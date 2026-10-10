@@ -1,6 +1,6 @@
 // The final dashboard is rendered once; no legacy layout is built or rearranged.
 export function combatShell() {
-  return `<header><a class="brand" href="#"><span class="brand-seal">✠</span><span>40K<span class="brand-sub">COMBAT LAB</span></span></a><nav aria-label="Workspace"><button id="combat-tab" class="nav active">Combat calculator</button><button id="army-tab" class="nav">Army Lists</button></nav><span class="version"><i></i> EXPERIMENT</span></header>
+  return `<header><a class="brand" href="#"><span>CODEX<span class="brand-sub">Imperium</span></span></a><nav aria-label="Workspace"><button id="combat-tab" class="nav active">Combat calculator</button><button id="army-tab" class="nav">Army Lists</button></nav><span class="version"><i></i> EXPERIMENT</span></header>
 <main>
  <div class="page-heading"><div><h1 id="title">WHAT DOES YOUR UNIT DO?</h1><p id="description">Pick two units. Watch the dice. Test the odds.</p></div><div class="heading-actions"><button id="save-scenario" class="button">Save scenario</button><button id="load-scenario" class="button">Load saved</button><button id="example" class="button dark">Custodes vs Lancer</button></div></div>
  <div id="notice" role="status" aria-live="polite"></div>
