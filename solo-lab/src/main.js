@@ -695,11 +695,14 @@ async function switchView(next) {
 }
 $("combat-tab").onclick = () => switchView("combat");
 $("army-tab").onclick = () => switchView("army");
+setBusy(true);
+notice("Loading faction and unit profiles…");
 try {
   const res = await fetch("/armies/index.json");
   if (!res.ok) throw Error("Could not load faction index.");
   index = await res.json();
   await example();
+  setBusy(false);
 } catch (e) {
   notice(e.message + " Reload to retry.");
   document.querySelectorAll("button").forEach((el) => (el.disabled = true));
