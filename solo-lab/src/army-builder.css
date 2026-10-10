@@ -2,3 +2,23 @@
 @media(max-width:1100px){.army-build-grid,.review-grid{grid-template-columns:minmax(0,1fr) 340px}.review-grid{grid-template-columns:340px minmax(0,1fr)}.detachment-cards{grid-template-columns:repeat(2,1fr)}.builder-toolbar>div:last-child{gap:10px}.edition-tag{display:none}.catalogue-controls{flex-wrap:wrap}.catalogue-controls input{min-width:190px}}@media(max-width:760px){.builder-toolbar{flex-wrap:wrap;gap:15px}.army-side-tabs{width:100%}.army-side-tabs button{min-width:0;width:50%;padding:14px 18px}.builder-steps{overflow:auto;gap:15px}.builder-steps button{padding-right:0;white-space:nowrap;font-size:12px;gap:7px}.builder-stage-head h2{font-size:26px}.army-fields{grid-template-columns:1fr}.points-cards{gap:12px}.points-card{width:50%;padding:20px}.points-card strong{font-size:35px}.detachment-cards{grid-template-columns:1fr}.army-build-grid,.review-grid{grid-template-columns:1fr}.army-list-panel{position:static}.unit-catalogue{height:420px}.army-source-note{flex-wrap:wrap;gap:10px;line-height:1.6}.army-source-note span{width:100%;order:3}.army-source-note a{margin-left:auto}.unit-config-panel{padding:20px}.faction-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.faction-card{padding:17px;min-height:140px}.faction-card strong{font-size:13px}.catalogue-row{padding:13px 12px;gap:12px}.catalogue-detail{gap:10px}.catalogue-symbol{width:22px}.catalogue-points{font-size:15px}}
 
 .equipment-picker{margin:20px 0;padding:18px;background:#10171f;border:1px solid #43505c;border-radius:8px}.equipment-picker h3{font:700 24px 'Barlow Condensed';margin:0 0 14px;color:#f4e8c8}.equipment-picker label{display:grid;grid-template-columns:minmax(100px,1fr) minmax(140px,1.5fr);align-items:center;gap:12px;margin:10px 0;font-size:13px;color:#bbc7d1}.equipment-picker select,.equipment-picker input{width:100%;min-height:40px;font-size:13px}.fixed-weapon{display:inline-block;margin:4px 8px 6px 0;padding:7px 10px;border:1px solid #34414c;border-radius:4px;color:#c7d0d8;font-size:12px}.equipment-warning{color:#efb39f!important;margin-top:12px!important}.equipment-group small{display:block;color:#c3a86d;margin-top:10px}.army-share-panel{max-width:620px!important}.share-actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.army-share-images img{display:block;width:100%;height:auto;border-radius:10px;margin-bottom:16px}.equipment-picker details{margin-bottom:12px}@media(max-width:520px){.equipment-picker label{grid-template-columns:1fr;gap:5px}.equipment-picker{padding:12px}}
+
+/* Mobile browsers zoom focused fields smaller than 16px. Keep pinch zoom available. */
+@media(max-width:760px){
+  body:has(.config-overlay){overflow:hidden}
+  .army-builder input:not([type=checkbox]),
+  .army-builder select,
+  .army-builder textarea{font-size:16px;min-height:44px;max-width:100%;box-sizing:border-box}
+  .unit-config-panel{width:100%;max-width:100%;height:100dvh;box-sizing:border-box;overflow-x:hidden;overscroll-behavior:contain;padding:20px max(16px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+  .unit-config-panel label{min-width:0}
+  .unit-config-panel .panel-top{gap:12px}
+  .unit-config-panel .panel-top .mini{min-width:44px;min-height:44px}
+  .config-fields{flex-wrap:wrap;gap:12px}
+  .equipment-picker label{grid-template-columns:minmax(0,1fr);gap:6px}
+  .equipment-picker{min-width:0;padding:12px}
+  .equipment-picker select,.equipment-picker input{min-width:0;max-width:100%}
+  .equipment-picker summary{min-height:44px;box-sizing:border-box;padding:10px 0;overflow-wrap:anywhere}
+  .fixed-weapon{max-width:100%;box-sizing:border-box;overflow-wrap:anywhere}
+  .warlord-choice{min-height:44px}
+  .unit-config-panel>#done-config{width:100%;min-height:48px}
+}
