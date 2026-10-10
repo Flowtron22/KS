@@ -44,8 +44,8 @@ function active(u, phase) {
     : "none";
 }
 export function effectiveAttack(attacker, defender, phase) {
-  const attackRules = collectRules(attacker, phase),
-    defenceRules = collectRules(defender, phase);
+  const attackRules = collectRules(attacker, phase, "attack"),
+    defenceRules = collectRules(defender, phase, "defence");
   const ar = attackRules.values,
     dr = defenceRules.values;
   const a = { ...EFFECT_DEFAULTS, ...attacker.effects },
@@ -53,10 +53,8 @@ export function effectiveAttack(attacker, defender, phase) {
     w = { ...attacker.weapon },
     applied = [];
   applied.push(
-    ...attackRules.labels.map((name) => `${name} (selected components)`),
-    ...defenceRules.labels.map(
-      (name) => `Target: ${name} (selected components)`,
-    ),
+    ...attackRules.labels.map((name) => `${name} (selected effects)`),
+    ...defenceRules.labels.map((name) => `Target: ${name} (selected effects)`),
   );
   for (const key of [
     "skillBonus",

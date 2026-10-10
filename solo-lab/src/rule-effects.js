@@ -108,13 +108,27 @@ export function validateRuleEffects(u) {
     }
   }
 }
-export function collectRules(u, phase) {
+export function collectRules(u, phase, role = "all") {
   const values = {},
     labels = [];
   if (!u.rulesConfirmed) return { values, labels };
   for (const r of u.ruleEffects ?? []) {
     if (r.phase !== "both" && r.phase !== phase) continue;
-    labels.push(r.name);
+    const defensive = [
+      "incomingHitMod",
+      "incomingWoundMod",
+      "fnp",
+      "invuln",
+      "stealth",
+    ];
+    if (
+      Object.keys(r.effects).some(
+        (k) =>
+          role === "all" ||
+          (role === "defence" ? defensive.includes(k) : !defensive.includes(k)),
+      )
+    )
+      labels.push(r.name);
     for (const [k, v] of Object.entries(r.effects)) {
       if (RULE_FLAGS.includes(k)) values[k] = values[k] || v;
       else if (
