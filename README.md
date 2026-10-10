@@ -1,6 +1,6 @@
-# KS — 40K Army Builder and Battle Simulator
+# KS — 40K Army Builder and Combat Lab
 
-A personal browser lab for building Warhammer 40,000 armies and testing a solo Three.js tabletop prototype. The army builder covers the 11th-edition community faction/chapter catalogues. The battle engine currently implements a small, simplified Space Marines versus Orks scenario.
+A personal browser lab for building Warhammer 40,000 armies and comparing unit-versus-unit attack scenarios. The army builder covers the 11th-edition community faction/chapter catalogues. The Combat calculator resolves one Shooting or Fight phase, with optional surviving attacks back, animated dice and repeated simulations.
 
 ## Deploy on Vercel
 
@@ -17,7 +17,9 @@ Import `Flowtron22/KS` and use:
 
 No environment variables or backend service are required. `solo-lab/vercel.json` records the build settings. Army catalogues are checked in under `solo-lab/public/armies/` and are copied into the production build; Vercel does not need to download or regenerate them.
 
-Army and battle saves use browser-local storage. Export existing armies/battles as JSON and import them on the Vercel site to transfer saves between hosting domains.
+Production: https://codex-imperium.vercel.app. Pushes to `main` trigger the connected Vercel deployment.
+
+Army and combat scenario saves use browser-local storage. Export/import JSON to transfer between hosting domains. Old battle checkpoints are not combat scenarios; existing army saves remain supported.
 
 ## Develop
 
@@ -27,7 +29,7 @@ npm ci
 npm run dev
 ```
 
-Run `npm test` for the army/battle tests and `npm run build` for a production build. See [the app README](solo-lab/README.md) for controls, data provenance and implementation limits.
+Run `npm test` for the army/combat tests and `npm run build` for a production build. See [the app README](solo-lab/README.md) for controls, data provenance and implementation limits.
 
 ## Project files
 
@@ -44,4 +46,4 @@ Army flow: Faction → Points → Detachments → Units → Review. Build two in
 
 The data snapshot is pinned to BSData commit `cc58ee3b2c23f90af9d00e7bf234cd703b762299` (9 October 2026), not a live feed. Official points reconciliation and full roster legality are unfinished. Weapon quantities are currently recorded manually; the next army-builder improvement is default equipment plus legal model-specific weapon replacements, followed by fuller Warlord, Enhancement and attachment restrictions.
 
-Full-faction roster coverage does not imply full-faction battle simulation. The simplified battle engine omits many tabletop rules; see the app README before interpreting simulation results.
+Combat starts with 5 Custodian Guard versus 1 Cerastus Knight Lancer. Choose units from any faction catalogue, or load unit/model counts from saved Army A/B. Use one homogeneous defensive profile and one weapon profile per unit. Abilities and weapon keywords are not applied automatically; see the app README for supported manual modifiers and limits.

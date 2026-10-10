@@ -1,123 +1,706 @@
-import * as THREE from 'three';
-import './battle.css';
-import {fresh,clone,alive,active,move,moveReason,attack,attackReason,endTurn,botCommand,execute,TEMPLATES,TERRAIN,OBJECTIVES,controlObjective,validateSnapshot} from './engine.js';
+import "./battle.css";
+import "./combat.css";
+import {
+  validateScenario,
+  seeded,
+  runScenario,
+  woundTarget,
+  saveTarget,
+} from "./combat.js";
 
-const $=id=>document.getElementById(id), sides=['Space Marines','Orks'], controlNames={manual:'Player',assisted:'Confirm AI actions',bot:'AI opponent'};
-let state=fresh(),selected=state.units[0].id,target=null,moveMode=false,busy=false,auto=false,snapshot=null,lastRoll=null,view='battle',sound=true;
-let roster=[['intercessors','heavy-intercessors','hellblasters'],['boyz','nobz','shoota-boyz']];
-try{const saved=localStorage.getItem('ks-lab-snapshot');if(saved)snapshot=validateSnapshot(JSON.parse(saved));}catch{}
-const icon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m12 2 9 5v10l-9 5-9-5V7z"/><path d="m3 7 9 5 9-5M12 12v10"/></svg>';
-$('app').innerHTML=`
-<header><a class="brand" href="#"><span class="brand-seal">✠</span><span>40K<span class="brand-sub">BATTLE SIMULATOR</span></span></a><nav aria-label="Workspace"><button id="battle-tab" class="nav active">Battle</button><button id="assemble-tab" class="nav">Army lists</button><button id="lab-tab" class="nav">Simulations</button></nav><span class="version"><i></i> SOLO PLAY</span></header>
-<main><div class="page-heading"><div><div class="eyebrow">OPEN PLAY / BASIC RULES</div><h1 id="page-title">SPACE MARINES <span>VS</span> ORKS</h1><p id="page-description">You command either army. Switch the opponent to AI whenever you want.</p></div><div class="heading-actions"><button id="save" class="button">Save battle</button><button id="reset" class="button dark">New battle</button></div></div>
-<section id="battle-view"><div class="workspace"><aside class="panel force-panel"><div class="panel-top"><span class="eyebrow">ARMIES</span><span id="round" class="small-tag"></span></div><div id="forces"></div><div class="force-footer">Set either army to Player to take its turn yourself.</div></aside>
-<div class="board-column"><div class="board-bar"><span><i class="status-dot"></i> <strong id="turn-label"></strong></span><div><button id="tilt" class="mini">Top-down view</button><button id="end" class="mini">End turn →</button></div></div><div id="board"><div class="board-label">BATTLEFIELD <span>40 × 26″ / 3 OBJECTIVES</span></div><div class="board-help" id="board-help">Select a unit. Move it, or choose an enemy to attack.</div><div class="board-compass">N<br>↑</div><div class="board-bottom"><span>SPACE MARINES &nbsp; / &nbsp; ORKS</span><span>SCROLL TO ZOOM</span></div><div id="toast" role="status" aria-live="polite"></div></div><div class="board-under"><span id="score"></span><div><button id="step" class="button">Next AI action</button><button id="auto" class="button dark">▶ Play AI turn</button></div></div><div class="battle-note">Basic rules: no abilities or stratagems. Units move together; Weapon keywords and sergeants are not included yet.</div></div>
-<div class="combat-column"><aside class="panel inspector"><div class="panel-top"><span class="eyebrow">UNIT DATASHEET</span><span id="selected-side" class="small-tag"></span></div><div id="unit-details"></div><div class="action-stack"><button id="move" class="button">Move</button><button id="shoot" class="button orange">Shoot · roll dice</button><button id="melee" class="button">Fight</button></div><div id="target-details" class="target-box"></div><details class="ai-details"><summary>Next AI action</summary><p id="bot-intent" class="muted"></p></details></aside>
-<section class="panel dice-panel"><div class="panel-top"><span class="eyebrow">DICE</span><div><button id="sound" class="mini">Sound on</button><select id="pace" aria-label="Dice animation speed"><option value="cinematic">Normal speed</option><option value="quick">Fast rolls</option><option value="instant">Instant rolls</option></select></div></div><div id="dice"><div class="dice-idle"><span class="idle-die">⚄</span><h3>ROLL TO HIT</h3><p>Select a unit and a target.<br>Then hit Shoot.</p></div></div></section></div></div>
-<section class="panel log-panel"><div class="panel-top"><span class="eyebrow">BATTLE LOG</span><button id="export" class="mini">Export battle JSON</button></div><div id="log"></div></section></section>
-<section id="assemble-view" hidden><div id="army-builder-root"></div></section>
-<section id="lab-view" hidden><div class="lab-grid"><section class="panel lab-config"><span class="eyebrow">BATTLE SIMULATIONS</span><h2>Who wins this matchup?</h2><p>Let the AI play both armies across different dice rolls. Results depend on this battlefield, the basic rules and the AI's decisions.</p><label>Start from<select id="sim-source"><option value="current">Current battle</option><option value="saved">Saved battle</option></select></label><label>Number of battles<select id="trials"><option>100</option><option selected>500</option><option>1000</option></select></label><button id="simulate" class="button orange">Run simulations →</button><p class="fine">Weapon keywords, unit abilities, stratagems and mixed loadouts are not simulated.</p></section><section class="panel results" id="sim-results"><span class="eyebrow">RESULTS</span><div class="empty-results"><span>⚄</span><h3>No battles simulated yet.</h3><p>Run simulations to compare wins and victory points.</p></div></section></div></section>
-<footer><span>40K BATTLE SIMULATOR · PROTOTYPE</span><span>Basic rules · community stat snapshot 9 Oct 2026 · points not officially verified</span><div><button id="restore" class="mini">Load saved battle</button><label class="import-label">Import battle JSON<input id="import" type="file" accept="application/json" hidden></label></div></footer></main>`;
-
-function escape(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-function notify(msg){$('toast').textContent=msg;$('toast').classList.add('visible');clearTimeout(notify.timer);notify.timer=setTimeout(()=>$('toast').classList.remove('visible'),3200);}
-function getUnit(){return state.units.find(u=>u.id===selected);}
-function human(){return state.controls[state.side]!=='bot';}
-function render(){
-  $('round').textContent=`ROUND ${state.round} / 5`;$('turn-label').textContent=state.winner?`${state.winner==='Draw'?'Draw':state.winner+' wins'} · Battle complete`:`${sides[state.side]} turn · ${controlNames[state.controls[state.side]]}`;
-  $('forces').innerHTML=[0,1].map(side=>`<div class="army ${side===state.side?'current':''}"><div class="army-title"><span class="faction-mark ${side?'green':'blue'}">${side?'☠':'✠'}</span><div><h3>${sides[side]}</h3><span>${state.units.filter(u=>u.side===side).reduce((n,u)=>n+u.points,0)} PTS</span></div></div><label class="control-label">CONTROL<select data-side="${side}" ${busy?'disabled':''}>${['manual','assisted','bot'].map(c=>`<option value="${c}" ${state.controls[side]===c?'selected':''}>${controlNames[c]}</option>`).join('')}</select></label>${state.units.filter(u=>u.side===side).map(u=>`<button class="unit-row ${selected===u.id?'selected':''} ${!alive(u)?'dead':''}" data-id="${u.id}" ${busy?'disabled':''}><span class="unit-symbol">${u.template==='heavy-intercessors'||u.template==='nobz'?'▰':u.template==='boyz'?'✕':'◇'}</span><span><strong>${u.name}</strong><small>${alive(u)} / ${u.models} models ${u.moved?' · MOVED':''}${u.shot?' · FIRED':''}</small></span><span class="unit-health">${u.hp.reduce((a,b)=>a+b,0)}<small>W LEFT</small></span></button>`).join('')}</div>`).join('');
-  document.querySelectorAll('[data-side]').forEach(el=>el.onchange=()=>{state.controls[Number(el.dataset.side)]=el.value;auto=false;render();});
-  document.querySelectorAll('[data-id]').forEach(el=>el.onclick=()=>selectUnit(el.dataset.id));
-  const u=getUnit(),v=state.units.find(v=>v.id===target);$('selected-side').textContent=u?sides[u.side].toUpperCase():'';
-  $('unit-details').innerHTML=u?`<div class="unit-large">${u.template==='heavy-intercessors'||u.template==='nobz'?'▰':u.template==='boyz'?'✕':'◇'}</div><h2>${u.name}</h2><p class="muted">${u.role} · ${alive(u)} models remaining</p><div class="stat-grid">${[['M',u.move+'″'],['T',u.toughness],['Sv',u.save+'+'],['W',u.wounds],['Ld',u.leadership+'+'],['OC',u.oc]].map(([k,v])=>`<div><small>${k}</small><strong>${v}</strong></div>`).join('')}</div><div class="weapon-line"><strong>${u.weapon}</strong><div class="weapon-stats"><span>Range <b>${u.range}″</b></span><span>A <b>${u.attacks}</b></span><span>BS <b>${u.hit}+</b></span><span>S <b>${u.strength}</b></span><span>AP <b>−${u.ap}</b></span><span>D <b>${u.damage}</b></span></div></div><details class="melee-weapon"><summary>${u.melee.name}</summary><div class="weapon-stats"><span>A <b>${u.melee.attacks}</b></span><span>WS <b>${u.melee.hit}+</b></span><span>S <b>${u.melee.strength}</b></span><span>AP <b>−${u.melee.ap}</b></span><span>D <b>${u.melee.damage}</b></span></div></details>`:'<p>Select a unit on the battlefield.</p>';
-  $('move').disabled=busy||!human()||!active(state,u)||u.moved;$('move').classList.toggle('active-action',moveMode);
-  $('shoot').disabled=busy||!human()||!!attackReason(state,u,v);$('melee').disabled=busy||!human()||!!attackReason(state,u,v,'melee');
-  $('target-details').innerHTML=v?`<span class="eyebrow">TARGET / ${sides[v.side]}</span><strong>${v.name}</strong><small>${attackReason(state,u,v)||'Clear line of sight · ready to shoot'}</small>`:'<span class="eyebrow">TARGET</span><small>Select an enemy unit to attack.</small>';
-  const c=botCommand(state);$('bot-intent').textContent=c?`${state.units.find(u=>u.id===c.id)?.name||'End turn'}: ${c.why}`:'Battle finished.';
-  $('step').textContent=state.controls[state.side]==='assisted'?'Confirm AI action':'Next AI action';$('step').disabled=busy||state.winner!==null||state.controls[state.side]==='manual';
-  $('auto').textContent=auto?'Ⅱ Pause AI':'▶ Play AI turn';$('auto').disabled=busy||state.winner!==null||state.controls[state.side]!=='bot';$('end').disabled=busy||!human()||state.winner!==null;
-  $('save').disabled=busy;$('reset').disabled=busy;$('restore').disabled=busy||!snapshot;$('import').disabled=busy;
-  $('score').innerHTML=`<span class="score-blue">SPACE MARINES <b>${state.score[0]}</b></span><span class="score-green">ORKS <b>${state.score[1]}</b></span><span class="score-note">VICTORY POINTS</span>`;
-  $('board-help').textContent=moveMode?'Click the ground to move your unit. Esc to cancel.':state.winner?'Battle finished. Save it or start another.':'Select your unit, then an enemy to attack.';
-  $('log').innerHTML=state.events.slice(-20).reverse().map(e=>`<div class="log-entry"><span>R${e.round}</span><p>${escape(e.text)}</p></div>`).join('');updateBoard();
+const $ = (id) => document.getElementById(id),
+  esc = (s) =>
+    String(s ?? "").replace(
+      /[&<>"']/g,
+      (c) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        })[c],
+    );
+const num = (s) => (/^\d+\+?$/.test(String(s ?? "")) ? parseInt(s) : null);
+const opt = (v, label, selected) =>
+  `<option value="${esc(v)}" ${String(v) === String(selected) ? "selected" : ""}>${esc(label)}</option>`;
+const baseWeapon = {
+  name: "Custom weapon",
+  attacks: "1",
+  hit: 3,
+  strength: 4,
+  ap: 0,
+  damage: "1",
+  hitMod: 0,
+  woundMod: 0,
+  hitReroll: "none",
+  woundReroll: "none",
+};
+let index,
+  cache = new Map(),
+  picks = [{}, {}],
+  scenario = {
+    phase: "fight",
+    first: 0,
+    fightBack: true,
+    seed: 40000,
+    units: [],
+  },
+  busy = false,
+  worker,
+  results = null,
+  lastRoll = null,
+  armyMounted = false;
+const weapons = (u) =>
+  (u?.profiles ?? []).filter(
+    (p) =>
+      p.type ===
+      (scenario.phase === "fight" ? "Melee Weapons" : "Ranged Weapons"),
+  );
+$("app").innerHTML =
+  `<header><a class="brand" href="#"><span class="brand-seal">✠</span><span>40K<span class="brand-sub">COMBAT LAB</span></span></a><nav aria-label="Workspace"><button id="combat-tab" class="nav active">Combat calculator</button><button id="army-tab" class="nav">Army Lists</button></nav><span class="version"><i></i> EXPERIMENT</span></header>
+<main><div class="page-heading"><div><div class="eyebrow">ONE PHASE / TWO UNITS</div><h1 id="title">WHAT DOES YOUR UNIT DO?</h1><p id="description">Pick a matchup. Roll the attacks. Find out how often it works.</p></div><div class="heading-actions"><button id="save-scenario" class="button">Save scenario</button><button id="load-scenario" class="button">Load saved</button><button id="example" class="button dark">Custodes vs Lancer</button></div></div><div id="notice" role="status" aria-live="polite"></div>
+<section id="combat-view"><div class="scenario-bar panel"><div class="phase-switch"><button id="fight" class="active">Fight phase</button><button id="shoot">Shooting phase</button></div><label>Attacks first<select id="first"><option value="0">Unit A</option><option value="1">Unit B</option></select></label><label class="check"><input id="fight-back" type="checkbox" checked> Survivors fight back</label><button id="swap" class="button">Swap units ⇄</button></div>
+<div class="matchup"><section id="unit-0" class="panel combat-unit"></section><div class="versus">VS</div><section id="unit-1" class="panel combat-unit"></section></div>
+<section class="rules-note"><strong>What this calculates</strong><p>One weapon profile per unit, shared by the chosen weapon bearers. All models in a unit use the same Toughness, Save and Wounds. Normal damage does not spill between models. Fight back uses surviving models, with selected weapon bearers surviving first. Each run starts fresh.</p><p><b>Abilities, weapon keywords, Detachments, Enhancements and Stratagems are not applied automatically.</b> Set supported effects manually. Range, charges, engagement and fight order are assumed.</p></section>
+<div class="experiment-controls panel"><label>Random seed<input id="seed" type="number" min="0" max="4294967295" value="40000"></label><button id="new-seed" class="mini">New seed ↻</button><label>Dice animation<select id="pace"><option value="normal">Normal</option><option value="fast">Fast</option><option value="instant">Instant</option></select></label><button id="roll" class="button orange">⚄ Roll attacks</button><label>Number of simulations<select id="trials"><option value="1000">1,000</option><option value="10000" selected>10,000</option><option value="50000">50,000</option></select></label><button id="simulate" class="button dark">Run simulations →</button></div>
+<div class="experiment-output"><section class="panel"><div class="panel-top"><span class="eyebrow">ATTACK SEQUENCE</span><button id="export-roll" class="mini" disabled>Export rolls JSON</button></div><div id="dice-output" aria-live="polite"></div></section><section class="panel"><div class="panel-top"><span class="eyebrow">SIMULATION RESULTS</span><button id="export-results" class="mini" disabled>Export results JSON</button></div><div id="results" aria-live="polite"></div></section></div><div class="scenario-files"><button id="export-scenario" class="mini">Export scenario JSON</button><label class="import-label">Import scenario JSON<input id="import-scenario" type="file" accept="application/json" hidden></label></div></section>
+<section id="army-view" hidden><div id="army-builder-root"></div></section><footer><span>40K COMBAT LAB · PROTOTYPE</span><span>Community stat snapshot · 9 Oct 2026 · points not officially verified</span><a href="https://github.com/BSData/wh40k-11e/tree/cc58ee3b2c23f90af9d00e7bf234cd703b762299" target="_blank" rel="noreferrer">Data source ↗</a></footer></main>`;
+function notice(s) {
+  $("notice").textContent = s;
 }
-function selectUnit(id){if(busy)return;const u=state.units.find(u=>u.id===id);if(!u||!alive(u))return;if(u.side===state.side){selected=id;target=null;}else if(selected&&getUnit()?.side===state.side)target=id;else selected=id;moveMode=false;render();}
-
-// Three.js battlefield: token clusters are presentation for simplified formation footprints.
-const scene=new THREE.Scene();scene.background=new THREE.Color('#10151b');scene.fog=new THREE.Fog('#10151b',60,120);
-const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFShadowMap;$('board').prepend(renderer.domElement);
-const camera=new THREE.OrthographicCamera(-22,22,16,-16,0.1,150);let tilted=true,zoom=1;
-const hemi=new THREE.HemisphereLight(0xadc4e2,0x302a24,1.8);scene.add(hemi);const sun=new THREE.DirectionalLight(0xffd5a0,2.5);sun.position.set(-12,25,10);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-25,right:25,top:20,bottom:-20});scene.add(sun);
-function material(color){return new THREE.MeshStandardMaterial({color,roughness:0.88});}
-const ground=new THREE.Mesh(new THREE.BoxGeometry(44,0.5,42),material('#443c34'));ground.position.y=-0.3;ground.receiveShadow=true;scene.add(ground);
-for(const edge of [{w:40,h:.05,d:.12,x:0,z:-13},{w:40,h:.05,d:.12,x:0,z:13},{w:.12,h:.05,d:26,x:-20,z:0},{w:.12,h:.05,d:26,x:20,z:0}]){const m=new THREE.Mesh(new THREE.BoxGeometry(edge.w,edge.h,edge.d),material('#b6a174'));m.position.set(edge.x,0,edge.z);scene.add(m);}
-const soil=document.createElement('canvas');soil.width=soil.height=1024;const soilCtx=soil.getContext('2d');soilCtx.fillStyle='#71614e';soilCtx.fillRect(0,0,1024,1024);let visualSeed=773;function visualRand(){visualSeed=(Math.imul(visualSeed,1664525)+1013904223)>>>0;return visualSeed/4294967296;}
-for(let i=0;i<24000;i++){soilCtx.fillStyle=visualRand()>.5?'#c1ab7922':'#211e1955';const size=visualRand()*5;soilCtx.fillRect(visualRand()*1024,visualRand()*1024,size,size);}
-for(let i=0;i<24;i++){const x=visualRand()*1024,y=visualRand()*1024,r=12+visualRand()*35;const g=soilCtx.createRadialGradient(x,y,1,x,y,r);g.addColorStop(0,'#101316cc');g.addColorStop(.65,'#211e1899');g.addColorStop(1,'#54432e00');soilCtx.fillStyle=g;soilCtx.fillRect(x-r,y-r,r*2,r*2);}
-const soilTexture=new THREE.CanvasTexture(soil);soilTexture.colorSpace=THREE.SRGBColorSpace;ground.material.map=soilTexture;ground.material.color.set('#b3a48b');ground.material.needsUpdate=true;
-const grid=new THREE.GridHelper(40,40,0x756652,0x51483d);grid.material.transparent=true;grid.material.opacity=0.13;grid.position.y=-0.02;scene.add(grid);
-TERRAIN.forEach((t,i)=>{
-  function block(w,h,d,x,y,z,c){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),material(c));m.position.set(t.x+x,y,t.z+z);m.castShadow=true;m.receiveShadow=true;scene.add(m);return m;}
-  block(t.w,.18,t.h,0,.02,0,'#292a2a');
-  // Solid ruins footprint for the simplified visibility rules, with broken walls.
-  block(t.w,1.2,t.h,0,.6,0,'#363b3f');
-  block(t.w+.1,.16,t.h+.1,0,1.2,0,'#52595c');
-  const n=Math.ceil(t.w/1.4);
-  for(let j=0;j<n;j++){const x=(j-(n-1)/2)*t.w/n;block(.4,2.1+(j%2)*.7,.5,x,1.65,-t.h/2,'#636b6c');block(t.w/n-.2,.35,.32,x,1.5,-t.h/2,'#727979');}
-  for(let j=0;j<Math.ceil(t.h/1.6);j++)block(.5,1.6+(j%3)*.35,.6,-t.w/2,1.4,(j-(Math.ceil(t.h/1.6)-1)/2)*1.6,'#565e61');
-  for(let j=0;j<9;j++){const r=block(.25+visualRand()*.5,.2+visualRand()*.3,.25+visualRand()*.5,(visualRand()-.5)*t.w,1.4,(visualRand()-.5)*t.h,'#666560');r.rotation.y=visualRand()*Math.PI;}
-});
-function boardText(text,color='#ded3b7',width=3){const c=document.createElement('canvas');c.width=512;c.height=96;const ctx=c.getContext('2d');ctx.fillStyle='#10161ee8';ctx.fillRect(0,0,512,96);ctx.strokeStyle=color;ctx.lineWidth=3;ctx.strokeRect(2,2,508,92);ctx.fillStyle=color;ctx.font='600 32px Arial';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(text,256,48,490);const texture=new THREE.CanvasTexture(c);texture.colorSpace=THREE.SRGBColorSpace;const sprite=new THREE.Sprite(new THREE.SpriteMaterial({map:texture,transparent:true,depthTest:false}));sprite.scale.set(width,width*96/512,1);return sprite;}
-const objectiveMeshes=OBJECTIVES.map((o,i)=>{const group=new THREE.Group();const ring=new THREE.Mesh(new THREE.TorusGeometry(1.3,0.07,8,60),material('#d9b15d'));ring.rotation.x=-Math.PI/2;group.add(ring);const center=new THREE.Mesh(new THREE.CylinderGeometry(.35,.55,.4,6),material('#ae873b'));center.position.y=.25;group.add(center);const label=boardText(`OBJECTIVE ${i+1}`,'#deb568',2.4);label.position.set(0,1.1,0);group.add(label);group.position.set(o.x,.03,o.z);scene.add(group);return {group,ring};});
-const tokenGroup=new THREE.Group();scene.add(tokenGroup);const picking=[];const ringMat=new THREE.MeshBasicMaterial({color:0xf2d5a0,transparent:true,opacity:0.9});
-let moveRing=null;
-function disposeGroup(group){group.traverse(o=>{o.geometry?.dispose();if(o.material&&o.material!==ringMat){o.material.map?.dispose();o.material.dispose();}});group.clear();}
-function updateBoard(){disposeGroup(tokenGroup);picking.length=0;if(moveRing){scene.remove(moveRing);moveRing.geometry.dispose();moveRing.material.dispose();moveRing=null;}
-  state.units.filter(alive).forEach(u=>{const group=new THREE.Group();group.position.set(u.x,0,u.z);const colour=u.side?'#a7ba49':'#327ad2';
-    u.hp.forEach((hp,i)=>{if(!hp)return;const a=i*Math.PI*2/u.models,r=u.models>1?0.78:0;const disc=new THREE.Mesh(new THREE.CylinderGeometry(0.38,0.43,0.22,24),material(colour));disc.position.set(Math.cos(a)*r,0.14,Math.sin(a)*r);disc.castShadow=true;disc.userData.unitId=u.id;group.add(disc);picking.push(disc);const cap=new THREE.Mesh(new THREE.CylinderGeometry(0.18,0.18,0.13,u.template==='heavy-intercessors'||u.template==='nobz'?4:6),material(u.side?'#4b571d':'#0d2349'));cap.position.copy(disc.position).y=0.31;group.add(cap);});
-    const base=new THREE.Mesh(new THREE.CylinderGeometry(1.18,1.18,0.06,40),material(u.side?'#292f16':'#172333'));base.position.y=0;base.userData.unitId=u.id;group.add(base);picking.push(base);
-    if(u.id===selected||u.id===target){const ring=new THREE.Mesh(new THREE.TorusGeometry(1.38,0.08,8,60),new THREE.MeshBasicMaterial({color:u.id===target?0xeb6b37:0xffd598}));ring.rotation.x=-Math.PI/2;ring.position.y=0.06;group.add(ring);}
-    const label=boardText(`${u.name.toUpperCase()} · ${alive(u)}`,u.side?'#c3cf88':'#9ac5ff',4.3);label.position.set(0,1.15,0);group.add(label);tokenGroup.add(group);
+async function catalogue(id) {
+  if (cache.has(id)) return cache.get(id);
+  const f = index.factions.find((f) => f.id === id);
+  if (!f) throw Error("Unknown faction.");
+  const res = await fetch("/armies/" + f.file);
+  if (!res.ok) throw Error("Could not load faction.");
+  const d = await res.json();
+  cache.set(id, d);
+  return d;
+}
+function applyWeapon(i) {
+  const u = picks[i].data?.units.find((u) => u.id === picks[i].unit),
+    p = weapons(u).find((p) => p.id === picks[i].weapon),
+    w = scenario.units[i].weapon;
+  if (!p) {
+    w.name = "Custom weapon";
+    return;
+  }
+  Object.assign(w, {
+    name: p.name,
+    attacks: p.stats.A ?? "",
+    damage: p.stats.D ?? "",
+    hit: num(p.stats.WS ?? p.stats.BS) ?? 0,
+    strength: num(p.stats.S) ?? 0,
+    ap: /^-?\d+$/.test(p.stats.AP ?? "") ? -Math.abs(Number(p.stats.AP)) : 0,
   });
-  objectiveMeshes.forEach((m,i)=>{const owner=controlObjective(state,OBJECTIVES[i]);m.ring.material.color.set(owner===null?'#e4cf9c':owner?'#a9ca78':'#83c8e7');});
-  const u=getUnit();if(moveMode&&u){moveRing=new THREE.Mesh(new THREE.RingGeometry(u.move-0.03,u.move,100),new THREE.MeshBasicMaterial({color:0xffe1a0,transparent:true,opacity:0.6,side:THREE.DoubleSide}));moveRing.rotation.x=-Math.PI/2;moveRing.position.set(u.x,0.03,u.z);scene.add(moveRing);}
+  if (!num(p.stats.WS ?? p.stats.BS) || !num(p.stats.S))
+    notice(
+      "This weapon needs manual characteristics. Automatic-hit weapons and keywords are not supported.",
+    );
 }
-function resize(){const b=$('board');renderer.setSize(b.clientWidth,b.clientHeight,false);const aspect=b.clientWidth/b.clientHeight,half=Math.max(13.8,21/aspect)*zoom;camera.left=-half*aspect;camera.right=half*aspect;camera.top=half;camera.bottom=-half;camera.position.set(0,tilted?32:42,tilted?24:0.01);camera.lookAt(0,0,0);camera.updateProjectionMatrix();}
-new ResizeObserver(()=>requestAnimationFrame(resize)).observe($('board'));const ray=new THREE.Raycaster(),mouse=new THREE.Vector2();
-renderer.domElement.addEventListener('click',e=>{if(busy)return;const b=renderer.domElement.getBoundingClientRect();mouse.set((e.clientX-b.left)/b.width*2-1,-(e.clientY-b.top)/b.height*2+1);ray.setFromCamera(mouse,camera);if(moveMode){const p=new THREE.Vector3();ray.ray.intersectPlane(new THREE.Plane(new THREE.Vector3(0,1,0),0),p);try{move(state,selected,{x:p.x,z:p.z});moveMode=false;render();}catch(error){notify(error.message);}return;}const hit=ray.intersectObjects(picking)[0];if(hit)selectUnit(hit.object.userData.unitId);});
-renderer.domElement.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(0.65,Math.min(1.5,zoom+e.deltaY*0.001));resize();},{passive:false});
-renderer.setAnimationLoop(()=>renderer.render(scene,camera));
-
-let audioContext;
-function clack(){if(!sound)return;try{audioContext??=new AudioContext();audioContext.resume();for(let i=0;i<5;i++){const o=audioContext.createOscillator(),g=audioContext.createGain();o.type='triangle';o.frequency.setValueAtTime(180+i*70,audioContext.currentTime+i*0.035);g.gain.setValueAtTime(0.055,audioContext.currentTime+i*0.035);g.gain.exponentialRampToValueAtTime(0.001,audioContext.currentTime+i*0.035+0.07);o.connect(g);g.connect(audioContext.destination);o.start(audioContext.currentTime+i*0.035);o.stop(audioContext.currentTime+i*0.035+0.09);}}catch{}}
-const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-async function attackEffect(c){
-  const a=state.units.find(u=>u.id===c.id),b=state.units.find(u=>u.id===c.targetId);if(!a||!b||$('pace').value==='instant'||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  const fx=new THREE.Group();scene.add(fx);
-  const from=new THREE.Vector3(a.x,0.6,a.z),to=new THREE.Vector3(b.x,0.5,b.z);
-  const beam=new THREE.Mesh(new THREE.CylinderGeometry(0.035,0.035,from.distanceTo(to),6),new THREE.MeshBasicMaterial({color:a.side?0xb4e344:0x70ceff}));beam.position.copy(from).lerp(to,0.5);beam.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),to.clone().sub(from).normalize());fx.add(beam);
-  const flash=new THREE.Mesh(new THREE.SphereGeometry(0.55,12,8),new THREE.MeshBasicMaterial({color:0xffc579,transparent:true,opacity:0.85}));flash.position.copy(to);fx.add(flash);
-  for(let i=0;i<3;i++){fx.visible=true;await wait(65);fx.visible=false;await wait(50);}scene.remove(fx);disposeGroup(fx);
+function unitFromCatalogue(i, u, models = u.models.min) {
+  picks[i].unit = u.id;
+  picks[i].profile = u.profiles.find((p) => p.type === "Unit")?.id;
+  picks[i].weapon = weapons(u)[0]?.id ?? "";
+  const stats = u.profiles.find((p) => p.id === picks[i].profile)?.stats ?? {};
+  scenario.units[i] = {
+    name: u.name,
+    models,
+    wounds: num(stats.W) ?? 0,
+    toughness: num(stats.T) ?? 0,
+    save: num(stats.Sv) ?? 7,
+    invuln: num(stats.InSv) ?? 7,
+    fnp: 7,
+    frontWounds: num(stats.W) ?? 0,
+    bearers: models,
+    cover: false,
+    weapon: { ...baseWeapon },
+  };
+  applyWeapon(i);
+  if (!num(stats.W) || !num(stats.T) || !num(stats.Sv))
+    notice(
+      "Incomplete unit profile: check and enter characteristics manually.",
+    );
 }
-function face(n){return `<span class="pips pips-${n}">${Array.from({length:9},(_,i)=>`<i class="${({1:[4],2:[0,8],3:[0,4,8],4:[0,2,6,8],5:[0,2,4,6,8],6:[0,2,3,5,6,8]})[n].includes(i)?'on':''}"></i>`).join('')}</span>`;}
-async function showRoll(r){lastRoll=r;const stages=[['Hit rolls',r.hits,r.hitTarget],['Wound rolls',r.wounds,r.woundTarget],['Saving throws',r.saves,r.saveTarget]];const pace=$('pace').value,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;$('dice').classList.toggle('instant',pace==='instant'||reduced);
-  $('dice').innerHTML=`<div class="roll-heading"><strong>${r.attacker} <span>→</span> ${r.defender}</strong><small>${r.weapon}</small></div><div class="dice-stages">${stages.map(([name,dice,threshold],i)=>`<div class="dice-stage" id="stage-${i}"><div class="stage-heading"><span>${String(i+1).padStart(2,'0')} / ${name}</span><b>${threshold>6?'NO SAVE':threshold+'+'}</b></div><div class="dice-pool">${dice.length?dice.slice(0,30).map(d=>`<span class="die waiting ${d>=threshold?'pass':'fail'}" aria-label="${d}, ${d>=threshold?'success':'failure'}">${face(d)}</span>`).join(''):'<small>No dice in this stage</small>'}</div><div class="stage-total">${dice.filter(d=>d>=threshold).length} / ${dice.length} successful</div></div>`).join('')}</div><div class="roll-result" id="roll-result">${r.failed} failed saves <span>·</span> ${r.kills} ${r.kills===1?'model':'models'} slain <span>·</span> ${r.damage} damage</div>`;
-  for(let i=0;i<3;i++){if(pace!=='instant'&&!reduced){clack();await wait(pace==='quick'?130:400);}$(`stage-${i}`).classList.add('revealed');}$('roll-result').classList.add('revealed');
+function field(i, k, label, value, min, max, type = "number") {
+  return `<label>${label}<input data-field="${k}" aria-label="Unit ${i ? "B" : "A"} ${label}" type="${type}" ${type === "number" ? `min="${min}" max="${max}" step="1"` : ""} value="${esc(value)}"></label>`;
 }
-async function perform(c){if(busy||!c)return;busy=true;moveMode=false;try{const r=execute(state,c);if(c.id)selected=c.id;if(c.targetId)target=c.targetId;if(c.type==='end'){selected=state.units.find(u=>active(state,u))?.id;target=null;}render();if(r){await attackEffect(c);await showRoll(r);}}catch(error){auto=false;notify(error.message);}finally{busy=false;render();}}
-async function botStep(){const c=botCommand(state);await perform(c);}
-setInterval(()=>{if(auto&&!busy&&state.controls[state.side]==='bot'&&state.winner===null&&view==='battle')botStep();else if(auto&&(state.controls[state.side]!=='bot'||state.winner!==null)){auto=false;render();}},850);
-$('move').onclick=()=>{moveMode=!moveMode;render();};$('shoot').onclick=()=>perform({type:'attack',id:selected,targetId:target,mode:'shoot'});$('melee').onclick=()=>perform({type:'attack',id:selected,targetId:target,mode:'melee'});$('end').onclick=()=>perform({type:'end'});$('step').onclick=botStep;$('auto').onclick=()=>{auto=!auto;render();};$('tilt').onclick=()=>{tilted=!tilted;$('tilt').textContent=tilted?'Top-down view':'Tilt view';resize();};document.addEventListener('keydown',e=>{if(e.key==='Escape'){moveMode=false;render();}});
-$('sound').onclick=()=>{sound=!sound;$('sound').textContent=sound?'Sound on':'Sound off';};
-function save(){snapshot=clone(state);try{localStorage.setItem('ks-lab-snapshot',JSON.stringify(snapshot));notify('Battle saved. Loading it repeats the same dice rolls.');}catch{notify('Saved for this session. Browser storage is unavailable.');}render();}
-$('save').onclick=save;$('restore').onclick=()=>{if(!snapshot||busy)return;state=clone(snapshot);selected=state.units.find(u=>active(state,u))?.id;target=null;auto=false;moveMode=false;lastRoll=null;$('dice').innerHTML='<p class="muted">Battle loaded. The next dice rolls will be the same.</p>';switchView('battle');render();};
-function start(){if(busy)return;state=fresh(state.seed,roster);selected=state.units[0].id;target=null;moveMode=false;auto=false;lastRoll=null;$('dice').innerHTML='<p class="muted">New battle. Select a unit and an enemy to shoot.</p>';switchView('battle');render();}
-$('reset').onclick=start;
-$('export').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(state,null,2)],{type:'application/json'}));a.download=`ks-round-${state.round}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);};
-$('import').onchange=async e=>{if(busy)return;try{const file=e.target.files[0];if(!file)return;if(file.size>2e6)throw Error('Battle file is too large.');state=validateSnapshot(JSON.parse(await file.text()));auto=false;selected=state.units.find(u=>active(state,u))?.id;target=null;moveMode=false;$('dice').innerHTML='<p class="muted">Battle imported. Ready to play.</p>';switchView('battle');render();notify('Battle imported.');}catch(error){notify(error.message);}e.target.value='';};
-function switchView(next){if(busy)return;view=next;auto=false;['battle','assemble','lab'].forEach(v=>{$(`${v}-view`).hidden=v!==next;$(`${v}-tab`).classList.toggle('active',v===next);});$('page-title').innerHTML=next==='battle'?'SPACE MARINES <span>VS</span> ORKS':next==='assemble'?'ARMY LISTS':'BATTLE SIMULATIONS';$('page-description').textContent=next==='battle'?'You command either army. Switch the opponent to AI whenever you want.':next==='assemble'?'Choose a faction, set your points, then build your army.':'Play this matchup hundreds of times with different dice rolls.';if(next==='assemble')renderRoster();document.querySelector('.heading-actions').hidden=next==='assemble';document.querySelector('.page-heading .eyebrow').textContent=next==='assemble'?'11TH EDITION / ARMY BUILDER':'OPEN PLAY / BASIC RULES';if(next==='battle')resize();}
-['battle','assemble','lab'].forEach(v=>$(`${v}-tab`).onclick=()=>switchView(v));
-let builderMounted=false;async function renderRoster(){if(builderMounted)return;builderMounted=true;try{const {mountArmyBuilder}=await import('./army-builder.js');await mountArmyBuilder($('army-builder-root'),armies=>{roster=armies;start();});}catch(e){builderMounted=false;$('army-builder-root').innerHTML='<p>Army builder could not load. '+escape(e.message)+'</p>';}}
-$('simulate').onclick=()=>{const source=$('sim-source').value==='saved'?snapshot:state;if(!source){notify('Save a battle first.');return;}if(source.winner!==null){notify('Start from a battle that has not finished.');return;}const button=$('simulate');button.disabled=true;button.textContent='Playing battles…';const worker=new Worker(new URL('./sim-worker.js',import.meta.url),{type:'module'});const finish=()=>{button.disabled=false;button.textContent='Run simulations →';worker.terminate();};worker.onerror=()=>{finish();$('sim-results').textContent='Simulations could not finish. Try a new battle.';};worker.onmessage=e=>{finish();const r=e.data;if(r.error){$('sim-results').textContent=r.error;return;}const labels=['Space Marines win','Orks win','Draw'],colors=['blue','green','draw'];$('sim-results').innerHTML=`<span class="eyebrow">${r.trials} TRIALS / AI VS AI</span><h2>Battle results</h2>${r.scores.map((count,i)=>{const p=count/r.trials,z=1.96,denom=1+z*z/r.trials,center=(p+z*z/(2*r.trials))/denom,half=z*Math.sqrt(p*(1-p)/r.trials+z*z/(4*r.trials*r.trials))/denom;return `<div class="sim-row"><div><strong>${labels[i]}</strong><b>${(p*100).toFixed(1)}%</b></div><div class="bar"><i class="${colors[i]}" style="width:${p*100}%"></i></div><small>${count} battles · 95% estimated range ${(Math.max(0,center-half)*100).toFixed(1)}–${(Math.min(1,center+half)*100).toFixed(1)}%</small></div>`;}).join('')}<div class="sim-score"><span>Average victory points <b>${r.blue.toFixed(1)} / ${r.green.toFixed(1)}</b></span><small>Space Marines / Orks</small></div><p class="fine">Both armies use the same basic AI. The battle ends after five rounds or when an army is destroyed. Results apply to this matchup and these simplified rules.</p>`;};worker.postMessage({snapshot:clone(source),trials:Number($('trials').value)});};
-render();resize();
-
+function select(i, k, label, values, value) {
+  return `<label>${label}<select data-field="${k}" aria-label="Unit ${i ? "B" : "A"} ${label}">${values.map(([v, l]) => opt(v, l, value)).join("")}</select></label>`;
+}
+const saves = [
+    [2, "2+"],
+    [3, "3+"],
+    [4, "4+"],
+    [5, "5+"],
+    [6, "6+"],
+    [7, "None"],
+  ],
+  mods = [
+    [-1, "−1"],
+    [0, "None"],
+    [1, "+1"],
+  ],
+  rerolls = [
+    ["none", "None"],
+    ["ones", "Re-roll 1s"],
+    ["failed", "Re-roll failed"],
+  ];
+function renderUnit(i) {
+  const pick = picks[i],
+    u = scenario.units[i],
+    source = pick.data?.units.find((u) => u.id === pick.unit),
+    w = u.weapon,
+    query = pick.search ?? "";
+  const filtered = (pick.data?.units ?? []).filter(
+    (u) =>
+      (!u.legend &&
+        !u.narrative &&
+        !u.allied &&
+        u.profiles.some((p) => p.type === "Unit") &&
+        u.name.toLowerCase().includes(query.toLowerCase())) ||
+      u.id === pick.unit,
+  );
+  $("unit-" + i).innerHTML =
+    `<div class="panel-top"><span class="eyebrow">UNIT ${i ? "B" : "A"} / ${i === scenario.first ? "ATTACKS FIRST" : "TARGET"}</span><span class="small-tag">${esc(pick.data?.name ?? "CUSTOM")}</span></div><div class="unit-body"><div class="unit-picker"><label>Faction<select data-faction aria-label="Unit ${i ? "B" : "A"} faction">${index.factions.map((f) => opt(f.id, f.name, pick.faction)).join("")}</select></label><label>Search units<input data-search aria-label="Unit ${i ? "B" : "A"} search units" type="search" placeholder="Search catalogue…" value="${esc(query)}"></label><label>Unit<select data-unit aria-label="Unit ${i ? "B" : "A"} unit">${filtered.map((u) => opt(u.id, u.name, pick.unit)).join("")}</select></label><button data-saved class="mini">Choose from saved Army ${i ? "B" : "A"} →</button><div id="saved-${i}"></div></div>
+ <h2>${esc(u.name)}</h2><div class="model-tokens" aria-hidden="true">${Array.from({ length: Math.min(12, u.models) }, () => "<span>✠</span>").join("")}${u.models > 12 ? `<small>+${u.models - 12}</small>` : ""}</div><label>Defensive profile<select data-profile aria-label="Unit ${i ? "B" : "A"} defensive profile">${(
+   source?.profiles ?? []
+ )
+   .filter((p) => p.type === "Unit")
+   .map((p) => opt(p.id, p.name, pick.profile))
+   .join("")}</select></label>
+ <div class="characteristics">${field(i, "models", "Models", u.models, 1, 100)}${field(i, "toughness", "T", u.toughness, 1, 100)}${select(i, "save", "Sv", saves, u.save)}${field(i, "wounds", "W per model", u.wounds, 1, 100)}</div><div class="defence-fields">${select(i, "invuln", "Invulnerable Save", saves, u.invuln)}${select(i, "fnp", "Feel No Pain", saves, u.fnp)}${field(i, "frontWounds", "Wounds left on first model", u.frontWounds, 1, u.wounds)}</div><label class="check"><input data-field="cover" type="checkbox" ${u.cover ? "checked" : ""} ${scenario.phase === "fight" ? "disabled" : ""}> Benefit of Cover (shooting only)</label>
+ <div class="weapon-header"><span class="eyebrow">${scenario.phase === "fight" ? "MELEE" : "RANGED"} WEAPON PROFILE</span><small>One profile per sequence</small></div><label>Weapon<select data-weapon aria-label="Unit ${i ? "B" : "A"} weapon">${weapons(
+   source,
+ )
+   .map((p) => opt(p.id, p.name, pick.weapon))
+   .join(
+     "",
+   )}${opt("", "Custom profile", pick.weapon)}</select></label><div class="weapon-fields">${field(i, "bearers", "Models using weapon", u.bearers, 0, u.models)}${field(i, "weapon.attacks", "A per model", w.attacks, null, null, "text")}${field(i, "weapon.hit", scenario.phase === "fight" ? "WS" : "BS", w.hit, 2, 6)}${field(i, "weapon.strength", "S", w.strength, 1, 100)}${field(i, "weapon.ap", "AP", w.ap, -10, 0)}${field(i, "weapon.damage", "D", w.damage, null, null, "text")}</div><p class="fine">A and D accept numbers or dice: D3, D6, 2D6+1. Edit profile values for your experiment.</p>
+ <details class="modifiers"><summary>Modifiers and re-rolls</summary><div class="defence-fields">${select(i, "weapon.hitMod", "Hit modifier", mods, w.hitMod)}${select(i, "weapon.woundMod", "Wound modifier", mods, w.woundMod)}${select(i, "weapon.hitReroll", "Hit re-rolls", rerolls, w.hitReroll)}${select(i, "weapon.woundReroll", "Wound re-rolls", rerolls, w.woundReroll)}</div><p class="fine">Manual effects only. These controls do not activate a named ability or Stratagem.</p></details><div class="sequence-preview" id="preview-${i}"></div></div>`;
+  bindUnit(i);
+}
+function preview() {
+  for (let i = 0; i < 2; i++) {
+    const u = scenario.units[i],
+      v = scenario.units[1 - i],
+      st = saveTarget(v, u.weapon, scenario.phase);
+    $("preview-" + i).textContent =
+      `${u.bearers} × ${u.weapon.attacks} attacks → ${u.weapon.hit}+ to hit${u.weapon.hitMod ? " (" + (u.weapon.hitMod > 0 ? "+" : "") + u.weapon.hitMod + ")" : ""} → ${woundTarget(u.weapon.strength, v.toughness)}+ to wound${u.weapon.woundMod ? " (" + (u.weapon.woundMod > 0 ? "+" : "") + u.weapon.woundMod + ")" : ""} → ${st > 6 ? "no successful save" : st + "+ save"} → ${u.weapon.damage} damage`;
+  }
+  $("title").innerHTML =
+    `${esc(scenario.units[0].models + " " + scenario.units[0].name)} <span>VS</span> ${esc(scenario.units[1].models + " " + scenario.units[1].name)}`;
+}
+function changed() {
+  results = null;
+  lastRoll = null;
+  $("results").innerHTML =
+    '<div class="empty-results"><h3>How reliable is this matchup?</h3><p>Repeat this scenario across thousands of dice rolls.</p></div>';
+  $("dice-output").innerHTML =
+    '<div class="dice-idle"><span class="idle-die">⚄</span><h3>ROLL TO HIT</h3><p>Resolve one experiment, step by step.</p></div>';
+  $("export-results").disabled = $("export-roll").disabled = true;
+  preview();
+}
+function bindUnit(i) {
+  const root = $("unit-" + i),
+    pick = picks[i];
+  root.querySelector("[data-faction]").onchange = async (e) => {
+    setBusy(true);
+    try {
+      pick.data = await catalogue(e.target.value);
+      pick.faction = pick.data.id;
+      pick.search = "";
+      const u = pick.data.units.find(
+        (u) =>
+          !u.legend &&
+          !u.narrative &&
+          !u.allied &&
+          u.profiles.some((p) => p.type === "Unit"),
+      );
+      if (!u) throw Error("No unit profiles found.");
+      unitFromCatalogue(i, u);
+      renderUnit(i);
+      changed();
+    } catch (e) {
+      notice(e.message);
+    } finally {
+      setBusy(false);
+    }
+  };
+  root.querySelector("[data-search]").oninput = (e) => {
+    pick.search = e.target.value;
+    const caret = e.target.selectionStart;
+    renderUnit(i);
+    const el = $("unit-" + i).querySelector("[data-search]");
+    el.focus();
+    el.setSelectionRange(caret, caret);
+    preview();
+  };
+  root.querySelector("[data-unit]").onchange = (e) => {
+    unitFromCatalogue(
+      i,
+      pick.data.units.find((u) => u.id === e.target.value),
+    );
+    renderUnit(i);
+    changed();
+  };
+  root.querySelector("[data-profile]").onchange = (e) => {
+    pick.profile = e.target.value;
+    const stats = pick.data.units
+      .find((u) => u.id === pick.unit)
+      .profiles.find((p) => p.id === pick.profile).stats;
+    Object.assign(scenario.units[i], {
+      toughness: num(stats.T) ?? 0,
+      save: num(stats.Sv) ?? 7,
+      wounds: num(stats.W) ?? 0,
+      frontWounds: num(stats.W) ?? 1,
+      invuln: num(stats.InSv) ?? 7,
+    });
+    renderUnit(i);
+    changed();
+  };
+  root.querySelector("[data-weapon]").onchange = (e) => {
+    pick.weapon = e.target.value;
+    applyWeapon(i);
+    renderUnit(i);
+    changed();
+  };
+  root.querySelectorAll("[data-field]").forEach((el) => {
+    const update = () => {
+      const [key, sub] = el.dataset.field.split("."),
+        u = scenario.units[i],
+        obj = sub ? u[key] : u,
+        k = sub ?? key,
+        allBearers = u.bearers === u.models;
+      obj[k] =
+        el.type === "checkbox"
+          ? el.checked
+          : el.type === "number"
+            ? Number(el.value)
+            : ["save", "invuln", "fnp", "hitMod", "woundMod"].includes(k)
+              ? Number(el.value)
+              : el.value;
+      if (key === "models") {
+        u.bearers = allBearers ? u.models : Math.min(u.bearers, u.models);
+      }
+      if (key === "wounds") {
+        u.frontWounds = Math.min(u.frontWounds, u.wounds);
+      }
+      changed();
+      if (key === "models") {
+        $("unit-" + i).querySelector('[data-field="bearers"]').value =
+          u.bearers;
+        $("unit-" + i).querySelector('[data-field="bearers"]').max = u.models;
+        root.querySelector('.model-tokens').innerHTML = Array.from(
+          {length: Math.max(0, Math.min(12, u.models))}, () => '<span>✠</span>',
+        ).join('') + (u.models > 12 ? `<small>+${u.models-12}</small>` : '');
+      }
+      if (key === "wounds") {
+        $("unit-" + i).querySelector('[data-field="frontWounds"]').value =
+          u.frontWounds;
+        $("unit-" + i).querySelector('[data-field="frontWounds"]').max = u.wounds;
+      }
+    };
+    if (el.tagName === "SELECT") el.onchange = update;
+    else el.oninput = update;
+  });
+  root.querySelector("[data-saved]").onclick = () => chooseSaved(i);
+}
+async function chooseSaved(i) {
+  try {
+    const army = JSON.parse(localStorage.getItem("ks-armies-11e") ?? "null")?.[
+      i
+    ];
+    if (!army?.units?.length)
+      throw Error(`Save units in Army ${i ? "B" : "A"} first.`);
+    const data = await catalogue(army.faction);
+    $("saved-" + i).innerHTML =
+      `<label>Saved unit<select id="saved-select-${i}"><option value="">Choose a unit…</option>${army.units.map((r) => opt(r.id, `${r.models} ${data.units.find((u) => u.id === r.unitId)?.name ?? "Unknown unit"}`, null)).join("")}</select></label>`;
+    $("saved-select-" + i).onchange = (e) => {
+      const row = army.units.find((r) => r.id === e.target.value);
+      if (!row) return;
+      const unit = data.units.find((u) => u.id === row.unitId);
+      if (!unit) {
+        notice("Saved unit is missing from the snapshot.");
+        return;
+      }
+      picks[i] = { data, faction: data.id, search: "" };
+      unitFromCatalogue(i, unit, row.models);
+      renderUnit(i);
+      changed();
+      notice(
+        "Unit and model count loaded. Choose weapon and defensive profiles; army wargear, attachments and abilities are not applied.",
+      );
+    };
+  } catch (e) {
+    notice(e.message);
+  }
+}
+function render() {
+  for (let i = 0; i < 2; i++) renderUnit(i);
+  $("first").value = String(scenario.first);
+  $("fight-back").checked = scenario.fightBack;
+  $("fight-back").disabled = scenario.phase === "shoot";
+  $("fight").classList.toggle("active", scenario.phase === "fight");
+  $("shoot").classList.toggle("active", scenario.phase === "shoot");
+  $("seed").value = scenario.seed;
+  preview();
+}
+function setBusy(value) {
+  busy = value;
+  document
+    .querySelectorAll(
+      "#combat-view input,#combat-view select,#combat-view button,.heading-actions button,nav button",
+    )
+    .forEach((el) => (el.disabled = value));
+  if (!value) {
+    $("fight-back").disabled = scenario.phase === "shoot";
+    document
+      .querySelectorAll('[data-field="cover"]')
+      .forEach((el) => (el.disabled = scenario.phase === "fight"));
+    $("export-results").disabled = !results;
+    $("export-roll").disabled = !lastRoll;
+  }
+}
+function checked() {
+  scenario.seed = Number($("seed").value);
+  return validateScenario(scenario);
+}
+function download(name, value) {
+  const url = URL.createObjectURL(
+      new Blob([JSON.stringify(value, null, 2)], { type: "application/json" }),
+    ),
+    a = document.createElement("a");
+  a.href = url;
+  a.download = name;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+function payload() {
+  return {
+    schema: "combat-lab-1",
+    scenario: checked(),
+    picks: picks.map(({ faction, unit, profile, weapon }) => ({
+      faction,
+      unit,
+      profile,
+      weapon,
+    })),
+    dataCommit: index.commit,
+  };
+}
+async function restore(value) {
+  if (value?.schema !== "combat-lab-1")
+    throw Error("This is not a Combat Lab scenario.");
+  const next = validateScenario(value.scenario);
+  if (!Array.isArray(value.picks) || value.picks.length !== 2)
+    throw Error("Missing catalogue selections.");
+  const nextPicks = [];
+  for (const p of value.picks) {
+    const data = await catalogue(p.faction),
+      unit = data.units.find((u) => u.id === p.unit);
+    if (
+      !unit ||
+      !unit.profiles.some((v) => v.id === p.profile && v.type === "Unit")
+    )
+      throw Error("Scenario unit profile is missing.");
+    if (
+      p.weapon &&
+      !unit.profiles.some(
+        (v) =>
+          v.id === p.weapon &&
+          v.type ===
+            (next.phase === "fight" ? "Melee Weapons" : "Ranged Weapons"),
+      )
+    )
+      throw Error("Scenario weapon is missing.");
+    nextPicks.push({ ...p, data, search: "" });
+  }
+  scenario = next;
+  picks = nextPicks;
+  render();
+  changed();
+  notice("Scenario loaded.");
+}
+async function example() {
+  const data = await Promise.all(
+    ["Adeptus Custodes", "Imperial Knights"].map((name) =>
+      catalogue(index.factions.find((f) => f.name === name).id),
+    ),
+  );
+  scenario = {
+    phase: "fight",
+    first: 0,
+    fightBack: true,
+    seed: 40000,
+    units: [],
+  };
+  picks = data.map((d) => ({ data: d, faction: d.id, search: "" }));
+  unitFromCatalogue(
+    0,
+    data[0].units.find((u) => u.name === "Custodian Guard"),
+    5,
+  );
+  unitFromCatalogue(
+    1,
+    data[1].units.find((u) => u.name === "Cerastus Knight Lancer"),
+    1,
+  );
+  render();
+  changed();
+  notice(
+    "5 Custodian Guard with Guardian Spears vs 1 Cerastus Knight Lancer, strike profile. Abilities and keywords are excluded.",
+  );
+}
+function diceRow(label, rolls, detail) {
+  return `<div class="dice-stage"><div class="stage-heading">${esc(label)}<b>${esc(detail)}</b></div><div class="dice-pool">${
+    rolls
+      .slice(0, 60)
+      .map(
+        (d) =>
+          `<span class="die ${d.pass ? "" : "fail"}" title="${esc(d.original ? "Re-rolled " + d.original + " → " + d.value : d.value)}">${d.value}${d.original ? "<small>↻</small>" : ""}</span>`,
+      )
+      .join("") || "<small>No rolls</small>"
+  }${rolls.length > 60 ? `<small>+${rolls.length - 60} rolls in JSON</small>` : ""}</div></div>`;
+}
+function sequence(e, s) {
+  const u = s.units[e.side],
+    v = s.units[1 - e.side],
+    t = e.trace,
+    rows = [];
+  if (t.attackDice.length)
+    rows.push(
+      diceRow("Number of attacks", t.attackDice, e.attacks + " attacks"),
+    );
+  rows.push(
+    diceRow("Hit rolls", t.hit, e.hits + " hits"),
+    diceRow("Wound rolls", t.wound, e.wounds + " wounds"),
+    diceRow("Saving throws", t.save, e.unsaved + " failed saves"),
+    diceRow("Damage", t.damage, e.damageRolled + " rolled"),
+  );
+  if (v.fnp <= 6)
+    rows.push(
+      diceRow(
+        "Feel No Pain",
+        t.fnp,
+        t.fnp.filter((d) => d.pass).length + " ignored",
+      ),
+    );
+  return `<article class="attack-sequence"><div class="roll-heading"><strong>${esc(u.name)} → ${esc(v.name)}</strong><small>${esc(u.weapon.name)} · ${e.attacks} attacks · ${e.woundTarget}+ to wound · ${e.saveTarget > 6 ? "no successful save" : e.saveTarget + "+ save"}</small></div><div class="dice-stages">${rows.join("")}</div><div class="roll-result">${e.damageLost} wounds lost · ${e.killed} models destroyed · ${e.modelsLeft} models / ${e.remaining} wounds left</div></article>`;
+}
+$("roll").onclick = async () => {
+  try {
+    const s = checked(),
+      pace = $("pace").value;
+    notice("");
+    setBusy(true);
+    const r = runScenario(s, seeded(s.seed), true);
+    lastRoll = { scenario: s, seed: s.seed, ...r };
+    $("dice-output").innerHTML =
+      r.events.map((e) => sequence(e, s)).join("") +
+      (s.phase === "fight" && s.fightBack && r.events.length === 1
+        ? '<p class="no-return">Target destroyed: no attacks back.</p>'
+        : "");
+    const delay =
+      pace === "instant" ||
+      matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? 0
+        : pace === "fast"
+          ? 120
+          : 430;
+    for (const el of $("dice-output").querySelectorAll(
+      ".dice-stage,.roll-result",
+    )) {
+      el.classList.add("revealed");
+      if (delay) await new Promise((r) => setTimeout(r, delay));
+    }
+    notice(
+      `Resolved with seed ${s.seed}. Use New seed for another roll; the same seed reproduces the sequence.`,
+    );
+  } catch (e) {
+    notice(e.message);
+  } finally {
+    setBusy(false);
+  }
+};
+function renderResults(r, s) {
+  $("results").innerHTML =
+    `<div class="result-heading"><strong>${r.trials.toLocaleString()} simulations</strong><small>Seed ${s.seed} · ${s.phase === "fight" ? "Fight" : "Shooting"} phase · ${esc(s.units[s.first].name)} attacks first</small></div>${r.sides
+      .map((out, i) => {
+        const entries = Object.entries(out.histogram)
+            .map(([d, n]) => [+d, n])
+            .sort((a, b) => a[0] - b[0]),
+          max = Math.max(...entries.map((e) => e[1]));
+        return `<section class="result-unit"><h3>${esc(s.units[i].name)} <span>damage received</span></h3><div class="result-stats"><div><strong>${out.damage.toFixed(2)}</strong><small>Average wounds lost</small></div><div><strong>${out.killed.toFixed(2)}</strong><small>Average models destroyed</small></div><div><strong>${(out.destroyChance * 100).toFixed(1)}%</strong><small>Chance unit is destroyed</small></div></div><p>95% interval for destruction: ${(out.interval[0] * 100).toFixed(1)}–${(out.interval[1] * 100).toFixed(1)}%</p><details><summary>Wounds lost distribution</summary><div class="histogram">${entries.map(([d, n]) => `<div><span>${d} W</span><i style="width:${(n / max) * 100}%"></i><b>${((n / r.trials) * 100).toFixed(1)}%</b></div>`).join("")}</div></details></section>`;
+      })
+      .join(
+        "",
+      )}<p class="result-footnote">Wounds lost are capped at the unit’s remaining wounds. Each trial resets both units. Intervals describe sampling uncertainty, not missing rules.</p>`;
+}
+$("simulate").onclick = () => {
+  try {
+    const s = checked(),
+      trials = Number($("trials").value);
+    setBusy(true);
+    notice("Simulating…");
+    worker = new Worker(new URL("./combat-worker.js", import.meta.url), {
+      type: "module",
+    });
+    worker.onmessage = ({ data }) => {
+      if (data.done) {
+        notice(
+          `Simulating ${data.done.toLocaleString()} / ${trials.toLocaleString()}…`,
+        );
+        return;
+      }
+      worker.terminate();
+      worker = null;
+      if (data.error) {
+        setBusy(false);
+        notice(data.error);
+        return;
+      }
+      results = {
+        scenario: s,
+        seed: s.seed,
+        dataCommit: index.commit,
+        ...data.result,
+      };
+      renderResults(data.result, s);
+      setBusy(false);
+      notice("Simulation complete.");
+    };
+    worker.onerror = () => {
+      worker.terminate();
+      worker = null;
+      setBusy(false);
+      notice("Simulation worker failed. Try again.");
+    };
+    worker.postMessage({ scenario: s, trials });
+  } catch (e) {
+    setBusy(false);
+    notice(e.message);
+  }
+};
+$("first").onchange = (e) => {
+  scenario.first = Number(e.target.value);
+  render();
+  changed();
+};
+$("fight-back").onchange = (e) => {
+  scenario.fightBack = e.target.checked;
+  changed();
+};
+for (const phase of ["fight", "shoot"])
+  $(phase).onclick = () => {
+    scenario.phase = phase;
+    for (let i = 0; i < 2; i++) {
+      const u = picks[i].data.units.find((u) => u.id === picks[i].unit);
+      picks[i].weapon = weapons(u)[0]?.id ?? "";
+      applyWeapon(i);
+    }
+    render();
+    changed();
+  };
+$("swap").onclick = () => {
+  scenario.units.reverse();
+  picks.reverse();
+  render();
+  changed();
+};
+$("new-seed").onclick = () => {
+  $("seed").value = crypto.getRandomValues(new Uint32Array(1))[0];
+  scenario.seed = Number($("seed").value);
+  changed();
+};
+$("seed").onchange = () => {
+  scenario.seed = Number($("seed").value);
+  changed();
+};
+$("save-scenario").onclick = () => {
+  try {
+    localStorage.setItem("ks-combat-scenario", JSON.stringify(payload()));
+    notice("Scenario saved in this browser.");
+  } catch (e) {
+    notice(e.message);
+  }
+};
+$("load-scenario").onclick = async () => {
+  try {
+    const value = localStorage.getItem("ks-combat-scenario");
+    if (!value) throw Error("No saved combat scenario in this browser.");
+    await restore(JSON.parse(value));
+  } catch (e) {
+    notice(e.message);
+  }
+};
+$("export-scenario").onclick = () => {
+  try {
+    download("combat-scenario.json", payload());
+  } catch (e) {
+    notice(e.message);
+  }
+};
+$("export-results").onclick = () => download("combat-results.json", results);
+$("export-roll").onclick = () => download("combat-rolls.json", lastRoll);
+$("import-scenario").onchange = async (e) => {
+  try {
+    const f = e.target.files[0];
+    if (!f) return;
+    if (f.size > 100000) throw Error("Scenario file is too large.");
+    await restore(JSON.parse(await f.text()));
+  } catch (e) {
+    notice(e.message);
+  } finally {
+    e.target.value = "";
+  }
+};
+$("example").onclick = async () => {
+  setBusy(true);
+  try {
+    await example();
+  } catch (e) {
+    notice(e.message);
+  } finally {
+    setBusy(false);
+  }
+};
+async function switchView(next) {
+  $("combat-view").hidden = next !== "combat";
+  $("army-view").hidden = next !== "army";
+  $("combat-tab").classList.toggle("active", next === "combat");
+  $("army-tab").classList.toggle("active", next === "army");
+  document.querySelector(".heading-actions").hidden = next === "army";
+  notice("");
+  $("description").textContent =
+    next === "army"
+      ? "Build and save your armies. Choose saved units in the Combat calculator."
+      : "Pick a matchup. Roll the attacks. Find out how often it works.";
+  if (next === "army") {
+    $("title").textContent = "ARMY LISTS";
+    if (!armyMounted) {
+      try {
+        const { mountArmyBuilder } = await import("./army-builder.js");
+        await mountArmyBuilder($("army-builder-root"), () =>
+          switchView("combat"),
+        );
+        armyMounted = true;
+      } catch (e) {
+        notice(e.message);
+      }
+    }
+  } else preview();
+}
+$("combat-tab").onclick = () => switchView("combat");
+$("army-tab").onclick = () => switchView("army");
+try {
+  const res = await fetch("/armies/index.json");
+  if (!res.ok) throw Error("Could not load faction index.");
+  index = await res.json();
+  await example();
+} catch (e) {
+  notice(e.message + " Reload to retry.");
+  document.querySelectorAll("button").forEach((el) => (el.disabled = true));
+}
