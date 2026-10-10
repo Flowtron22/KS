@@ -1,0 +1,224 @@
+{
+  "version": 1,
+  "commit": "cc58ee3b2c23f90af9d00e7bf234cd703b762299",
+  "checkedOn": "2026-10-10",
+  "officialReconciled": false,
+  "factions": [
+    {
+      "id": "d265-877b-e03d-30ca",
+      "name": "Chaos Daemons",
+      "file": "chaos-daemons.json",
+      "rules": 462
+    },
+    {
+      "id": "46d8-abc8-ef3a-9f85",
+      "name": "Chaos Knights",
+      "file": "chaos-knights.json",
+      "rules": 479
+    },
+    {
+      "id": "c8da-e875-58f7-f6d6",
+      "name": "Chaos Space Marines",
+      "file": "chaos-space-marines.json",
+      "rules": 666
+    },
+    {
+      "id": "5108-f98-63c2-53cb",
+      "name": "Death Guard",
+      "file": "death-guard.json",
+      "rules": 366
+    },
+    {
+      "id": "03fe-a162-4c02-f07b",
+      "name": "Emperor's Children",
+      "file": "emperor-s-children.json",
+      "rules": 305
+    },
+    {
+      "id": "1069-10ff-3ba9-873b",
+      "name": "Thousand Sons",
+      "file": "thousand-sons.json",
+      "rules": 369
+    },
+    {
+      "id": "880c-c7e-4a43-a0c1",
+      "name": "Titanicus Traitoris",
+      "file": "titanicus-traitoris.json",
+      "rules": 329
+    },
+    {
+      "id": "df9a-59b2-f464-59ad",
+      "name": "World Eaters",
+      "file": "world-eaters.json",
+      "rules": 341
+    },
+    {
+      "id": "b39e-4401-8f3e-fdf7",
+      "name": "Adepta Sororitas",
+      "file": "adepta-sororitas.json",
+      "rules": 491
+    },
+    {
+      "id": "1f19-6509-d906-ca10",
+      "name": "Adeptus Custodes",
+      "file": "adeptus-custodes.json",
+      "rules": 445
+    },
+    {
+      "id": "77b9-2f66-3f9b-5cf3",
+      "name": "Adeptus Mechanicus",
+      "file": "adeptus-mechanicus.json",
+      "rules": 472
+    },
+    {
+      "id": "bdc0-c0d-72d7-87e2",
+      "name": "Adeptus Titanicus",
+      "file": "adeptus-titanicus.json",
+      "rules": 292
+    },
+    {
+      "id": "b00-cd86-4b4c-97ba",
+      "name": "Agents of the Imperium",
+      "file": "agents-of-the-imperium.json",
+      "rules": 328
+    },
+    {
+      "id": "b0ae-12a5-c84-ea45",
+      "name": "Astra Militarum",
+      "file": "astra-militarum.json",
+      "rules": 664
+    },
+    {
+      "id": "36d3-36bc-68dd-40ac",
+      "name": "Black Templars",
+      "file": "black-templars.json",
+      "rules": 822
+    },
+    {
+      "id": "4ef9-15ce-e3e6-36de",
+      "name": "Blood Angels",
+      "file": "blood-angels.json",
+      "rules": 869
+    },
+    {
+      "id": "470a-6daa-9014-12df",
+      "name": "Dark Angels",
+      "file": "dark-angels.json",
+      "rules": 869
+    },
+    {
+      "id": "f89b-84e0-6e3b-f1e2",
+      "name": "Deathwatch",
+      "file": "deathwatch.json",
+      "rules": 784
+    },
+    {
+      "id": "50c4-3e83-fe54-97c4",
+      "name": "Grey Knights",
+      "file": "grey-knights.json",
+      "rules": 446
+    },
+    {
+      "id": "5d6e-fd3-330a-11dd",
+      "name": "Imperial Fists",
+      "file": "imperial-fists.json",
+      "rules": 813
+    },
+    {
+      "id": "25dd-7aa0-6bf4-f2d5",
+      "name": "Imperial Knights",
+      "file": "imperial-knights.json",
+      "rules": 398
+    },
+    {
+      "id": "f27e-18c0-b73e-748e",
+      "name": "Iron Hands",
+      "file": "iron-hands.json",
+      "rules": 810
+    },
+    {
+      "id": "6e59-e1ee-47ad-6ce5",
+      "name": "Raven Guard",
+      "file": "raven-guard.json",
+      "rules": 809
+    },
+    {
+      "id": "2261-79a5-19d9-1668",
+      "name": "Salamanders",
+      "file": "salamanders.json",
+      "rules": 809
+    },
+    {
+      "id": "e0af-67df-9d63-8fb7",
+      "name": "Space Marines",
+      "file": "space-marines.json",
+      "rules": 964
+    },
+    {
+      "id": "94bb-3284-ee14-57a1",
+      "name": "Space Wolves",
+      "file": "space-wolves.json",
+      "rules": 909
+    },
+    {
+      "id": "4029-9237-e8db-af55",
+      "name": "Ultramarines",
+      "file": "ultramarines.json",
+      "rules": 853
+    },
+    {
+      "id": "67c1-fc13-f9a1-cbbf",
+      "name": "White Scars",
+      "file": "white-scars.json",
+      "rules": 809
+    },
+    {
+      "id": "34a5-8c7e-f468-82d1",
+      "name": "Aeldari",
+      "file": "aeldari.json",
+      "rules": 570
+    },
+    {
+      "id": "38de-521f-1ce0-44a0",
+      "name": "Drukhari",
+      "file": "drukhari.json",
+      "rules": 235
+    },
+    {
+      "id": "3bdf-a114-5035-c6ac",
+      "name": "Genestealer Cults",
+      "file": "genestealer-cults.json",
+      "rules": 518
+    },
+    {
+      "id": "f616-3f08-ee8e-3349",
+      "name": "Leagues of Votann",
+      "file": "leagues-of-votann.json",
+      "rules": 235
+    },
+    {
+      "id": "b654-a18a-ea1-3bf2",
+      "name": "Necrons",
+      "file": "necrons.json",
+      "rules": 287
+    },
+    {
+      "id": "a55f-b7b3-6c65-a05f",
+      "name": "Orks",
+      "file": "orks.json",
+      "rules": 274
+    },
+    {
+      "id": "d81a-61dd-6d27-a3ce",
+      "name": "T'au Empire",
+      "file": "t-au-empire.json",
+      "rules": 299
+    },
+    {
+      "id": "b984-7317-81cc-20f",
+      "name": "Tyranids",
+      "file": "tyranids.json",
+      "rules": 253
+    }
+  ]
+}

@@ -1,3 +1,48 @@
+.rule-library,
+.weapon-rule-panel {
+  border: 1px solid #46515a;
+  background: #10171d55;
+  padding: 12px;
+  margin: 14px 0;
+  font-size: 12px;
+}
+.rule-library > summary,
+.weapon-rule-panel > summary {
+  color: #d6b677;
+  cursor: pointer;
+  font-weight: 600;
+}
+.rule-library label {
+  margin-top: 12px;
+}
+.selected-rules article {
+  border-left: 2px solid #b39257;
+  padding: 12px;
+  margin: 12px 0;
+  background: #30291d55;
+}
+.selected-rules article p {
+  font-size: 11px;
+  color: #aebcc4;
+  line-height: 1.65;
+  margin: 8px 0;
+}
+.selected-rules .mini {
+  float: right;
+}
+.reference-rules {
+  margin: 14px 0;
+  max-height: 250px;
+  overflow: auto;
+}
+.reference-rules p {
+  font-size: 11px;
+  line-height: 1.6;
+}
+.weapon-rule-panel .check {
+  display: flex;
+  margin: 14px 0;
+}
 .effects-panel {
   margin-top: 16px;
   border-top: 1px solid #3c4650;

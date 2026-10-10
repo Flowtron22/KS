@@ -1,4 +1,5 @@
 import { EFFECT_DEFAULTS, KATAHS, effectiveAttack } from "./combat-effects.js";
+import { validateRuleEffects } from "./rule-effects.js";
 // Homogeneous units, one weapon profile per attack sequence; explicit effects only.
 export function expression(value) {
   const s = String(value).replace(/\s/g, "").toUpperCase();
@@ -48,6 +49,7 @@ export function validateScenario(s) {
     throw Error("Invalid scenario.");
   integer(s.seed, 0, 4294967295, "Seed");
   for (const u of s.units) {
+    validateRuleEffects(u);
     if (!u || typeof u.name !== "string" || u.name.length > 150)
       throw Error("Invalid unit name.");
     for (const [k, min, max] of [
@@ -118,6 +120,15 @@ export function validateScenario(s) {
       if (!["none", "ones", "failed"].includes(w[k]))
         throw Error("Invalid re-roll setting.");
   }
+  for (let i = 0; i < 2; i++) {
+    const u = s.units[i],
+      a = expression(u.weapon.attacks),
+      effect = effectiveAttack(u, s.units[1 - i], s.phase);
+    if ((a.flat + a.count * a.sides + effect.attacksBonus) * u.bearers > 2000)
+      throw Error(
+        "This lab supports up to 2,000 attacks including rule bonuses.",
+      );
+  }
   return structuredClone(s);
 }
 export function saveTarget(target, weapon, phase) {
@@ -148,7 +159,7 @@ function check(
   }
   const pass = passes(v);
   trace?.push({ value: v, pass, original });
-  onRoll(v, pass);
+  onRoll(v, pass, original);
   return pass;
 }
 export function resolveAttack(
@@ -161,6 +172,7 @@ export function resolveAttack(
   attackerHp = null,
 ) {
   const effects = effectiveAttack(attacker, defender, phase);
+  defender = effects.defender;
   const w = effects.weapon,
     hit = [],
     wound = [],
@@ -180,23 +192,38 @@ export function resolveAttack(
     damageRolled = 0,
     damageLost = 0;
   let autoWounds = 0,
-    extraHits = 0;
+    extraHits = 0,
+    devastating = 0;
+  let hitBudget = effects.singleHitReroll,
+    woundBudget = effects.singleWoundReroll;
+  const limitedReroll = (normal, budget) =>
+    normal === "failed" || budget > 0 ? "failed" : normal;
   for (let i = 0; i < bearers; i++)
     attacks += amount(a, rng, trace ? attackDice : null) + effects.attacksBonus;
   const wt = woundTarget(w.strength, defender.toughness),
     st = saveTarget(defender, w, phase);
   for (let i = 0; i < attacks; i++) {
+    if (effects.torrent) {
+      hits++;
+      continue;
+    }
     let critical = false;
     if (
       check(
         rng,
         w.hit,
         w.hitMod,
-        w.hitReroll,
+        limitedReroll(w.hitReroll, hitBudget),
         true,
         trace ? hit : null,
         effects.criticalHit,
-        (value, pass) => {
+        (value, pass, original) => {
+          if (
+            original !== null &&
+            w.hitReroll !== "failed" &&
+            !(w.hitReroll === "ones" && original === 1)
+          )
+            hitBudget--;
           critical = pass && value >= effects.criticalHit;
         },
       )
@@ -211,18 +238,47 @@ export function resolveAttack(
   hits += extraHits;
   wounds = autoWounds;
   for (let i = 0; i < hits - autoWounds; i++)
-    if (check(rng, wt, w.woundMod, w.woundReroll, true, trace ? wound : null))
+    if (
+      check(
+        rng,
+        wt,
+        w.woundMod,
+        limitedReroll(w.woundReroll, woundBudget),
+        true,
+        trace ? wound : null,
+        effects.criticalWound,
+        (value, pass, original) => {
+          if (
+            original !== null &&
+            w.woundReroll !== "failed" &&
+            !(w.woundReroll === "ones" && original === 1)
+          )
+            woundBudget--;
+          if (
+            pass &&
+            value >= effects.criticalWound &&
+            effects.devastatingWounds
+          )
+            devastating++;
+        },
+      )
+    )
       wounds++;
   const before = hp.length;
   for (let i = 0; i < wounds; i++) {
     // Resolve damage sequentially; excess normal damage never spills to another model.
     if (!hp.length) break;
-    if (check(rng, st, 0, "none", false, trace ? save : null)) continue;
+    if (
+      i < wounds - devastating &&
+      check(rng, st, 0, "none", false, trace ? save : null)
+    )
+      continue;
     unsaved++;
     let n = amount(d, rng, null) + effects.damageBonus;
     damageRolled += n;
     if (trace) damage.push({ value: n, pass: true, expression: w.damage });
-    if (n > 0) n = Math.max(1, n - effects.damageReduction);
+    if (n > 0 && i < wounds - devastating)
+      n = Math.max(1, n - effects.damageReduction);
     if (defender.fnp <= 6) {
       let lost = 0;
       for (let j = 0; j < n; j++)
@@ -240,6 +296,7 @@ export function resolveAttack(
     hits,
     extraHits,
     autoWounds,
+    devastating,
     appliedEffects: effects.applied,
     wounds,
     unsaved,

@@ -1,5 +1,6 @@
 import "./battle.css";
 import "./combat.css";
+import { rulePicker, prepareRules } from "./rule-picker.js";
 import {
   EFFECT_DEFAULTS,
   KATAHS,
@@ -68,7 +69,7 @@ $("app").innerHTML =
 <main><div class="page-heading"><div><div class="eyebrow">ONE PHASE / TWO UNITS</div><h1 id="title">WHAT DOES YOUR UNIT DO?</h1><p id="description">Pick a matchup. Roll the attacks. Find out how often it works.</p></div><div class="heading-actions"><button id="save-scenario" class="button">Save scenario</button><button id="load-scenario" class="button">Load saved</button><button id="example" class="button dark">Custodes vs Lancer</button></div></div><div id="notice" role="status" aria-live="polite"></div>
 <section id="combat-view"><div class="scenario-bar panel"><div class="phase-switch"><button id="fight" class="active">Fight phase</button><button id="shoot">Shooting phase</button></div><label>Attacks first<select id="first"><option value="0">Unit A</option><option value="1">Unit B</option></select></label><label class="check"><input id="fight-back" type="checkbox" checked> Survivors fight back</label><button id="swap" class="button">Swap units ⇄</button></div>
 <div class="matchup"><section id="unit-0" class="panel combat-unit"></section><div class="versus">VS</div><section id="unit-1" class="panel combat-unit"></section></div>
-<section class="rules-note"><strong>What this calculates</strong><p>One weapon profile per unit, shared by the chosen weapon bearers. All models in a unit use the same Toughness, Save and Wounds. Normal damage does not spill between models. Fight back uses surviving models, with selected weapon bearers surviving first. Each run starts fresh.</p><p><b>Only selected Ka’tahs and configured effects are applied. Other abilities, weapon keywords, Detachments, Enhancements and Stratagems are not applied automatically.</b> Set supported effects manually. Range, charges, engagement and fight order are assumed.</p></section>
+<section class="rules-note"><strong>What this calculates</strong><p>One weapon profile per unit, shared by the chosen weapon bearers. All models in a unit use the same Toughness, Save and Wounds. Normal damage does not spill between models. Fight back uses surviving models, with selected weapon bearers surviving first. Each run starts fresh.</p><p><b>Only selected Ka’tahs, confirmed ability effects and configured effects are applied. Other abilities, weapon keywords, Detachments, Enhancements and Stratagems are not applied automatically.</b> Set supported effects manually. Range, charges, engagement and fight order are assumed.</p></section>
 <div class="experiment-controls panel"><label>Random seed<input id="seed" type="number" min="0" max="4294967295" value="40000"></label><button id="new-seed" class="mini">New seed ↻</button><label>Dice animation<select id="pace"><option value="normal">Normal</option><option value="fast">Fast</option><option value="instant">Instant</option></select></label><button id="roll" class="button orange">⚄ Roll attacks</button><label>Number of simulations<select id="trials"><option value="1000">1,000</option><option value="10000" selected>10,000</option><option value="50000">50,000</option></select></label><button id="simulate" class="button dark">Run simulations →</button></div>
 <div class="experiment-output"><section class="panel"><div class="panel-top"><span class="eyebrow">ATTACK SEQUENCE</span><button id="export-roll" class="mini" disabled>Export rolls JSON</button></div><div id="dice-output" aria-live="polite"></div></section><section class="panel"><div class="panel-top"><span class="eyebrow">SIMULATION RESULTS</span><button id="export-results" class="mini" disabled>Export results JSON</button></div><div id="results" aria-live="polite"></div></section></div><div class="scenario-files"><button id="export-scenario" class="mini">Export scenario JSON</button><label class="import-label">Import scenario JSON<input id="import-scenario" type="file" accept="application/json" hidden></label></div></section>
 <section id="army-view" hidden><div id="army-builder-root"></div></section><footer><span>40K COMBAT LAB · PROTOTYPE</span><span>Community stat snapshot · 9 Oct 2026 · points not officially verified</span><a href="https://github.com/BSData/wh40k-11e/tree/cc58ee3b2c23f90af9d00e7bf234cd703b762299" target="_blank" rel="noreferrer">Data source ↗</a></footer></main>`;
@@ -82,6 +83,9 @@ async function catalogue(id) {
   const res = await fetch("/armies/" + f.file);
   if (!res.ok) throw Error("Could not load faction.");
   const d = await res.json();
+  const rulesResponse = await fetch("/rules/" + f.file);
+  if (!rulesResponse.ok) throw Error("Could not load faction rules.");
+  d.combatRules = await rulesResponse.json();
   cache.set(id, d);
   return d;
 }
@@ -97,7 +101,9 @@ function applyWeapon(i) {
     name: p.name,
     attacks: p.stats.A ?? "",
     damage: p.stats.D ?? "",
-    hit: num(p.stats.WS ?? p.stats.BS) ?? 0,
+    hit:
+      num(p.stats.WS ?? p.stats.BS) ??
+      (/Torrent/i.test(picks[i].data.combatRules.weapons[p.id] ?? "") ? 2 : 0),
     strength: num(p.stats.S) ?? 0,
     ap: /^-?\d+$/.test(p.stats.AP ?? "") ? -Math.abs(Number(p.stats.AP)) : 0,
   });
@@ -112,7 +118,9 @@ function applyWeapon(i) {
   }
   if (!num(p.stats.WS ?? p.stats.BS) || !num(p.stats.S))
     notice(
-      "This weapon needs manual characteristics. Automatic-hit weapons and keywords are not supported.",
+      /Torrent/i.test(picks[i].data.combatRules.weapons[p.id] ?? "")
+        ? "Torrent profile: enable supported weapon keywords and confirm conditions. Its displayed BS/WS is ignored while Torrent is active."
+        : "This weapon needs manual characteristics. Check its unsupported values before calculating.",
     );
 }
 function unitFromCatalogue(i, u, models = u.models.min) {
@@ -122,6 +130,14 @@ function unitFromCatalogue(i, u, models = u.models.min) {
   const stats = u.profiles.find((p) => p.id === picks[i].profile)?.stats ?? {};
   scenario.units[i] = {
     name: u.name,
+    ruleSelections: [],
+    rulesConfirmed: false,
+    weaponRules: false,
+    weaponConditions: {
+      halfRange: false,
+      heavyEligible: false,
+      charged: false,
+    },
     models,
     wounds: num(stats.W) ?? 0,
     toughness: num(stats.T) ?? 0,
@@ -184,8 +200,8 @@ function effectsPanel(i, u, pick) {
       `<label class="check"><input data-field="effects.${key}" aria-label="Unit ${i ? "B" : "A"} ${label}" type="checkbox" ${e[key] ? "checked" : ""}>${label}</label>`;
   const custodes = pick.data?.name === "Adeptus Custodes";
   return `<section class="effects-panel"><div class="weapon-header"><span class="eyebrow">ABILITIES & AURAS</span><small>Choose effects for this scenario</small></div>
- ${custodes ? `<div class="katah-panel"><label>Martial Ka’tah<select data-field="effects.katah" aria-label="Unit ${i ? "B" : "A"} Martial Ka’tah">${KATAHS.map(([id, label]) => opt(id, label, e.katah)).join("")}<option disabled>Conservai — actions (outside this calculator)</option><option disabled>Calistus — movement (outside this calculator)</option></select></label><div class="katah-checks">${check("katahEligible", "Unit has Martial Ka’tah")}${check("readied", "Unit is readied")}</div><p class="fine">September 2026 Codex. Only one Ka’tah is selected; phase and target conditions are checked. Eligibility and readiness are your scenario assumptions. <a href="${KATAH_SOURCE}" target="_blank" rel="noreferrer">Rule source ↗</a></p></div><div class="katah-checks">${check("custodes", "Unit has ADEPTUS CUSTODES keyword")}${check("captainGeneral", "Trajann’s Captain-General aura (within 6 inches)")}${u.guardCodex ? check("impenetrableDefence", "Impenetrable Defence: either unit is in range of an objective") : ""}</div><p class="fine">Captain-General grants hit and wound re-rolls of 1 to eligible Custodes, excluding Monsters and Vehicles. Confirm aura range yourself. Impenetrable Defence grants Sustained Hits 1 against other targets; repeated Sustained Hits effects use the highest value.</p><p class="data-warning">${u.guardCodex ? "Guard uses the September preview: T7, W5, Guardian Spear A6 / S8 in melee. Squads contain 3 models; larger counts here are experimental. Assault and Rapid Fire are not automatic." : "This Custodes profile uses the older community snapshot. Verify its characteristics."} Other Custodes and Army Lists still use the older snapshot. <a href="https://www.warhammer-community.com/en-gb/articles/2xxurx9j/first-look-adeptus-custodes-datasheets/" target="_blank" rel="noreferrer">Datasheet and aura source ↗</a>${!u.guardCodex && pick.data.units.find((entry) => entry.id === pick.unit)?.name === "Custodian Guard" ? '<button data-guard-update class="mini">Use September Guard profile →</button>' : ""}</p>` : ""}
- <div class="defence-fields">${select(
+ ${custodes ? `<div class="katah-panel"><label>Martial Ka’tah<select data-field="effects.katah" aria-label="Unit ${i ? "B" : "A"} Martial Ka’tah">${KATAHS.map(([id, label]) => opt(id, label, e.katah)).join("")}<option disabled>Conservai — actions (outside this calculator)</option><option disabled>Calistus — movement (outside this calculator)</option></select></label><div class="katah-checks">${check("katahEligible", "Unit has Martial Ka’tah")}${check("readied", "Unit is readied")}</div><p class="fine">September 2026 Codex. Only one Ka’tah is selected; phase and target conditions are checked. Eligibility and readiness are your scenario assumptions. <a href="${KATAH_SOURCE}" target="_blank" rel="noreferrer">Rule source ↗</a></p></div><div class="katah-checks">${check("custodes", "Unit has ADEPTUS CUSTODES keyword")}${check("captainGeneral", "Trajann’s Captain-General aura (within 6 inches)")}${u.guardCodex ? check("impenetrableDefence", "Impenetrable Defence: either unit is in range of an objective") : ""}</div><p class="fine">Captain-General grants hit and wound re-rolls of 1 to eligible Custodes, excluding Monsters and Vehicles. Confirm aura range yourself. Impenetrable Defence grants Sustained Hits 1 against other targets; repeated Sustained Hits effects use the highest value.</p><p class="data-warning">${u.guardCodex ? "Guard uses the September preview: T7, W5, Guardian Spear A6 / S8 in melee. Squads contain 3 models; larger counts here are experimental. Assault movement is outside this calculator; enable weapon keywords for Rapid Fire." : "This Custodes profile uses the older community snapshot. Verify its characteristics."} Other Custodes and Army Lists still use the older snapshot. <a href="https://www.warhammer-community.com/en-gb/articles/2xxurx9j/first-look-adeptus-custodes-datasheets/" target="_blank" rel="noreferrer">Datasheet and aura source ↗</a>${!u.guardCodex && pick.data.units.find((entry) => entry.id === pick.unit)?.name === "Custodian Guard" ? '<button data-guard-update class="mini">Use September Guard profile →</button>' : ""}</p>` : ""}
+ ${rulePicker(i, u, pick, esc)}<div class="defence-fields">${select(
    i,
    "effects.targetType",
    "Unit target type",
@@ -292,16 +308,25 @@ function renderUnit(i) {
   bindUnit(i);
 }
 function preview() {
+  scenario.units.forEach((u, i) => prepareRules(u, picks[i], scenario.phase));
   for (let i = 0; i < 2; i++) {
     const u = scenario.units[i],
       v = scenario.units[1 - i],
       effect = effectiveAttack(u, v, scenario.phase),
       w = effect.weapon,
-      st = saveTarget(v, w, scenario.phase);
+      st = saveTarget(effect.defender, w, scenario.phase);
     $("preview-" + i).textContent =
-      `${u.bearers} × (${w.attacks}${effect.attacksBonus ? " + " + effect.attacksBonus : ""}) attacks → ${w.hit}+ to hit${w.hitMod ? " (" + (w.hitMod > 0 ? "+" : "") + w.hitMod + ")" : ""} → ${woundTarget(w.strength, v.toughness)}+ to wound${w.woundMod ? " (" + (w.woundMod > 0 ? "+" : "") + w.woundMod + ")" : ""} → ${st > 6 ? "no successful save" : st + "+ save"} → ${w.damage}${effect.damageBonus ? " + " + effect.damageBonus : ""} damage`;
+      `${u.bearers} × (${w.attacks}${effect.attacksBonus ? " + " + effect.attacksBonus : ""}) attacks → ${w.hit}+ to hit${w.hitMod ? " (" + (w.hitMod > 0 ? "+" : "") + w.hitMod + ")" : ""} → ${woundTarget(w.strength, effect.defender.toughness)}+ to wound${w.woundMod ? " (" + (w.woundMod > 0 ? "+" : "") + w.woundMod + ")" : ""} → ${st > 6 ? "no successful save" : st + "+ save"} → ${w.damage}${effect.damageBonus ? " + " + effect.damageBonus : ""} damage`;
     const e = u.effects,
       conditions = [];
+    if ((u.ruleSelections?.length || u.weaponRules) && !u.rulesConfirmed)
+      conditions.push(
+        "Selected source rules and weapon keywords inactive: confirm all conditions and availability.",
+      );
+    if (u.rulesConfirmed)
+      for (const r of u.ruleEffects ?? [])
+        if (r.phase !== "both" && r.phase !== scenario.phase)
+          conditions.push(`${r.name}: inactive in this phase.`);
     if (
       e.captainGeneral &&
       (!e.custodes || ["monster", "vehicle"].includes(e.targetType))
@@ -468,10 +493,94 @@ function bindUnit(i) {
     else el.oninput = update;
   });
   root.querySelector("[data-saved]").onclick = () => chooseSaved(i);
+  const refreshRules = (focusSearch = false) => {
+    const weaponOpen = root.querySelector(".weapon-rule-panel").open;
+    renderUnit(i);
+    const nextRoot = $("unit-" + i);
+    nextRoot.querySelector(".rule-library").open = true;
+    nextRoot.querySelector(".weapon-rule-panel").open = weaponOpen;
+    if (focusSearch) {
+      const input = nextRoot.querySelector("[data-rule-search]");
+      input.focus();
+      input.setSelectionRange(input.value.length, input.value.length);
+    }
+    changed();
+  };
+  root.querySelector("[data-rule-scope]").onchange = (e) => {
+    pick.ruleScope = e.target.value;
+    refreshRules();
+  };
+  root.querySelector("[data-rule-search]").oninput = (e) => {
+    pick.ruleSearch = e.target.value;
+    refreshRules(true);
+  };
+  root.querySelector("[data-rule-choice]").onchange = (e) => {
+    const u = scenario.units[i];
+    if (e.target.value && !u.ruleSelections.includes(e.target.value)) {
+      if (u.ruleSelections.length >= 30) {
+        notice("Maximum 30 named rules per scenario unit.");
+        return;
+      }
+      u.ruleSelections.push(e.target.value);
+      try {
+        prepareRules(u, pick, scenario.phase);
+      } catch (err) {
+        u.ruleSelections.pop();
+        notice(err.message);
+        refreshRules();
+        return;
+      }
+      u.rulesConfirmed = false;
+    }
+    refreshRules();
+  };
+  root.querySelectorAll("[data-rule-remove]").forEach(
+    (el) =>
+      (el.onclick = () => {
+        scenario.units[i].ruleSelections = scenario.units[
+          i
+        ].ruleSelections.filter((id) => id !== el.dataset.ruleRemove);
+        if (scenario.units[i].ruleComponents)
+          delete scenario.units[i].ruleComponents[el.dataset.ruleRemove];
+        refreshRules();
+      }),
+  );
+  root.querySelectorAll("[data-rule-check]").forEach(
+    (el) =>
+      (el.onchange = () => {
+        const u = scenario.units[i],
+          key = el.dataset.ruleCheck;
+        if (["rulesConfirmed", "weaponRules"].includes(key))
+          u[key] = el.checked;
+        else {
+          u.weaponConditions ??= {};
+          u.weaponConditions[key] = el.checked;
+        }
+        changed();
+      }),
+  );
+  root.querySelectorAll("[data-rule-component]").forEach(
+    (el) =>
+      (el.onchange = () => {
+        const u = scenario.units[i],
+          id = el.dataset.ruleComponent,
+          key = el.dataset.componentKey;
+        u.ruleComponents ??= {};
+        const keys = new Set(
+          u.ruleComponents[id] ??
+            Object.keys(pick.data.combatRules.definitions[id].effects),
+        );
+        if (el.checked) keys.add(key);
+        else keys.delete(key);
+        u.ruleComponents[id] = [...keys];
+        changed();
+      }),
+  );
   const guardUpdate = root.querySelector("[data-guard-update]");
   if (guardUpdate)
     guardUpdate.onclick = () => {
       upgradeGuard(i);
+      scenario.units[i].ruleSelections = [];
       applyWeapon(i);
       renderUnit(i);
       changed();
@@ -538,6 +647,19 @@ function setBusy(value) {
 }
 function checked() {
   scenario.seed = Number($("seed").value);
+  scenario.units.forEach((u, i) => prepareRules(u, picks[i], scenario.phase));
+  scenario.units.forEach((u, i) => {
+    if (
+      !u.guardCodex &&
+      /Torrent/i.test(
+        picks[i].data.combatRules.weapons[picks[i].weapon] ?? "",
+      ) &&
+      !(u.weaponRules && u.rulesConfirmed)
+    )
+      throw Error(
+        "Torrent profile: enable supported weapon keywords and confirm conditions, or select a custom profile for your experiment.",
+      );
+  });
   return validateScenario(scenario);
 }
 function download(name, value) {
@@ -561,6 +683,7 @@ function payload() {
       weapon,
     })),
     dataCommit: index.commit,
+    rulesVersion: 1,
   };
 }
 async function restore(value) {
@@ -590,6 +713,7 @@ async function restore(value) {
       throw Error("Scenario weapon is missing.");
     nextPicks.push({ ...p, data, search: "" });
   }
+  next.units.forEach((u, i) => prepareRules(u, nextPicks[i], next.phase));
   scenario = next;
   picks = nextPicks;
   scenario.units.forEach((u, i) => {
@@ -671,12 +795,13 @@ function sequence(e, s) {
       t.wound,
       e.wounds +
         " wounds" +
-        (e.autoWounds ? " · " + e.autoWounds + " automatic" : ""),
+        (e.autoWounds ? " · " + e.autoWounds + " automatic" : "") +
+        (e.devastating ? " · " + e.devastating + " devastating" : ""),
     ),
     diceRow("Saving throws", t.save, e.unsaved + " failed saves"),
     diceRow("Damage", t.damage, e.damageRolled + " rolled"),
   );
-  if (v.fnp <= 6)
+  if (t.fnp.length)
     rows.push(
       diceRow(
         "Feel No Pain",
