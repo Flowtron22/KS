@@ -1,0 +1,7821 @@
+{
+  "source": {
+    "repo": "BSData/wh40k-11e",
+    "commit": "cc58ee3b2c23f90af9d00e7bf234cd703b762299",
+    "file": "Imperium - Deathwatch.json",
+    "sourceUrl": "https://raw.githubusercontent.com/BSData/wh40k-11e/cc58ee3b2c23f90af9d00e7bf234cd703b762299/Imperium%20-%20Deathwatch.json",
+    "sha256": "33a38116738750f709b93e23ab8f4d9ae7abdd5baec7ec42e1e39864ed6b75af"
+  },
+  "catalogue": {
+    "id": "f89b-84e0-6e3b-f1e2",
+    "name": "Imperium - Adeptus Astartes - Deathwatch",
+    "revision": 9,
+    "library": false,
+    "imports": [
+      {
+        "name": "Imperium - Space Marines",
+        "targetId": "e0af-67df-9d63-8fb7",
+        "importRootEntries": true
+      }
+    ]
+  },
+  "status": "research-only-unresolved-conditional-values",
+  "profiles": [
+    {
+      "id": "27b9-ba9e-95a5-a6",
+      "name": "Power Fist",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "3+",
+        "S": "8",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "7dae-4b51-d0e1-e90",
+      "name": "Storm Bolter",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "8cfe-ed9f-bf3e-4335",
+      "name": "Deathwatch Veterans",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "c06b-bca8-50c3-b63e",
+      "name": "Kill Team Intercessor",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "db91-f6d2-e8ff-cfcd",
+      "name": "Watch Master",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "f7c3-45d2-a7ac-d8bc"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "5",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "d1f3-99a9-d3b9-20d1",
+      "name": "Vigil spear",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "f7c3-45d2-a7ac-d8bc",
+        "120e-64f3-6f97-9417",
+        "c478-d73-a7ff-6aef"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "2",
+        "BS": "2+",
+        "S": "4",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "af24-5cc3-6b6a-b66b",
+      "name": "Vigil spear",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "f7c3-45d2-a7ac-d8bc",
+        "120e-64f3-6f97-9417",
+        "c478-d73-a7ff-6aef"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "2+",
+        "S": "6",
+        "AP": "-2",
+        "D": "D3"
+      }
+    },
+    {
+      "id": "9704-dfd4-a221-49c1",
+      "name": "Watch Captain Artemis",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "3d7c-2de-31ea-b028"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "4",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "f250-8a64-779a-ca3a",
+      "name": "Hellfire Extremis",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "3d7c-2de-31ea-b028",
+        "76ca-f0fb-310-285a"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D6",
+        "BS": "N/A",
+        "S": "4",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "f25c-9d73-6855-c35a",
+      "name": "Master-crafted power weapon",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "3d7c-2de-31ea-b028",
+        "7c1e-5549-391f-bdbd"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "2+",
+        "S": "5",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "7a52-ba2c-7f06-2b53",
+      "name": "Assault Cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "b1c7-f5b7-e77d-94eb"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "6",
+        "BS": "3+",
+        "S": "6",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "d291-71e5-1610-a4ce",
+      "name": "Heavy flamer",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "f705-bc58-183b-767"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D6",
+        "BS": "N/A",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "af16-5bb-e048-e76e",
+      "name": "➤ Infernus heavy bolter - heavy bolter",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "ef13-323d-7627-dc7"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "3",
+        "BS": "4+",
+        "S": "5",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "dde2-d05e-7d2e-f4c6",
+      "name": "➤ Infernus heavy bolter - heavy flamer",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "ef13-323d-7627-dc7"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D6",
+        "BS": "N/A",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "c4be-29a8-52c7-949",
+      "name": "➤ Plasma pistol - Standard",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2902-b665-48b6-bb09"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "7",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "4aed-ac70-60c-ae7b",
+      "name": "➤ Plasma pistol - Supercharge",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2902-b665-48b6-bb09"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "8",
+        "AP": "-3",
+        "D": "2"
+      }
+    },
+    {
+      "id": "39ea-2182-61e3-c303",
+      "name": "Long Vigil ranged weapon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "9be1-2f4b-22b5-6780"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "1",
+        "BS": "4+",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "e6cc-6a7c-9617-3ab1",
+      "name": "Corvus Blackstar",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "d861-972b-54f9-bdfa"
+      ],
+      "stats": {
+        "M": "14\"",
+        "T": "10",
+        "W": "14",
+        "LD": "6+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "cb83-410b-8dfc-9961",
+      "name": "Armoured hull",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "d861-972b-54f9-bdfa",
+        "663f-d79b-25fd-b52f",
+        "f483-c541-62c8-5a49"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "4+",
+        "S": "6",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "85c5-d77a-762-df62",
+      "name": "Hurricane bolter",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "d861-972b-54f9-bdfa",
+        "663f-d79b-25fd-b52f",
+        "39fd-529-fe62-955e"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "6",
+        "BS": "3+",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "11d9-6915-a37f-3504",
+      "name": "Twin assault cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "d861-972b-54f9-bdfa",
+        "663f-d79b-25fd-b52f",
+        "cd33-acae-10d1-2db0",
+        "a53b-f93b-5136-1fb1"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "6",
+        "BS": "3+",
+        "S": "6",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "fe26-6685-7cb7-67c9",
+      "name": "Twin lascannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "d861-972b-54f9-bdfa",
+        "663f-d79b-25fd-b52f",
+        "cd33-acae-10d1-2db0",
+        "ce7c-2f31-957b-e430"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "12",
+        "AP": "-3",
+        "D": "D6+1"
+      }
+    },
+    {
+      "id": "b1e7-499-b467-b78",
+      "name": "Blackstar rocket launcher",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "d861-972b-54f9-bdfa",
+        "663f-d79b-25fd-b52f",
+        "f7b7-2fa0-265f-69ec",
+        "659f-cdb6-c687-5096",
+        "e1bb-7422-d97a-8392"
+      ],
+      "stats": {
+        "Range": "30\"",
+        "A": "D6+1",
+        "BS": "3+",
+        "S": "5",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "58c9-ffce-1cb1-e267",
+      "name": "Stormstrike missile launcher",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "d861-972b-54f9-bdfa",
+        "663f-d79b-25fd-b52f",
+        "f7b7-2fa0-265f-69ec",
+        "f01a-6492-a57e-31e8",
+        "8d31-e74f-7724-1f53"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "10",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "7b94-5793-49d3-9aa6",
+      "name": "Chaplain Cassius",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "92eb-83bc-dcff-9386"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "4",
+        "LD": "5+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "762a-41e3-a2bc-8dd5",
+      "name": "Artificer crozius",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "92eb-83bc-dcff-9386",
+        "9d6-495a-ec17-7924"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "5",
+        "WS": "2+",
+        "S": "6",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "3646-9280-1362-3124",
+      "name": "Vael Donatus",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "fe0a-b5eb-1e1a-21bc"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "3c4a-9c7f-777b-5b24",
+      "name": "Close combat weapon",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "fe0a-b5eb-1e1a-21bc",
+        "38e3-8907-cd67-f400"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "d29c-4c3-8f0-252e",
+      "name": "Zameon Gydrael",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "743c-f14-a2c2-a12c"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "2949-b18c-d94-947e",
+      "name": "Rodricus Grytt",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "572c-d3a3-e597-94a3"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "a0a1-bc45-4ea8-5de7",
+      "name": "Close combat weapon",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "572c-d3a3-e597-94a3",
+        "a41e-6ed3-538-1a22"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "6001-82d7-a43b-beb4",
+      "name": "Frag cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "572c-d3a3-e597-94a3",
+        "25bb-751f-5e1a-d283"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "D3",
+        "BS": "4+",
+        "S": "7",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "ab32-50cc-ecea-14b9",
+      "name": "Antor Delassio",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "16d6-b842-a1d1-2d77"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "f25a-41c8-d5e5-44fe",
+      "name": "Edryc Setorax",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "9636-f9b-1bbf-14b9"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "991-c41b-7d4c-ac72",
+      "name": "Twin lightning claws",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "9636-f9b-1bbf-14b9",
+        "e102-1304-5c21-e122"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "c190-307f-6969-fda8",
+      "name": "Jensus Natorian",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "16b6-4055-1e55-27d5"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "ed52-578f-6e11-809d",
+      "name": "Psychic Cleanse",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "16b6-4055-1e55-27d5",
+        "c48b-daed-df-20b"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "D6",
+        "BS": "3+",
+        "S": "5",
+        "AP": "-1",
+        "D": "D3"
+      }
+    },
+    {
+      "id": "2b58-3fd3-3211-6da2",
+      "name": "Force weapon",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "16b6-4055-1e55-27d5",
+        "f536-dd2f-14d1-24c5"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "5",
+        "WS": "2+",
+        "S": "5",
+        "AP": "-3",
+        "D": "D3"
+      }
+    },
+    {
+      "id": "1475-5852-b210-a71e",
+      "name": "Drenn Redblade",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "b42a-2552-4350-e1d1"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "da3c-2d61-7879-ea97",
+      "name": "Garran Branatar",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "7e27-9914-e88-5858"
+      ],
+      "stats": {
+        "M": "5\"",
+        "T": "5",
+        "W": "3",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "f6d4-6a8f-9eab-fc4a",
+      "name": "Heavy Flamer",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "7e27-9914-e88-5858",
+        "ad82-8000-8d9d-8fa8"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D6",
+        "BS": "N/A",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "87f-efba-9858-45bc",
+      "name": "Power fist",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "7e27-9914-e88-5858",
+        "7828-f96a-2087-d351"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "3+",
+        "S": "8",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "6cda-8f8-eb1f-996",
+      "name": "Ennox Sorrlock",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "3722-72d6-5151-5003"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "cea2-c4c5-a7fb-ec5b",
+      "name": "Close combat weapon",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "3722-72d6-5151-5003",
+        "9a78-2788-8706-cfba"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "2ec8-6e16-ede2-f6c9",
+      "name": "Jetek Suberei",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "cd4a-d623-f7b6-b8e6"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "5",
+        "W": "3",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "19d9-7128-75c6-fa69",
+      "name": "Deathwatch twin boltgun",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33",
+        "cd4a-d623-f7b6-b8e6",
+        "eb83-8a1f-796b-5756"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "4",
+        "BS": "3+",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "c869-6a2e-6dcc-7780",
+      "name": "Close combat weapon",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2078-20a8-181f-a708"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "3+",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "e57b-128f-695c-c42f",
+      "name": "Long Vigil melee weapon",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "e3f6-2750-6e07-a27"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "fbb6-8d06-f810-4677",
+      "name": "Deathwatch Terminator",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "390e-706b-a059-378b",
+        "50fb-8de8-f1cf-86b3",
+        "45fa-9a7-8352-362e"
+      ],
+      "stats": {
+        "M": "5\"",
+        "T": "5",
+        "W": "3",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "fd0c-f6e3-f81-179c",
+      "name": "Power Weapon",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "390e-706b-a059-378b",
+        "50fb-8de8-f1cf-86b3",
+        "45fa-9a7-8352-362e",
+        "ead7-caae-cc7e-f148",
+        "245b-cbdd-7915-e0",
+        "e94e-ea43-a3a3-7c18"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "663d-7f7d-1e20-7c2b",
+      "name": "Thunder Hammer",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "390e-706b-a059-378b",
+        "50fb-8de8-f1cf-86b3",
+        "45fa-9a7-8352-362e",
+        "ead7-caae-cc7e-f148",
+        "6d89-f8ad-8cac-18b4",
+        "7361-e230-fa4d-4ac4"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "4+",
+        "S": "8",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "9ba4-fd5d-776e-a9d8",
+      "name": "Chainfist",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "390e-706b-a059-378b",
+        "50fb-8de8-f1cf-86b3",
+        "45fa-9a7-8352-362e",
+        "ead7-caae-cc7e-f148",
+        "745c-a89b-7d0f-3065",
+        "a8c8-531b-a4b-fcb5"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "4+",
+        "S": "8+",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "d5b5-e016-ff50-36f2",
+      "name": "Deathwatch Terminator",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "390e-706b-a059-378b",
+        "50fb-8de8-f1cf-86b3",
+        "259f-d98e-e052-ec64"
+      ],
+      "stats": {
+        "M": "5\"",
+        "T": "5",
+        "W": "3",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "76a7-e9a3-dac6-dda5",
+      "name": "Deathwatch Terminator Sergeant",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "390e-706b-a059-378b",
+        "50fb-8de8-f1cf-86b3",
+        "4595-7ad2-617a-c07d"
+      ],
+      "stats": {
+        "M": "5\"",
+        "T": "5",
+        "W": "3",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "0d68-122d-8526-301d",
+      "name": "Power Weapon",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "390e-706b-a059-378b",
+        "50fb-8de8-f1cf-86b3",
+        "4595-7ad2-617a-c07d",
+        "52a3-786b-962d-44c3",
+        "3b41-ef3b-efd7-6784",
+        "0a0e-85c7-20e7-3031"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "690f-4f3d-056a-23c0",
+      "name": "Thunder Hammer",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "390e-706b-a059-378b",
+        "50fb-8de8-f1cf-86b3",
+        "4595-7ad2-617a-c07d",
+        "52a3-786b-962d-44c3",
+        "f831-6dfb-6b1b-8112",
+        "ff14-7e0a-4b32-6fc1"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "4+",
+        "S": "8",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "8573-3307-c57c-7003",
+      "name": "Chainfist",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "390e-706b-a059-378b",
+        "50fb-8de8-f1cf-86b3",
+        "4595-7ad2-617a-c07d",
+        "52a3-786b-962d-44c3",
+        "7adb-f0b7-a934-18ad",
+        "fdae-d3a9-c43d-0d92"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "4+",
+        "S": "8+",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "a52-b080-e77f-d369",
+      "name": "Boltgun",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4d-5d79-b348-19ee"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "2",
+        "BS": "3",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "ef04-837e-5305-2883",
+      "name": "Kill Team Sergeant",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "a077-e1c9-f8f0-d38",
+        "4962-be6c-d809-e206"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "df06-ae69-272b-9984",
+      "name": "Heavy bolt pistol",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "a077-e1c9-f8f0-d38",
+        "2453-11c-9b7f-47c7",
+        "3c99-1b17-8b08-ce52",
+        "874f-5923-626a-cc1c"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "4",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "4aaf-3138-04dc-608f",
+      "name": "Superfrag missile launcher",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "a077-e1c9-f8f0-d38",
+        "2453-11c-9b7f-47c7",
+        "c346-db09-d839-e0b0",
+        "ccfb-e995-308b-4b7a",
+        "7089-6582-2a5d-93f6"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "D6+1",
+        "BS": "4+",
+        "S": "5",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "b7a5-8147-72e3-89fe",
+      "name": "Superkrak missile launcher",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "a077-e1c9-f8f0-d38",
+        "2453-11c-9b7f-47c7",
+        "c346-db09-d839-e0b0",
+        "0690-3f67-1f92-3968",
+        "7ab4-5c71-f281-06e1"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "1",
+        "BS": "4+",
+        "S": "10",
+        "AP": "-2",
+        "D": "D6+1"
+      }
+    },
+    {
+      "id": "2d32-5ad7-f9ff-6782",
+      "name": "Kill Team Heavy Intercessor",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "3c68-34fc-53e0-334f",
+        "d171-7d41-4be1-3382"
+      ],
+      "stats": {
+        "M": "5\"",
+        "T": "6",
+        "W": "3",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "f2b7-a0b6-257a-c2b4",
+      "name": "Kill Team Heavy Intercessor",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "3c68-34fc-53e0-334f",
+        "a666-891-4187-a82"
+      ],
+      "stats": {
+        "M": "5\"",
+        "T": "6",
+        "W": "3",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "eda4-0ea4-ee24-ea43",
+      "name": "Kill Team Heavy Intercessor",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "5fc8-18a9-cf52-c762",
+        "31bd-dd30-6128-356e"
+      ],
+      "stats": {
+        "M": "5\"",
+        "T": "6",
+        "W": "3",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "5be5-bda3-d931-b3cb",
+      "name": "Auto boltstorm gauntlets",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "5fc8-18a9-cf52-c762",
+        "31bd-dd30-6128-356e",
+        "65e9-cc14-1fc1-267f"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "3",
+        "BS": "3+",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "09a6-8358-2593-150b",
+      "name": "Twin power fists",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "5fc8-18a9-cf52-c762",
+        "31bd-dd30-6128-356e",
+        "9592-92a8-cd44-dcc0"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "3+",
+        "S": "8",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "57c7-673f-048b-ef77",
+      "name": "Kill Team Heavy Intercessor",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "5fc8-18a9-cf52-c762",
+        "0d9b-e508-49a1-0b5f"
+      ],
+      "stats": {
+        "M": "5\"",
+        "T": "6",
+        "W": "3",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "567f-9ebe-d264-bbc5",
+      "name": "Flamestorm gauntlets",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "5fc8-18a9-cf52-c762",
+        "0d9b-e508-49a1-0b5f",
+        "5633-82d7-6f6a-317a"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D6+1",
+        "BS": "N/A",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "9589-a0c0-1e08-519e",
+      "name": "Twin power fists",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "5fc8-18a9-cf52-c762",
+        "0d9b-e508-49a1-0b5f",
+        "5e96-4ab9-4531-8073"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "3+",
+        "S": "8",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "0c56-a376-2f28-4266",
+      "name": "Kill Team Heavy Intercessor",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "0d29-7325-4b94-4e87",
+        "84f7-2150-fe04-4f8b"
+      ],
+      "stats": {
+        "M": "5\"",
+        "T": "6",
+        "W": "3",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "706c-da54-2d65-4603",
+      "name": "Deathwatch heavy bolt rifle",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "0d29-7325-4b94-4e87",
+        "84f7-2150-fe04-4f8b",
+        "5654-5bdd-c713-10c0"
+      ],
+      "stats": {
+        "Range": "30\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "571d-b955-bdeb-9b94",
+      "name": "Kill Team Heavy Intercessor w/ Heavy Bolter",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "0d29-7325-4b94-4e87",
+        "83ce-4339-bfd5-7635"
+      ],
+      "stats": {
+        "M": "5\"",
+        "T": "6",
+        "W": "3",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "8dbf-1436-3106-296a",
+      "name": "Deathwatch heavy bolter",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "0d29-7325-4b94-4e87",
+        "83ce-4339-bfd5-7635",
+        "46ee-696e-8631-b41e"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "3",
+        "BS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "a544-eb12-9107-920a",
+      "name": "Kill Team Infiltrator",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "a39b-9d32-c3ee-a14f"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "70e2-227f-7fe-f661",
+      "name": "Deathwatch marksman bolt carbine",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "a39b-9d32-c3ee-a14f",
+        "7ce0-d222-824c-1713"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "72fb-3bef-bcf6-3519",
+      "name": "Kill Team Infiltrator",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "477e-f891-4b7c-e003"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "a612-8000-b81-e736",
+      "name": "Deathwatch occulus bolt carbine",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "477e-f891-4b7c-e003",
+        "bd3-53d3-d134-ab8f"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "4956-af00-f27d-a58b",
+      "name": "Paired combat blades",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "477e-f891-4b7c-e003",
+        "3087-465d-c1b5-8ac3"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "3+",
+        "S": "4",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "9b61-707c-d346-34f2",
+      "name": "Kill Team Infiltrator",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "f1f0-4d9d-cb87-72cc"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "64ad-a661-43fb-f2de",
+      "name": "Deathwatch marksman bolt carbine",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "f1f0-4d9d-cb87-72cc",
+        "eaaa-a55e-ee06-4295"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "0ea5-a4b3-fd52-f94b",
+      "name": "Kill Team Infiltrator",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "8cc2-90d1-c503-9e5e",
+        "1ed9-356c-5051-e11d"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "2772-9ad4-7ad9-7e4c",
+      "name": "Special-issue bolt pistol",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "8cc2-90d1-c503-9e5e",
+        "1ed9-356c-5051-e11d",
+        "984b-5c36-a50f-0a21"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "4",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "a4e9-7a48-816f-f437",
+      "name": "Combat knife",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "8cc2-90d1-c503-9e5e",
+        "1ed9-356c-5051-e11d",
+        "2277-c2cf-4759-1a25"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "4",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "4842-cad3-faba-11cd",
+      "name": "Kill Team Infiltrator",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "8cc2-90d1-c503-9e5e",
+        "9a84-da58-e70a-f057"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "e1ab-6cb7-25ff-3ae9",
+      "name": "Special-issue bolt pistol",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "8cc2-90d1-c503-9e5e",
+        "9a84-da58-e70a-f057",
+        "2bf6-dfb9-fea9-7a94"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "4",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "f97d-f908-b6d2-220b",
+      "name": "Deathwatch Bolt carbine",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "8cc2-90d1-c503-9e5e",
+        "9a84-da58-e70a-f057",
+        "1b2b-2c12-fa9e-a9ed"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "f649-2ef9-72d1-a1dc",
+      "name": "Kill Team Infiltrator",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "284f-9201-42f6-f4f2",
+        "b55d-e297-921b-9915"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "af00-9cba-2f76-8b15",
+      "name": "Instigator bolt carbine",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "284f-9201-42f6-f4f2",
+        "b55d-e297-921b-9915",
+        "4f5b-2465-8b5f-66b8"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "4",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "771c-2f18-e7cb-8202",
+      "name": "Kill Team Infiltrator",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "284f-9201-42f6-f4f2",
+        "e0ff-56bb-613d-802f"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "1941-6aef-a1a9-3317",
+      "name": "Kill Team Infiltrator",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "284f-9201-42f6-f4f2",
+        "ca58-2c6d-1b85-bc76"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "482f-8359-6be6-4028",
+      "name": "Bolt sniper rifle",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "284f-9201-42f6-f4f2",
+        "ca58-2c6d-1b85-bc76",
+        "a0dc-70d3-af1f-f83b"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "1914-74b5-ec91-e6b5",
+      "name": "Close combat weapon",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "c23d-db22-8cc8-dda9"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "3+",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "84de-bc90-c672-d2a1",
+      "name": "Long Vigil ranged weapon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "f706-6c9c-c899-9b5a"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "1",
+        "BS": "4+",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "2333-a3fe-e6af-747",
+      "name": "➤ Plasma incinerator - Standard",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "386c-b933-68ce-5e31"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "7",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "7bcf-8a8f-67e6-2dca",
+      "name": "➤ Plasma incinerator - Supercharge",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "386c-b933-68ce-5e31"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "8",
+        "AP": "-3",
+        "D": "2"
+      }
+    },
+    {
+      "id": "570f-3c96-ba40-74ce",
+      "name": "Deathwatch thunder hammer",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0",
+        "8079-3417-5f9a-d8f0",
+        "9317-df05-c108-8b92"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "4+",
+        "S": "10",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "1422-5f67-86a6-53fd",
+      "name": "Frag cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0",
+        "4b26-70ff-0fc2-e6f0",
+        "989d-3553-6fcc-1650"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "D3",
+        "BS": "4+",
+        "S": "7",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "f075-0a7f-670e-f7cf",
+      "name": "Stalker-pattern boltgun",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0",
+        "f026-8957-5e60-f8e5",
+        "a21d-235b-bf6e-5ff7"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "4",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "6a1d-eee5-b22d-dd3b",
+      "name": "Deathwatch shotgun",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0",
+        "de39-4ccb-2c26-a77c",
+        "2af8-d30a-f422-6eeb"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "4",
+        "AP": "0",
+        "D": "2"
+      }
+    },
+    {
+      "id": "eb19-2eb1-d83a-1428",
+      "name": "Blackshield blades",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0",
+        "102e-91cf-2edb-7bb7",
+        "791f-6fb7-1f06-730c"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "9f27-9fb9-aace-fe07",
+      "name": "Power weapon",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "eca6-624b-8c87-5d69"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "8213-cf63-41e1-befd",
+      "name": "Xenophase blade",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "98a3-2db5-6cb1-40a1"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "0477-9238-8186-803c",
+      "name": "Combi-weapon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "716b-e411-72e7-1eb7"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "1",
+        "BS": "4+",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "88c1-4908-1f18-b1bc",
+      "name": "Kill Team Sergeant w/ Jump Pack",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "c679-f252-32b1-ebcc",
+        "68d2-9aaa-f6cb-f4dc"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "c58a-b496-ac64-9781",
+      "name": "Kill Team Intercessor w/ Jump Pack",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "c679-f252-32b1-ebcc",
+        "3717-7eea-6730-5de5",
+        "13c9-7b74-3736-15b4"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "fd99-3eb6-0aa2-3864",
+      "name": "Kill Team Intercessor w/ Jump Pack",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "c679-f252-32b1-ebcc",
+        "3717-7eea-6730-5de5",
+        "cd78-e267-5f72-a2a2"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "32f2-fdf1-ee27-8c68",
+      "name": "Kill Team Heavy Intercessor w/ Jump Pack",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "c679-f252-32b1-ebcc",
+        "3717-7eea-6730-5de5",
+        "4a9a-c715-b0a6-c7b4",
+        "d773-5ee0-d647-efaa"
+      ],
+      "stats": {
+        "M": "10\"",
+        "T": "6",
+        "W": "3",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "aae9-d039-e99b-9311",
+      "name": "Assault bolters",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "c679-f252-32b1-ebcc",
+        "3717-7eea-6730-5de5",
+        "4a9a-c715-b0a6-c7b4",
+        "d773-5ee0-d647-efaa",
+        "8d1c-e6d8-5d46-6a3a"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "3",
+        "BS": "3+",
+        "S": "5",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "fae1-c25e-e642-6724",
+      "name": "Kill Team Heavy Intercessor w/ Jump Pack",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "c679-f252-32b1-ebcc",
+        "3717-7eea-6730-5de5",
+        "4a9a-c715-b0a6-c7b4",
+        "5d95-06fe-8f10-5dd9"
+      ],
+      "stats": {
+        "M": "10\"",
+        "T": "6",
+        "W": "3",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "169d-4868-32b9-da04",
+      "name": "➤ Plasma exterminators - standard",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "c679-f252-32b1-ebcc",
+        "3717-7eea-6730-5de5",
+        "4a9a-c715-b0a6-c7b4",
+        "5d95-06fe-8f10-5dd9",
+        "af8e-9b8b-a106-2f1b"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "7",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "8a99-68d4-cfb7-b72e",
+      "name": "➤ Plasma exterminators - supercharge",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "c679-f252-32b1-ebcc",
+        "3717-7eea-6730-5de5",
+        "4a9a-c715-b0a6-c7b4",
+        "5d95-06fe-8f10-5dd9",
+        "af8e-9b8b-a106-2f1b"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "8",
+        "AP": "-3",
+        "D": "3"
+      }
+    },
+    {
+      "id": "1e8c-da24-6662-a2e3",
+      "name": "Deathwatch bolt rifle",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "ad6a-c679-52ea-6059"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "6764-6471-512f-0f4c",
+      "name": "Xenophase blade",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "b169-ff89-b05e-3884",
+        "27aa-0757-7a11-2050",
+        "7065-df9c-4dff-aa9a",
+        "407d-7aa3-78a1-0d7e",
+        "44ce-4256-035e-bf2a"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "44a3-4b4f-adbd-383e",
+      "name": "Kill Team Sergeant",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "ab41-fdc1-8d0f-bb74"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "26b4-2780-2e7c-28a6",
+      "name": "Deathwatch Veteran",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "9ae9-4f7e-a148-cbfa"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "3af1-cf3a-2bff-56d0",
+      "name": "Stalker bolt rifle",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "9ae9-4f7e-a148-cbfa",
+        "b439-6122-b494-52d7",
+        "4b89-bd85-ed45-0ce4"
+      ],
+      "stats": {
+        "Range": "30\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "d96a-b9aa-34d3-5c72",
+      "name": "Deathwatch Veteran",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2537-956c-98c0-bffb"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "b97e-2834-009d-d0b7",
+      "name": "Heavy thunder hammer",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2537-956c-98c0-bffb",
+        "d23a-cc50-b438-ff2b",
+        "f1d9-6336-7a0c-64cf"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "4+",
+        "S": "10",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "016d-a1e1-a89a-c461",
+      "name": "Power weapon",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2174-53aa-f028-b509"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "69a6-2fc4-e0ea-3268",
+      "name": "Deathwatch Veteran",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "8778-e3cb-2c6f-b23d"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "a87d-8d8f-1f70-fe13",
+      "name": "Deathwatch marksman bolt carbine",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "8778-e3cb-2c6f-b23d",
+        "8667-6300-4cc0-671a",
+        "2fde-1e35-34a9-0b37"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "cea1-dabe-7fee-1563",
+      "name": "Combat knife",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "8778-e3cb-2c6f-b23d",
+        "8667-6300-4cc0-671a",
+        "812d-8e13-8148-1db6"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "4",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "22e9-d6ae-0929-7455",
+      "name": "Special-issue bolt pistol",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "bd52-0d98-f3a0-e291"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "4",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "8040-aa17-8e5e-0cb8",
+      "name": "Gravis Veteran",
+      "type": "Unit",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "550a-f5c4-d6a9-a09e"
+      ],
+      "stats": {
+        "M": "5\"",
+        "T": "6",
+        "W": "3",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "67b7-65e7-6a7a-d4d8",
+      "name": "Frag cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "550a-f5c4-d6a9-a09e",
+        "3899-8463-5291-674b",
+        "efbd-2915-b637-83f8"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "D3",
+        "BS": "3+",
+        "S": "7",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "cfc4-f2e1-4f31-d0a2",
+      "name": "Hellstorm bolt rifle",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "550a-f5c4-d6a9-a09e",
+        "3899-8463-5291-674b",
+        "e2b3-c14f-5a6a-b660",
+        "7c66-f2f6-a3fc-0867"
+      ],
+      "stats": {
+        "Range": "30\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "10a4-502b-1982-6f28",
+      "name": "➤ Astartes grenade launcher - frag",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "550a-f5c4-d6a9-a09e",
+        "3899-8463-5291-674b",
+        "e2b3-c14f-5a6a-b660",
+        "703f-ed39-cb24-5686"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "D3",
+        "BS": "3+",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "9425-908b-ebed-31b6",
+      "name": "➤ Astartes grenade launcher - krak",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "550a-f5c4-d6a9-a09e",
+        "3899-8463-5291-674b",
+        "e2b3-c14f-5a6a-b660",
+        "703f-ed39-cb24-5686"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "9",
+        "AP": "-2",
+        "D": "D3"
+      }
+    },
+    {
+      "id": "2b11-1b52-c371-308d",
+      "name": "➤ Infernus heavy bolter - heavy bolter",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "550a-f5c4-d6a9-a09e",
+        "3899-8463-5291-674b",
+        "dc61-590e-f638-6584"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "3",
+        "BS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "8c61-1566-94e0-0e97",
+      "name": "➤ Infernus heavy bolter - heavy flamer",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "550a-f5c4-d6a9-a09e",
+        "3899-8463-5291-674b",
+        "dc61-590e-f638-6584"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D6",
+        "BS": "N/A",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "c61a-1024-ae80-dd9a",
+      "name": "Bolt pistol",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "d177-4e7a-6b6b-19e5"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "a69d-646f-8acf-14c",
+      "name": "Chainfist",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "77ef-f5b6-e6bc-7618",
+        "80c0-420b-9d0c-6581"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "4+",
+        "S": "8+",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "57d8-18ad-c7cc-f9dd",
+      "name": "Power Weapon",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "77ef-f5b6-e6bc-7618",
+        "afe6-4342-76d7-7126"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "81fe-a78d-ebae-e118",
+      "name": "Chainfist",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "77ef-f5b6-e6bc-7618",
+        "3dfd-61d0-51ce-d9d3"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "4+",
+        "S": "8+",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "f392-8810-dbef-eac7",
+      "name": "Power Weapon",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "77ef-f5b6-e6bc-7618",
+        "56a9-4150-f61a-cfb0"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "842b-a185-5c0-dd4c",
+      "name": "Frag Cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "7733-3c89-d4c4-bf17",
+        "b72e-bbda-d1af-a5ff",
+        "f933-387d-f6b9-3f7a"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "D3",
+        "BS": "4+",
+        "S": "7",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "a335-719a-a935-dcbe",
+      "name": "➤ Missile Launcher - frag",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "7733-3c89-d4c4-bf17",
+        "ef51-9159-c3c3-4cb0",
+        "6e17-a8ca-1df5-4b7b"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "D6",
+        "BS": "4+",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "a773-ddc2-3f10-b7b1",
+      "name": "➤ Missile Launcher - krak",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "7733-3c89-d4c4-bf17",
+        "ef51-9159-c3c3-4cb0",
+        "6e17-a8ca-1df5-4b7b"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "1",
+        "BS": "4+",
+        "S": "9",
+        "AP": "-2",
+        "D": "D6"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "id": "f7c3-45d2-a7ac-d8bc",
+      "name": "Watch Master",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 95
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Honour Points",
+          "typeId": "8135-9a2f-6627-09e2",
+          "value": 0
+        },
+        {
+          "name": "Relic Fragments",
+          "typeId": "0ece-6541-4662-ece2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "e4f0-c9f8-2c23-f2fb",
+          "targetId": "b4dd-3e1f-41cb-218f",
+          "type": "rule"
+        },
+        {
+          "id": "1f02-b7c4-4816-de87",
+          "targetId": "3b76-4053-ece9-6e7d",
+          "type": "rule"
+        },
+        {
+          "id": "69a6-446d-5d4a-6e7f",
+          "targetId": "2a5c-3c55-d113-3a53",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "3d7c-2de-31ea-b028",
+      "name": "Watch Captain Artemis",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 65
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "a22-980a-787a-f53d",
+          "targetId": "b4dd-3e1f-41cb-218f",
+          "type": "rule"
+        },
+        {
+          "id": "a855-f58f-4aea-b7fe",
+          "targetId": "9bf4-280f-bbe2-6fbb",
+          "type": "rule"
+        },
+        {
+          "id": "82c4-2698-7ffb-c000",
+          "targetId": "2a5c-3c55-d113-3a53",
+          "type": "rule"
+        },
+        {
+          "id": "81b8-fc91-acd5-f622",
+          "targetId": "3b76-4053-ece9-6e7d",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "d861-972b-54f9-bdfa",
+      "name": "Corvus Blackstar",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 180
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "a03a-d2e-830-c5bd",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "5bd5-cb9b-3455-8698",
+          "targetId": "eec5-5f54-9c03-c305",
+          "type": "rule"
+        },
+        {
+          "id": "f2e3-9278-538-27fa",
+          "targetId": "bec5-4288-34a6-ccfa",
+          "type": "rule"
+        },
+        {
+          "id": "7570-3ad4-7d2a-e0b0",
+          "targetId": "2a5c-3c55-d113-3a53",
+          "type": "rule"
+        },
+        {
+          "id": "453a-bd3f-225e-1e7a",
+          "targetId": "3b76-4053-ece9-6e7d",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "4042-67ce-8d45-ed33",
+      "name": "Kill Team Cassius [Legends]",
+      "type": "unit",
+      "hidden": true,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 220
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "4083-9b50-adff-2111",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        },
+        {
+          "id": "007c-c329-a75c-f724",
+          "targetId": "2a5c-3c55-d113-3a53",
+          "type": "rule"
+        },
+        {
+          "id": "0a4b-c003-b91a-8d75",
+          "targetId": "3b76-4053-ece9-6e7d",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "92eb-83bc-dcff-9386",
+      "name": "Chaplain Cassius",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "fe0a-b5eb-1e1a-21bc",
+      "name": "Vael Donatus",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "743c-f14-a2c2-a12c",
+      "name": "Zameon Gydrael",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "572c-d3a3-e597-94a3",
+      "name": "Rodricus Grytt",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "16d6-b842-a1d1-2d77",
+      "name": "Antor Delassio",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "9636-f9b-1bbf-14b9",
+      "name": "Edryc Setorax",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "16b6-4055-1e55-27d5",
+      "name": "Jensus Natorian",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "b42a-2552-4350-e1d1",
+      "name": "Drenn Redblade",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "7e27-9914-e88-5858",
+      "name": "Garran Branatar",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "3722-72d6-5151-5003",
+      "name": "Ennox Sorrlock",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "cd4a-d623-f7b6-b8e6",
+      "name": "Jetek Suberei",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "4042-67ce-8d45-ed33"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "390e-706b-a059-378b",
+      "name": "Deathwatch Terminator Squad",
+      "type": "unit",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 180
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        },
+        {
+          "name": "Honour Points",
+          "typeId": "8135-9a2f-6627-09e2",
+          "value": 0
+        },
+        {
+          "name": "Relic Fragments",
+          "typeId": "0ece-6541-4662-ece2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "571f-13f9-8778-7406",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        },
+        {
+          "id": "f809-cf1f-c888-c281",
+          "targetId": "3b76-4053-ece9-6e7d",
+          "type": "rule"
+        },
+        {
+          "id": "7700-a084-2a5d-60e7",
+          "targetId": "2a5c-3c55-d113-3a53",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "45fa-9a7-8352-362e",
+      "name": "Deathwatch Terminator",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "390e-706b-a059-378b",
+        "50fb-8de8-f1cf-86b3"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "259f-d98e-e052-ec64",
+      "name": "Deathwatch Terminator w/ Heavy Weapon",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "390e-706b-a059-378b",
+        "50fb-8de8-f1cf-86b3"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "4595-7ad2-617a-c07d",
+      "name": "Deathwatch Terminator Sergeant",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "390e-706b-a059-378b",
+        "50fb-8de8-f1cf-86b3"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "a077-e1c9-f8f0-d38",
+      "name": "Fortis Kill Team",
+      "type": "unit",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 195
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        },
+        {
+          "name": "Honour Points",
+          "typeId": "8135-9a2f-6627-09e2",
+          "value": 0
+        },
+        {
+          "name": "Relic Fragments",
+          "typeId": "0ece-6541-4662-ece2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "c92c-ce6e-0f3c-085c",
+          "targetId": "2a5c-3c55-d113-3a53",
+          "type": "rule"
+        },
+        {
+          "id": "beb0-435c-c725-2253",
+          "targetId": "3b76-4053-ece9-6e7d",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "4962-be6c-d809-e206",
+      "name": "Kill Team Sergeant",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "a077-e1c9-f8f0-d38"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "7bf3-4c74-4427-717c",
+      "name": "Kill Team Intercessor",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "a077-e1c9-f8f0-d38",
+        "2453-11c-9b7f-47c7"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "298f-7937-276d-208d",
+          "targetId": "c06b-bca8-50c3-b63e",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "ed4e-ce7a-9fc6-4225",
+      "name": "Kill Team Intercessor w/ grenade launcher",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "a077-e1c9-f8f0-d38",
+        "2453-11c-9b7f-47c7"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "54c8-2d82-b9a5-b84c",
+          "targetId": "c06b-bca8-50c3-b63e",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "3c99-1b17-8b08-ce52",
+      "name": "Kill Team Intercessor w/ heavy bolt pistol",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "a077-e1c9-f8f0-d38",
+        "2453-11c-9b7f-47c7"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "14d6-0269-16fe-5a58",
+          "targetId": "c06b-bca8-50c3-b63e",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "2061-4f19-0a98-e5ff",
+      "name": "Kill Team Intercessor w/ pyreblaster",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "a077-e1c9-f8f0-d38",
+        "2453-11c-9b7f-47c7"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "a356-2611-17d6-3af9",
+          "targetId": "c06b-bca8-50c3-b63e",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "dd1b-4fab-d15c-bacf",
+      "name": "Kill Team Intercessor w/ plasma pistol and incinerator",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "a077-e1c9-f8f0-d38",
+        "2453-11c-9b7f-47c7",
+        "1309-c8b7-fa8c-86ab"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "f1d7-d7de-c11d-3c70",
+          "targetId": "c06b-bca8-50c3-b63e",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "e980-d865-fec5-10d3",
+      "name": "Kill Team Intercessor w/ bolt pistol and incinerator",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "a077-e1c9-f8f0-d38",
+        "2453-11c-9b7f-47c7",
+        "1309-c8b7-fa8c-86ab"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "46c7-2080-180a-0bc2",
+          "targetId": "c06b-bca8-50c3-b63e",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "65e5-1485-c2a9-8cc2",
+      "name": "Kill Team Intercessor w/ vengor launcher",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "a077-e1c9-f8f0-d38",
+        "2453-11c-9b7f-47c7",
+        "c346-db09-d839-e0b0"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "c3f7-8cd6-b214-9019",
+          "targetId": "c06b-bca8-50c3-b63e",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "ccfb-e995-308b-4b7a",
+      "name": "Kill Team Intercessor w/ superfrag missile launcher",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "a077-e1c9-f8f0-d38",
+        "2453-11c-9b7f-47c7",
+        "c346-db09-d839-e0b0"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "1845-cfdb-f8a3-6596",
+          "targetId": "c06b-bca8-50c3-b63e",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "0690-3f67-1f92-3968",
+      "name": "Kill Team Intercessor w/ superkrak missile launcher",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "a077-e1c9-f8f0-d38",
+        "2453-11c-9b7f-47c7",
+        "c346-db09-d839-e0b0"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "57d8-b7d5-3710-a0eb",
+          "targetId": "c06b-bca8-50c3-b63e",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "6cb-912c-c43-210b",
+      "name": "Indomitor Kill Team",
+      "type": "unit",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 275
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        },
+        {
+          "name": "Honour Points",
+          "typeId": "8135-9a2f-6627-09e2",
+          "value": 0
+        },
+        {
+          "name": "Relic Fragments",
+          "typeId": "0ece-6541-4662-ece2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "e3e1-9d3f-2082-5663",
+          "targetId": "2a5c-3c55-d113-3a53",
+          "type": "rule"
+        },
+        {
+          "id": "4ab0-9f19-aaa5-c671",
+          "targetId": "3b76-4053-ece9-6e7d",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "d171-7d41-4be1-3382",
+      "name": "Kill Team Heavy Intercessor w/ melta rifle",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "3c68-34fc-53e0-334f"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "a666-891-4187-a82",
+      "name": "Kill Team Heavy Intercessor w/ multi-melta",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "3c68-34fc-53e0-334f"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "31bd-dd30-6128-356e",
+      "name": "Kill Team Heavy Intercessor w/ power fists & auto boltstorm gauntlets",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "5fc8-18a9-cf52-c762"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "0d9b-e508-49a1-0b5f",
+      "name": "Kill Team Heavy Intercessor w/ power fists & flamestorm gauntlets",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "5fc8-18a9-cf52-c762"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "84f7-2150-fe04-4f8b",
+      "name": "Kill Team Heavy Intercessor",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "0d29-7325-4b94-4e87"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "83ce-4339-bfd5-7635",
+      "name": "Kill Team Heavy Intercessor w/ heavy bolter",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "6cb-912c-c43-210b",
+        "cecf-b6a2-6407-628a",
+        "0d29-7325-4b94-4e87"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "2544-5189-7806-30f3",
+      "name": "Spectrus Kill Team",
+      "type": "unit",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 170
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        },
+        {
+          "name": "Honour Points",
+          "typeId": "8135-9a2f-6627-09e2",
+          "value": 0
+        },
+        {
+          "name": "Relic Fragments",
+          "typeId": "0ece-6541-4662-ece2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "97a3-8998-13aa-fc4d",
+          "targetId": "ada6-bac1-ffe0-d6f7",
+          "type": "rule"
+        },
+        {
+          "id": "832-857-cfb2-463d",
+          "targetId": "c05d-f4c3-f091-4938",
+          "type": "rule"
+        },
+        {
+          "id": "6afd-e6fb-3da2-15b5",
+          "targetId": "2a5c-3c55-d113-3a53",
+          "type": "rule"
+        },
+        {
+          "id": "f740-d579-6c76-e357",
+          "targetId": "3b76-4053-ece9-6e7d",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "a39b-9d32-c3ee-a14f",
+      "name": "Kill Team Infiltrator",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "477e-f891-4b7c-e003",
+      "name": "Kill Team Infiltrator w/ occulus bolt carbine",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "f1f0-4d9d-cb87-72cc",
+      "name": "Kill Team Infiltrator w/ wargear",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "1ed9-356c-5051-e11d",
+      "name": "Kill Team Infiltrator w/ combat knife",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "8cc2-90d1-c503-9e5e"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "9a84-da58-e70a-f057",
+      "name": "Kill Team Infiltrator w/ bolt carbine",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "8cc2-90d1-c503-9e5e"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "b55d-e297-921b-9915",
+      "name": "Kill Team Infiltrator w/ instigator bolt carbine",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "284f-9201-42f6-f4f2"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "e0ff-56bb-613d-802f",
+      "name": "Kill Team Infiltrator w/ las fusil",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "284f-9201-42f6-f4f2"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "ca58-2c6d-1b85-bc76",
+      "name": "Kill Team Infiltrator w/ bolt sniper rifle",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "2544-5189-7806-30f3",
+        "da91-b248-f816-b72b",
+        "284f-9201-42f6-f4f2"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "66ab-476a-134e-ec7b",
+      "name": "Deathwatch Veterans",
+      "type": "unit",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 100
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "7824-6c36-8227-ac58",
+          "targetId": "2a5c-3c55-d113-3a53",
+          "type": "rule"
+        },
+        {
+          "id": "a3ed-0115-15cc-8d30",
+          "targetId": "3b76-4053-ece9-6e7d",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "ba3d-91bd-62a4-44ec",
+      "name": "Veteran w/ boltgun and power weapon",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "53d6-2b0c-7861-4844",
+          "targetId": "8cfe-ed9f-bf3e-4335",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "8079-3417-5f9a-d8f0",
+      "name": "Veteran w/ Deathwatch thunder hammer",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "5876-bb3e-6b87-49a5",
+          "targetId": "8cfe-ed9f-bf3e-4335",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "4b26-70ff-0fc2-e6f0",
+      "name": "Veteran w/ frag cannon and CCW",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "1349-c0c0-7a63-4a21",
+          "targetId": "8cfe-ed9f-bf3e-4335",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "7581-22bb-9ade-6b0c",
+      "name": "Veteran w/ infernus heavy bolter and CCW",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "93a7-e459-0750-48dd",
+          "targetId": "8cfe-ed9f-bf3e-4335",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "3ec4-62ab-71f2-9cf3",
+      "name": "Veteran w/ Astartes shield and boltgun",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "b33d-b1c3-7cdb-e272",
+          "targetId": "8cfe-ed9f-bf3e-4335",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "1327-d6d3-7532-4d83",
+      "name": "Veteran w/ Astartes shield and power weapon",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "981d-eca8-86e3-47e7",
+          "targetId": "8cfe-ed9f-bf3e-4335",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "f026-8957-5e60-f8e5",
+      "name": "Veteran w/ stalker-pattern boltgun and CCW",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "641d-f783-b789-392b",
+          "targetId": "8cfe-ed9f-bf3e-4335",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "de39-4ccb-2c26-a77c",
+      "name": "Veteran w/ Deathwatch shotgun and CCW",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "2d4d-8ca3-7bc0-8617",
+          "targetId": "8cfe-ed9f-bf3e-4335",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "102e-91cf-2edb-7bb7",
+      "name": "Veteran w/ Black Shield blades",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "0f6c-abe6-33a4-f400",
+          "targetId": "8cfe-ed9f-bf3e-4335",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "075f-d1fd-2889-31cf",
+      "name": "Sgt w/ Astartes shield and xenophase blade",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0",
+        "544d-f8d0-c66e-c1ea"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "5427-59da-a9d0-beed",
+          "targetId": "8cfe-ed9f-bf3e-4335",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "f7c8-4603-da2e-b40e",
+      "name": "Sgt w/ boltgun and xenophase blade",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0",
+        "544d-f8d0-c66e-c1ea"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "f795-dc17-b17f-c879",
+          "targetId": "8cfe-ed9f-bf3e-4335",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "8df2-9d40-3b87-bdd4",
+      "name": "Sgt w/ combi-weapon and power weapon",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0",
+        "544d-f8d0-c66e-c1ea"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "0127-3c8d-ee18-8578",
+          "targetId": "8cfe-ed9f-bf3e-4335",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "70c1-7626-7135-09b6",
+      "name": "Sgt w/ combi-weapon and xenophase blade",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0",
+        "544d-f8d0-c66e-c1ea"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "f6e7-3935-90db-a8c8",
+          "targetId": "8cfe-ed9f-bf3e-4335",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "9496-f6ed-9ea0-d750",
+      "name": "Sgt w/ Astartes shield and combi-weapon",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "66ab-476a-134e-ec7b",
+        "9f9a-7a8b-0040-8ae0",
+        "544d-f8d0-c66e-c1ea"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "9ac1-d2f1-ea4b-6221",
+          "targetId": "8cfe-ed9f-bf3e-4335",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "c679-f252-32b1-ebcc",
+      "name": "Talonstrike Kill Team",
+      "type": "unit",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 265
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        },
+        {
+          "name": "Honour Points",
+          "typeId": "8135-9a2f-6627-09e2",
+          "value": 0
+        },
+        {
+          "name": "Relic Fragments",
+          "typeId": "0ece-6541-4662-ece2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "cc0b-37cd-d852-fe27",
+          "targetId": "3b76-4053-ece9-6e7d",
+          "type": "rule"
+        },
+        {
+          "id": "9f59-905b-2e3f-c37e",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        },
+        {
+          "id": "9815-73e0-d930-74e0",
+          "targetId": "2a5c-3c55-d113-3a53",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "68d2-9aaa-f6cb-f4dc",
+      "name": "Kill Team Sergeant w/ Jump Pack",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "c679-f252-32b1-ebcc"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "13c9-7b74-3736-15b4",
+      "name": "Intercessor w/ heavy bolt pistol and Jump Pack",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "c679-f252-32b1-ebcc",
+        "3717-7eea-6730-5de5"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "cd78-e267-5f72-a2a2",
+      "name": "Intercessor w/ plasma pistol and Jump Pack",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "c679-f252-32b1-ebcc",
+        "3717-7eea-6730-5de5"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "d773-5ee0-d647-efaa",
+      "name": "Heavy Intercessor w/ assault bolter",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "c679-f252-32b1-ebcc",
+        "3717-7eea-6730-5de5",
+        "4a9a-c715-b0a6-c7b4"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "5d95-06fe-8f10-5dd9",
+      "name": "Heavy Intercessor w/ plasma exterminators",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "c679-f252-32b1-ebcc",
+        "3717-7eea-6730-5de5",
+        "4a9a-c715-b0a6-c7b4"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "b169-ff89-b05e-3884",
+      "name": "Decimus Kill Team",
+      "type": "unit",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 100
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Honour Points",
+          "typeId": "8135-9a2f-6627-09e2",
+          "value": 0
+        },
+        {
+          "name": "Relic Fragments",
+          "typeId": "0ece-6541-4662-ece2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "a437-b1f1-cf97-a5a5",
+          "targetId": "2a5c-3c55-d113-3a53",
+          "type": "rule"
+        },
+        {
+          "id": "53c9-8868-0fac-d7f4",
+          "targetId": "3b76-4053-ece9-6e7d",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "407d-7aa3-78a1-0d7e",
+      "name": "Deathwatch Veteran w/ xenophase blade",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2",
+        "b169-ff89-b05e-3884",
+        "27aa-0757-7a11-2050",
+        "7065-df9c-4dff-aa9a"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "ab41-fdc1-8d0f-bb74",
+      "name": "Kill Team Sergeant",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "9ae9-4f7e-a148-cbfa",
+      "name": "Deathwatch Veteran w/ stalker bolt rifle",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "2537-956c-98c0-bffb",
+      "name": "Deathwatch Veteran w/ heavy thunder hammer",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "8778-e3cb-2c6f-b23d",
+      "name": "Deathwatch Veteran w/ carbine",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "550a-f5c4-d6a9-a09e",
+      "name": "Gravis Veteran w/ infernus heavy bolter",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "f89b-84e0-6e3b-f1e2"
+      ],
+      "costs": [],
+      "profileLinks": []
+    }
+  ],
+  "references": [
+    {
+      "id": "0e90-a51e-f59d-892a",
+      "targetId": "e0af-67df-9d63-8fb7",
+      "type": "catalogue",
+      "name": "Imperium - Space Marines"
+    },
+    {
+      "id": "d7e1-13bb-2177-b6bc",
+      "targetId": "f7c3-45d2-a7ac-d8bc",
+      "type": "selectionEntry",
+      "name": "Watch Master"
+    },
+    {
+      "id": "4bc4-95ae-422d-1469",
+      "targetId": "3d7c-2de-31ea-b028",
+      "type": "selectionEntry",
+      "name": "Watch Captain Artemis"
+    },
+    {
+      "id": "319e-5b9d-5c49-4e57",
+      "targetId": "d861-972b-54f9-bdfa",
+      "type": "selectionEntry",
+      "name": "Corvus Blackstar"
+    },
+    {
+      "id": "7211-5200-e107-dcac",
+      "targetId": "4042-67ce-8d45-ed33",
+      "type": "selectionEntry",
+      "name": "Kill Team Cassius [Legends]"
+    },
+    {
+      "id": "9a-d0b0-480d-21cd",
+      "targetId": "390e-706b-a059-378b",
+      "type": "selectionEntry",
+      "name": "Deathwatch Terminator Squad"
+    },
+    {
+      "id": "a5ae-26d2-12a0-13d7",
+      "targetId": "a077-e1c9-f8f0-d38",
+      "type": "selectionEntry",
+      "name": "Fortis Kill Team"
+    },
+    {
+      "id": "6942-fa3c-d518-295f",
+      "targetId": "6cb-912c-c43-210b",
+      "type": "selectionEntry",
+      "name": "Indomitor Kill Team"
+    },
+    {
+      "id": "6482-591d-fe98-7961",
+      "targetId": "2544-5189-7806-30f3",
+      "type": "selectionEntry",
+      "name": "Spectrus Kill Team"
+    },
+    {
+      "id": "e17b-05e3-61c0-2ad9",
+      "targetId": "66ab-476a-134e-ec7b",
+      "type": "selectionEntry",
+      "name": "Deathwatch Veterans"
+    },
+    {
+      "id": "3fda-b554-1ac7-a635",
+      "targetId": "c679-f252-32b1-ebcc",
+      "type": "selectionEntry",
+      "name": "Talonstrike Kill Team"
+    },
+    {
+      "id": "8b60-d2f3-62a3-e41f",
+      "targetId": "b169-ff89-b05e-3884",
+      "type": "selectionEntry",
+      "name": "Decimus Kill Team"
+    },
+    {
+      "id": "468d-e565-4261-1362",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "2329-ff0e-f491-e7ac",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "436a-e0ff-996c-e10",
+      "targetId": "2d7f-1892-2fd0-e29c",
+      "name": "Captain"
+    },
+    {
+      "id": "d348-487c-3d53-c1cc",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "15fc-cfc4-d2e6-7329",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "5af4-ded8-65a5-b731",
+      "targetId": "6e-71bd-2538-d468",
+      "name": "Watch Master"
+    },
+    {
+      "id": "c0cc-215c-8e3f-7e15",
+      "targetId": "6e7-40c-58d9-e402",
+      "name": "Faction: Adeptus Astartes"
+    },
+    {
+      "id": "86e0-2861-333a-2b8b",
+      "targetId": "d39c-9989-db7f-d815",
+      "name": "Faction: Deathwatch"
+    },
+    {
+      "id": "8136-69d4-a082-26a9",
+      "targetId": "caa-f869-3cbd-b48e",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "5e7c-dc52-9e88-b382",
+      "targetId": "9e5d-de4c-c5d1-1d3e",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "fee3-ccd5-54be-e54d",
+      "targetId": "9a99-f13c-a667-e698",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "e4f0-c9f8-2c23-f2fb",
+      "targetId": "b4dd-3e1f-41cb-218f",
+      "type": "rule",
+      "name": "Leader"
+    },
+    {
+      "id": "1f02-b7c4-4816-de87",
+      "targetId": "3b76-4053-ece9-6e7d",
+      "type": "rule",
+      "name": "Oath of Moment"
+    },
+    {
+      "id": "69a6-446d-5d4a-6e7f",
+      "targetId": "2a5c-3c55-d113-3a53",
+      "type": "rule",
+      "name": "Mission Tactics"
+    },
+    {
+      "id": "a761-8615-375a-c8ba",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "072a-eda9-1d6c-63a8",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "3354-8365-a4e2-cc3a",
+      "targetId": "2ebc-abdf-8129-6c57",
+      "type": "rule",
+      "name": "Lance"
+    },
+    {
+      "id": "6ce0-4980-b5e6-3f3f",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "9eb8-699c-fa18-7477",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "5638-47d5-7e51-4ea0",
+      "targetId": "4f3a-f0f7-6647-348d",
+      "name": "Epic Hero"
+    },
+    {
+      "id": "735d-dffc-9ab8-e8d2",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "cb4d-64c5-31dc-dacb",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "287d-bd92-4f64-a6dc",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "b74a-5b0d-a712-61ee",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "1c7e-91ae-a92f-66f0",
+      "targetId": "76e-a320-40ba-2a3",
+      "name": "Watch Captain Artemis"
+    },
+    {
+      "id": "d15d-4f84-0375-8ad3",
+      "targetId": "6e7-40c-58d9-e402",
+      "name": "Faction: Adeptus Astartes"
+    },
+    {
+      "id": "c30d-20b1-04e4-61cb",
+      "targetId": "d39c-9989-db7f-d815",
+      "name": "Faction: Deathwatch"
+    },
+    {
+      "id": "2852-67cc-14eb-7484",
+      "targetId": "2d7f-1892-2fd0-e29c",
+      "name": "Captain"
+    },
+    {
+      "id": "9d37-1fee-f411-b521",
+      "targetId": "caa-f869-3cbd-b48e",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "a22-980a-787a-f53d",
+      "targetId": "b4dd-3e1f-41cb-218f",
+      "type": "rule",
+      "name": "Leader"
+    },
+    {
+      "id": "a855-f58f-4aea-b7fe",
+      "targetId": "9bf4-280f-bbe2-6fbb",
+      "type": "rule",
+      "name": "Feel No Pain"
+    },
+    {
+      "id": "82c4-2698-7ffb-c000",
+      "targetId": "2a5c-3c55-d113-3a53",
+      "type": "rule",
+      "name": "Mission Tactics"
+    },
+    {
+      "id": "81b8-fc91-acd5-f622",
+      "targetId": "3b76-4053-ece9-6e7d",
+      "type": "rule",
+      "name": "Oath of Moment"
+    },
+    {
+      "id": "3894-f085-24eb-4dac",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "d18a-14a2-80a7-96ba",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "e212-a730-593f-65d3",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "cf70-72ff-ea9-8581",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "9b40-6f1b-82a7-ac31",
+      "targetId": "f842-6e90-bc5a-80f1",
+      "type": "selectionEntryGroup",
+      "name": "Mighty Champions"
+    },
+    {
+      "id": "630f-51ef-5a87-48b9",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "7c8-c041-e1e4-4c2f",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "e46c-db20-f30-5906",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "d711-a238-437a-f905",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "2943-4127-78e0-cdeb",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "8181-3e87-2cc4-51d9",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "5c63-5f25-6fbe-122b",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "73b8-d622-86fc-bc75",
+      "targetId": "8367-374c-f87-c627",
+      "type": "rule",
+      "name": "Hazardous"
+    },
+    {
+      "id": "6efa-d138-894f-5be0",
+      "targetId": "8bf7-8812-923d-29e4",
+      "type": "rule",
+      "name": "Pistol"
+    },
+    {
+      "id": "f6bc-1d2c-4497-fbb5",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "76ad-8883-8b18-1737",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "b45e-641e-74a4-804f",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "3a0b-b2b5-5c2c-69a0",
+      "targetId": "c619-2086-bbcf-69c9",
+      "name": "Fly"
+    },
+    {
+      "id": "59af-b3cf-2a3d-36df",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "801a-7444-3e40-1eee",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "e97b-313b-a74d-711",
+      "targetId": "75e8-57c4-40e3-1817",
+      "name": "Transport"
+    },
+    {
+      "id": "9621-88e3-b9a-29f7",
+      "targetId": "b9d0-ad1e-b2c9-c2b9",
+      "name": "Corvus Blackstar"
+    },
+    {
+      "id": "aa61-4f4d-b546-e940",
+      "targetId": "6e7-40c-58d9-e402",
+      "name": "Faction: Adeptus Astartes"
+    },
+    {
+      "id": "0d0a-eaea-4097-0493",
+      "targetId": "d39c-9989-db7f-d815",
+      "name": "Faction: Deathwatch"
+    },
+    {
+      "id": "bc0d-dfea-0b83-d5fc",
+      "targetId": "b927-8eeb-7cc3-8dec",
+      "name": "Frame"
+    },
+    {
+      "id": "582a-1af2-04e9-b0e6",
+      "targetId": "9a99-f13c-a667-e698",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "a03a-d2e-830-c5bd",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "5bd5-cb9b-3455-8698",
+      "targetId": "eec5-5f54-9c03-c305",
+      "type": "rule",
+      "name": "Hover"
+    },
+    {
+      "id": "f2e3-9278-538-27fa",
+      "targetId": "bec5-4288-34a6-ccfa",
+      "type": "rule",
+      "name": "Stealth"
+    },
+    {
+      "id": "7570-3ad4-7d2a-e0b0",
+      "targetId": "2a5c-3c55-d113-3a53",
+      "type": "rule",
+      "name": "Mission Tactics"
+    },
+    {
+      "id": "453a-bd3f-225e-1e7a",
+      "targetId": "3b76-4053-ece9-6e7d",
+      "type": "rule",
+      "name": "Oath of Moment"
+    },
+    {
+      "id": "a853-5cb6-c7fe-2894",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "9dcb-57b2-8933-8a5d",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "12d3-ec75-7b87-f5f1",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "3d1f-dac2-8ec6-73c6",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "0f75-1a37-c8eb-6d15",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "c50a-ea11-f97e-69e5",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "da83-571b-220a-3aea",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "7414-6cb8-4064-df26",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "adc1-c10b-ec1a-c0c5",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "514b-5a98-926d-07a4",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "1aeb-f47e-f6b5-d66e",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "1f46-95dd-df5e-8698",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "3f86-f653-def1-d3d2",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "bf7-f8de-56d6-c103",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "9bc5-eff2-df9d-4c1",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "2a7a-92cf-275e-ece2",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "4365-853b-4128-4b27",
+      "targetId": "81b0-a893-4fb7-c298",
+      "name": "Kill Team"
+    },
+    {
+      "id": "f629-3b21-b009-b552",
+      "targetId": "73ac-907a-3014-e457",
+      "name": "Kill Team Cassius"
+    },
+    {
+      "id": "ab15-f825-693b-1c6d",
+      "targetId": "15df-a532-a570-461e",
+      "name": "Deathwatch"
+    },
+    {
+      "id": "bbb8-0144-2ecd-26a2",
+      "targetId": "5128-90b-e4a5-dcbd",
+      "name": "Faction: Agents of the Imperium"
+    },
+    {
+      "id": "d107-9f08-2ddf-eb04",
+      "targetId": "df23-f48a-60b1-480d",
+      "name": "Ordo Xenos"
+    },
+    {
+      "id": "4083-9b50-adff-2111",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "007c-c329-a75c-f724",
+      "targetId": "2a5c-3c55-d113-3a53",
+      "type": "rule",
+      "name": "Mission Tactics"
+    },
+    {
+      "id": "0a4b-c003-b91a-8d75",
+      "targetId": "3b76-4053-ece9-6e7d",
+      "type": "rule",
+      "name": "Oath of Moment"
+    },
+    {
+      "id": "e353-d81a-188-8b86",
+      "targetId": "4f3a-f0f7-6647-348d",
+      "name": "Epic Hero"
+    },
+    {
+      "id": "ce01-a32c-1053-c4f6",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "2b37-916-99ee-476",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "a06f-2608-8f15-99bc",
+      "targetId": "5c0e-4c31-d51b-e470",
+      "name": "Warlord"
+    },
+    {
+      "id": "b49f-9294-c1fa-50bd",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "42b6-2535-b18c-7257",
+      "targetId": "4d-5d79-b348-19ee",
+      "type": "selectionEntry",
+      "name": "Boltgun"
+    },
+    {
+      "id": "66e4-8d81-84ca-134b",
+      "targetId": "9be1-2f4b-22b5-6780",
+      "type": "selectionEntry",
+      "name": "Long Vigil ranged weapon"
+    },
+    {
+      "id": "f2-6829-dc15-9244",
+      "targetId": "e3f6-2750-6e07-a27",
+      "type": "selectionEntry",
+      "name": "Long Vigil melee weapon"
+    },
+    {
+      "id": "ce65-70f7-7adf-a89e",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "8082-f90a-df19-5a91",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "70a9-69b0-dd0-3df5",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "b417-a776-9e7-e3d7",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "ddf1-b29-b2f-b63d",
+      "targetId": "9be1-2f4b-22b5-6780",
+      "type": "selectionEntry",
+      "name": "Long Vigil ranged weapon"
+    },
+    {
+      "id": "4675-9389-6e09-c14",
+      "targetId": "e3f6-2750-6e07-a27",
+      "type": "selectionEntry",
+      "name": "Long Vigil melee weapon"
+    },
+    {
+      "id": "3b29-cfc8-c60c-5068",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "664e-a3fa-d859-9b99",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "b954-c616-ec00-1b8a",
+      "targetId": "e9c4-2bb8-12ee-cd1b",
+      "type": "rule",
+      "name": "Psychic"
+    },
+    {
+      "id": "8d58-523a-706a-e5d8",
+      "targetId": "e9c4-2bb8-12ee-cd1b",
+      "type": "rule",
+      "name": "Psychic"
+    },
+    {
+      "id": "f613-3b42-82c4-a006",
+      "targetId": "4d-5d79-b348-19ee",
+      "type": "selectionEntry",
+      "name": "Boltgun"
+    },
+    {
+      "id": "d161-9ed3-4fdb-a6f7",
+      "targetId": "e3f6-2750-6e07-a27",
+      "type": "selectionEntry",
+      "name": "Long Vigil melee weapon"
+    },
+    {
+      "id": "790-9718-c595-7f5",
+      "targetId": "9be1-2f4b-22b5-6780",
+      "type": "selectionEntry",
+      "name": "Long Vigil ranged weapon"
+    },
+    {
+      "id": "6861-2575-9977-24e7",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "1f72-445f-dc7f-70b",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "81d9-ba6d-95f5-5714",
+      "targetId": "9be1-2f4b-22b5-6780",
+      "type": "selectionEntry",
+      "name": "Long Vigil ranged weapon"
+    },
+    {
+      "id": "31bd-2750-5dfe-306c",
+      "targetId": "e3f6-2750-6e07-a27",
+      "type": "selectionEntry",
+      "name": "Long Vigil melee weapon"
+    },
+    {
+      "id": "1e9c-e9a5-063a-40cc",
+      "targetId": "f842-6e90-bc5a-80f1",
+      "type": "selectionEntryGroup",
+      "name": "Mighty Champions"
+    },
+    {
+      "id": "86b8-3586-f375-f4f8",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "7276-9bd8-e63a-864f",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "ae34-3488-a051-fc03",
+      "targetId": "8311-8645-4ce3-8b3",
+      "name": "Deathwatch Terminator Squad"
+    },
+    {
+      "id": "3051-cc65-d815-3019",
+      "targetId": "740a-892c-8958-defa",
+      "name": "Terminator"
+    },
+    {
+      "id": "2887-e3a7-91ca-e3be",
+      "targetId": "81b0-a893-4fb7-c298",
+      "name": "Kill Team"
+    },
+    {
+      "id": "b65d-c264-1c4f-0daf",
+      "targetId": "6e7-40c-58d9-e402",
+      "name": "Faction: Adeptus Astartes"
+    },
+    {
+      "id": "8f70-b979-b449-66be",
+      "targetId": "d39c-9989-db7f-d815",
+      "name": "Faction: Deathwatch"
+    },
+    {
+      "id": "cf40-0f88-5e84-7a86",
+      "targetId": "9a99-f13c-a667-e698",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "571f-13f9-8778-7406",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "f809-cf1f-c888-c281",
+      "targetId": "3b76-4053-ece9-6e7d",
+      "type": "rule",
+      "name": "Oath of Moment"
+    },
+    {
+      "id": "7700-a084-2a5d-60e7",
+      "targetId": "2a5c-3c55-d113-3a53",
+      "type": "rule",
+      "name": "Mission Tactics"
+    },
+    {
+      "id": "eae3-9dfa-62c9-a320",
+      "targetId": "130e-9b77-584-a15b",
+      "type": "selectionEntry",
+      "name": "Twin lightning claws"
+    },
+    {
+      "id": "e307-318b-f8ce-9876",
+      "targetId": "27b9-ba9e-95a5-a6",
+      "type": "profile",
+      "name": "Power Fist"
+    },
+    {
+      "id": "931d-52e-2e89-30e8",
+      "targetId": "7dae-4b51-d0e1-e90",
+      "type": "profile",
+      "name": "Storm Bolter"
+    },
+    {
+      "id": "1f00-380-199c-5304",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "4c9d-771d-6c64-bef7",
+      "targetId": "7dae-4b51-d0e1-e90",
+      "type": "profile",
+      "name": "Storm Bolter"
+    },
+    {
+      "id": "58d5-ce8c-55e9-569e",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "c7bc-3bfe-b813-a22",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "c049-62fb-2b4d-5279",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "f805-df04-7e10-bea1",
+      "targetId": "7dae-4b51-d0e1-e90",
+      "type": "profile",
+      "name": "Storm Bolter"
+    },
+    {
+      "id": "9c9a-c1de-8fcf-7862",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "b9fb-4e47-ec43-c1fb",
+      "targetId": "77ef-f5b6-e6bc-7618",
+      "type": "selectionEntryGroup",
+      "name": "Terminator Heavy Weapons"
+    },
+    {
+      "id": "b5ad-3548-05bd-d122",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "babe-d0fa-9769-a205",
+      "targetId": "130e-9b77-584-a15b",
+      "type": "selectionEntry",
+      "name": "Twin lightning claws"
+    },
+    {
+      "id": "c33c-37dd-7b72-13a2",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "4bc3-c2db-30ee-bd24",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "4d54-28ec-97fe-3aa0",
+      "targetId": "27b9-ba9e-95a5-a6",
+      "type": "profile",
+      "name": "Power Fist"
+    },
+    {
+      "id": "9569-d3b9-180d-089a",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "1619-a368-2a8b-e862",
+      "targetId": "7dae-4b51-d0e1-e90",
+      "type": "profile",
+      "name": "Storm Bolter"
+    },
+    {
+      "id": "4eb8-dd26-089f-a6b2",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "d8d2-c091-e60c-8af8",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "796b-046a-b73f-6562",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "1604-a4a3-6ab1-b377",
+      "targetId": "7dae-4b51-d0e1-e90",
+      "type": "profile",
+      "name": "Storm Bolter"
+    },
+    {
+      "id": "17b0-460c-873b-122f",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "4e80-0eb9-7457-0173",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "9d7d-2b45-4e7b-9685",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "b001-5c0f-c524-6f70",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "2503-7255-38ca-8331",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "d1f2-cb56-ff8a-e724",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "37d3-ab7a-0d6b-7aa1",
+      "targetId": "7dae-4b51-d0e1-e90",
+      "type": "profile",
+      "name": "Storm Bolter"
+    },
+    {
+      "id": "4417-468f-76c6-d370",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "efbb-bbf1-57eb-c7e1",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "8ebd-731d-ffed-1a89",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "1ff3-743d-4483-538d",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "5c0-51e7-95a9-bfb9",
+      "targetId": "a2bb-b582-9f57-27f5",
+      "name": "Fortis Kill Team"
+    },
+    {
+      "id": "5156-1413-318e-d9be",
+      "targetId": "6e7-40c-58d9-e402",
+      "name": "Faction: Adeptus Astartes"
+    },
+    {
+      "id": "1472-3bab-f390-0f6e",
+      "targetId": "d39c-9989-db7f-d815",
+      "name": "Faction: Deathwatch"
+    },
+    {
+      "id": "3b4b-a484-e442-a8d1",
+      "targetId": "5179-8ede-45e3-49a2",
+      "name": "Tacticus"
+    },
+    {
+      "id": "bb29-1401-341b-36f3",
+      "targetId": "81b0-a893-4fb7-c298",
+      "name": "Kill Team"
+    },
+    {
+      "id": "329d-0f10-75e0-d236",
+      "targetId": "9a99-f13c-a667-e698",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "c92c-ce6e-0f3c-085c",
+      "targetId": "2a5c-3c55-d113-3a53",
+      "type": "rule",
+      "name": "Mission Tactics"
+    },
+    {
+      "id": "beb0-435c-c725-2253",
+      "targetId": "3b76-4053-ece9-6e7d",
+      "type": "rule",
+      "name": "Oath of Moment"
+    },
+    {
+      "id": "ab02-913c-6cba-5d5c",
+      "targetId": "ca2b-3d9a-e739-cb21",
+      "type": "selectionEntry",
+      "name": "Astartes grenade launcher"
+    },
+    {
+      "id": "4135-12bf-abc1-dffa",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "ced4-f796-802a-345f",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "514c-5b0d-824e-2572",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "7459-de94-d52e-9d49",
+      "targetId": "efcd-180-d07-b4d6",
+      "type": "selectionEntry",
+      "name": "Astartes Chainsword"
+    },
+    {
+      "id": "edd6-57ff-9824-3e04",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "204a-238e-5c6d-85aa",
+      "targetId": "ad6a-c679-52ea-6059",
+      "type": "selectionEntry",
+      "name": "Deathwatch bolt rifle"
+    },
+    {
+      "id": "6719-060f-093d-bf0b",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "62dc-5b31-9423-2d59",
+      "targetId": "c4b5-68e-2266-f459",
+      "type": "selectionEntry",
+      "name": "Power weapon"
+    },
+    {
+      "id": "bed2-4b4f-1fcb-cc90",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "cf73-2b51-b346-a8ae",
+      "targetId": "9dc6-6ad8-818e-db2e",
+      "type": "selectionEntry",
+      "name": "Hand flamer"
+    },
+    {
+      "id": "de28-ebfc-e7ee-9af4",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "da0d-ec35-24d6-8096",
+      "targetId": "25c2-104f-fa0c-809e",
+      "type": "selectionEntry",
+      "name": "Plasma pistol"
+    },
+    {
+      "id": "f9c4-4922-9c7c-9700",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "bc0c-9310-bfcf-de55",
+      "targetId": "6c7d-af5b-482-6fbe",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "06ed-6e84-0921-759e",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "d15a-fe2c-0919-d1e7",
+      "targetId": "c4b5-68e-2266-f459",
+      "type": "selectionEntry",
+      "name": "Power weapon"
+    },
+    {
+      "id": "43d2-c621-fb57-f33b",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "2a09-1ff8-5023-6bed",
+      "targetId": "f8d8-7e77-4b71-faac",
+      "type": "selectionEntry",
+      "name": "Power fist"
+    },
+    {
+      "id": "b86e-2b23-16f6-0836",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "c0be-65af-67b6-2078",
+      "targetId": "4913-96d4-2b1f-2c21",
+      "type": "selectionEntry",
+      "name": "Thunder Hammer"
+    },
+    {
+      "id": "280a-8d24-0ae2-7475",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "c928-ac79-e8b3-093d",
+      "targetId": "efcd-180-d07-b4d6",
+      "type": "selectionEntry",
+      "name": "Astartes Chainsword"
+    },
+    {
+      "id": "98a6-f29e-fa46-af53",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "6443-96b2-f81e-91ad",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "4282-fe37-c9e9-e92e",
+      "targetId": "c23d-db22-8cc8-dda9",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "47a5-9e86-6347-9228",
+      "targetId": "ad6a-c679-52ea-6059",
+      "type": "selectionEntry",
+      "name": "Deathwatch bolt rifle"
+    },
+    {
+      "id": "298f-7937-276d-208d",
+      "targetId": "c06b-bca8-50c3-b63e",
+      "type": "profile",
+      "name": "Kill Team Intercessor"
+    },
+    {
+      "id": "da18-b750-6753-cfd2",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "ea42-7a8a-cc7e-33c5",
+      "targetId": "c23d-db22-8cc8-dda9",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "3f1b-1b3d-1f21-0726",
+      "targetId": "ad6a-c679-52ea-6059",
+      "type": "selectionEntry",
+      "name": "Deathwatch bolt rifle"
+    },
+    {
+      "id": "8766-1ee4-06db-55bf",
+      "targetId": "ca2b-3d9a-e739-cb21",
+      "type": "selectionEntry",
+      "name": "Astartes grenade launcher"
+    },
+    {
+      "id": "54c8-2d82-b9a5-b84c",
+      "targetId": "c06b-bca8-50c3-b63e",
+      "type": "profile",
+      "name": "Kill Team Intercessor"
+    },
+    {
+      "id": "0580-5bf8-bb0d-68b9",
+      "targetId": "efcd-180-d07-b4d6",
+      "type": "selectionEntry",
+      "name": "Astartes Chainsword"
+    },
+    {
+      "id": "14d6-0269-16fe-5a58",
+      "targetId": "c06b-bca8-50c3-b63e",
+      "type": "profile",
+      "name": "Kill Team Intercessor"
+    },
+    {
+      "id": "28de-cf4c-c252-7676",
+      "targetId": "8bf7-8812-923d-29e4",
+      "type": "rule",
+      "name": "Pistol"
+    },
+    {
+      "id": "f82c-7c13-8110-8fb5",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "1076-51c1-3fbf-0f77",
+      "targetId": "c23d-db22-8cc8-dda9",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "6b9e-b8c6-f7ad-228d",
+      "targetId": "2737-cb80-0c3a-3dfa",
+      "type": "selectionEntry",
+      "name": "Pyreblaster"
+    },
+    {
+      "id": "a356-2611-17d6-3af9",
+      "targetId": "c06b-bca8-50c3-b63e",
+      "type": "profile",
+      "name": "Kill Team Intercessor"
+    },
+    {
+      "id": "bf56-7941-a1e9-8278",
+      "targetId": "c23d-db22-8cc8-dda9",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "2f24-d407-629e-b298",
+      "targetId": "2902-b665-48b6-bb09",
+      "type": "selectionEntry",
+      "name": "Plasma pistol"
+    },
+    {
+      "id": "e6aa-739c-e716-e6c3",
+      "targetId": "386c-b933-68ce-5e31",
+      "type": "selectionEntry",
+      "name": "Plasma incinerator"
+    },
+    {
+      "id": "f1d7-d7de-c11d-3c70",
+      "targetId": "c06b-bca8-50c3-b63e",
+      "type": "profile",
+      "name": "Kill Team Intercessor"
+    },
+    {
+      "id": "ba90-9e8a-4746-d836",
+      "targetId": "c23d-db22-8cc8-dda9",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "8990-e4fe-995a-e7d3",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "12ec-227f-02cb-91df",
+      "targetId": "386c-b933-68ce-5e31",
+      "type": "selectionEntry",
+      "name": "Plasma incinerator"
+    },
+    {
+      "id": "46c7-2080-180a-0bc2",
+      "targetId": "c06b-bca8-50c3-b63e",
+      "type": "profile",
+      "name": "Kill Team Intercessor"
+    },
+    {
+      "id": "e179-ad55-8d41-e72e",
+      "targetId": "c23d-db22-8cc8-dda9",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "c8e8-42c1-17ae-1655",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "5fad-cb88-bc24-405f",
+      "targetId": "566c-9e8f-3121-93b0",
+      "type": "selectionEntry",
+      "name": "Castellan Launcher"
+    },
+    {
+      "id": "45c4-cf62-c6fb-0a20",
+      "targetId": "7d58-3576-d40e-b858",
+      "type": "selectionEntry",
+      "name": "Vengor launcher"
+    },
+    {
+      "id": "c3f7-8cd6-b214-9019",
+      "targetId": "c06b-bca8-50c3-b63e",
+      "type": "profile",
+      "name": "Kill Team Intercessor"
+    },
+    {
+      "id": "aabf-9979-4041-bb16",
+      "targetId": "c23d-db22-8cc8-dda9",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "e243-f440-4e99-69d3",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "4bbe-a651-0949-34cd",
+      "targetId": "566c-9e8f-3121-93b0",
+      "type": "selectionEntry",
+      "name": "Castellan Launcher"
+    },
+    {
+      "id": "1845-cfdb-f8a3-6596",
+      "targetId": "c06b-bca8-50c3-b63e",
+      "type": "profile",
+      "name": "Kill Team Intercessor"
+    },
+    {
+      "id": "cec7-8162-5d9b-c61d",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "87c7-c360-e02d-0213",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "937b-5475-1274-964c",
+      "targetId": "c23d-db22-8cc8-dda9",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "ef0c-c761-a7f1-56dd",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "0915-80ce-d6c4-31c1",
+      "targetId": "566c-9e8f-3121-93b0",
+      "type": "selectionEntry",
+      "name": "Castellan Launcher"
+    },
+    {
+      "id": "57d8-b7d5-3710-a0eb",
+      "targetId": "c06b-bca8-50c3-b63e",
+      "type": "profile",
+      "name": "Kill Team Intercessor"
+    },
+    {
+      "id": "e282-67c4-2b87-51d7",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "b99e-5934-1610-d018",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "724-5cc5-c3ce-22ef",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "cb0b-4033-8cb9-3e7b",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "440d-60e0-37b3-eaf8",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "c96c-ed1-afd6-907",
+      "targetId": "6acb-612b-3fe6-9061",
+      "name": "Indomitor Kill Team"
+    },
+    {
+      "id": "301b-b4d3-4949-1e15",
+      "targetId": "81f0-f40e-c36c-5a30",
+      "name": "Gravis"
+    },
+    {
+      "id": "547c-1ec2-1128-7c8c",
+      "targetId": "6e7-40c-58d9-e402",
+      "name": "Faction: Adeptus Astartes"
+    },
+    {
+      "id": "1852-8090-6030-8ba1",
+      "targetId": "d39c-9989-db7f-d815",
+      "name": "Faction: Deathwatch"
+    },
+    {
+      "id": "fd53-4c4c-ad07-54a0",
+      "targetId": "81b0-a893-4fb7-c298",
+      "name": "Kill Team"
+    },
+    {
+      "id": "874f-705f-07fb-85a6",
+      "targetId": "9a99-f13c-a667-e698",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "e3e1-9d3f-2082-5663",
+      "targetId": "2a5c-3c55-d113-3a53",
+      "type": "rule",
+      "name": "Mission Tactics"
+    },
+    {
+      "id": "4ab0-9f19-aaa5-c671",
+      "targetId": "3b76-4053-ece9-6e7d",
+      "type": "rule",
+      "name": "Oath of Moment"
+    },
+    {
+      "id": "ae82-6562-497e-de55",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "eae0-5a01-2822-a2bd",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "c01f-c15f-c04e-dedb",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "8f97-db97-52be-799a",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "d728-a8d8-70b1-7b91",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "0b8b-e8e1-2961-86b9",
+      "targetId": "c88c-d4a0-4ec4-625c",
+      "type": "selectionEntry",
+      "name": "Melta rifle"
+    },
+    {
+      "id": "6582-fd4a-1697-f029",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "ff42-27b7-67c-e679",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "4feb-78e5-a68b-43b8",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "59aa-3a9-f9f9-5847",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "fdd6-55bc-5546-3859",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "6389-c97f-ac1b-bb89",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "6b3a-da0e-010c-de24",
+      "targetId": "59c-91b5-f87b-1395",
+      "type": "selectionEntry",
+      "name": "Multi-melta"
+    },
+    {
+      "id": "d154-d5e7-58cb-ea92",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "4265-34cc-a6f5-40d6",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "c671-17f7-c2d0-b42e",
+      "targetId": "2557-ebbd-6ea5-3785",
+      "type": "selectionEntry",
+      "name": "Fragstorm grenade launcher"
+    },
+    {
+      "id": "915d-dd82-48f0-c3bd",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "790d-d49a-da20-56b0",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "fdb9-cbf6-1291-d450",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "ac06-d885-bf2b-726d",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "dacf-a7e7-9ba9-60b6",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "3da8-a578-d806-e786",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "b76c-e785-0dc8-a712",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "1e0d-a5ed-0e5f-6d88",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "81fd-aefc-21f9-0c5a",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "4f60-2769-50b1-299e",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "b46d-1a52-6dad-9933",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "f906-2734-c3a8-20e4",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "7a47-2296-2512-45e6",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "82df-6458-40fa-fd7b",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "f120-9b9e-1f3f-779e",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "80d4-76c0-8f00-4e1b",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "4145-ce8e-bc84-7fa4",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "77d6-356b-f73e-eff4",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "e1eb-49c0-15ab-a447",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "bbbb-7039-5ee6-9fa3",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "27f1-9721-c6ca-7aef",
+      "targetId": "d1d1-611e-5191-1095",
+      "type": "rule",
+      "name": "Lethal Hits"
+    },
+    {
+      "id": "ff70-fa6d-3525-c08a",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "c050-544a-cbcf-92be",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "3de7-1ff5-5d02-8e55",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "ab45-2e66-e769-8faf",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "47d0-7b82-29c2-8bee",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "971e-93c8-7549-52d6",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "f0c0-36d1-b5c8-6d87",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "acf-4f3c-34ae-16d0",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "f657-d214-4073-7e75",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "fb41-cfa7-214d-e790",
+      "targetId": "d1d1-611e-5191-1095",
+      "type": "rule",
+      "name": "Lethal Hits"
+    },
+    {
+      "id": "78bb-27f7-5c80-c0ec",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "bd90-2457-31b9-d3a3",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "c41d-87ee-4fd5-2b02",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "6db6-124d-99e8-1a17",
+      "targetId": "6df-937-16bc-8c1a",
+      "name": "Smoke"
+    },
+    {
+      "id": "22b4-be42-58ca-3bce",
+      "targetId": "2de5-9b49-eb99-3e9f",
+      "name": "Spectrus Kill Team"
+    },
+    {
+      "id": "51d0-993a-5319-3542",
+      "targetId": "81b0-a893-4fb7-c298",
+      "name": "Kill Team"
+    },
+    {
+      "id": "7634-f90f-aee7-4177",
+      "targetId": "6e7-40c-58d9-e402",
+      "name": "Faction: Adeptus Astartes"
+    },
+    {
+      "id": "f561-1eaa-f73e-e992",
+      "targetId": "d39c-9989-db7f-d815",
+      "name": "Faction: Deathwatch"
+    },
+    {
+      "id": "7af6-db83-0b4e-80b6",
+      "targetId": "7295-ed65-8ff4-7a5f",
+      "name": "Phobos"
+    },
+    {
+      "id": "2df9-dfc3-3cc7-e3ff",
+      "targetId": "9a99-f13c-a667-e698",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "97a3-8998-13aa-fc4d",
+      "targetId": "ada6-bac1-ffe0-d6f7",
+      "type": "rule",
+      "name": "Scouts"
+    },
+    {
+      "id": "832-857-cfb2-463d",
+      "targetId": "c05d-f4c3-f091-4938",
+      "type": "rule",
+      "name": "Infiltrators"
+    },
+    {
+      "id": "6afd-e6fb-3da2-15b5",
+      "targetId": "2a5c-3c55-d113-3a53",
+      "type": "rule",
+      "name": "Mission Tactics"
+    },
+    {
+      "id": "f740-d579-6c76-e357",
+      "targetId": "3b76-4053-ece9-6e7d",
+      "type": "rule",
+      "name": "Oath of Moment"
+    },
+    {
+      "id": "ac01-79aa-e24f-38e",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "80a5-0772-949a-d5e1",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "268d-9fbb-9eb-ce9a",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "8045-6b79-b2e6-dda6",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "7a91-e995-cd0b-9bdb",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "a148-c8a2-41e0-dd7f",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "6512-0ceb-7198-ff32",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "0639-9a0e-7472-d4b1",
+      "targetId": "d1d1-611e-5191-1095",
+      "type": "rule",
+      "name": "Lethal Hits"
+    },
+    {
+      "id": "684b-9e41-83a2-7221",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "f4b4-587c-d397-0127",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "6fbf-2681-c4aa-a1ca",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "e479-bca2-d7be-96f5",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "177-a9fe-4f28-f2a2",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "fcc5-5cee-506-90ba",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "bfdc-61e8-858d-0b2c",
+      "targetId": "d1d1-611e-5191-1095",
+      "type": "rule",
+      "name": "Lethal Hits"
+    },
+    {
+      "id": "c0f5-3824-9d7f-a88c",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "bd08-b459-36a1-6ea",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "f24f-1446-d7a3-2403",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "42b7-2590-8823-4cb4",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "1b51-6403-1ff1-62db",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "8ea3-819e-23fa-afec",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "f58c-139e-7f6c-3a56",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "cb2e-9b71-b658-efa3",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "e54e-e74b-1e9b-101f",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "26c1-a4b0-4fb7-b3c5",
+      "targetId": "d1d1-611e-5191-1095",
+      "type": "rule",
+      "name": "Lethal Hits"
+    },
+    {
+      "id": "2823-f8e6-00fb-fee3",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "8533-e63a-e4cd-b451",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "dbb6-6466-aade-49cb",
+      "targetId": "8bf7-8812-923d-29e4",
+      "type": "rule",
+      "name": "Pistol"
+    },
+    {
+      "id": "7b68-6539-a881-ff15",
+      "targetId": "9143-31ae-e0a6-6007",
+      "type": "rule",
+      "name": "Precision"
+    },
+    {
+      "id": "ff0a-3ea0-8379-8ce3",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "e130-93dd-f407-e192",
+      "targetId": "9143-31ae-e0a6-6007",
+      "type": "rule",
+      "name": "Precision"
+    },
+    {
+      "id": "ce9e-c337-14da-f625",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "9dce-dfbd-940e-b46c",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "b2a8-710b-65d6-0f3b",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "f6f9-1c31-dd90-e90e",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "3ee8-09a7-63f6-79b6",
+      "targetId": "8bf7-8812-923d-29e4",
+      "type": "rule",
+      "name": "Pistol"
+    },
+    {
+      "id": "41eb-148b-35a2-fc03",
+      "targetId": "9143-31ae-e0a6-6007",
+      "type": "rule",
+      "name": "Precision"
+    },
+    {
+      "id": "a294-e76b-5d36-6e98",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "8a26-d165-b611-be15",
+      "targetId": "9143-31ae-e0a6-6007",
+      "type": "rule",
+      "name": "Precision"
+    },
+    {
+      "id": "3be3-d695-11e7-9af0",
+      "targetId": "d1d1-611e-5191-1095",
+      "type": "rule",
+      "name": "Lethal Hits"
+    },
+    {
+      "id": "adac-6eb5-5e8f-0221",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "52b3-c370-55fc-ad23",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "e353-61ef-fc68-0eea",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "0c9a-fff9-3bc7-4fb0",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "8c28-3fc5-dbcf-5cd0",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "ab9b-3edf-ce4a-af69",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "62a3-9986-f90d-a091",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "309a-0831-4910-4a79",
+      "targetId": "9143-31ae-e0a6-6007",
+      "type": "rule",
+      "name": "Precision"
+    },
+    {
+      "id": "26fe-f6b9-75dc-887c",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "a983-e766-4f50-65d7",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "ea41-9ea9-6e08-5b20",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "76c9-9898-e173-368e",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "4cb4-d567-5b89-f2ad",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "9fac-8013-550b-e3fa",
+      "targetId": "631b-bd1f-e76a-e166",
+      "type": "selectionEntry",
+      "name": "Las fusil"
+    },
+    {
+      "id": "bece-108f-d8d6-6e51",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "8ce3-531b-4210-e200",
+      "targetId": "18b0-8c2-173f-5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "c01a-8630-26c3-101c",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "2194-64e8-3592-4dc0",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "576d-0b3d-ef9f-7842",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "309e-1cf5-8b07-b927",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "07d6-d525-b934-b9ef",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "d347-1a75-e186-5db1",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "979b-5b6f-043c-746b",
+      "targetId": "9143-31ae-e0a6-6007",
+      "type": "rule",
+      "name": "Precision"
+    },
+    {
+      "id": "b669-ac38-8c9f-d3e2",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "a4ec-49fb-cd5d-19ea",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "6928-f70f-18ec-f046",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "4f29-496-d22c-baa9",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "9a30-ae1-a95-3765",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "a4f4-f6c3-472f-b225",
+      "targetId": "8367-374c-f87-c627",
+      "type": "rule",
+      "name": "Hazardous"
+    },
+    {
+      "id": "e3a5-4752-9a44-00f1",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "f842-24ac-1ac0-6a60",
+      "targetId": "e338-111e-d0c6-b687",
+      "name": "Battleline"
+    },
+    {
+      "id": "edf7-e06e-92c3-0a47",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "ac65-8b5b-08b3-2eec",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "cd75-c4e2-3ae7-c683",
+      "targetId": "6e7-40c-58d9-e402",
+      "name": "Faction: Adeptus Astartes"
+    },
+    {
+      "id": "f041-8ef7-aabb-6ee8",
+      "targetId": "d39c-9989-db7f-d815",
+      "name": "Faction: Deathwatch"
+    },
+    {
+      "id": "b82b-dab2-989f-a602",
+      "targetId": "81b0-a893-4fb7-c298",
+      "name": "Kill Team"
+    },
+    {
+      "id": "cc48-5f06-7c3e-8c47",
+      "targetId": "1193-4f69-5b9f-6fbc",
+      "name": "Deathwatch Veterans"
+    },
+    {
+      "id": "daae-68d4-e478-53f5",
+      "targetId": "9a99-f13c-a667-e698",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "7824-6c36-8227-ac58",
+      "targetId": "2a5c-3c55-d113-3a53",
+      "type": "rule",
+      "name": "Mission Tactics"
+    },
+    {
+      "id": "a3ed-0115-15cc-8d30",
+      "targetId": "3b76-4053-ece9-6e7d",
+      "type": "rule",
+      "name": "Oath of Moment"
+    },
+    {
+      "id": "1c2e-9cff-4924-70b1",
+      "targetId": "4d-5d79-b348-19ee",
+      "type": "selectionEntry",
+      "name": "Boltgun"
+    },
+    {
+      "id": "d4c5-b050-891b-19fa",
+      "targetId": "eca6-624b-8c87-5d69",
+      "type": "selectionEntry",
+      "name": "Power weapon"
+    },
+    {
+      "id": "53d6-2b0c-7861-4844",
+      "targetId": "8cfe-ed9f-bf3e-4335",
+      "type": "profile",
+      "name": "Deathwatch Veterans"
+    },
+    {
+      "id": "5876-bb3e-6b87-49a5",
+      "targetId": "8cfe-ed9f-bf3e-4335",
+      "type": "profile",
+      "name": "Deathwatch Veterans"
+    },
+    {
+      "id": "d763-81e2-c49a-77cf",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "9f02-44c3-6b0e-b1f1",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "1349-c0c0-7a63-4a21",
+      "targetId": "8cfe-ed9f-bf3e-4335",
+      "type": "profile",
+      "name": "Deathwatch Veterans"
+    },
+    {
+      "id": "b15b-8d98-2fcc-8f59",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "c4c8-16af-e224-36a2",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "650f-723d-1ddf-0693",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "bcfe-6b4b-41d1-4062",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "727-7b34-85fa-4cd0",
+      "targetId": "ef13-323d-7627-dc7",
+      "type": "selectionEntry",
+      "name": "Infernus heavy bolter"
+    },
+    {
+      "id": "93a7-e459-0750-48dd",
+      "targetId": "8cfe-ed9f-bf3e-4335",
+      "type": "profile",
+      "name": "Deathwatch Veterans"
+    },
+    {
+      "id": "4d68-8e19-3190-d67a",
+      "targetId": "4d-5d79-b348-19ee",
+      "type": "selectionEntry",
+      "name": "Boltgun"
+    },
+    {
+      "id": "7eed-c1c2-aa6b-97f4",
+      "targetId": "b547-440b-71ea-f424",
+      "type": "selectionEntry",
+      "name": "Astartes shield"
+    },
+    {
+      "id": "959d-04f1-d12d-3479",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "b33d-b1c3-7cdb-e272",
+      "targetId": "8cfe-ed9f-bf3e-4335",
+      "type": "profile",
+      "name": "Deathwatch Veterans"
+    },
+    {
+      "id": "1d41-c742-f114-c47a",
+      "targetId": "eca6-624b-8c87-5d69",
+      "type": "selectionEntry",
+      "name": "Power weapon"
+    },
+    {
+      "id": "7805-96fb-00c1-f2e5",
+      "targetId": "b547-440b-71ea-f424",
+      "type": "selectionEntry",
+      "name": "Astartes shield"
+    },
+    {
+      "id": "981d-eca8-86e3-47e7",
+      "targetId": "8cfe-ed9f-bf3e-4335",
+      "type": "profile",
+      "name": "Deathwatch Veterans"
+    },
+    {
+      "id": "c9e6-14b8-c76b-eb4c",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "641d-f783-b789-392b",
+      "targetId": "8cfe-ed9f-bf3e-4335",
+      "type": "profile",
+      "name": "Deathwatch Veterans"
+    },
+    {
+      "id": "ed22-a575-8451-9e31",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "4e99-472c-d318-20a2",
+      "targetId": "9143-31ae-e0a6-6007",
+      "type": "rule",
+      "name": "Precision"
+    },
+    {
+      "id": "a9f0-fd66-d308-0b7a",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "2d4d-8ca3-7bc0-8617",
+      "targetId": "8cfe-ed9f-bf3e-4335",
+      "type": "profile",
+      "name": "Deathwatch Veterans"
+    },
+    {
+      "id": "6242-9d71-c8e3-9f4b",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "0f6c-abe6-33a4-f400",
+      "targetId": "8cfe-ed9f-bf3e-4335",
+      "type": "profile",
+      "name": "Deathwatch Veterans"
+    },
+    {
+      "id": "27be-e154-4b15-739d",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "7532-93de-f2ff-74d2",
+      "targetId": "ecbb-2557-ffeb-7a49",
+      "name": "Watch Sergeant loadout"
+    },
+    {
+      "id": "bf61-2c1d-ded6-4f7e",
+      "targetId": "98a3-2db5-6cb1-40a1",
+      "type": "selectionEntry",
+      "name": "Xenophase blade"
+    },
+    {
+      "id": "3bd2-c47d-6d87-097f",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "87e3-dc53-bb1a-07c0",
+      "targetId": "b547-440b-71ea-f424",
+      "type": "selectionEntry",
+      "name": "Astartes shield"
+    },
+    {
+      "id": "e211-ba56-d5a9-429f",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "5427-59da-a9d0-beed",
+      "targetId": "8cfe-ed9f-bf3e-4335",
+      "type": "profile",
+      "name": "Deathwatch Veterans"
+    },
+    {
+      "id": "3e92-2312-a7d5-1a5e",
+      "targetId": "ecbb-2557-ffeb-7a49",
+      "name": "Watch Sergeant loadout"
+    },
+    {
+      "id": "fe70-7756-df6b-d413",
+      "targetId": "4d-5d79-b348-19ee",
+      "type": "selectionEntry",
+      "name": "Boltgun"
+    },
+    {
+      "id": "5599-0923-967c-2a63",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "cdc5-a9d9-70d9-9f35",
+      "targetId": "98a3-2db5-6cb1-40a1",
+      "type": "selectionEntry",
+      "name": "Xenophase blade"
+    },
+    {
+      "id": "1386-e7f6-7767-33e0",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "e79f-1370-e06c-cd2d",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "f795-dc17-b17f-c879",
+      "targetId": "8cfe-ed9f-bf3e-4335",
+      "type": "profile",
+      "name": "Deathwatch Veterans"
+    },
+    {
+      "id": "0bdf-9b90-6650-af86",
+      "targetId": "ecbb-2557-ffeb-7a49",
+      "name": "Watch Sergeant loadout"
+    },
+    {
+      "id": "bc00-2b09-68e9-f781",
+      "targetId": "eca6-624b-8c87-5d69",
+      "type": "selectionEntry",
+      "name": "Power weapon"
+    },
+    {
+      "id": "d812-fa23-ecd3-8f16",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "f53f-9253-6994-820d",
+      "targetId": "716b-e411-72e7-1eb7",
+      "type": "selectionEntry",
+      "name": "Combi-weapon"
+    },
+    {
+      "id": "46cf-8dbe-65b1-9e02",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "04fc-c693-e3fb-c573",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "0127-3c8d-ee18-8578",
+      "targetId": "8cfe-ed9f-bf3e-4335",
+      "type": "profile",
+      "name": "Deathwatch Veterans"
+    },
+    {
+      "id": "6398-5dc4-9eac-136c",
+      "targetId": "ecbb-2557-ffeb-7a49",
+      "name": "Watch Sergeant loadout"
+    },
+    {
+      "id": "6342-ac35-8952-5408",
+      "targetId": "98a3-2db5-6cb1-40a1",
+      "type": "selectionEntry",
+      "name": "Xenophase blade"
+    },
+    {
+      "id": "67c5-9ca1-59f0-7c45",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "010d-7f32-d6d5-9833",
+      "targetId": "716b-e411-72e7-1eb7",
+      "type": "selectionEntry",
+      "name": "Combi-weapon"
+    },
+    {
+      "id": "08c6-fe8b-e0e2-d525",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "75a0-5c6e-2408-8865",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "f6e7-3935-90db-a8c8",
+      "targetId": "8cfe-ed9f-bf3e-4335",
+      "type": "profile",
+      "name": "Deathwatch Veterans"
+    },
+    {
+      "id": "1ecb-79a6-9f7e-0ce3",
+      "targetId": "ecbb-2557-ffeb-7a49",
+      "name": "Watch Sergeant loadout"
+    },
+    {
+      "id": "a592-ddbf-c8eb-9a9b",
+      "targetId": "716b-e411-72e7-1eb7",
+      "type": "selectionEntry",
+      "name": "Combi-weapon"
+    },
+    {
+      "id": "b5af-1c77-7909-ca56",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "63b5-dee7-6265-32e3",
+      "targetId": "b547-440b-71ea-f424",
+      "type": "selectionEntry",
+      "name": "Astartes shield"
+    },
+    {
+      "id": "f942-10a6-170e-4095",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "9ac1-d2f1-ea4b-6221",
+      "targetId": "8cfe-ed9f-bf3e-4335",
+      "type": "profile",
+      "name": "Deathwatch Veterans"
+    },
+    {
+      "id": "d75c-7b3c-3eea-4ebd",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "807f-4b02-059e-ae91",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "79c3-a86e-40c8-c752",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "cae0-29f5-07b7-84a0",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "0275-64a3-ad31-9b97",
+      "targetId": "6e7-40c-58d9-e402",
+      "name": "Faction: Adeptus Astartes"
+    },
+    {
+      "id": "ce70-0c1a-588d-2395",
+      "targetId": "d39c-9989-db7f-d815",
+      "name": "Faction: Deathwatch"
+    },
+    {
+      "id": "9b5d-f6c5-9431-1e57",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "8369-4a3e-9b3f-9d7d",
+      "targetId": "c619-2086-bbcf-69c9",
+      "name": "Fly"
+    },
+    {
+      "id": "8f8e-196e-cdb9-0b93",
+      "targetId": "dda2-bb0a-215e-ad9c",
+      "name": "Jump Pack"
+    },
+    {
+      "id": "1b20-cf56-32e2-859a",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "2efe-03f0-ebb9-4046",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "3bf9-eb5d-ac98-096c",
+      "targetId": "81b0-a893-4fb7-c298",
+      "name": "Kill Team"
+    },
+    {
+      "id": "480a-4e71-6e90-d954",
+      "targetId": "4082-03bb-1ab3-a93b",
+      "name": "Talonstrike Kill Team"
+    },
+    {
+      "id": "fc68-d880-95e0-7c34",
+      "targetId": "9a99-f13c-a667-e698",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "cc0b-37cd-d852-fe27",
+      "targetId": "3b76-4053-ece9-6e7d",
+      "type": "rule",
+      "name": "Oath of Moment"
+    },
+    {
+      "id": "9f59-905b-2e3f-c37e",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "9815-73e0-d930-74e0",
+      "targetId": "2a5c-3c55-d113-3a53",
+      "type": "rule",
+      "name": "Mission Tactics"
+    },
+    {
+      "id": "d415-eed5-01ad-f552",
+      "targetId": "e7f9-66f5-9b9e-c587",
+      "type": "selectionEntry",
+      "name": "Terminator Honours upgrade"
+    },
+    {
+      "id": "b5d8-2f4e-9266-2c18",
+      "targetId": "3b8f-1cb7-3c6e-4455",
+      "type": "selectionEntry",
+      "name": "Heavy Bolt Pistol"
+    },
+    {
+      "id": "6155-687c-4832-487f",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "64c7-a841-3279-543b",
+      "targetId": "9dc6-6ad8-818e-db2e",
+      "type": "selectionEntry",
+      "name": "Hand flamer"
+    },
+    {
+      "id": "87ca-0815-ee47-acfc",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "c470-978e-e1b8-f087",
+      "targetId": "2902-b665-48b6-bb09",
+      "type": "selectionEntry",
+      "name": "Plasma pistol"
+    },
+    {
+      "id": "acec-324c-1046-4040",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "0433-b01b-4de7-f132",
+      "targetId": "efcd-180-d07-b4d6",
+      "type": "selectionEntry",
+      "name": "Astartes Chainsword"
+    },
+    {
+      "id": "2888-f6e0-e6a5-7c40",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "73ae-1a48-f599-b037",
+      "targetId": "f8d8-7e77-4b71-faac",
+      "type": "selectionEntry",
+      "name": "Power fist"
+    },
+    {
+      "id": "3049-769f-c019-ef47",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "e5dd-1e97-9c87-6ac4",
+      "targetId": "eca6-624b-8c87-5d69",
+      "type": "selectionEntry",
+      "name": "Power weapon"
+    },
+    {
+      "id": "3ac7-ad01-af31-8591",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "addd-216d-6ebe-5222",
+      "targetId": "efcd-180-d07-b4d6",
+      "type": "selectionEntry",
+      "name": "Astartes Chainsword"
+    },
+    {
+      "id": "1ee6-4b59-4262-1803",
+      "targetId": "3b8f-1cb7-3c6e-4455",
+      "type": "selectionEntry",
+      "name": "Heavy Bolt Pistol"
+    },
+    {
+      "id": "a87d-c8fc-af6f-a21f",
+      "targetId": "efcd-180-d07-b4d6",
+      "type": "selectionEntry",
+      "name": "Astartes Chainsword"
+    },
+    {
+      "id": "ac7d-0b1f-2179-2998",
+      "targetId": "2902-b665-48b6-bb09",
+      "type": "selectionEntry",
+      "name": "Plasma pistol"
+    },
+    {
+      "id": "855c-c9e5-17f8-865b",
+      "targetId": "6c7d-af5b-482-6fbe",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "c79d-1449-275a-7598",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "fcd1-0c77-3e78-78c4",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "11d6-f6d5-6c7c-72c9",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "9c74-9376-9b61-75b2",
+      "targetId": "8bf7-8812-923d-29e4",
+      "type": "rule",
+      "name": "Pistol"
+    },
+    {
+      "id": "9aa1-a880-380d-253d",
+      "targetId": "6c7d-af5b-482-6fbe",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "493e-7e57-6847-2ac6",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "6586-88ec-b752-f9fd",
+      "targetId": "8bf7-8812-923d-29e4",
+      "type": "rule",
+      "name": "Pistol"
+    },
+    {
+      "id": "5d03-eacf-71f1-dca7",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "e418-f0e3-ce43-a3e6",
+      "targetId": "8367-374c-f87-c627",
+      "type": "rule",
+      "name": "Hazardous"
+    },
+    {
+      "id": "c63b-e755-d010-b572",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "a15e-8523-e90f-56ae",
+      "targetId": "d1d1-611e-5191-1095",
+      "type": "rule",
+      "name": "Lethal Hits"
+    },
+    {
+      "id": "05af-4409-603d-cbd6",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "3ec0-0bc1-7f15-9f6d",
+      "targetId": "6e7-40c-58d9-e402",
+      "name": "Faction: Adeptus Astartes"
+    },
+    {
+      "id": "db2f-6f6d-8dc9-c5c2",
+      "targetId": "d39c-9989-db7f-d815",
+      "name": "Faction: Deathwatch"
+    },
+    {
+      "id": "f709-0377-58cd-6d33",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "c04e-7686-1abf-2616",
+      "targetId": "e338-111e-d0c6-b687",
+      "name": "Battleline"
+    },
+    {
+      "id": "4840-b1f7-9838-9daf",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "cadb-8e53-8f5f-87ab",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "9743-44c4-b0a0-8525",
+      "targetId": "81b0-a893-4fb7-c298",
+      "name": "Kill Team"
+    },
+    {
+      "id": "06e4-3862-2fc4-b176",
+      "targetId": "5179-8ede-45e3-49a2",
+      "name": "Tacticus"
+    },
+    {
+      "id": "877d-4413-86ae-fd06",
+      "targetId": "20a9-0897-2b65-89a7",
+      "name": "Decimus Kill Team"
+    },
+    {
+      "id": "9e7d-58bc-71d9-9d85",
+      "targetId": "9a99-f13c-a667-e698",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "a437-b1f1-cf97-a5a5",
+      "targetId": "2a5c-3c55-d113-3a53",
+      "type": "rule",
+      "name": "Mission Tactics"
+    },
+    {
+      "id": "53c9-8868-0fac-d7f4",
+      "targetId": "3b76-4053-ece9-6e7d",
+      "type": "rule",
+      "name": "Oath of Moment"
+    },
+    {
+      "id": "f2f8-f603-f340-0b4d",
+      "targetId": "ab41-fdc1-8d0f-bb74",
+      "type": "selectionEntry",
+      "name": "Kill Team Sergeant"
+    },
+    {
+      "id": "f253-3812-3f51-926c",
+      "targetId": "9ae9-4f7e-a148-cbfa",
+      "type": "selectionEntry",
+      "name": "Deathwatch Veteran w/ stalker bolt rifle"
+    },
+    {
+      "id": "a535-f3f8-3ca3-c97b",
+      "targetId": "2537-956c-98c0-bffb",
+      "type": "selectionEntry",
+      "name": "Deathwatch Veteran w/ heavy thunder hammer"
+    },
+    {
+      "id": "c89b-62a3-682a-c7dc",
+      "targetId": "8778-e3cb-2c6f-b23d",
+      "type": "selectionEntry",
+      "name": "Deathwatch Veteran w/ carbine"
+    },
+    {
+      "id": "49b8-f2b6-a45c-be63",
+      "targetId": "550a-f5c4-d6a9-a09e",
+      "type": "selectionEntry",
+      "name": "Gravis Veteran w/ infernus heavy bolter"
+    },
+    {
+      "id": "4d2d-a64b-71d4-c791",
+      "targetId": "ab41-fdc1-8d0f-bb74",
+      "type": "selectionEntry",
+      "name": "Kill Team Sergeant"
+    },
+    {
+      "id": "7d75-fc7c-85a5-6c4d",
+      "targetId": "9ae9-4f7e-a148-cbfa",
+      "type": "selectionEntry",
+      "name": "Deathwatch Veteran w/ stalker bolt rifle"
+    },
+    {
+      "id": "b53a-6c65-04c8-e6be",
+      "targetId": "2537-956c-98c0-bffb",
+      "type": "selectionEntry",
+      "name": "Deathwatch Veteran w/ heavy thunder hammer"
+    },
+    {
+      "id": "4246-dbc5-0c51-5cea",
+      "targetId": "8778-e3cb-2c6f-b23d",
+      "type": "selectionEntry",
+      "name": "Deathwatch Veteran w/ carbine"
+    },
+    {
+      "id": "738d-ec99-12e9-5c38",
+      "targetId": "550a-f5c4-d6a9-a09e",
+      "type": "selectionEntry",
+      "name": "Gravis Veteran w/ infernus heavy bolter"
+    },
+    {
+      "id": "bb4f-7ddd-c8ef-63de",
+      "targetId": "5179-8ede-45e3-49a2",
+      "name": "Tacticus"
+    },
+    {
+      "id": "0171-67ff-8b71-cbc2",
+      "targetId": "bd52-0d98-f3a0-e291",
+      "type": "selectionEntry",
+      "name": "Special-issue bolt pistol"
+    },
+    {
+      "id": "6380-cb63-216c-9f43",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "a631-0a32-ea5a-5dcb",
+      "targetId": "5179-8ede-45e3-49a2",
+      "name": "Tacticus"
+    },
+    {
+      "id": "bfe7-5537-a3b3-a516",
+      "targetId": "2902-b665-48b6-bb09",
+      "type": "selectionEntry",
+      "name": "Plasma pistol"
+    },
+    {
+      "id": "df96-8ead-0bc9-4932",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "114c-0978-d222-d346",
+      "targetId": "2174-53aa-f028-b509",
+      "type": "selectionEntry",
+      "name": "Power weapon"
+    },
+    {
+      "id": "05e6-f8ca-fb8e-2bf8",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "7f72-090b-bbba-9aff",
+      "targetId": "5179-8ede-45e3-49a2",
+      "name": "Tacticus"
+    },
+    {
+      "id": "48a1-fc8d-05b2-106f",
+      "targetId": "d177-4e7a-6b6b-19e5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "1db9-23dc-3f81-9059",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "90d2-e9fa-5d17-cf52",
+      "targetId": "386c-b933-68ce-5e31",
+      "type": "selectionEntry",
+      "name": "Plasma incinerator"
+    },
+    {
+      "id": "6c7c-fdde-ebba-1b7d",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "8333-4127-ef5d-b7c0",
+      "targetId": "d1d1-611e-5191-1095",
+      "type": "rule",
+      "name": "Lethal Hits"
+    },
+    {
+      "id": "138c-dd65-ea07-688e",
+      "targetId": "9143-31ae-e0a6-6007",
+      "type": "rule",
+      "name": "Precision"
+    },
+    {
+      "id": "664a-4654-cf2d-2dba",
+      "targetId": "5179-8ede-45e3-49a2",
+      "name": "Tacticus"
+    },
+    {
+      "id": "48cf-b425-da09-cdb5",
+      "targetId": "d177-4e7a-6b6b-19e5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "1ded-f2c1-8fa4-03ec",
+      "targetId": "2174-53aa-f028-b509",
+      "type": "selectionEntry",
+      "name": "Power weapon"
+    },
+    {
+      "id": "bd64-dd0e-b976-0626",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "131c-a522-34d1-a89e",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "1eb8-4605-5e2d-8487",
+      "targetId": "5179-8ede-45e3-49a2",
+      "name": "Tacticus"
+    },
+    {
+      "id": "48a9-a3aa-45bf-b454",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "e58d-035c-fd4e-5b50",
+      "targetId": "bd52-0d98-f3a0-e291",
+      "type": "selectionEntry",
+      "name": "Special-issue bolt pistol"
+    },
+    {
+      "id": "3643-b552-d38d-1631",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "7d35-e674-06e7-0276",
+      "targetId": "d1d1-611e-5191-1095",
+      "type": "rule",
+      "name": "Lethal Hits"
+    },
+    {
+      "id": "7e56-07ee-125e-84a6",
+      "targetId": "9143-31ae-e0a6-6007",
+      "type": "rule",
+      "name": "Precision"
+    },
+    {
+      "id": "4405-cec2-b6f4-c2c4",
+      "targetId": "8bf7-8812-923d-29e4",
+      "type": "rule",
+      "name": "Pistol"
+    },
+    {
+      "id": "1caf-5667-0cba-b274",
+      "targetId": "9143-31ae-e0a6-6007",
+      "type": "rule",
+      "name": "Precision"
+    },
+    {
+      "id": "ae51-09c8-d4bd-435c",
+      "targetId": "d1d1-611e-5191-1095",
+      "type": "rule",
+      "name": "Lethal Hits"
+    },
+    {
+      "id": "ddab-c89e-13a7-c41b",
+      "targetId": "81f0-f40e-c36c-5a30",
+      "name": "Gravis"
+    },
+    {
+      "id": "627f-c831-6ef3-6dfa",
+      "targetId": "d177-4e7a-6b6b-19e5",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "428f-db58-3ed8-693a",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "24bb-cc1d-7753-3b29",
+      "targetId": "d1d1-611e-5191-1095",
+      "type": "rule",
+      "name": "Lethal Hits"
+    },
+    {
+      "id": "8adc-9fd3-c21b-3444",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "a0c1-6f76-d26c-b759",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "47e3-7975-4849-a5c5",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "ae68-01c1-9627-0511",
+      "targetId": "d1d1-611e-5191-1095",
+      "type": "rule",
+      "name": "Lethal Hits"
+    },
+    {
+      "id": "c944-a359-ffd2-08e8",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "f5f9-85ed-5822-bf2a",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "ff08-eaf6-7e7f-dbf6",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "d0d2-d044-4c06-5c1d",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "b5fb-455a-c2d3-a506",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "9870-91a4-dab8-7538",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "241a-c605-7272-29b4",
+      "targetId": "8bf7-8812-923d-29e4",
+      "type": "rule",
+      "name": "Pistol"
+    },
+    {
+      "id": "2740-6645-58f8-0a90",
+      "targetId": "d1d1-611e-5191-1095",
+      "type": "rule",
+      "name": "Lethal Hits"
+    },
+    {
+      "id": "6917-5c80-b528-5940",
+      "targetId": "b1c7-f5b7-e77d-94eb",
+      "type": "selectionEntry",
+      "name": "Assault Cannon"
+    },
+    {
+      "id": "9094-2791-ef7c-f5e2",
+      "targetId": "27b9-ba9e-95a5-a6",
+      "type": "profile",
+      "name": "Power Fist"
+    },
+    {
+      "id": "8ecd-e40f-c528-a4ab",
+      "targetId": "f705-bc58-183b-767",
+      "type": "selectionEntry",
+      "name": "Heavy flamer"
+    },
+    {
+      "id": "b511-5311-881-fcfd",
+      "targetId": "27b9-ba9e-95a5-a6",
+      "type": "profile",
+      "name": "Power Fist"
+    },
+    {
+      "id": "c8e8-e62f-1e5c-5832",
+      "targetId": "fdd7-3066-57cc-ce52",
+      "type": "selectionEntry",
+      "name": "Plasma cannon"
+    },
+    {
+      "id": "2317-08cc-fb2b-ddf4",
+      "targetId": "f8d8-7e77-4b71-faac",
+      "type": "selectionEntry",
+      "name": "Power fist"
+    },
+    {
+      "id": "eb24-a514-989e-1b7e",
+      "targetId": "da0b-ae86-a275-13f1",
+      "type": "selectionEntry",
+      "name": "Cyclone missile launcher"
+    },
+    {
+      "id": "4cfd-703a-f1b9-2379",
+      "targetId": "eb61-5cd0-5242-74cc",
+      "type": "selectionEntry",
+      "name": "Storm bolter"
+    },
+    {
+      "id": "b94d-dbb4-b608-fbfc",
+      "targetId": "f8d8-7e77-4b71-faac",
+      "type": "selectionEntry",
+      "name": "Power fist"
+    },
+    {
+      "id": "36b7-be0e-c622-b224",
+      "targetId": "b1c7-f5b7-e77d-94eb",
+      "type": "selectionEntry",
+      "name": "Assault Cannon"
+    },
+    {
+      "id": "ec57-e2eb-9429-f273",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "18cc-c908-5aaa-ea54",
+      "targetId": "b1c7-f5b7-e77d-94eb",
+      "type": "selectionEntry",
+      "name": "Assault Cannon"
+    },
+    {
+      "id": "4907-e8c6-c14b-23a3",
+      "targetId": "f705-bc58-183b-767",
+      "type": "selectionEntry",
+      "name": "Heavy flamer"
+    },
+    {
+      "id": "d77b-1a96-7c03-be2b",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "390f-9335-6d26-b07a",
+      "targetId": "f705-bc58-183b-767",
+      "type": "selectionEntry",
+      "name": "Heavy flamer"
+    },
+    {
+      "id": "bb9b-51f8-92-c77",
+      "targetId": "fdd7-3066-57cc-ce52",
+      "type": "selectionEntry",
+      "name": "Plasma cannon"
+    },
+    {
+      "id": "d8fd-17f3-4011-7e36",
+      "targetId": "50dd-3e76-d993-4d1a",
+      "type": "selectionEntry",
+      "name": "Power weapon"
+    },
+    {
+      "id": "c99b-d36a-2eb8-30bf",
+      "targetId": "fdd7-3066-57cc-ce52",
+      "type": "selectionEntry",
+      "name": "Plasma cannon"
+    },
+    {
+      "id": "e860-c9f4-45cd-684c",
+      "targetId": "cb6c-970e-444a-3ec3",
+      "type": "selectionEntry",
+      "name": "Chainfist"
+    },
+    {
+      "id": "1723-13c4-1f4-ac57",
+      "targetId": "da0b-ae86-a275-13f1",
+      "type": "selectionEntry",
+      "name": "Cyclone missile launcher"
+    },
+    {
+      "id": "fee3-4025-e025-596e",
+      "targetId": "eb61-5cd0-5242-74cc",
+      "type": "selectionEntry",
+      "name": "Storm bolter"
+    },
+    {
+      "id": "0967-a142-a752-07f0",
+      "targetId": "cb6c-970e-444a-3ec3",
+      "type": "selectionEntry",
+      "name": "Chainfist"
+    },
+    {
+      "id": "c886-bd63-5a5c-8141",
+      "targetId": "da0b-ae86-a275-13f1",
+      "type": "selectionEntry",
+      "name": "Cyclone missile launcher"
+    },
+    {
+      "id": "27ef-77d5-5493-c96c",
+      "targetId": "eb61-5cd0-5242-74cc",
+      "type": "selectionEntry",
+      "name": "Storm bolter"
+    },
+    {
+      "id": "94ee-0b80-4a0d-3e5e",
+      "targetId": "50dd-3e76-d993-4d1a",
+      "type": "selectionEntry",
+      "name": "Power weapon"
+    },
+    {
+      "id": "fef7-86b8-23c1-e1f3",
+      "targetId": "4d-5d79-b348-19ee",
+      "type": "selectionEntry",
+      "name": "Boltgun"
+    },
+    {
+      "id": "6bdb-76f0-ff39-1994",
+      "targetId": "e3f6-2750-6e07-a27",
+      "type": "selectionEntry",
+      "name": "Long Vigil melee weapon"
+    },
+    {
+      "id": "e80e-700f-2b8b-68e3",
+      "targetId": "9be1-2f4b-22b5-6780",
+      "type": "selectionEntry",
+      "name": "Long Vigil ranged weapon"
+    },
+    {
+      "id": "2c5-e198-b699-13d0",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "9da1-5274-dc24-b5bc",
+      "targetId": "4d-5d79-b348-19ee",
+      "type": "selectionEntry",
+      "name": "Boltgun"
+    },
+    {
+      "id": "5d4b-253d-4870-3330",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "f1b4-4ede-5bff-6ab9",
+      "targetId": "e3f6-2750-6e07-a27",
+      "type": "selectionEntry",
+      "name": "Long Vigil melee weapon"
+    },
+    {
+      "id": "6cda-bfdb-15dd-9130",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "574c-fbd1-01bb-aa52",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "bbb4-9a-233a-37d9",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "6ec-7e5e-eb5f-aa78",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "a80d-7059-ee68-fd8c",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "8ea5-fc37-806c-5837",
+      "targetId": "4d-5d79-b348-19ee",
+      "type": "selectionEntry",
+      "name": "Boltgun"
+    },
+    {
+      "id": "77f9-b5e0-f7c5-be96",
+      "targetId": "e3f6-2750-6e07-a27",
+      "type": "selectionEntry",
+      "name": "Long Vigil melee weapon"
+    },
+    {
+      "id": "dc46-d89-a1df-a9a",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "56ac-611b-d57b-9cce",
+      "targetId": "ef13-323d-7627-dc7",
+      "type": "selectionEntry",
+      "name": "Infernus heavy bolter"
+    },
+    {
+      "id": "e95-969d-c28e-e648",
+      "targetId": "2078-20a8-181f-a708",
+      "type": "selectionEntry",
+      "name": "Close combat weapon"
+    },
+    {
+      "id": "ac14-bd92-1234-1742",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "e221-24e5-bc3a-bddd",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    }
+  ]
+}

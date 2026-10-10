@@ -1,0 +1,3861 @@
+{
+  "source": {
+    "repo": "BSData/wh40k-11e",
+    "commit": "cc58ee3b2c23f90af9d00e7bf234cd703b762299",
+    "file": "Unaligned Forces.json",
+    "sourceUrl": "https://raw.githubusercontent.com/BSData/wh40k-11e/cc58ee3b2c23f90af9d00e7bf234cd703b762299/Unaligned%20Forces.json",
+    "sha256": "dc1fc71749c40f83299a4e52adf69602ad2de94b3b3c39c138065e19fa21ed3c"
+  },
+  "catalogue": {
+    "id": "581a-46b9-5b86-44b7",
+    "name": "Unaligned Forces",
+    "revision": 2,
+    "library": true,
+    "imports": []
+  },
+  "status": "research-only-unresolved-conditional-values",
+  "profiles": [
+    {
+      "id": "f274-7ebf-75d0-44b5",
+      "name": "Ambull",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "e85b-17c7-1ad9-8375"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "8",
+        "W": "8",
+        "LD": "8+",
+        "OC": "3"
+      }
+    },
+    {
+      "id": "af45-70fa-c712-2c49",
+      "name": "Enormous claws",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "e85b-17c7-1ad9-8375",
+        "9946-824b-f220-11be",
+        "e5b0-1627-ba3b-841e"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "6",
+        "AP": "-2",
+        "D": "D3"
+      }
+    },
+    {
+      "id": "2236-7917-c04c-971c",
+      "name": "Aegis Defence Line with Weapon Emplacement",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "5b1d-134a-9996-b634"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "12",
+        "W": "10",
+        "LD": "7+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "149c-4cc5-8542-5d0a",
+      "name": "Bastion",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "5134-5fe9-e489-43c4"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "13",
+        "W": "18",
+        "LD": "7+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "32ca-14bb-af34-51f5",
+      "name": "Firestorm Redoubt",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "71b0-77b9-522c-17d6"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "13",
+        "W": "18",
+        "LD": "7+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "aced-c483-e78f-4baa",
+      "name": "Fortress of Redemption",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "c4d1-c85a-a20e-6c94"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "13",
+        "W": "30",
+        "LD": "7+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "e05c-7eb5-ea6b-7c40",
+      "name": "Redemptor lascannons",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "c4d1-c85a-a20e-6c94",
+        "db95-3509-494e-5358"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "2",
+        "BS": "4+",
+        "S": "14",
+        "AP": "-3",
+        "D": "D6+1"
+      }
+    },
+    {
+      "id": "f441-a86c-9936-ee58",
+      "name": "➤ Redemptor missile silo - superfrag",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "c4d1-c85a-a20e-6c94",
+        "988-2a33-6cbd-4020"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "2D6+2",
+        "BS": "4+",
+        "S": "5",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "cd89-3984-98d0-a1f7",
+      "name": "➤ Redemptor missile silo - superkrak",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "c4d1-c85a-a20e-6c94",
+        "988-2a33-6cbd-4020"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "2",
+        "BS": "4+",
+        "S": "10",
+        "AP": "-2",
+        "D": "D6+1"
+      }
+    },
+    {
+      "id": "2164-a8b3-1e0a-ff34",
+      "name": "Guardian Drone",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "e3ba-7f87-c32-229"
+      ],
+      "stats": {
+        "M": "5\"",
+        "T": "7",
+        "W": "7",
+        "LD": "6+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "6468-f7a-cf-1f16",
+      "name": "Destroyer pulse",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "e3ba-7f87-c32-229",
+        "58fa-ec3e-e1a3-4ba8",
+        "1ab6-25ac-947b-bf5f"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "1",
+        "BS": "4+",
+        "S": "8",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "6317-ed6f-87cc-a6b4",
+      "name": "Guardian salvo launchers",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "e3ba-7f87-c32-229",
+        "58fa-ec3e-e1a3-4ba8",
+        "3200-448d-b069-ce9b"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "D6",
+        "BS": "4+",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "8c32-7c4d-8e22-d07d",
+      "name": "Manipulator limbs",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "e3ba-7f87-c32-229",
+        "58fa-ec3e-e1a3-4ba8",
+        "7291-ec92-1fd4-75ad"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "4+",
+        "S": "5",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "cdd1-7b5d-9ed7-6eab",
+      "name": "Macro-cannon Aquila Strongpoint",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "3b75-e314-ecd5-cd63"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "13",
+        "W": "30",
+        "LD": "7+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "700c-9476-95d1-4339",
+      "name": "Aquila macro-cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "3b75-e314-ecd5-cd63",
+        "dc0f-e233-7c7c-18e7"
+      ],
+      "stats": {
+        "Range": "72\"",
+        "A": "D6+6",
+        "BS": "5+",
+        "S": "16",
+        "AP": "-4",
+        "D": "4"
+      }
+    },
+    {
+      "id": "8ecf-7ac2-bab1-a98b",
+      "name": "Plasma Obliterator",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "cabe-2c66-c8b6-de6c"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "13",
+        "W": "18",
+        "LD": "7+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "8ea2-bb1e-22b5-1356",
+      "name": "➤ Plasma obliterator - standard",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "cabe-2c66-c8b6-de6c",
+        "a72b-27ca-d431-cf98"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "D6+3",
+        "BS": "5+",
+        "S": "9",
+        "AP": "-3",
+        "D": "3"
+      }
+    },
+    {
+      "id": "e558-4d62-5827-b2a7",
+      "name": "➤ Plasma obliterator - supercharge",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "cabe-2c66-c8b6-de6c",
+        "a72b-27ca-d431-cf98"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "D6+3",
+        "BS": "5+",
+        "S": "10",
+        "AP": "-4",
+        "D": "4"
+      }
+    },
+    {
+      "id": "f45f-a0c7-9c25-85d7",
+      "name": "Primaris Redoubt",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "f39-fc54-f95a-8395"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "12",
+        "W": "18",
+        "LD": "7+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "9b49-efd7-71e3-762a",
+      "name": "Primaris Redoubt turbo-laser destructor",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "f39-fc54-f95a-8395",
+        "b6ab-e70d-f8f3-731a"
+      ],
+      "stats": {
+        "Range": "96\"",
+        "A": "D3+1",
+        "BS": "4+",
+        "S": "16",
+        "AP": "-3",
+        "D": "D6+3"
+      }
+    },
+    {
+      "id": "d0f1-59-950-988b",
+      "name": "Primaris air defence missiles",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "f39-fc54-f95a-8395",
+        "bca0-9eff-5e78-5f16",
+        "2b2d-2d80-c99a-50bc"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "D6",
+        "BS": "4+",
+        "S": "6",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "6ad2-3453-8b7a-1b14",
+      "name": "Primaris Icarus lascannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "f39-fc54-f95a-8395",
+        "bca0-9eff-5e78-5f16",
+        "82f9-177b-779e-7780"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "1",
+        "BS": "4+",
+        "S": "12",
+        "AP": "-3",
+        "D": "D6+1"
+      }
+    },
+    {
+      "id": "6824-7bc4-f903-ae56",
+      "name": "Primaris Icarus quad lascannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "f39-fc54-f95a-8395",
+        "bca0-9eff-5e78-5f16",
+        "663c-1233-84a9-8909"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "2",
+        "BS": "4+",
+        "S": "12",
+        "AP": "-3",
+        "D": "D6+1"
+      }
+    },
+    {
+      "id": "a2c8-8592-c8f1-f4ca",
+      "name": "Primaris quad-gun",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "f39-fc54-f95a-8395",
+        "bca0-9eff-5e78-5f16",
+        "6f21-792e-17c6-c9dc"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "4",
+        "BS": "4+",
+        "S": "8",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "23cc-baa3-860-9a55",
+      "name": "Primaris castellan launcher",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "f39-fc54-f95a-8395",
+        "bca0-9eff-5e78-5f16",
+        "2cde-a0ef-d7e0-53b3"
+      ],
+      "stats": {
+        "Range": "72\"",
+        "A": "D6+1",
+        "BS": "4+",
+        "S": "6",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "aa0d-fbea-c259-1e13",
+      "name": "Primaris vengeance launcher",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "f39-fc54-f95a-8395",
+        "bca0-9eff-5e78-5f16",
+        "e500-1c20-8d3d-e4c5"
+      ],
+      "stats": {
+        "Range": "72\"",
+        "A": "D3+1",
+        "BS": "4+",
+        "S": "7",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "56d6-8cd4-6ca9-baf6",
+      "name": "Skyshield Landing Pad",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "54c-8b9f-b1d8-93c3"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "12",
+        "W": "16",
+        "LD": "7+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "a470-533e-a14a-bcb2",
+      "name": "Spindle Drone",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "da76-e18f-523e-d45a",
+        "a050-08fd-451c-4f2a",
+        "e32d-ae0a-732f-5864"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "2",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "eeef-d2e4-8b2-da34",
+      "name": "Drone pulse",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "da76-e18f-523e-d45a",
+        "a050-08fd-451c-4f2a",
+        "e32d-ae0a-732f-5864",
+        "8e88-801b-56-a3d4"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "1",
+        "BS": "4+",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "a43f-c689-eb14-49c2",
+      "name": "Close combat weapon",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "da76-e18f-523e-d45a",
+        "a050-08fd-451c-4f2a",
+        "e32d-ae0a-732f-5864",
+        "9370-323f-758e-f4b4"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "1",
+        "WS": "4+",
+        "S": "3",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "9048-aa3f-1224-25fe",
+      "name": "The Archivist",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "11b2-8348-ae67-fa98"
+      ],
+      "stats": {
+        "M": "5\"",
+        "T": "6",
+        "W": "6",
+        "LD": "7+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "ccfb-da5f-6573-19a8",
+      "name": "Atomic disassembler",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "11b2-8348-ae67-fa98",
+        "368e-12b2-f6f7-b37b"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "8",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "9a27-5f9b-48bb-f529",
+      "name": "Eradicator glove",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "11b2-8348-ae67-fa98",
+        "29a1-6633-a564-40e2"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "4+",
+        "S": "8",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "3a14-ac16-908b-eb1f",
+      "name": "Vengeance Weapon Battery",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "14fe-18ed-9c25-189c"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "13",
+        "W": "10",
+        "LD": "7+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "70d7-d25d-676f-b6b3",
+      "name": "Void Shield Generator",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "4501-646d-e705-9dca"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "12",
+        "W": "16",
+        "LD": "7+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "dff9-b0ed-6703-ce0c",
+      "name": "Vortex Missile Strongpoint",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "5c81-92c5-e20b-edf1"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "13",
+        "W": "30",
+        "LD": "7+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "258f-6186-726f-3617",
+      "name": "Vortex missile battery",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "5c81-92c5-e20b-edf1",
+        "8190-92a3-5cd1-26e8"
+      ],
+      "stats": {
+        "Range": "72\"",
+        "A": "D6+3",
+        "BS": "5+",
+        "S": "16",
+        "AP": "-4",
+        "D": "D6"
+      }
+    },
+    {
+      "id": "bba8-cdc1-94df-18da",
+      "name": "Wall of Martyrs Bunker",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "9698-2e0-15ac-1193"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "13",
+        "W": "10",
+        "LD": "7+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "181b-ba69-e96f-c1ff",
+      "name": "Wall of Martyrs Defence Emplacement",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "8419-8133-33f3-e0a4"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "12",
+        "W": "10",
+        "LD": "7+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "2de-a65a-c42e-c2c9",
+      "name": "Wall of Martyrs Defence Line",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "64b7-a2df-416a-9963"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "12",
+        "W": "10",
+        "LD": "7+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "22ce-ef35-75b0-f0f3",
+      "name": "Icarus Lascannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "72e7-16-6f4c-ecbd"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "1",
+        "BS": "5+",
+        "S": "12",
+        "AP": "-3",
+        "D": "D6+1"
+      }
+    },
+    {
+      "id": "a103-4e16-9e2-b099",
+      "name": "Quad-gun",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "aece-7cae-ceb6-4079"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "4",
+        "BS": "5+",
+        "S": "9",
+        "AP": "-1",
+        "D": "3"
+      }
+    },
+    {
+      "id": "ae44-5e76-8f9d-b613",
+      "name": "Heavy bolter",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "9772-d936-9e34-8549"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "3",
+        "BS": "4+",
+        "S": "5",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "c317-5f56-6f74-d4d2",
+      "name": "Quad lascannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "e55-db9a-8f67-b41f"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "2",
+        "BS": "4+",
+        "S": "12",
+        "AP": "-3",
+        "D": "D6+1"
+      }
+    },
+    {
+      "id": "5df7-e2e1-d087-be41",
+      "name": "Punisher gatling cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "708f-a01b-953d-d59e"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "20",
+        "BS": "4+",
+        "S": "6",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "b8fa-1557-64ec-760f",
+      "name": "Battle cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "837d-5927-b2f1-d4b8"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "D6+3",
+        "BS": "4+",
+        "S": "9",
+        "AP": "-1",
+        "D": "3"
+      }
+    },
+    {
+      "id": "1522-b78-d8a-83bf",
+      "name": "Multi-melta",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "9caf-4cf9-3a99-5e84"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "2",
+        "BS": "4+",
+        "S": "9",
+        "AP": "-4",
+        "D": "D6"
+      }
+    },
+    {
+      "id": "757c-fbf9-ad90-549c",
+      "name": "Twin heavy bolter",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "9c32-9f63-8d26-8ec9"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "3",
+        "BS": "4+",
+        "S": "5",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "94e8-d958-e3ac-a4b8",
+      "name": "Twin heavy flamer",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "ad83-5e8f-6f3f-37b2"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D6",
+        "BS": "N/A",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "8f53-c3a6-7cc8-34a3",
+      "name": "Twin lascannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "475-eb92-56f5-9f9f"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "1",
+        "BS": "4+",
+        "S": "12",
+        "AP": "-3",
+        "D": "D6+1"
+      }
+    },
+    {
+      "id": "aa4d-88d3-5d16-1361",
+      "name": "Imperial Fortress Walls",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "f6f8-8759-3282-2ab"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "14",
+        "W": "80",
+        "LD": "7+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "eb03-dac6-7559-14c2",
+      "name": "Twin long-barrelled autocannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "f6f8-8759-3282-2ab",
+        "412e-da68-5020-dd05"
+      ],
+      "stats": {
+        "Range": "60\"",
+        "A": "2",
+        "BS": "4+",
+        "S": "9",
+        "AP": "-1",
+        "D": "3"
+      }
+    },
+    {
+      "id": "10fd-2ba7-8465-d05f",
+      "name": "Castellum Stronghold",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "20c8-d2-586d-623"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "13",
+        "W": "50",
+        "LD": "6+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "c4a4-5c42-92f9-265",
+      "name": "Castellum battle cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "20c8-d2-586d-623",
+        "63b4-a4b0-6cb-8f4d",
+        "9c9d-e47b-7f4-92cf"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "D6+3",
+        "BS": "4+",
+        "S": "10",
+        "AP": "-1",
+        "D": "3"
+      }
+    },
+    {
+      "id": "71a3-9dff-a1b8-7316",
+      "name": "Whirlwind castellan launcher",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "20c8-d2-586d-623",
+        "63b4-a4b0-6cb-8f4d",
+        "74fa-24db-eb7d-f115"
+      ],
+      "stats": {
+        "Range": "72\"",
+        "A": "D6+3",
+        "BS": "4+",
+        "S": "8",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "f84b-8fa5-d8cc-2e7",
+      "name": "Castellum Icarus quad lascannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "20c8-d2-586d-623",
+        "63b4-a4b0-6cb-8f4d",
+        "e26a-8cf8-9d1d-7917"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "2",
+        "BS": "4+",
+        "S": "12",
+        "AP": "-3",
+        "D": "D6+1"
+      }
+    },
+    {
+      "id": "b62a-94ad-fd13-baa8",
+      "name": "Castellum air defence missiles",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "454f-4f6a-1859-dbbf"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "D6",
+        "BS": "4+",
+        "S": "9",
+        "AP": "-2",
+        "D": "D6"
+      }
+    },
+    {
+      "id": "1482-a8cc-33a5-7823",
+      "name": "Twin assault cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "f0ef-58b5-5e72-228d"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "6",
+        "BS": "4+",
+        "S": "6",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "5105-3270-024a-f8a4",
+      "name": "Sentry Gun",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "983d-b163-dc9f-3c54"
+      ],
+      "stats": {
+        "M": "-",
+        "T": "4",
+        "W": "3",
+        "LD": "6+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "b146-a9fd-5916-abcb",
+      "name": "Twin heavy bolter",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "983d-b163-dc9f-3c54",
+        "7fed-ef47-7301-6705"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "3",
+        "BS": "5+",
+        "S": "5",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "044e-d255-c273-8be8",
+      "name": "Breaching Robot",
+      "type": "Unit",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "a5c2-3951-e727-b64a"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "3",
+        "LD": "6+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "64eb-0f5c-852c-06ed",
+      "name": "Cutting blade",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "a5c2-3951-e727-b64a",
+        "8ba1-e792-2c9e-32d4",
+        "f9fb-6fda-429e-91f2",
+        "4557-5450-c419-37fb"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "2",
+        "WS": "4+",
+        "S": "4",
+        "AP": "-2",
+        "D": "1"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "id": "e85b-17c7-1ad9-8375",
+      "name": "Ambull [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 85
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "435a-e270-1c67-af4",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        },
+        {
+          "id": "2308-ce93-5765-7e7e",
+          "targetId": "9bf4-280f-bbe2-6fbb",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "5b1d-134a-9996-b634",
+      "name": "Aegis Defence Line with Weapon Emplacement [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 145
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "78aa-6c41-72c9-43d7",
+          "targetId": "fa4e-5ac8-11a6-78d2",
+          "type": "profile"
+        },
+        {
+          "id": "cd03-3481-2344-6024",
+          "targetId": "241c-8bed-ca28-f77",
+          "type": "profile"
+        },
+        {
+          "id": "f364-b873-6533-fc94",
+          "targetId": "29fe-dbb0-2a7-a301",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "5134-5fe9-e489-43c4",
+      "name": "Bastion [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 275
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "27a2-8f94-8c48-644c",
+          "targetId": "241c-8bed-ca28-f77",
+          "type": "profile"
+        },
+        {
+          "id": "8673-27bf-352-2e44",
+          "targetId": "2e62-f126-df89-60d",
+          "type": "profile"
+        },
+        {
+          "id": "be81-1fbf-f631-d522",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "56dc-bf08-7894-a324",
+          "targetId": "13b2-6518-dab3-7ea1",
+          "type": "rule"
+        },
+        {
+          "id": "1b46-ef7a-225f-f5e4",
+          "targetId": "fa4e-5ac8-11a6-78d2",
+          "type": "profile"
+        },
+        {
+          "id": "c721-6f06-72d3-9144",
+          "targetId": "39db-fc02-9b22-388d",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "71b0-77b9-522c-17d6",
+      "name": "Firestorm Redoubt [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 260
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "c31e-dc63-d357-8820",
+          "targetId": "2e62-f126-df89-60d",
+          "type": "profile"
+        },
+        {
+          "id": "6f98-d4bb-fa0d-ea61",
+          "targetId": "241c-8bed-ca28-f77",
+          "type": "profile"
+        },
+        {
+          "id": "1b46-162b-cd21-a03f",
+          "targetId": "13b2-6518-dab3-7ea1",
+          "type": "rule"
+        },
+        {
+          "id": "c796-6e8b-194b-3da9",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "cdbd-58bd-4bac-70ea",
+          "targetId": "fa4e-5ac8-11a6-78d2",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "c4d1-c85a-a20e-6c94",
+      "name": "Fortress of Redemption [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 480
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "c9c5-cee4-aae3-58fe",
+          "targetId": "33ea-51f2-96cb-4893",
+          "type": "profile"
+        },
+        {
+          "id": "cdf5-da2a-5b0f-b0a1",
+          "targetId": "fa4e-5ac8-11a6-78d2",
+          "type": "profile"
+        },
+        {
+          "id": "5b4e-c251-248a-a3f6",
+          "targetId": "241c-8bed-ca28-f77",
+          "type": "profile"
+        },
+        {
+          "id": "4758-494-d88b-923d",
+          "targetId": "2e62-f126-df89-60d",
+          "type": "profile"
+        },
+        {
+          "id": "cea2-510f-c27d-3d55",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "3f19-ad75-4250-55f6",
+          "targetId": "13b2-6518-dab3-7ea1",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "e3ba-7f87-c32-229",
+      "name": "Guardian Drone [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 45
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "3af9-eb06-6d3e-afce",
+          "targetId": "9bf4-280f-bbe2-6fbb",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "3b75-e314-ecd5-cd63",
+      "name": "Macro-cannon Aquila Strongpoint [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 550
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "ba55-c1a2-3f03-bb67",
+          "targetId": "241c-8bed-ca28-f77",
+          "type": "profile"
+        },
+        {
+          "id": "9ee3-2a51-980d-ddd7",
+          "targetId": "fa4e-5ac8-11a6-78d2",
+          "type": "profile"
+        },
+        {
+          "id": "a38c-cde0-ef54-144b",
+          "targetId": "33ea-51f2-96cb-4893",
+          "type": "profile"
+        },
+        {
+          "id": "e67c-9cd2-681b-451a",
+          "targetId": "2e62-f126-df89-60d",
+          "type": "profile"
+        },
+        {
+          "id": "9abe-99a2-222a-6ec3",
+          "targetId": "13b2-6518-dab3-7ea1",
+          "type": "rule"
+        },
+        {
+          "id": "6b9a-5f93-fe22-2566",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "cabe-2c66-c8b6-de6c",
+      "name": "Plasma Obliterator [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 225
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "ed84-eb04-6df-648",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "92b8-5a61-d777-85d5",
+          "targetId": "13b2-6518-dab3-7ea1",
+          "type": "rule"
+        },
+        {
+          "id": "d1ab-f479-9229-194f",
+          "targetId": "241c-8bed-ca28-f77",
+          "type": "profile"
+        },
+        {
+          "id": "9712-d686-e3fb-f5a4",
+          "targetId": "39db-fc02-9b22-388d",
+          "type": "profile"
+        },
+        {
+          "id": "7497-7a69-4cfc-f2c2",
+          "targetId": "fa4e-5ac8-11a6-78d2",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "f39-fc54-f95a-8395",
+      "name": "Primaris Redoubt [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 220
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "6ec5-bb67-ec46-104b",
+          "targetId": "241c-8bed-ca28-f77",
+          "type": "profile"
+        },
+        {
+          "id": "3b2-2b91-6ebc-3282",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "f8ff-6545-642a-6f2f",
+          "targetId": "f791-bfaa-d110-9379",
+          "type": "profile"
+        },
+        {
+          "id": "faf3-5a9-c2da-204f",
+          "targetId": "f644-db15-d1f0-3c48",
+          "type": "profile"
+        },
+        {
+          "id": "24e1-99b5-f583-7a25",
+          "targetId": "fa4e-5ac8-11a6-78d2",
+          "type": "profile"
+        },
+        {
+          "id": "eacc-bc70-2e7e-7aa7",
+          "targetId": "39db-fc02-9b22-388d",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "54c-8b9f-b1d8-93c3",
+      "name": "Skyshield Landing Pad [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 125
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "b0fa-7e98-2331-2fe",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "c3e-bf7f-2c22-752f",
+          "targetId": "241c-8bed-ca28-f77",
+          "type": "profile"
+        },
+        {
+          "id": "a326-441b-71f2-6ab8",
+          "targetId": "fa4e-5ac8-11a6-78d2",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "da76-e18f-523e-d45a",
+      "name": "Spindle Drones [Legends]",
+      "type": "unit",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 35
+        }
+      ],
+      "profileLinks": []
+    },
+    {
+      "id": "e32d-ae0a-732f-5864",
+      "name": "Spindle Drone",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7",
+        "da76-e18f-523e-d45a",
+        "a050-08fd-451c-4f2a"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "bd29-e1d9-68d-a45b",
+          "targetId": "9bf4-280f-bbe2-6fbb",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "11b2-8348-ae67-fa98",
+      "name": "The Archivist [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 70
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "f4a3-f6d6-6a8d-acf8",
+          "targetId": "a8a0-8fe7-898-e0f3",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "14fe-18ed-9c25-189c",
+      "name": "Vengeance Weapon Battery [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 140
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "97f4-ffc1-61d9-10f6",
+          "targetId": "241c-8bed-ca28-f77",
+          "type": "profile"
+        },
+        {
+          "id": "5362-4cfc-bbfd-6668",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "7dbe-c81d-b7a0-317a",
+          "targetId": "fa4e-5ac8-11a6-78d2",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "4501-646d-e705-9dca",
+      "name": "Void Shield Generator [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 155
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "6b4d-4247-a218-2985",
+          "targetId": "fa4e-5ac8-11a6-78d2",
+          "type": "profile"
+        },
+        {
+          "id": "ceac-9e39-a387-e8ae",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "3764-ecad-8bb2-3008",
+          "targetId": "241c-8bed-ca28-f77",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "5c81-92c5-e20b-edf1",
+      "name": "Vortex Missile Strongpoint [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 525
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "8100-71e8-cec5-50d9",
+          "targetId": "33ea-51f2-96cb-4893",
+          "type": "profile"
+        },
+        {
+          "id": "8cd6-cbfb-1d15-ba15",
+          "targetId": "13b2-6518-dab3-7ea1",
+          "type": "rule"
+        },
+        {
+          "id": "ff78-56a6-9dd-1561",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "e28f-cc10-59c5-a13b",
+          "targetId": "2e62-f126-df89-60d",
+          "type": "profile"
+        },
+        {
+          "id": "5d61-e637-477a-dd8b",
+          "targetId": "241c-8bed-ca28-f77",
+          "type": "profile"
+        },
+        {
+          "id": "bff7-356e-a62a-c467",
+          "targetId": "fa4e-5ac8-11a6-78d2",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "9698-2e0-15ac-1193",
+      "name": "Wall of Martyrs Bunker [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 180
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "c11b-49aa-ba9c-b091",
+          "targetId": "13b2-6518-dab3-7ea1",
+          "type": "rule"
+        },
+        {
+          "id": "5aa9-30a4-5505-4ad6",
+          "targetId": "241c-8bed-ca28-f77",
+          "type": "profile"
+        },
+        {
+          "id": "ab63-c935-c4d0-b17f",
+          "targetId": "2e62-f126-df89-60d",
+          "type": "profile"
+        },
+        {
+          "id": "c156-79ef-fd95-2ce1",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "31f3-5ca6-da7c-6615",
+          "targetId": "fa4e-5ac8-11a6-78d2",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "8419-8133-33f3-e0a4",
+      "name": "Wall of Martyrs Defence Emplacement [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 140
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "195f-ca2a-89c9-33e7",
+          "targetId": "7669-c371-7ee3-ce0f",
+          "type": "profile"
+        },
+        {
+          "id": "a983-a306-db69-f16e",
+          "targetId": "fa4e-5ac8-11a6-78d2",
+          "type": "profile"
+        },
+        {
+          "id": "8698-5901-84cb-a7b9",
+          "targetId": "29fe-dbb0-2a7-a301",
+          "type": "profile"
+        },
+        {
+          "id": "30a-121b-6f3e-bb44",
+          "targetId": "241c-8bed-ca28-f77",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "64b7-a2df-416a-9963",
+      "name": "Wall of Martyrs Defence Line [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 140
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "9bca-724f-5dea-e32a",
+          "targetId": "241c-8bed-ca28-f77",
+          "type": "profile"
+        },
+        {
+          "id": "4cd7-83d2-7822-c37f",
+          "targetId": "fa4e-5ac8-11a6-78d2",
+          "type": "profile"
+        },
+        {
+          "id": "fe35-2586-346b-a3",
+          "targetId": "29fe-dbb0-2a7-a301",
+          "type": "profile"
+        },
+        {
+          "id": "27b6-83c1-965a-b7a5",
+          "targetId": "7669-c371-7ee3-ce0f",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "f6f8-8759-3282-2ab",
+      "name": "Imperial Fortress Walls [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "9d8f-9b28-991d-6822",
+          "targetId": "13b2-6518-dab3-7ea1",
+          "type": "rule"
+        },
+        {
+          "id": "ec0c-698b-aa2e-5cf2",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "86f9-578e-f3bb-20d6",
+          "targetId": "f644-db15-d1f0-3c48",
+          "type": "profile"
+        },
+        {
+          "id": "b6b9-6436-a9b0-a9b",
+          "targetId": "241c-8bed-ca28-f77",
+          "type": "profile"
+        },
+        {
+          "id": "1c87-11fd-ae16-3031",
+          "targetId": "fa4e-5ac8-11a6-78d2",
+          "type": "profile"
+        },
+        {
+          "id": "5ddd-7bf4-ecd5-f27c",
+          "targetId": "5dd-a7bc-b1a6-9a00",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "20c8-d2-586d-623",
+      "name": "Castellum Stronghold [Legends]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "1120-76-86a-723",
+          "targetId": "241c-8bed-ca28-f77",
+          "type": "profile"
+        },
+        {
+          "id": "c36d-2f2a-65f6-114d",
+          "targetId": "fa4e-5ac8-11a6-78d2",
+          "type": "profile"
+        },
+        {
+          "id": "3851-e670-27a6-adad",
+          "targetId": "5dd-a7bc-b1a6-9a00",
+          "type": "profile"
+        },
+        {
+          "id": "748f-d1a5-61bb-db80",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "ff15-ae63-78b9-23d5",
+          "targetId": "13b2-6518-dab3-7ea1",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "983d-b163-dc9f-3c54",
+      "name": "Sentry Gun",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 30
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        }
+      ],
+      "profileLinks": []
+    },
+    {
+      "id": "61f3-ff33-ec7a-3546",
+      "name": "Searchlight",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 10
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        }
+      ],
+      "profileLinks": []
+    },
+    {
+      "id": "a5c2-3951-e727-b64a",
+      "name": "Breaching Robot",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "581a-46b9-5b86-44b7"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 35
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        }
+      ],
+      "profileLinks": []
+    }
+  ],
+  "references": [
+    {
+      "id": "33b3-aedd-9cc0-f799",
+      "targetId": "5b1d-134a-9996-b634",
+      "type": "selectionEntry",
+      "name": "Aegis Defence Line with Weapon Emplacement [Legends]"
+    },
+    {
+      "id": "60d8-7d2-71d-6e4a",
+      "targetId": "e85b-17c7-1ad9-8375",
+      "type": "selectionEntry",
+      "name": "Ambull [Legends]"
+    },
+    {
+      "id": "89f2-5111-a9c4-6016",
+      "targetId": "5134-5fe9-e489-43c4",
+      "type": "selectionEntry",
+      "name": "Bastion [Legends]"
+    },
+    {
+      "id": "578b-5072-a0d5-ba2",
+      "targetId": "71b0-77b9-522c-17d6",
+      "type": "selectionEntry",
+      "name": "Firestorm Redoubt [Legends]"
+    },
+    {
+      "id": "ecf6-b23e-96d9-2d16",
+      "targetId": "c4d1-c85a-a20e-6c94",
+      "type": "selectionEntry",
+      "name": "Fortress of Redemption [Legends]"
+    },
+    {
+      "id": "da3c-7385-5909-abd5",
+      "targetId": "e3ba-7f87-c32-229",
+      "type": "selectionEntry",
+      "name": "Guardian Drone [Legends]"
+    },
+    {
+      "id": "3bf4-89cc-17ce-960e",
+      "targetId": "3b75-e314-ecd5-cd63",
+      "type": "selectionEntry",
+      "name": "Macro-cannon Aquila Strongpoint [Legends]"
+    },
+    {
+      "id": "5c0d-9412-2c43-1069",
+      "targetId": "cabe-2c66-c8b6-de6c",
+      "type": "selectionEntry",
+      "name": "Plasma Obliterator [Legends]"
+    },
+    {
+      "id": "984f-d7af-c493-9c5a",
+      "targetId": "f39-fc54-f95a-8395",
+      "type": "selectionEntry",
+      "name": "Primaris Redoubt [Legends]"
+    },
+    {
+      "id": "f0b7-283f-7d6e-6812",
+      "targetId": "54c-8b9f-b1d8-93c3",
+      "type": "selectionEntry",
+      "name": "Skyshield Landing Pad [Legends]"
+    },
+    {
+      "id": "4ad3-7c1d-33a0-9852",
+      "targetId": "da76-e18f-523e-d45a",
+      "type": "selectionEntry",
+      "name": "Spindle Drones [Legends]"
+    },
+    {
+      "id": "5716-86b8-dbda-f28a",
+      "targetId": "11b2-8348-ae67-fa98",
+      "type": "selectionEntry",
+      "name": "The Archivist [Legends]"
+    },
+    {
+      "id": "26f9-f5fb-b25f-64e5",
+      "targetId": "14fe-18ed-9c25-189c",
+      "type": "selectionEntry",
+      "name": "Vengeance Weapon Battery [Legends]"
+    },
+    {
+      "id": "e42e-790e-c6e6-3a43",
+      "targetId": "4501-646d-e705-9dca",
+      "type": "selectionEntry",
+      "name": "Void Shield Generator [Legends]"
+    },
+    {
+      "id": "24f-c20d-7833-92c1",
+      "targetId": "5c81-92c5-e20b-edf1",
+      "type": "selectionEntry",
+      "name": "Vortex Missile Strongpoint [Legends]"
+    },
+    {
+      "id": "45f-d20b-3b71-e29d",
+      "targetId": "9698-2e0-15ac-1193",
+      "type": "selectionEntry",
+      "name": "Wall of Martyrs Bunker [Legends]"
+    },
+    {
+      "id": "9d11-211d-1d25-1c24",
+      "targetId": "8419-8133-33f3-e0a4",
+      "type": "selectionEntry",
+      "name": "Wall of Martyrs Defence Emplacement [Legends]"
+    },
+    {
+      "id": "138c-e220-9e95-f8a3",
+      "targetId": "64b7-a2df-416a-9963",
+      "type": "selectionEntry",
+      "name": "Wall of Martyrs Defence Line [Legends]"
+    },
+    {
+      "id": "52a0-2f07-647b-30d0",
+      "targetId": "f6f8-8759-3282-2ab",
+      "type": "selectionEntry",
+      "name": "Imperial Fortress Walls [Legends]"
+    },
+    {
+      "id": "e137-53d3-833-4389",
+      "targetId": "20c8-d2-586d-623",
+      "type": "selectionEntry",
+      "name": "Castellum Stronghold [Legends]"
+    },
+    {
+      "id": "5aa0-78d6-5aa4-15de",
+      "targetId": "983d-b163-dc9f-3c54",
+      "type": "selectionEntry",
+      "name": "Sentry Gun"
+    },
+    {
+      "id": "977c-a27d-7164-02f2",
+      "targetId": "61f3-ff33-ec7a-3546",
+      "type": "selectionEntry",
+      "name": "Searchlight"
+    },
+    {
+      "id": "ece1-a5ff-7a82-4d4c",
+      "targetId": "a5c2-3951-e727-b64a",
+      "type": "selectionEntry",
+      "name": "Breaching Robot"
+    },
+    {
+      "id": "a2c1-3a0f-d4cc-b72f",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "61ae-6a82-acc9-8b6f",
+      "targetId": "9693-cf84-fe69-37a9",
+      "name": "Monster"
+    },
+    {
+      "id": "98bd-8f3d-4737-bbe4",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "bb02-a4b1-fa11-4bac",
+      "targetId": "7d2a-37ff-a5ac-15e4",
+      "name": "Ambull"
+    },
+    {
+      "id": "4910-9e82-1d51-b00b",
+      "targetId": "07d9-ab1c-cf28-0939",
+      "name": "Allies: Unaligned Forces"
+    },
+    {
+      "id": "125d-5ba0-4e24-f759",
+      "targetId": "3088-b399-bea3-ec18",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "435a-e270-1c67-af4",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "2308-ce93-5765-7e7e",
+      "targetId": "9bf4-280f-bbe2-6fbb",
+      "type": "rule",
+      "name": "Feel No Pain"
+    },
+    {
+      "id": "25eb-ec3e-4aec-5e76",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "dd5f-6db4-90a7-c24c",
+      "targetId": "4986-bf86-beb4-13ac",
+      "name": "Damage Dx Weapon"
+    },
+    {
+      "id": "ca77-6ea6-c419-ad15",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "48a2-ba99-a4c3-23ee",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "cf8d-689e-9c13-9b07",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "ad99-b97b-bc8-88e8",
+      "targetId": "19d7-9c74-2140-5851",
+      "name": "Fortification"
+    },
+    {
+      "id": "d62f-7131-e6a8-c6b6",
+      "targetId": "c1aa-8ee-2a60-ecf4",
+      "name": "Aegis Defence Line with Weapon Emplacement"
+    },
+    {
+      "id": "78aa-6c41-72c9-43d7",
+      "targetId": "fa4e-5ac8-11a6-78d2",
+      "type": "profile",
+      "name": "Fortification"
+    },
+    {
+      "id": "cd03-3481-2344-6024",
+      "targetId": "241c-8bed-ca28-f77",
+      "type": "profile",
+      "name": "Reinforced Cover"
+    },
+    {
+      "id": "f364-b873-6533-fc94",
+      "targetId": "29fe-dbb0-2a7-a301",
+      "type": "profile",
+      "name": "Defence Line"
+    },
+    {
+      "id": "870c-dae1-65e2-9cee",
+      "targetId": "aece-7cae-ceb6-4079",
+      "type": "selectionEntry",
+      "name": "Quad-gun"
+    },
+    {
+      "id": "352e-36c6-3ae5-ead0",
+      "targetId": "72e7-16-6f4c-ecbd",
+      "type": "selectionEntry",
+      "name": "Icarus lascannon"
+    },
+    {
+      "id": "e07e-c03b-ad9a-1258",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "64c1-a6ab-be04-eb8",
+      "targetId": "19d7-9c74-2140-5851",
+      "name": "Fortification"
+    },
+    {
+      "id": "5fb6-5b94-cad0-e08",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "4131-1197-f1d4-18a",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "a206-148f-4983-62f0",
+      "targetId": "75e8-57c4-40e3-1817",
+      "name": "Transport"
+    },
+    {
+      "id": "e957-dc81-609b-8283",
+      "targetId": "8888-fb01-3ef-63d0",
+      "name": "Bastion"
+    },
+    {
+      "id": "5db6-55c1-807b-6be",
+      "targetId": "9772-d936-9e34-8549",
+      "type": "selectionEntry",
+      "name": "Heavy bolter"
+    },
+    {
+      "id": "27a2-8f94-8c48-644c",
+      "targetId": "241c-8bed-ca28-f77",
+      "type": "profile",
+      "name": "Reinforced Cover"
+    },
+    {
+      "id": "8673-27bf-352-2e44",
+      "targetId": "2e62-f126-df89-60d",
+      "type": "profile",
+      "name": "Roof Access"
+    },
+    {
+      "id": "be81-1fbf-f631-d522",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "56dc-bf08-7894-a324",
+      "targetId": "13b2-6518-dab3-7ea1",
+      "type": "rule",
+      "name": "Firing Deck"
+    },
+    {
+      "id": "1b46-ef7a-225f-f5e4",
+      "targetId": "fa4e-5ac8-11a6-78d2",
+      "type": "profile",
+      "name": "Fortification"
+    },
+    {
+      "id": "c721-6f06-72d3-9144",
+      "targetId": "39db-fc02-9b22-388d",
+      "type": "profile",
+      "name": "Damaged: 1-6 Wounds Remaining"
+    },
+    {
+      "id": "866d-5d02-6bbe-81c",
+      "targetId": "4985-9124-1e83-10f0",
+      "type": "selectionEntry",
+      "name": "Comms antenna"
+    },
+    {
+      "id": "db5a-f3-5b74-3acb",
+      "targetId": "72e7-16-6f4c-ecbd",
+      "type": "selectionEntry",
+      "name": "Icarus lascannon"
+    },
+    {
+      "id": "3cba-8def-5bb4-bb6d",
+      "targetId": "aece-7cae-ceb6-4079",
+      "type": "selectionEntry",
+      "name": "Quad-gun"
+    },
+    {
+      "id": "f867-d876-adaf-5cc2",
+      "targetId": "19d7-9c74-2140-5851",
+      "name": "Fortification"
+    },
+    {
+      "id": "ce3a-8b8-a633-f6be",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "965b-a51b-e6b6-4fd",
+      "targetId": "75e8-57c4-40e3-1817",
+      "name": "Transport"
+    },
+    {
+      "id": "152b-7476-6f65-eada",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "e0bd-c89d-61d8-2652",
+      "targetId": "fc43-1a6a-44bd-4350",
+      "name": "Wall of Martyrs"
+    },
+    {
+      "id": "6688-fd8a-4779-1b56",
+      "targetId": "bd6f-cfc-c88-9f95",
+      "name": "Firestorm Redoubt"
+    },
+    {
+      "id": "c31e-dc63-d357-8820",
+      "targetId": "2e62-f126-df89-60d",
+      "type": "profile",
+      "name": "Roof Access"
+    },
+    {
+      "id": "6f98-d4bb-fa0d-ea61",
+      "targetId": "241c-8bed-ca28-f77",
+      "type": "profile",
+      "name": "Reinforced Cover"
+    },
+    {
+      "id": "1b46-162b-cd21-a03f",
+      "targetId": "13b2-6518-dab3-7ea1",
+      "type": "rule",
+      "name": "Firing Deck"
+    },
+    {
+      "id": "c796-6e8b-194b-3da9",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "cdbd-58bd-4bac-70ea",
+      "targetId": "fa4e-5ac8-11a6-78d2",
+      "type": "profile",
+      "name": "Fortification"
+    },
+    {
+      "id": "9710-3051-3a09-af77",
+      "targetId": "4985-9124-1e83-10f0",
+      "type": "selectionEntry",
+      "name": "Comms antenna"
+    },
+    {
+      "id": "c049-f816-4822-920c",
+      "targetId": "72e7-16-6f4c-ecbd",
+      "type": "selectionEntry",
+      "name": "Icarus lascannon"
+    },
+    {
+      "id": "efa1-186c-7f51-6ae0",
+      "targetId": "aece-7cae-ceb6-4079",
+      "type": "selectionEntry",
+      "name": "Quad-gun"
+    },
+    {
+      "id": "d6aa-a1ef-3d1c-54",
+      "targetId": "837d-5927-b2f1-d4b8",
+      "type": "selectionEntry",
+      "name": "Battle cannon"
+    },
+    {
+      "id": "5f73-2391-368b-6c4a",
+      "targetId": "708f-a01b-953d-d59e",
+      "type": "selectionEntry",
+      "name": "Punisher gatling cannon"
+    },
+    {
+      "id": "4d19-a2f6-5d6e-e53f",
+      "targetId": "e55-db9a-8f67-b41f",
+      "type": "selectionEntry",
+      "name": "Quad lascannon"
+    },
+    {
+      "id": "9dfe-ec11-d032-124",
+      "targetId": "19d7-9c74-2140-5851",
+      "name": "Fortification"
+    },
+    {
+      "id": "9772-8c1a-1294-8ba7",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "3679-34dd-95f7-4b6e",
+      "targetId": "75e8-57c4-40e3-1817",
+      "name": "Transport"
+    },
+    {
+      "id": "13ef-3ca2-bb5b-9a5c",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "9c12-c196-1a56-e9db",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "8e3-c76e-4d92-a02f",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "2a9d-32a7-1e00-199c",
+      "targetId": "8f18-8c8b-3d82-6e18",
+      "name": "Fortress of Redemption"
+    },
+    {
+      "id": "c9c5-cee4-aae3-58fe",
+      "targetId": "33ea-51f2-96cb-4893",
+      "type": "profile",
+      "name": "Damaged: 1-10 Wounds Remaining"
+    },
+    {
+      "id": "cdf5-da2a-5b0f-b0a1",
+      "targetId": "fa4e-5ac8-11a6-78d2",
+      "type": "profile",
+      "name": "Fortification"
+    },
+    {
+      "id": "5b4e-c251-248a-a3f6",
+      "targetId": "241c-8bed-ca28-f77",
+      "type": "profile",
+      "name": "Reinforced Cover"
+    },
+    {
+      "id": "4758-494-d88b-923d",
+      "targetId": "2e62-f126-df89-60d",
+      "type": "profile",
+      "name": "Roof Access"
+    },
+    {
+      "id": "cea2-510f-c27d-3d55",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "3f19-ad75-4250-55f6",
+      "targetId": "13b2-6518-dab3-7ea1",
+      "type": "rule",
+      "name": "Firing Deck"
+    },
+    {
+      "id": "92a5-bb4e-a090-7d73",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "f0ba-1ff8-bdd2-a19a",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "935a-dccc-f5df-c4f4",
+      "targetId": "9772-d936-9e34-8549",
+      "type": "selectionEntry",
+      "name": "Heavy bolter"
+    },
+    {
+      "id": "2686-fb2f-dd21-e510",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "956e-7d12-7fb0-12a8",
+      "targetId": "9693-cf84-fe69-37a9",
+      "name": "Monster"
+    },
+    {
+      "id": "4cf0-207-d593-cc17",
+      "targetId": "393a-5707-47ac-8a47",
+      "name": "Guardian Drone"
+    },
+    {
+      "id": "b3c5-96f9-5c02-cb1c",
+      "targetId": "07d9-ab1c-cf28-0939",
+      "name": "Allies: Unaligned Forces"
+    },
+    {
+      "id": "d6b1-486b-446f-d4aa",
+      "targetId": "3088-b399-bea3-ec18",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "3af9-eb06-6d3e-afce",
+      "targetId": "9bf4-280f-bbe2-6fbb",
+      "type": "rule",
+      "name": "Feel No Pain"
+    },
+    {
+      "id": "c079-255d-9033-c983",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "230d-1f55-a508-200b",
+      "targetId": "8bf7-8812-923d-29e4",
+      "type": "rule",
+      "name": "Pistol"
+    },
+    {
+      "id": "ff15-f2d5-2ca7-e081",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "0cec-6a02-46ed-36bb",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "efd3-c0f-a875-ddd4",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "fe10-336e-af16-0187",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "ccdf-3ffb-2694-737c",
+      "targetId": "19d7-9c74-2140-5851",
+      "name": "Fortification"
+    },
+    {
+      "id": "70c7-12cf-85e0-1ba5",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "77ed-dab3-f6d0-903",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "5003-def-c993-2ad2",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "ef14-3441-4f0c-2bdd",
+      "targetId": "75e8-57c4-40e3-1817",
+      "name": "Transport"
+    },
+    {
+      "id": "5903-1143-6c77-aeaa",
+      "targetId": "fc43-1a6a-44bd-4350",
+      "name": "Wall of Martyrs"
+    },
+    {
+      "id": "524f-ca07-984d-142e",
+      "targetId": "97a9-7f06-f2e0-84fa",
+      "name": "Macro-cannon Aquila Strongpoint"
+    },
+    {
+      "id": "ba55-c1a2-3f03-bb67",
+      "targetId": "241c-8bed-ca28-f77",
+      "type": "profile",
+      "name": "Reinforced Cover"
+    },
+    {
+      "id": "9ee3-2a51-980d-ddd7",
+      "targetId": "fa4e-5ac8-11a6-78d2",
+      "type": "profile",
+      "name": "Fortification"
+    },
+    {
+      "id": "a38c-cde0-ef54-144b",
+      "targetId": "33ea-51f2-96cb-4893",
+      "type": "profile",
+      "name": "Damaged: 1-10 Wounds Remaining"
+    },
+    {
+      "id": "e67c-9cd2-681b-451a",
+      "targetId": "2e62-f126-df89-60d",
+      "type": "profile",
+      "name": "Roof Access"
+    },
+    {
+      "id": "9abe-99a2-222a-6ec3",
+      "targetId": "13b2-6518-dab3-7ea1",
+      "type": "rule",
+      "name": "Firing Deck"
+    },
+    {
+      "id": "6b9a-5f93-fe22-2566",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "f352-dcc9-8686-ae27",
+      "targetId": "9772-d936-9e34-8549",
+      "type": "selectionEntry",
+      "name": "Heavy bolter"
+    },
+    {
+      "id": "d8e7-14c-ee1b-6154",
+      "targetId": "19d7-9c74-2140-5851",
+      "name": "Fortification"
+    },
+    {
+      "id": "79e1-53d9-ebc6-2c",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "a6a0-ccfe-e31d-747a",
+      "targetId": "75e8-57c4-40e3-1817",
+      "name": "Transport"
+    },
+    {
+      "id": "3662-fd14-4958-470d",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "1992-f126-472f-b128",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "a0e8-e723-ffd9-e989",
+      "targetId": "9278-7145-847f-3cac",
+      "name": "Plasma Obliterator"
+    },
+    {
+      "id": "ed84-eb04-6df-648",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "92b8-5a61-d777-85d5",
+      "targetId": "13b2-6518-dab3-7ea1",
+      "type": "rule",
+      "name": "Firing Deck"
+    },
+    {
+      "id": "d1ab-f479-9229-194f",
+      "targetId": "241c-8bed-ca28-f77",
+      "type": "profile",
+      "name": "Reinforced Cover"
+    },
+    {
+      "id": "9712-d686-e3fb-f5a4",
+      "targetId": "39db-fc02-9b22-388d",
+      "type": "profile",
+      "name": "Damaged: 1-6 Wounds Remaining"
+    },
+    {
+      "id": "7497-7a69-4cfc-f2c2",
+      "targetId": "fa4e-5ac8-11a6-78d2",
+      "type": "profile",
+      "name": "Fortification"
+    },
+    {
+      "id": "d369-d205-85d4-49bb",
+      "targetId": "8367-374c-f87-c627",
+      "type": "rule",
+      "name": "Hazardous"
+    },
+    {
+      "id": "589-3696-1e7e-30bf",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "2af-2f4e-f879-7505",
+      "targetId": "19d7-9c74-2140-5851",
+      "name": "Fortification"
+    },
+    {
+      "id": "b1c5-523c-f9bf-283e",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "51d0-8bd-212f-431e",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "a298-e947-63ac-432d",
+      "targetId": "62e0-9a0b-b965-9df1",
+      "name": "Primaris Redoubt"
+    },
+    {
+      "id": "f271-c70e-dbf1-bb1c",
+      "targetId": "9772-d936-9e34-8549",
+      "type": "selectionEntry",
+      "name": "Heavy bolter"
+    },
+    {
+      "id": "6ec5-bb67-ec46-104b",
+      "targetId": "241c-8bed-ca28-f77",
+      "type": "profile",
+      "name": "Reinforced Cover"
+    },
+    {
+      "id": "3b2-2b91-6ebc-3282",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "f8ff-6545-642a-6f2f",
+      "targetId": "f791-bfaa-d110-9379",
+      "type": "profile",
+      "name": "Gates"
+    },
+    {
+      "id": "faf3-5a9-c2da-204f",
+      "targetId": "f644-db15-d1f0-3c48",
+      "type": "profile",
+      "name": "Battlements"
+    },
+    {
+      "id": "24e1-99b5-f583-7a25",
+      "targetId": "fa4e-5ac8-11a6-78d2",
+      "type": "profile",
+      "name": "Fortification"
+    },
+    {
+      "id": "eacc-bc70-2e7e-7aa7",
+      "targetId": "39db-fc02-9b22-388d",
+      "type": "profile",
+      "name": "Damaged: 1-6 Wounds Remaining"
+    },
+    {
+      "id": "a553-8b3f-c92a-8bba",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "6624-49e6-ab77-33a4",
+      "targetId": "837d-5927-b2f1-d4b8",
+      "type": "selectionEntry",
+      "name": "Battle cannon"
+    },
+    {
+      "id": "f5-b408-3074-48e9",
+      "targetId": "9caf-4cf9-3a99-5e84",
+      "type": "selectionEntry",
+      "name": "Multi-melta"
+    },
+    {
+      "id": "16e2-abe1-a564-a8f5",
+      "targetId": "475-eb92-56f5-9f9f",
+      "type": "selectionEntry",
+      "name": "Twin lascannon"
+    },
+    {
+      "id": "8cec-fe90-d8a2-be83",
+      "targetId": "9c32-9f63-8d26-8ec9",
+      "type": "selectionEntry",
+      "name": "Twin heavy bolter"
+    },
+    {
+      "id": "7a6f-b9c4-89ce-bdd9",
+      "targetId": "ad83-5e8f-6f3f-37b2",
+      "type": "selectionEntry",
+      "name": "Twin heavy flamer"
+    },
+    {
+      "id": "1c57-cd93-da17-d39c",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "c5-75fb-f8c7-a06b",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "68ae-ce52-6d9e-5fd7",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "6c5a-75a5-308f-ff87",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "b8c7-5da0-fbc-8474",
+      "targetId": "4ddd-4e29-acdd-5e6d",
+      "type": "rule",
+      "name": "Indirect Fire"
+    },
+    {
+      "id": "cc2a-7a3-9c1e-c642",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "4832-9738-9aaf-d3ed",
+      "targetId": "4ddd-4e29-acdd-5e6d",
+      "type": "rule",
+      "name": "Indirect Fire"
+    },
+    {
+      "id": "123b-7709-5067-91da",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "edde-b509-c48c-3822",
+      "targetId": "19d7-9c74-2140-5851",
+      "name": "Fortification"
+    },
+    {
+      "id": "17b8-8604-3df5-e7ab",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "ecbc-ef4f-73-aa2d",
+      "targetId": "c5e3-117a-a679-a415",
+      "name": "Skyshield Landing Pad"
+    },
+    {
+      "id": "b0fa-7e98-2331-2fe",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "c3e-bf7f-2c22-752f",
+      "targetId": "241c-8bed-ca28-f77",
+      "type": "profile",
+      "name": "Reinforced Cover"
+    },
+    {
+      "id": "a326-441b-71f2-6ab8",
+      "targetId": "fa4e-5ac8-11a6-78d2",
+      "type": "profile",
+      "name": "Fortification"
+    },
+    {
+      "id": "a1b4-5e25-f583-d5b",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "bf1c-22b1-6ac4-1852",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "abb0-27c3-595a-2290",
+      "targetId": "cade-8bdc-1e52-e011",
+      "name": "Spindle Drones"
+    },
+    {
+      "id": "1882-bb54-71b2-79c4",
+      "targetId": "07d9-ab1c-cf28-0939",
+      "name": "Allies: Unaligned Forces"
+    },
+    {
+      "id": "d475-30ca-88c4-2a1a",
+      "targetId": "3088-b399-bea3-ec18",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "bd29-e1d9-68d-a45b",
+      "targetId": "9bf4-280f-bbe2-6fbb",
+      "type": "rule",
+      "name": "Feel No Pain"
+    },
+    {
+      "id": "dcf9-fbcc-4105-20c1",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "f626-49a6-14c0-c6fd",
+      "targetId": "8bf7-8812-923d-29e4",
+      "type": "rule",
+      "name": "Pistol"
+    },
+    {
+      "id": "4fc2-78c8-a9ba-7f0f",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "eb77-4bd0-3fc0-6934",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "bf9e-c4ad-47d7-addc",
+      "targetId": "9693-cf84-fe69-37a9",
+      "name": "Monster"
+    },
+    {
+      "id": "a401-4542-364d-ded9",
+      "targetId": "4f3a-f0f7-6647-348d",
+      "name": "Epic Hero"
+    },
+    {
+      "id": "296a-c343-6dc-563c",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "e9ed-1efc-b769-6480",
+      "targetId": "c2ad-1025-acf0-324f",
+      "name": "The Archivist"
+    },
+    {
+      "id": "9670-0ea2-a76e-fdf7",
+      "targetId": "07d9-ab1c-cf28-0939",
+      "name": "Allies: Unaligned Forces"
+    },
+    {
+      "id": "f4a3-f6d6-6a8d-acf8",
+      "targetId": "a8a0-8fe7-898-e0f3",
+      "type": "rule",
+      "name": "Lone Operative"
+    },
+    {
+      "id": "1a54-7f5e-bd96-7172",
+      "targetId": "8bf7-8812-923d-29e4",
+      "type": "rule",
+      "name": "Pistol"
+    },
+    {
+      "id": "90bd-5785-e0ac-73e9",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "472a-05f3-1939-ee3e",
+      "targetId": "f842-6e90-bc5a-80f1",
+      "type": "selectionEntryGroup",
+      "name": "Mighty Champions"
+    },
+    {
+      "id": "7542-8baf-5d33-16f3",
+      "targetId": "19d7-9c74-2140-5851",
+      "name": "Fortification"
+    },
+    {
+      "id": "6c21-3770-fb57-7883",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "e76b-c24d-bd7b-9c68",
+      "targetId": "fc43-1a6a-44bd-4350",
+      "name": "Wall of Martyrs"
+    },
+    {
+      "id": "b3fc-2a1f-d383-1bb3",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "b60e-940-ae3f-83c4",
+      "targetId": "5c5f-5977-50b8-9ae1",
+      "name": "Vengeance Weapon Battery"
+    },
+    {
+      "id": "97f4-ffc1-61d9-10f6",
+      "targetId": "241c-8bed-ca28-f77",
+      "type": "profile",
+      "name": "Reinforced Cover"
+    },
+    {
+      "id": "5362-4cfc-bbfd-6668",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "7dbe-c81d-b7a0-317a",
+      "targetId": "fa4e-5ac8-11a6-78d2",
+      "type": "profile",
+      "name": "Fortification"
+    },
+    {
+      "id": "8be9-d977-344a-ba5b",
+      "targetId": "837d-5927-b2f1-d4b8",
+      "type": "selectionEntry",
+      "name": "Battle cannon"
+    },
+    {
+      "id": "2a22-a567-eadd-b4c5",
+      "targetId": "708f-a01b-953d-d59e",
+      "type": "selectionEntry",
+      "name": "Punisher gatling cannon"
+    },
+    {
+      "id": "90e2-6517-c725-8535",
+      "targetId": "e55-db9a-8f67-b41f",
+      "type": "selectionEntry",
+      "name": "Quad lascannon"
+    },
+    {
+      "id": "5634-bf7a-ae36-ba7b",
+      "targetId": "19d7-9c74-2140-5851",
+      "name": "Fortification"
+    },
+    {
+      "id": "4684-2b81-abfd-1427",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "21f7-acae-70ee-347c",
+      "targetId": "ccb3-6116-5cf1-62b7",
+      "name": "Void Shield Generator"
+    },
+    {
+      "id": "6b4d-4247-a218-2985",
+      "targetId": "fa4e-5ac8-11a6-78d2",
+      "type": "profile",
+      "name": "Fortification"
+    },
+    {
+      "id": "ceac-9e39-a387-e8ae",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "3764-ecad-8bb2-3008",
+      "targetId": "241c-8bed-ca28-f77",
+      "type": "profile",
+      "name": "Reinforced Cover"
+    },
+    {
+      "id": "12c0-1ff3-a2c6-baee",
+      "targetId": "19d7-9c74-2140-5851",
+      "name": "Fortification"
+    },
+    {
+      "id": "bbce-8a13-637d-ff5f",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "c2f-d35a-8a21-7162",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "9e3c-69e8-ef03-b152",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "d2bc-8e2c-f846-687f",
+      "targetId": "75e8-57c4-40e3-1817",
+      "name": "Transport"
+    },
+    {
+      "id": "bc1f-8274-4cc9-29d8",
+      "targetId": "fc43-1a6a-44bd-4350",
+      "name": "Wall of Martyrs"
+    },
+    {
+      "id": "8586-a9e0-9641-14c2",
+      "targetId": "cc17-b0ac-fdc9-4672",
+      "name": "Vortex Missile Strongpoint"
+    },
+    {
+      "id": "8100-71e8-cec5-50d9",
+      "targetId": "33ea-51f2-96cb-4893",
+      "type": "profile",
+      "name": "Damaged: 1-10 Wounds Remaining"
+    },
+    {
+      "id": "8cd6-cbfb-1d15-ba15",
+      "targetId": "13b2-6518-dab3-7ea1",
+      "type": "rule",
+      "name": "Firing Deck"
+    },
+    {
+      "id": "ff78-56a6-9dd-1561",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "e28f-cc10-59c5-a13b",
+      "targetId": "2e62-f126-df89-60d",
+      "type": "profile",
+      "name": "Roof Access"
+    },
+    {
+      "id": "5d61-e637-477a-dd8b",
+      "targetId": "241c-8bed-ca28-f77",
+      "type": "profile",
+      "name": "Reinforced Cover"
+    },
+    {
+      "id": "bff7-356e-a62a-c467",
+      "targetId": "fa4e-5ac8-11a6-78d2",
+      "type": "profile",
+      "name": "Fortification"
+    },
+    {
+      "id": "3d6d-2b29-951b-b6e2",
+      "targetId": "4ddd-4e29-acdd-5e6d",
+      "type": "rule",
+      "name": "Indirect Fire"
+    },
+    {
+      "id": "5628-efb0-f0c9-911",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "524e-66de-b91d-b1d6",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "f37d-7b7c-d033-b7ca",
+      "targetId": "8367-374c-f87-c627",
+      "type": "rule",
+      "name": "Hazardous"
+    },
+    {
+      "id": "115e-7da-5d2d-2c4e",
+      "targetId": "9772-d936-9e34-8549",
+      "type": "selectionEntry",
+      "name": "Heavy bolter"
+    },
+    {
+      "id": "85de-6217-acf-6dc3",
+      "targetId": "19d7-9c74-2140-5851",
+      "name": "Fortification"
+    },
+    {
+      "id": "a82-7e85-2f7a-2a97",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "ad2b-8024-1545-922e",
+      "targetId": "75e8-57c4-40e3-1817",
+      "name": "Transport"
+    },
+    {
+      "id": "8915-349d-da8d-88b",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "3046-816e-f22e-d7c7",
+      "targetId": "fc43-1a6a-44bd-4350",
+      "name": "Wall of Martyrs"
+    },
+    {
+      "id": "267-1d75-28f3-87a0",
+      "targetId": "4f49-11ac-ce05-5a31",
+      "name": "Bunker"
+    },
+    {
+      "id": "c11b-49aa-ba9c-b091",
+      "targetId": "13b2-6518-dab3-7ea1",
+      "type": "rule",
+      "name": "Firing Deck"
+    },
+    {
+      "id": "5aa9-30a4-5505-4ad6",
+      "targetId": "241c-8bed-ca28-f77",
+      "type": "profile",
+      "name": "Reinforced Cover"
+    },
+    {
+      "id": "ab63-c935-c4d0-b17f",
+      "targetId": "2e62-f126-df89-60d",
+      "type": "profile",
+      "name": "Roof Access"
+    },
+    {
+      "id": "c156-79ef-fd95-2ce1",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "31f3-5ca6-da7c-6615",
+      "targetId": "fa4e-5ac8-11a6-78d2",
+      "type": "profile",
+      "name": "Fortification"
+    },
+    {
+      "id": "e8ef-45f3-f3c2-5c99",
+      "targetId": "4985-9124-1e83-10f0",
+      "type": "selectionEntry",
+      "name": "Comms antenna"
+    },
+    {
+      "id": "1999-209e-c01e-b74d",
+      "targetId": "72e7-16-6f4c-ecbd",
+      "type": "selectionEntry",
+      "name": "Icarus lascannon"
+    },
+    {
+      "id": "f7aa-cc26-fbca-79c2",
+      "targetId": "aece-7cae-ceb6-4079",
+      "type": "selectionEntry",
+      "name": "Quad-gun"
+    },
+    {
+      "id": "926a-219c-813d-236d",
+      "targetId": "19d7-9c74-2140-5851",
+      "name": "Fortification"
+    },
+    {
+      "id": "de3b-d738-3d7d-ddd6",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "f67d-9ef3-dfae-ed43",
+      "targetId": "fc43-1a6a-44bd-4350",
+      "name": "Wall of Martyrs"
+    },
+    {
+      "id": "75ba-d9ae-2cd8-28f6",
+      "targetId": "5d7b-c048-8c24-5043",
+      "name": "Defence Emplacement"
+    },
+    {
+      "id": "195f-ca2a-89c9-33e7",
+      "targetId": "7669-c371-7ee3-ce0f",
+      "type": "profile",
+      "name": "Trench Line"
+    },
+    {
+      "id": "a983-a306-db69-f16e",
+      "targetId": "fa4e-5ac8-11a6-78d2",
+      "type": "profile",
+      "name": "Fortification"
+    },
+    {
+      "id": "8698-5901-84cb-a7b9",
+      "targetId": "29fe-dbb0-2a7-a301",
+      "type": "profile",
+      "name": "Defence Line"
+    },
+    {
+      "id": "30a-121b-6f3e-bb44",
+      "targetId": "241c-8bed-ca28-f77",
+      "type": "profile",
+      "name": "Reinforced Cover"
+    },
+    {
+      "id": "d465-107d-b082-f710",
+      "targetId": "19d7-9c74-2140-5851",
+      "name": "Fortification"
+    },
+    {
+      "id": "e2e5-878c-c561-39cc",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "7aa7-7fe9-1c1b-301c",
+      "targetId": "fc43-1a6a-44bd-4350",
+      "name": "Wall of Martyrs"
+    },
+    {
+      "id": "d357-8f2f-f2f8-bf24",
+      "targetId": "5207-4f15-f3e-c6ff",
+      "name": "Defence Line"
+    },
+    {
+      "id": "9bca-724f-5dea-e32a",
+      "targetId": "241c-8bed-ca28-f77",
+      "type": "profile",
+      "name": "Reinforced Cover"
+    },
+    {
+      "id": "4cd7-83d2-7822-c37f",
+      "targetId": "fa4e-5ac8-11a6-78d2",
+      "type": "profile",
+      "name": "Fortification"
+    },
+    {
+      "id": "fe35-2586-346b-a3",
+      "targetId": "29fe-dbb0-2a7-a301",
+      "type": "profile",
+      "name": "Defence Line"
+    },
+    {
+      "id": "27b6-83c1-965a-b7a5",
+      "targetId": "7669-c371-7ee3-ce0f",
+      "type": "profile",
+      "name": "Trench Line"
+    },
+    {
+      "id": "303c-83f6-5ba9-3d68",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "f7ec-d7cb-4fcb-6d44",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "1a3a-9d14-584a-3b5a",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "7022-92b2-89df-b949",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "1aa0-afcb-3774-4d8e",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "ca10-d873-c93a-8113",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "8d22-a65-734e-8e9b",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "27df-60aa-d82e-177e",
+      "targetId": "7cdb-fb99-44a9-8849",
+      "type": "rule",
+      "name": "Melta"
+    },
+    {
+      "id": "af34-3edd-e4d4-a824",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "c224-b70d-66c1-4a6d",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "2763-d8a3-a50f-47a",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "7d21-8ad5-7bdc-9398",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "5f01-8c53-93be-d21d",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "b25a-661b-46c5-bb77",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "f0e8-62de-aac2-c013",
+      "targetId": "19d7-9c74-2140-5851",
+      "name": "Fortification"
+    },
+    {
+      "id": "d90c-bb96-5b17-9a75",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "818-4762-aacb-7640",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "4ff6-72e7-9755-e6d",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "9bdb-1e5e-9e7c-d875",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "1d57-d2-60ce-37b2",
+      "targetId": "75e8-57c4-40e3-1817",
+      "name": "Transport"
+    },
+    {
+      "id": "41-30d2-a088-1b80",
+      "targetId": "a7ed-6216-ee97-5b7a",
+      "name": "Imperial Fortress Walls"
+    },
+    {
+      "id": "9d8f-9b28-991d-6822",
+      "targetId": "13b2-6518-dab3-7ea1",
+      "type": "rule",
+      "name": "Firing Deck"
+    },
+    {
+      "id": "ec0c-698b-aa2e-5cf2",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "86f9-578e-f3bb-20d6",
+      "targetId": "f644-db15-d1f0-3c48",
+      "type": "profile",
+      "name": "Battlements"
+    },
+    {
+      "id": "b6b9-6436-a9b0-a9b",
+      "targetId": "241c-8bed-ca28-f77",
+      "type": "profile",
+      "name": "Reinforced Cover"
+    },
+    {
+      "id": "1c87-11fd-ae16-3031",
+      "targetId": "fa4e-5ac8-11a6-78d2",
+      "type": "profile",
+      "name": "Fortification"
+    },
+    {
+      "id": "5ddd-7bf4-ecd5-f27c",
+      "targetId": "5dd-a7bc-b1a6-9a00",
+      "type": "profile",
+      "name": "Mighty Edifice"
+    },
+    {
+      "id": "f164-7c2e-cab3-4404",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "76e0-53b6-1a88-dee4",
+      "targetId": "9c32-9f63-8d26-8ec9",
+      "type": "selectionEntry",
+      "name": "Twin heavy bolter"
+    },
+    {
+      "id": "68c3-73a2-6636-e4f3",
+      "targetId": "475-eb92-56f5-9f9f",
+      "type": "selectionEntry",
+      "name": "Twin lascannon"
+    },
+    {
+      "id": "dc-6d6f-6e75-994b",
+      "targetId": "475-eb92-56f5-9f9f",
+      "type": "selectionEntry",
+      "name": "Twin lascannon"
+    },
+    {
+      "id": "8c01-8811-e567-fda8",
+      "targetId": "9c32-9f63-8d26-8ec9",
+      "type": "selectionEntry",
+      "name": "Twin heavy bolter"
+    },
+    {
+      "id": "81c8-4d31-26e1-a2cd",
+      "targetId": "10ec-c57f-1acc-6db7",
+      "name": "Castellum Stronghold"
+    },
+    {
+      "id": "df04-dd8-ff2c-8642",
+      "targetId": "19d7-9c74-2140-5851",
+      "name": "Fortification"
+    },
+    {
+      "id": "f94b-a201-f1e8-dc62",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "2a3e-8d55-7a8-e9c5",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "c33b-1e88-dc31-718e",
+      "targetId": "75e8-57c4-40e3-1817",
+      "name": "Transport"
+    },
+    {
+      "id": "1b1f-1193-d278-4649",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "1120-76-86a-723",
+      "targetId": "241c-8bed-ca28-f77",
+      "type": "profile",
+      "name": "Reinforced Cover"
+    },
+    {
+      "id": "c36d-2f2a-65f6-114d",
+      "targetId": "fa4e-5ac8-11a6-78d2",
+      "type": "profile",
+      "name": "Fortification"
+    },
+    {
+      "id": "3851-e670-27a6-adad",
+      "targetId": "5dd-a7bc-b1a6-9a00",
+      "type": "profile",
+      "name": "Mighty Edifice"
+    },
+    {
+      "id": "748f-d1a5-61bb-db80",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "ff15-ae63-78b9-23d5",
+      "targetId": "13b2-6518-dab3-7ea1",
+      "type": "rule",
+      "name": "Firing Deck"
+    },
+    {
+      "id": "864a-83b4-8ba-8e8c",
+      "targetId": "9caf-4cf9-3a99-5e84",
+      "type": "selectionEntry",
+      "name": "Multi-melta"
+    },
+    {
+      "id": "d376-dc4b-215-941",
+      "targetId": "475-eb92-56f5-9f9f",
+      "type": "selectionEntry",
+      "name": "Twin lascannon"
+    },
+    {
+      "id": "7487-e709-816d-7188",
+      "targetId": "4985-9124-1e83-10f0",
+      "type": "selectionEntry",
+      "name": "Comms antenna"
+    },
+    {
+      "id": "f37e-5b13-3834-71b5",
+      "targetId": "ad83-5e8f-6f3f-37b2",
+      "type": "selectionEntry",
+      "name": "Twin heavy flamer"
+    },
+    {
+      "id": "c93b-fcc4-aa3b-f61f",
+      "targetId": "9c32-9f63-8d26-8ec9",
+      "type": "selectionEntry",
+      "name": "Twin heavy bolter"
+    },
+    {
+      "id": "88e2-7b4-38a2-7d99",
+      "targetId": "454f-4f6a-1859-dbbf",
+      "type": "selectionEntry",
+      "name": "Castellum air defence missiles"
+    },
+    {
+      "id": "9482-dff5-c004-9a94",
+      "targetId": "f0ef-58b5-5e72-228d",
+      "type": "selectionEntry",
+      "name": "Twin assault cannon"
+    },
+    {
+      "id": "753-69a0-d6f6-fba5",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "ae37-9ae1-b0c2-d2b5",
+      "targetId": "4ddd-4e29-acdd-5e6d",
+      "type": "rule",
+      "name": "Indirect Fire"
+    },
+    {
+      "id": "5839-89c5-6115-6331",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "a67b-8f88-f3c0-88eb",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "e2db-2712-978-c4ae",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "8b69-a121-1e49-1595",
+      "targetId": "454f-4f6a-1859-dbbf",
+      "type": "selectionEntry",
+      "name": "Castellum air defence missiles"
+    },
+    {
+      "id": "362c-23d2-f49e-1599",
+      "targetId": "475-eb92-56f5-9f9f",
+      "type": "selectionEntry",
+      "name": "Twin lascannon"
+    },
+    {
+      "id": "53de-5129-8401-4af6",
+      "targetId": "ad83-5e8f-6f3f-37b2",
+      "type": "selectionEntry",
+      "name": "Twin heavy flamer"
+    },
+    {
+      "id": "c8ac-946d-32ef-f91a",
+      "targetId": "9c32-9f63-8d26-8ec9",
+      "type": "selectionEntry",
+      "name": "Twin heavy bolter"
+    },
+    {
+      "id": "bce4-c726-9961-bbe7",
+      "targetId": "9caf-4cf9-3a99-5e84",
+      "type": "selectionEntry",
+      "name": "Multi-melta"
+    },
+    {
+      "id": "25a-bbfe-8c02-b52d",
+      "targetId": "f0ef-58b5-5e72-228d",
+      "type": "selectionEntry",
+      "name": "Twin assault cannon"
+    },
+    {
+      "id": "ca3d-33b6-5384-8c13",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "b9d4-12dd-4557-67e4",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "88b8-ec5f-b7b3-cc91",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "7649-6f74-5735-f5b0",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "1c90-33ba-18f5-59b1",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "2c39-36d3-454f-e007",
+      "targetId": "5b23-6112-24a0-5ba5",
+      "name": "Sentry Gun"
+    },
+    {
+      "id": "b86c-ad94-f450-fd29",
+      "targetId": "07d9-ab1c-cf28-0939",
+      "name": "Allies: Unaligned Forces"
+    },
+    {
+      "id": "1321-bc24-2589-4f21",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "c5f9-11e1-e4b5-0b37",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "3c59-7d65-e536-8d8c",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "3d80-376f-2245-5f17",
+      "targetId": "07d9-ab1c-cf28-0939",
+      "name": "Allies: Unaligned Forces"
+    },
+    {
+      "id": "7d0b-b013-3c0f-5681",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "b2b0-4b1d-154a-ce38",
+      "targetId": "e1ff-c0fa-2ca7-3466",
+      "name": "Faction: Unaligned Forces"
+    },
+    {
+      "id": "19fb-4dc3-b181-328a",
+      "targetId": "2997-c698-96cd-e3f8",
+      "name": "Breaching Robot"
+    },
+    {
+      "id": "e009-b01e-330d-b545",
+      "targetId": "07d9-ab1c-cf28-0939",
+      "name": "Allies: Unaligned Forces"
+    },
+    {
+      "id": "8b66-51a2-6b2e-3703",
+      "targetId": "2dbf-4d49-5d74-85c9",
+      "type": "selectionEntry",
+      "name": "Experience Points"
+    },
+    {
+      "id": "18ff-7906-1959-9faf",
+      "targetId": "1511-18fe-f51e-7b9d",
+      "type": "selectionEntry",
+      "name": "Legendary Veterans"
+    },
+    {
+      "id": "f75e-c7cb-c17f-87f5",
+      "targetId": "1576-e816-033f-828d",
+      "type": "selectionEntryGroup",
+      "name": "Battle Scars"
+    },
+    {
+      "id": "0cfb-5f52-a863-2cd0",
+      "targetId": "0511-d9ad-2978-2234",
+      "type": "selectionEntryGroup",
+      "name": "Battle Traits"
+    },
+    {
+      "id": "d223-e293-ad24-58fc",
+      "targetId": "e919-5b46-974d-a5b1",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relics"
+    },
+    {
+      "id": "8b06-cf16-9350-8835",
+      "targetId": "1927-d905-041e-b914",
+      "type": "selectionEntryGroup",
+      "name": "Tyrannic War Battle Honours"
+    },
+    {
+      "id": "765b-9c7e-e7b7-ead0",
+      "targetId": "66c2-2a46-e7ed-a935",
+      "type": "selectionEntryGroup",
+      "name": "Pariah Nexus Blackstone Upgrades"
+    },
+    {
+      "id": "85ec-778b-66b7-b65b",
+      "targetId": "d1a5-4297-168b-11cd",
+      "type": "selectionEntry",
+      "name": "Weapon Modifications"
+    }
+  ]
+}

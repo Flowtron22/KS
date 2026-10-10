@@ -1,0 +1,7738 @@
+{
+  "source": {
+    "repo": "BSData/wh40k-11e",
+    "commit": "cc58ee3b2c23f90af9d00e7bf234cd703b762299",
+    "file": "Chaos - Chaos Knights Library.json",
+    "sourceUrl": "https://raw.githubusercontent.com/BSData/wh40k-11e/cc58ee3b2c23f90af9d00e7bf234cd703b762299/Chaos%20-%20Chaos%20Knights%20Library.json",
+    "sha256": "3b355dda0247034c55a60711cd66f857d108bb2b89542d35d3baa930d6451914"
+  },
+  "catalogue": {
+    "id": "8106-aad2-918a-9ac",
+    "name": "Chaos - Chaos Knights Library",
+    "revision": 10,
+    "library": true,
+    "imports": []
+  },
+  "status": "research-only-unresolved-conditional-values",
+  "profiles": [
+    {
+      "id": "b861-c239-8fa2-afa5",
+      "name": "War Dog Executioner",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "8df0-fc3c-8ced-ffce"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "9",
+        "W": "14",
+        "LD": "7+",
+        "OC": "6"
+      }
+    },
+    {
+      "id": "ffca-811e-9ca8-4222",
+      "name": "War Dog autocannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "8df0-fc3c-8ced-ffce",
+        "2d04-234d-6303-6fa1",
+        "7193-1dfe-7721-ecbd"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "4",
+        "BS": "3+",
+        "S": "9",
+        "AP": "-1",
+        "D": "3"
+      }
+    },
+    {
+      "id": "a4fb-4101-1b27-d2db",
+      "name": "Diabolus heavy stubber",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "dfe8-cea0-8d16-db95"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "3",
+        "BS": "3+",
+        "S": "5",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "75c0-6077-3c29-fe59",
+      "name": "Daemonbreath meltagun",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "e0dc-e414-aa41-8ebd"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "9",
+        "AP": "-4",
+        "D": "D6"
+      }
+    },
+    {
+      "id": "432a-109c-aeaa-84d2",
+      "name": "Armoured feet",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "6638-278a-5331-d1ff"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "6",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "2ba6-4ed1-9dbe-cece",
+      "name": "Avenger chaincannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "a30d-6752-d912-315e"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "12",
+        "BS": "3+",
+        "S": "6",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "cae9-9335-5429-9523",
+      "name": "Daemonbreath spear",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "0b63-2988-ec78-7913"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "12",
+        "AP": "-4",
+        "D": "D6"
+      }
+    },
+    {
+      "id": "a50f-8e7c-ff7f-9854",
+      "name": "Havoc multi-launcher",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "773c-c2e1-0261-d8f4"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "D6",
+        "BS": "3+",
+        "S": "5",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "cb63-4c38-2886-64ee",
+      "name": "➤ Reaper chaintalon - strike",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "34bd-d83f-3753-d642"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "10",
+        "AP": "-3",
+        "D": "3"
+      }
+    },
+    {
+      "id": "28e3-9284-5a98-daa7",
+      "name": "➤ Reaper chaintalon - sweep",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "34bd-d83f-3753-d642"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "8",
+        "WS": "3+",
+        "S": "8",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "509e-6a22-be2b-c499",
+      "name": "Slaughterclaw",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "c4a1-e0b1-20c1-7092"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "12",
+        "AP": "-3",
+        "D": "D6+2"
+      }
+    },
+    {
+      "id": "ce7f-d704-a682-dcd6",
+      "name": "War Dog Stalker",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "bbc6-c0ed-24e8-86b7"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "9",
+        "W": "14",
+        "LD": "7+",
+        "OC": "6"
+      }
+    },
+    {
+      "id": "a907-b7f9-b9cf-a620",
+      "name": "War Dog Karnivore",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "e96b-ac98-7fd2-a155"
+      ],
+      "stats": {
+        "M": "14\"",
+        "T": "9",
+        "W": "14",
+        "LD": "7+",
+        "OC": "6"
+      }
+    },
+    {
+      "id": "9a2a-73c8-7c8c-f19b",
+      "name": "Reaper chaintalon",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "e96b-ac98-7fd2-a155",
+        "184a-3920-781a-3fa8",
+        "efec-643e-117d-a977"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "12",
+        "WS": "3+",
+        "S": "8",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "70ef-396b-bb23-6560",
+      "name": "Slaughterclaw",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "e96b-ac98-7fd2-a155",
+        "184a-3920-781a-3fa8",
+        "2a1d-e15f-408e-7660"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "3+",
+        "S": "12",
+        "AP": "-3",
+        "D": "D6+2"
+      }
+    },
+    {
+      "id": "2a67-fd95-e3f9-420e",
+      "name": "War Dog Brigand",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "753d-4e02-eda3-4809"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "9",
+        "W": "14",
+        "LD": "7+",
+        "OC": "6"
+      }
+    },
+    {
+      "id": "540b-339c-30a4-fb9d",
+      "name": "War Dog Huntsman",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "6e6d-7950-ce6d-4cd4"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "9",
+        "W": "14",
+        "LD": "7+",
+        "OC": "6"
+      }
+    },
+    {
+      "id": "0487-2918-c4e9-735f",
+      "name": "Knight Despoiler",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "0119-8c04-435e-c782"
+      ],
+      "stats": {
+        "M": "10\"",
+        "T": "11",
+        "W": "26",
+        "LD": "6+",
+        "OC": "10"
+      }
+    },
+    {
+      "id": "c9d8-2338-850e-45c6",
+      "name": "Titanic feet",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "0119-8c04-435e-c782",
+        "3018-3716-d944-ae36",
+        "3f41-4b71-a07b-506a"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "4+",
+        "S": "8",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "aad8-5fd2-d082-9bde",
+      "name": "➤ Reaper chainsword - strike",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "5eca-c264-36cf-172e"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "14",
+        "AP": "-4",
+        "D": "6"
+      }
+    },
+    {
+      "id": "c90a-f924-3747-d0c0",
+      "name": "➤ Reaper chainsword - sweep",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "5eca-c264-36cf-172e"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "12",
+        "WS": "3+",
+        "S": "9",
+        "AP": "-3",
+        "D": "2"
+      }
+    },
+    {
+      "id": "584c-1ff6-83a0-94d3",
+      "name": "➤ Warpstrike claw - strike",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "5623-efa6-bed8-fa42"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "20",
+        "AP": "-3",
+        "D": "8"
+      }
+    },
+    {
+      "id": "8dbe-4e7a-8b59-1524",
+      "name": "➤ Warpstrike claw - sweep",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "5623-efa6-bed8-fa42"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "8",
+        "WS": "3+",
+        "S": "10",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "3520-54bf-a486-7d70",
+      "name": "Daemonbreath thermal cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "3f43-5865-ddd8-ea87"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "2D3",
+        "BS": "3+",
+        "S": "12",
+        "AP": "-4",
+        "D": "D6"
+      }
+    },
+    {
+      "id": "59ad-bdf4-6c3e-66a5",
+      "name": "Despoiler battle cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "a0e9-d24d-0927-8670"
+      ],
+      "stats": {
+        "Range": "72\"",
+        "A": "D6+3",
+        "BS": "3+",
+        "S": "10",
+        "AP": "-1",
+        "D": "3"
+      }
+    },
+    {
+      "id": "7e92-7bfc-524a-cf8d",
+      "name": "Despoiler gatling cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "89c4-132e-6ad6-2a08"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "18",
+        "BS": "3+",
+        "S": "6",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "a15d-814c-53ed-0d82",
+      "name": "Havoc missile pod",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "a37b-438f-7e62-486e"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "D6+1",
+        "BS": "3+",
+        "S": "5",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "63c0-ba8f-e510-7c15",
+      "name": "Heavy darkflamer",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "f4a1-7f17-ec57-6c69"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D6",
+        "BS": "N/A",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "b714-5918-ba80-8a43",
+      "name": "Ruinspear rocket pod",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "005c-b2d1-4432-415a"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "3",
+        "BS": "3+",
+        "S": "8",
+        "AP": "-2",
+        "D": "D6"
+      }
+    },
+    {
+      "id": "424f-b32e-6dfc-bc4b",
+      "name": "Hellstorm autocannons",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "08ba-94c4-8833-a27d"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "3",
+        "BS": "3+",
+        "S": "7",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "160e-7198-c314-f89c",
+      "name": "Knight Desecrator",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "7a51-8f1f-7290-d9d2"
+      ],
+      "stats": {
+        "M": "10\"",
+        "T": "11",
+        "W": "26",
+        "LD": "6+",
+        "OC": "10"
+      }
+    },
+    {
+      "id": "54d1-9fb5-ea42-08c6",
+      "name": "Desecrator laser destructor",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "7a51-8f1f-7290-d9d2",
+        "6128-b4e5-e879-21fe",
+        "d6a1-5530-317a-4686"
+      ],
+      "stats": {
+        "Range": "72\"",
+        "A": "3",
+        "BS": "2+",
+        "S": "18",
+        "AP": "-4",
+        "D": "D6+3"
+      }
+    },
+    {
+      "id": "ffc0-0726-99fb-fc11",
+      "name": "Diabolus heavy stubber",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "7a51-8f1f-7290-d9d2",
+        "6128-b4e5-e879-21fe",
+        "2b80-b811-01a8-1562"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "3",
+        "BS": "2+",
+        "S": "5",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "bade-b185-e569-edc1",
+      "name": "Knight Rampager",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "61e0-e55b-1926-44df"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "11",
+        "W": "26",
+        "LD": "6+",
+        "OC": "10"
+      }
+    },
+    {
+      "id": "815-bc92-c750-fde7",
+      "name": "➤ Reaper chainsword - strike",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "61e0-e55b-1926-44df",
+        "7ad7-78c1-ce8b-d787",
+        "e420-9e00-9c96-ce4a"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "2+",
+        "S": "14",
+        "AP": "-4",
+        "D": "6"
+      }
+    },
+    {
+      "id": "c9aa-1054-c816-8c79",
+      "name": "➤ Reaper chainsword - sweep",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "61e0-e55b-1926-44df",
+        "7ad7-78c1-ce8b-d787",
+        "e420-9e00-9c96-ce4a"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "18",
+        "WS": "2+",
+        "S": "9",
+        "AP": "-3",
+        "D": "2"
+      }
+    },
+    {
+      "id": "8a66-42f3-470-2067",
+      "name": "➤ Warpstrike claw - strike",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "61e0-e55b-1926-44df",
+        "7ad7-78c1-ce8b-d787",
+        "fe5b-e66a-4aa7-62e"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "2+",
+        "S": "20",
+        "AP": "-3",
+        "D": "8"
+      }
+    },
+    {
+      "id": "5c72-6f33-e9c8-5d0f",
+      "name": "➤ Warpstrike claw - sweep",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "61e0-e55b-1926-44df",
+        "7ad7-78c1-ce8b-d787",
+        "fe5b-e66a-4aa7-62e"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "12",
+        "WS": "2+",
+        "S": "10",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "b5fe-c12f-7cfd-152d",
+      "name": "Knight Abominant",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "a78d-828b-302b-1bec"
+      ],
+      "stats": {
+        "M": "10\"",
+        "T": "11",
+        "W": "26",
+        "LD": "6+",
+        "OC": "10"
+      }
+    },
+    {
+      "id": "76d6-265c-e9e8-cada",
+      "name": "Balemace",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "a78d-828b-302b-1bec",
+        "33dc-a75a-19ca-9d4e",
+        "bd23-9709-8dba-312e"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "3+",
+        "S": "8",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "90db-08d8-a005-310e",
+      "name": "Electroscourge",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "a78d-828b-302b-1bec",
+        "33dc-a75a-19ca-9d4e",
+        "f738-4e10-b894-f056"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "9",
+        "WS": "3+",
+        "S": "10",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "19b7-9d13-3590-27dc",
+      "name": "Volkite combustor",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "a78d-828b-302b-1bec",
+        "33dc-a75a-19ca-9d4e",
+        "7f9d-c996-4304-d9ab"
+      ],
+      "stats": {
+        "Range": "30\"",
+        "A": "12",
+        "BS": "3+",
+        "S": "12",
+        "AP": "0",
+        "D": "3"
+      }
+    },
+    {
+      "id": "868c-dc0a-4bc2-55ad",
+      "name": "Knight Tyrant",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "87ea-c7bd-6df0-f056"
+      ],
+      "stats": {
+        "M": "8\"",
+        "T": "12",
+        "W": "28",
+        "LD": "6+",
+        "OC": "10"
+      }
+    },
+    {
+      "id": "6e62-ed67-6e74-1fa2",
+      "name": "Titanic feet",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "87ea-c7bd-6df0-f056",
+        "575b-3eb5-4179-23d9",
+        "52fe-84a1-27cf-c9ce"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "4+",
+        "S": "8",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "83a6-06f5-e131-7bca",
+      "name": "Twin daemonbreath meltagun",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "87ea-c7bd-6df0-f056",
+        "575b-3eb5-4179-23d9",
+        "65a3-e04c-fa08-2a01"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "9",
+        "AP": "-4",
+        "D": "D6"
+      }
+    },
+    {
+      "id": "4ac0-abd4-dd0c-686d",
+      "name": "Brimstone volcano lance",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "87ea-c7bd-6df0-f056",
+        "575b-3eb5-4179-23d9",
+        "53aa-af3d-5b81-5df6",
+        "0d51-1b09-1511-86e4",
+        "da60-a5c3-ed49-2cc9"
+      ],
+      "stats": {
+        "Range": "60\"",
+        "A": "D3",
+        "BS": "3+",
+        "S": "20",
+        "AP": "-5",
+        "D": "D6+8"
+      }
+    },
+    {
+      "id": "d476-28a4-cb23-c7c4",
+      "name": "➤ Ectoplasma decimator - standard",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "87ea-c7bd-6df0-f056",
+        "575b-3eb5-4179-23d9",
+        "53aa-af3d-5b81-5df6",
+        "0d51-1b09-1511-86e4",
+        "066b-50ed-3045-b896"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "D6+3",
+        "BS": "3+",
+        "S": "8",
+        "AP": "-3",
+        "D": "2"
+      }
+    },
+    {
+      "id": "8c11-0e26-88a7-d38d",
+      "name": "➤ Ectoplasma decimator - supercharge",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "87ea-c7bd-6df0-f056",
+        "575b-3eb5-4179-23d9",
+        "53aa-af3d-5b81-5df6",
+        "0d51-1b09-1511-86e4",
+        "066b-50ed-3045-b896"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "D6+3",
+        "BS": "3+",
+        "S": "9",
+        "AP": "-4",
+        "D": "3"
+      }
+    },
+    {
+      "id": "2d1d-031f-52c9-5773",
+      "name": "Darkflame cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "87ea-c7bd-6df0-f056",
+        "575b-3eb5-4179-23d9",
+        "53aa-af3d-5b81-5df6",
+        "0d33-ceef-2c1f-e440",
+        "daf1-6516-6b59-4ce4"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "3D6",
+        "BS": "N/A",
+        "S": "8",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "2ebf-53ac-3034-47a1",
+      "name": "Warpshock harpoon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "87ea-c7bd-6df0-f056",
+        "575b-3eb5-4179-23d9",
+        "53aa-af3d-5b81-5df6",
+        "0d33-ceef-2c1f-e440",
+        "a924-08dd-fd49-8121"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D3",
+        "BS": "3+",
+        "S": "24",
+        "AP": "-6",
+        "D": "12"
+      }
+    },
+    {
+      "id": "5ac3-daa9-5b46-b247",
+      "name": "Gheiststrike missile launcher",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "fb24-d907-e7e7-04f7"
+      ],
+      "stats": {
+        "Range": "72\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "12",
+        "AP": "-6",
+        "D": "D6+1"
+      }
+    },
+    {
+      "id": "ce4c-8f32-75cd-a68d",
+      "name": "Twin desecrator cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "6a8b-6d2e-fd7b-5e12"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "D6",
+        "BS": "3+",
+        "S": "6",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "6b1e-130c-63fa-2e7d",
+      "name": "Chaos Acastus Knight Asterius",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "e289-ad32-c78a-e055"
+      ],
+      "stats": {
+        "M": "8\"",
+        "T": "13",
+        "W": "30",
+        "LD": "6+",
+        "OC": "10"
+      }
+    },
+    {
+      "id": "8ef2-44e8-d00c-ebe6",
+      "name": "Asterius volkite culverin",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "e289-ad32-c78a-e055",
+        "850f-b369-61dd-ddc2",
+        "a895-55eb-d2ea-6b87"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "6",
+        "BS": "3+",
+        "S": "6",
+        "AP": "0",
+        "D": "2"
+      }
+    },
+    {
+      "id": "b377-6e1c-4b6d-2681",
+      "name": "Karacnos mortar battery",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "e289-ad32-c78a-e055",
+        "850f-b369-61dd-ddc2",
+        "506b-fe3c-9d9f-1d55"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "D6+3",
+        "BS": "3+",
+        "S": "6",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "7322-a1c5-255-ed8b",
+      "name": "Twin conversion beam cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "e289-ad32-c78a-e055",
+        "850f-b369-61dd-ddc2",
+        "1e7e-f373-3db1-a768"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "3",
+        "BS": "3+",
+        "S": "16",
+        "AP": "-2",
+        "D": "6"
+      }
+    },
+    {
+      "id": "9ce8-7e93-8963-59e3",
+      "name": "Titanic feet",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "28a-8545-4104-4ffa"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "4+",
+        "S": "10",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "310d-1486-55e8-2d6c",
+      "name": "Chaos Acastus Knight Porphyrion",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "fe77-6f85-5ddb-65bf"
+      ],
+      "stats": {
+        "M": "8\"",
+        "T": "13",
+        "W": "30",
+        "LD": "6+",
+        "OC": "10"
+      }
+    },
+    {
+      "id": "f407-c2ad-122e-228c",
+      "name": "Twin magna lascannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "fe77-6f85-5ddb-65bf",
+        "559b-9e67-c50e-0be3",
+        "ab22-ae06-7c8c-48c5"
+      ],
+      "stats": {
+        "Range": "72\"",
+        "A": "D6",
+        "BS": "3+",
+        "S": "18",
+        "AP": "-4",
+        "D": "D6+6"
+      }
+    },
+    {
+      "id": "4588-c0e0-6cd-ae7",
+      "name": "Acastus ironstorm missile pod",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "fe77-6f85-5ddb-65bf",
+        "559b-9e67-c50e-0be3",
+        "3a86-44ef-e8e8-b7a0",
+        "2bd3-2771-a737-adee"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "D6+6",
+        "BS": "3+",
+        "S": "5",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "998b-6509-2f9c-8f2d",
+      "name": "Helios defence missiles",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "fe77-6f85-5ddb-65bf",
+        "559b-9e67-c50e-0be3",
+        "3a86-44ef-e8e8-b7a0",
+        "e5d0-2359-8a2a-3601"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "3",
+        "BS": "3+",
+        "S": "10",
+        "AP": "-2",
+        "D": "D6"
+      }
+    },
+    {
+      "id": "cdca-553e-e7d3-8d78",
+      "name": "Acastus autocannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "fe77-6f85-5ddb-65bf",
+        "559b-9e67-c50e-0be3",
+        "b24c-86fa-7e04-48a7",
+        "ba14-8cac-6b19-4318"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "9",
+        "AP": "-1",
+        "D": "3"
+      }
+    },
+    {
+      "id": "dd25-aaba-f173-ab3a",
+      "name": "Lascannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "fe77-6f85-5ddb-65bf",
+        "559b-9e67-c50e-0be3",
+        "b24c-86fa-7e04-48a7",
+        "1561-195a-c202-2f45"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "12",
+        "AP": "-3",
+        "D": "D6+1"
+      }
+    },
+    {
+      "id": "2916-a86d-a98f-b9fb",
+      "name": "Chaos Cerastus Knight Lancer",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "4175-82c6-8e96-bef8"
+      ],
+      "stats": {
+        "M": "14\"",
+        "T": "11",
+        "W": "28",
+        "LD": "6+",
+        "OC": "10"
+      }
+    },
+    {
+      "id": "8c6d-af66-a0aa-cea6",
+      "name": "Cerastus shock lance",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "4175-82c6-8e96-bef8",
+        "f815-dfdc-be4d-9a12",
+        "545a-eead-e216-5939"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "6",
+        "BS": "3+",
+        "S": "6",
+        "AP": "0",
+        "D": "2"
+      }
+    },
+    {
+      "id": "da4d-3a50-d9a6-bb1d",
+      "name": "➤ Cerastus shock lance - strike",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "4175-82c6-8e96-bef8",
+        "f815-dfdc-be4d-9a12",
+        "545a-eead-e216-5939"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "5",
+        "WS": "2+",
+        "S": "20",
+        "AP": "-3",
+        "D": "8"
+      }
+    },
+    {
+      "id": "a0a8-3a3-bfce-777a",
+      "name": "➤ Cerastus shock lance - sweep",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "4175-82c6-8e96-bef8",
+        "f815-dfdc-be4d-9a12",
+        "545a-eead-e216-5939"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "10",
+        "WS": "2+",
+        "S": "10",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "c85c-2c10-9dab-f10f",
+      "name": "Chaos Cerastus Knight Castigator",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "b6e5-911b-93f-476"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "11",
+        "W": "28",
+        "LD": "6+",
+        "OC": "10"
+      }
+    },
+    {
+      "id": "94c3-ace-1f3c-87ee",
+      "name": "Castigator bolt cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "b6e5-911b-93f-476",
+        "d82a-7e7f-ffdf-9ebb",
+        "8860-55c6-5ee9-227b"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "18",
+        "BS": "3+",
+        "S": "6",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "7ab9-95e4-95f3-6736",
+      "name": "➤ Tempest warblade - strike",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "b6e5-911b-93f-476",
+        "d82a-7e7f-ffdf-9ebb",
+        "fb4f-9321-e4de-99da"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "14",
+        "AP": "-4",
+        "D": "6"
+      }
+    },
+    {
+      "id": "e651-a733-cc20-c647",
+      "name": "➤ Tempest warblade - sweep",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "b6e5-911b-93f-476",
+        "d82a-7e7f-ffdf-9ebb",
+        "fb4f-9321-e4de-99da"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "12",
+        "WS": "3+",
+        "S": "9",
+        "AP": "-3",
+        "D": "2"
+      }
+    },
+    {
+      "id": "5403-3f13-3ca6-22b6",
+      "name": "Chaos Cerastus Knight Acheron",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "ec6e-d1d6-f7c6-d008"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "11",
+        "W": "28",
+        "LD": "6+",
+        "OC": "10"
+      }
+    },
+    {
+      "id": "a166-c3be-78c2-5dd9",
+      "name": "Acheron flame cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "ec6e-d1d6-f7c6-d008",
+        "1efb-9072-5202-07ad",
+        "eab7-2fd-1641-4f4"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "2D6",
+        "BS": "N/A",
+        "S": "8",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "1787-669c-9ba8-465f",
+      "name": "➤ Reaper chainfist - strike",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "ec6e-d1d6-f7c6-d008",
+        "1efb-9072-5202-07ad",
+        "b4e0-25f1-54a4-4308"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "14",
+        "AP": "-4",
+        "D": "6"
+      }
+    },
+    {
+      "id": "59dc-5722-7844-79a6",
+      "name": "➤ Reaper chainfist - sweep",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "ec6e-d1d6-f7c6-d008",
+        "1efb-9072-5202-07ad",
+        "b4e0-25f1-54a4-4308"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "12",
+        "WS": "3+",
+        "S": "9",
+        "AP": "-3",
+        "D": "2"
+      }
+    },
+    {
+      "id": "a701-7b9a-ff40-af1f",
+      "name": "Twin heavy bolter",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "ec6e-d1d6-f7c6-d008",
+        "1efb-9072-5202-07ad",
+        "6423-b7ff-a468-7e6a"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "3",
+        "BS": "3+",
+        "S": "5",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "76f5-bb5c-ae0e-950e",
+      "name": "Chaos Cerastus Knight Atrapos",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "8b1d-9029-f9e1-42d9"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "11",
+        "W": "28",
+        "LD": "6+",
+        "OC": "10"
+      }
+    },
+    {
+      "id": "b582-f54d-7ba2-17b5",
+      "name": "➤ Atrapos lascutter - low intensity",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "8b1d-9029-f9e1-42d9",
+        "68e0-c460-8491-5b75",
+        "f57d-be6e-77e4-bfe3"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "12",
+        "WS": "3+",
+        "S": "7",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "4e9-f5e5-9f32-520e",
+      "name": "➤ Atrapos lascutter - low intensity",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "8b1d-9029-f9e1-42d9",
+        "68e0-c460-8491-5b75",
+        "f57d-be6e-77e4-bfe3"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "2D6",
+        "BS": "3+",
+        "S": "7",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "1105-7920-ddf8-4cae",
+      "name": "➤ Atrapos lascutter - high intensity",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "8b1d-9029-f9e1-42d9",
+        "68e0-c460-8491-5b75",
+        "f57d-be6e-77e4-bfe3"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "D6",
+        "BS": "3+",
+        "S": "14",
+        "AP": "-3",
+        "D": "4"
+      }
+    },
+    {
+      "id": "2f08-1615-1fe4-5531",
+      "name": "➤ Atrapos lascutter - high intensity",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "8b1d-9029-f9e1-42d9",
+        "68e0-c460-8491-5b75",
+        "f57d-be6e-77e4-bfe3"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "3+",
+        "S": "14",
+        "AP": "-3",
+        "D": "4"
+      }
+    },
+    {
+      "id": "458a-6dc-7607-2669",
+      "name": "➤ Graviton singularity cannon - contained",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "8b1d-9029-f9e1-42d9",
+        "68e0-c460-8491-5b75",
+        "7546-5742-581c-9e8b"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "D3",
+        "BS": "3+",
+        "S": "16",
+        "AP": "-4",
+        "D": "D6+1"
+      }
+    },
+    {
+      "id": "6b03-8129-9435-adbb",
+      "name": "➤ Graviton singularity cannon - singularity",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "8b1d-9029-f9e1-42d9",
+        "68e0-c460-8491-5b75",
+        "7546-5742-581c-9e8b"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "D3",
+        "BS": "3+",
+        "S": "16",
+        "AP": "-4",
+        "D": "D6+1"
+      }
+    },
+    {
+      "id": "a69c-d32c-a409-86bd",
+      "name": "Chaos Questoris Knight Magaera",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "2d0e-5b83-b678-56dc"
+      ],
+      "stats": {
+        "M": "10\"",
+        "T": "11",
+        "W": "26",
+        "LD": "6+",
+        "OC": "10"
+      }
+    },
+    {
+      "id": "c59e-7343-2e7-6d7f",
+      "name": "Lightning cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "2d0e-5b83-b678-56dc",
+        "6bcd-fc7d-6947-223b",
+        "7152-d126-5030-8aaa"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "12",
+        "BS": "3+",
+        "S": "9",
+        "AP": "0",
+        "D": "2"
+      }
+    },
+    {
+      "id": "dee7-d73f-44d4-9bda",
+      "name": "Phased plasma-fusil",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "2d0e-5b83-b678-56dc",
+        "6bcd-fc7d-6947-223b",
+        "49da-529d-d89f-71e3"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "8",
+        "AP": "-3",
+        "D": "2"
+      }
+    },
+    {
+      "id": "98ba-a2b8-b11-bfc5",
+      "name": "Twin rad cleanser",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "2d0e-5b83-b678-56dc",
+        "6bcd-fc7d-6947-223b",
+        "ee33-43a7-5c5-dfe1",
+        "c4f1-17d8-3504-d457",
+        "6739-55ab-95a5-823b"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D6",
+        "BS": "N/A",
+        "S": "2",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "c53-7ad0-5caa-3ea6",
+      "name": "➤ Hekaton siege claw - strike",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "2d0e-5b83-b678-56dc",
+        "6bcd-fc7d-6947-223b",
+        "ee33-43a7-5c5-dfe1",
+        "c4f1-17d8-3504-d457",
+        "a32a-21fc-0560-b29a"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "20",
+        "AP": "-3",
+        "D": "8"
+      }
+    },
+    {
+      "id": "852d-d0b2-871f-59d7",
+      "name": "➤ Hekaton siege claw - sweep",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "2d0e-5b83-b678-56dc",
+        "6bcd-fc7d-6947-223b",
+        "ee33-43a7-5c5-dfe1",
+        "c4f1-17d8-3504-d457",
+        "a32a-21fc-0560-b29a"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "8",
+        "WS": "3+",
+        "S": "10",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "fe0a-7433-490d-b27",
+      "name": "Chaos Questoris Knight Styrix",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "106c-4bdf-79a4-1c70"
+      ],
+      "stats": {
+        "M": "10\"",
+        "T": "11",
+        "W": "26",
+        "LD": "6+",
+        "OC": "10"
+      }
+    },
+    {
+      "id": "bbc9-ae78-78d3-a91b",
+      "name": "Graviton crusher",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "106c-4bdf-79a4-1c70",
+        "4063-8e8e-6869-ec97",
+        "b2f6-fda6-d756-f8e4"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "3",
+        "BS": "3+",
+        "S": "6",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "2554-21b4-d8e0-1b20",
+      "name": "Volkite chierovile",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "106c-4bdf-79a4-1c70",
+        "4063-8e8e-6869-ec97",
+        "bb21-f914-ecd0-f2b8"
+      ],
+      "stats": {
+        "Range": "30\"",
+        "A": "12",
+        "BS": "3+",
+        "S": "12",
+        "AP": "0",
+        "D": "3"
+      }
+    },
+    {
+      "id": "3d86-ae69-cfd2-5d31",
+      "name": "Twin rad cleanser",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "106c-4bdf-79a4-1c70",
+        "4063-8e8e-6869-ec97",
+        "7dc7-e65c-64c-fff3",
+        "7b0f-b7a2-dde0-482b",
+        "14e9-35eb-c8f8-d4bf"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D6",
+        "BS": "N/A",
+        "S": "2",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "5f24-7145-c135-3ae8",
+      "name": "➤ Hekaton siege claw - strike",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "106c-4bdf-79a4-1c70",
+        "4063-8e8e-6869-ec97",
+        "7dc7-e65c-64c-fff3",
+        "7b0f-b7a2-dde0-482b",
+        "795a-95e5-de03-395e"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "20",
+        "AP": "-3",
+        "D": "8"
+      }
+    },
+    {
+      "id": "545f-e492-5391-53ad",
+      "name": "➤ Hekaton siege claw - sweep",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "106c-4bdf-79a4-1c70",
+        "4063-8e8e-6869-ec97",
+        "7dc7-e65c-64c-fff3",
+        "7b0f-b7a2-dde0-482b",
+        "795a-95e5-de03-395e"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "8",
+        "WS": "3+",
+        "S": "10",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "edf-bf86-2acc-2b21",
+      "name": "War Dog Moirax",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "ae7c-3679-a88-6895"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "9",
+        "W": "14",
+        "LD": "7+",
+        "OC": "6"
+      }
+    },
+    {
+      "id": "2b0c-2aed-a612-c979",
+      "name": "Volkite veuglaire",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "ae7c-3679-a88-6895",
+        "8429-5740-f1fd-0046",
+        "f9a1-251a-ee9f-707f",
+        "82bb-5188-3701-a846"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "4",
+        "BS": "3+",
+        "S": "8",
+        "AP": "0",
+        "D": "2"
+      }
+    },
+    {
+      "id": "e57-c0ec-4b65-d00c",
+      "name": "Conversion beam cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "ae7c-3679-a88-6895",
+        "8429-5740-f1fd-0046",
+        "f9a1-251a-ee9f-707f",
+        "cf3a-bab9-317c-17d6"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "1",
+        "BS": "3+",
+        "S": "10",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "3558-5e50-322f-9ee6",
+      "name": "Graviton pulsar",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "ae7c-3679-a88-6895",
+        "8429-5740-f1fd-0046",
+        "f9a1-251a-ee9f-707f",
+        "6721-d47f-74bf-6ffc"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "D6",
+        "BS": "3+",
+        "S": "7",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "70e1-fd77-4d20-ef15",
+      "name": "Lightning lock",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "ae7c-3679-a88-6895",
+        "8429-5740-f1fd-0046",
+        "f9a1-251a-ee9f-707f",
+        "3909-f5fb-f7d7-8f"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "6",
+        "BS": "3+",
+        "S": "8",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "5721-8708-9e4f-d38b",
+      "name": "Rad cleanser",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "ae7c-3679-a88-6895",
+        "8429-5740-f1fd-0046",
+        "f9a1-251a-ee9f-707f",
+        "e9ea-196b-4d4d-83b1",
+        "f3c3-7f5f-1a31-2776"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D6",
+        "BS": "N/A",
+        "S": "2",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "97aa-6682-f52e-376f",
+      "name": "Siege claw",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "ae7c-3679-a88-6895",
+        "8429-5740-f1fd-0046",
+        "f9a1-251a-ee9f-707f",
+        "e9ea-196b-4d4d-83b1",
+        "81e2-5b55-6050-ab88"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "12",
+        "AP": "-3",
+        "D": "D6+2"
+      }
+    },
+    {
+      "id": "3bc9-aaff-0392-6cb1",
+      "name": "Knight Ruinator",
+      "type": "Unit",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "c0a2-eb65-6d34-5bc6"
+      ],
+      "stats": {
+        "M": "10\"",
+        "T": "11",
+        "W": "26",
+        "LD": "6+",
+        "OC": "10"
+      }
+    },
+    {
+      "id": "abfa-0c6d-627f-3989",
+      "name": "Darkflame lance",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "c0a2-eb65-6d34-5bc6",
+        "3af4-5792-3b4b-c03f",
+        "b4ca-3419-c219-f429"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "D6+6",
+        "BS": "N/A",
+        "S": "8",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "8607-3727-9026-6f98",
+      "name": "➤ Fellbore - strike",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "c0a2-eb65-6d34-5bc6",
+        "3af4-5792-3b4b-c03f",
+        "f075-4ccc-9a91-5e6d"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "3+",
+        "S": "14",
+        "AP": "-3",
+        "D": "6"
+      }
+    },
+    {
+      "id": "6edb-b414-5785-3cd9",
+      "name": "➤ Fellbore - sweep",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "c0a2-eb65-6d34-5bc6",
+        "3af4-5792-3b4b-c03f",
+        "f075-4ccc-9a91-5e6d"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "10",
+        "WS": "3+",
+        "S": "9",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "60e2-30d0-5d84-df0e",
+      "name": "Terrorpulse missiles",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "8106-aad2-918a-9ac",
+        "c0a2-eb65-6d34-5bc6",
+        "3af4-5792-3b4b-c03f",
+        "9e94-b7d4-ec7f-9163"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "D6+6",
+        "BS": "3+",
+        "S": "8",
+        "AP": "-2",
+        "D": "2"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "id": "8df0-fc3c-8ced-ffce",
+      "name": "War Dog Executioner",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 130
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "d0e2-a29c-b8e8-e44f",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "4c84-8a9e-3fbc-3de8",
+          "targetId": "97fd-09c5-60a8-63c4",
+          "type": "profile"
+        },
+        {
+          "id": "ee05-6f4a-b0b2-200b",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "7686-5fc0-fc07-1f3e",
+          "targetId": "4e9b-b002-b008-6077",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "bbc6-c0ed-24e8-86b7",
+      "name": "War Dog Stalker",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 135
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "0388-7187-ccba-58ec",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "f5f5-6433-ddd6-23aa",
+          "targetId": "97fd-09c5-60a8-63c4",
+          "type": "profile"
+        },
+        {
+          "id": "b065-8569-91d8-423a",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "81f4-17ee-d873-24d0",
+          "targetId": "ada6-bac1-ffe0-d6f7",
+          "type": "rule"
+        },
+        {
+          "id": "f404-dd31-3f91-de8f",
+          "targetId": "4e9b-b002-b008-6077",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "e96b-ac98-7fd2-a155",
+      "name": "War Dog Karnivore",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 145
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "3de4-fb78-e6de-dca5",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "928a-574c-f429-72f8",
+          "targetId": "97fd-09c5-60a8-63c4",
+          "type": "profile"
+        },
+        {
+          "id": "81c8-fc6f-d880-245b",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "fbd6-48b3-54d3-bc65",
+          "targetId": "4e9b-b002-b008-6077",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "753d-4e02-eda3-4809",
+      "name": "War Dog Brigand",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 135
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "44f6-cdb6-f568-5c55",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "aaab-a55c-8c11-d7bf",
+          "targetId": "97fd-09c5-60a8-63c4",
+          "type": "profile"
+        },
+        {
+          "id": "0b42-7bab-c9fa-55d2",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "1a80-0a6f-6441-c484",
+          "targetId": "4e9b-b002-b008-6077",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "6e6d-7950-ce6d-4cd4",
+      "name": "War Dog Huntsman",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 135
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "1a98-6dbb-f7bc-ac12",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "ab81-818e-ca5f-92a5",
+          "targetId": "97fd-09c5-60a8-63c4",
+          "type": "profile"
+        },
+        {
+          "id": "6477-6d84-788a-83a9",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "4f42-08ac-d533-3ba4",
+          "targetId": "4e9b-b002-b008-6077",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "0119-8c04-435e-c782",
+      "name": "Knight Despoiler",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 360
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "31a0-b1e6-1ecb-3c7c",
+          "targetId": "5e13-1624-d280-418d",
+          "type": "rule"
+        },
+        {
+          "id": "81ca-78d2-2489-0bee",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "daaf-7ef7-c7cb-462b",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "e4ea-9586-78bd-615b",
+          "targetId": "12ce-2a62-9fea-74bd",
+          "type": "profile"
+        },
+        {
+          "id": "0b67-c7a8-b249-135d",
+          "targetId": "4e9b-b002-b008-6077",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "7a51-8f1f-7290-d9d2",
+      "name": "Knight Desecrator",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 350
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "c023-0954-374a-0af7",
+          "targetId": "5e13-1624-d280-418d",
+          "type": "rule"
+        },
+        {
+          "id": "f9e4-dd11-791b-44eb",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "053e-d6d6-3ef0-be8e",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "ed66-ef4e-c2-b782",
+          "targetId": "12ce-2a62-9fea-74bd",
+          "type": "profile"
+        },
+        {
+          "id": "d0be-44df-8f46-ae6a",
+          "targetId": "4e9b-b002-b008-6077",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "61e0-e55b-1926-44df",
+      "name": "Knight Rampager",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 350
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "ca19-5a88-8a4f-9bcc",
+          "targetId": "5e13-1624-d280-418d",
+          "type": "rule"
+        },
+        {
+          "id": "87d7-7ff3-2681-0667",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "6ad4-77bf-0a46-8d85",
+          "targetId": "1897-c22c-9597-12b1",
+          "type": "rule"
+        },
+        {
+          "id": "13cb-a4f0-dc88-7b1f",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "a17-18d3-8c51-c8b4",
+          "targetId": "12ce-2a62-9fea-74bd",
+          "type": "profile"
+        },
+        {
+          "id": "316f-d8c8-ab3c-8135",
+          "targetId": "4e9b-b002-b008-6077",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "a78d-828b-302b-1bec",
+      "name": "Knight Abominant",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 350
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "c560-9d76-7c1c-eb2c",
+          "targetId": "5e13-1624-d280-418d",
+          "type": "rule"
+        },
+        {
+          "id": "c4a8-84fa-a02e-2f16",
+          "targetId": "4e9b-b002-b008-6077",
+          "type": "profile"
+        },
+        {
+          "id": "3b4a-cc9d-2650-476a",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "8b67-d967-873f-8919",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "c9f9-667d-d596-a1d7",
+          "targetId": "12ce-2a62-9fea-74bd",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "87ea-c7bd-6df0-f056",
+      "name": "Knight Tyrant",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 390
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "2cba-8848-b0b6-dda9",
+          "targetId": "5e13-1624-d280-418d",
+          "type": "rule"
+        },
+        {
+          "id": "a905-6eac-7efc-779b",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "3e23-1899-b1ea-0d4f",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "bd9f-efd3-8aee-df65",
+          "targetId": "7400-7387-dae-781f",
+          "type": "profile"
+        },
+        {
+          "id": "3c96-c167-5c0d-9c7f",
+          "targetId": "4e9b-b002-b008-6077",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "e289-ad32-c78a-e055",
+      "name": "Chaos Acastus Knight Asterius",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 785
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "4ef1-9977-116f-d4b8",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "2b3-6e05-b3a3-4b04",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "7536-4ece-da3f-ff96",
+          "targetId": "5e13-1624-d280-418d",
+          "type": "rule"
+        },
+        {
+          "id": "9538-9dad-5e30-2c0",
+          "targetId": "7400-7387-dae-781f",
+          "type": "profile"
+        },
+        {
+          "id": "9374-8790-4eec-aeac",
+          "targetId": "4e9b-b002-b008-6077",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "fe77-6f85-5ddb-65bf",
+      "name": "Chaos Acastus Knight Porphyrion",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 725
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "91e6-5be1-c93-f189",
+          "targetId": "7400-7387-dae-781f",
+          "type": "profile"
+        },
+        {
+          "id": "774-8a3f-b98c-2e8d",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "93eb-c5b0-872e-cc77",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "a226-6784-bacd-ed18",
+          "targetId": "5e13-1624-d280-418d",
+          "type": "rule"
+        },
+        {
+          "id": "0a1f-d9c6-a40c-4564",
+          "targetId": "4e9b-b002-b008-6077",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "4175-82c6-8e96-bef8",
+      "name": "Chaos Cerastus Knight Lancer",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 385
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "fddc-6260-698f-40e",
+          "targetId": "7400-7387-dae-781f",
+          "type": "profile"
+        },
+        {
+          "id": "38ac-b5b2-7db9-f4a3",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "778c-9b9-8529-c419",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "dc7b-e107-b327-4001",
+          "targetId": "5e13-1624-d280-418d",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "b6e5-911b-93f-476",
+      "name": "Chaos Cerastus Knight Castigator",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 370
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "bcce-9f90-f744-80e0",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "a1c9-29ef-8029-36e9",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "a4a4-248c-a0c1-87d3",
+          "targetId": "5e13-1624-d280-418d",
+          "type": "rule"
+        },
+        {
+          "id": "500-6af5-592-7e7",
+          "targetId": "7400-7387-dae-781f",
+          "type": "profile"
+        },
+        {
+          "id": "cbd2-ab4a-9416-1ffb",
+          "targetId": "4e9b-b002-b008-6077",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "ec6e-d1d6-f7c6-d008",
+      "name": "Chaos Cerastus Knight Acheron",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 370
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "814c-54a0-9ed8-6cb1",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "a836-d284-5da1-45f2",
+          "targetId": "7400-7387-dae-781f",
+          "type": "profile"
+        },
+        {
+          "id": "cc30-31f9-d62d-48b7",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "a431-ff8-a3f-a1a5",
+          "targetId": "5e13-1624-d280-418d",
+          "type": "rule"
+        },
+        {
+          "id": "174a-6809-5222-9f1b",
+          "targetId": "4e9b-b002-b008-6077",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "8b1d-9029-f9e1-42d9",
+      "name": "Chaos Cerastus Knight Atrapos",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 385
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "fc4f-3207-7c3d-932c",
+          "targetId": "7400-7387-dae-781f",
+          "type": "profile"
+        },
+        {
+          "id": "a047-2bb4-a481-8542",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "881f-e74a-194a-d75d",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "8fb2-c7cc-fd8-f9ea",
+          "targetId": "5e13-1624-d280-418d",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "2d0e-5b83-b678-56dc",
+      "name": "Chaos Questoris Knight Magaera",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 375
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "6434-33e1-93a1-8fd8",
+          "targetId": "12ce-2a62-9fea-74bd",
+          "type": "profile"
+        },
+        {
+          "id": "93d9-a91d-9135-c859",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "e0f7-8e3e-7a32-51af",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "c204-d4e2-a47e-ed16",
+          "targetId": "5e13-1624-d280-418d",
+          "type": "rule"
+        },
+        {
+          "id": "e70d-97f1-3540-3e87",
+          "targetId": "73ac-6b3a-8480-d08a",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "106c-4bdf-79a4-1c70",
+      "name": "Chaos Questoris Knight Styrix",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 365
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "9fb-5f3d-ddb5-2723",
+          "targetId": "12ce-2a62-9fea-74bd",
+          "type": "profile"
+        },
+        {
+          "id": "94ba-eb84-8519-6b15",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "82f0-908f-8f58-a62e",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "5b52-a7e7-e494-ce42",
+          "targetId": "5e13-1624-d280-418d",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "ae7c-3679-a88-6895",
+      "name": "War Dog Moirax",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 150
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "409e-76fe-4b03-783d",
+          "targetId": "97fd-09c5-60a8-63c4",
+          "type": "profile"
+        },
+        {
+          "id": "d7d4-a4a3-e070-a620",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "a2d6-de7b-4726-c5b1",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "2e30-ae47-1bdc-3516",
+          "targetId": "4e9b-b002-b008-6077",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "c0a2-eb65-6d34-5bc6",
+      "name": "Knight Ruinator",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "8106-aad2-918a-9ac"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 325
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "d8a4-595d-9e4d-de38",
+          "targetId": "5e13-1624-d280-418d",
+          "type": "rule"
+        },
+        {
+          "id": "0f5f-b0e4-e443-7dc6",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "c44f-3420-4a51-98e9",
+          "targetId": "d71a-a59f-aafd-3723",
+          "type": "rule"
+        },
+        {
+          "id": "0be2-d03c-7ff6-3564",
+          "targetId": "12ce-2a62-9fea-74bd",
+          "type": "profile"
+        },
+        {
+          "id": "ee52-ddc0-e0f5-2b88",
+          "targetId": "4e9b-b002-b008-6077",
+          "type": "profile"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "89b5-60c6-7bb6-d021",
+      "targetId": "e289-ad32-c78a-e055",
+      "type": "selectionEntry",
+      "name": "Chaos Acastus Knight Asterius"
+    },
+    {
+      "id": "1e67-5742-99cf-aed4",
+      "targetId": "fe77-6f85-5ddb-65bf",
+      "type": "selectionEntry",
+      "name": "Chaos Acastus Knight Porphyrion"
+    },
+    {
+      "id": "a0ec-633-123f-32d2",
+      "targetId": "ec6e-d1d6-f7c6-d008",
+      "type": "selectionEntry",
+      "name": "Chaos Cerastus Knight Acheron"
+    },
+    {
+      "id": "1915-5cea-2b22-8805",
+      "targetId": "8b1d-9029-f9e1-42d9",
+      "type": "selectionEntry",
+      "name": "Chaos Cerastus Knight Atrapos"
+    },
+    {
+      "id": "8996-bc14-504-f902",
+      "targetId": "b6e5-911b-93f-476",
+      "type": "selectionEntry",
+      "name": "Chaos Cerastus Knight Castigator"
+    },
+    {
+      "id": "a606-abf1-4103-623",
+      "targetId": "4175-82c6-8e96-bef8",
+      "type": "selectionEntry",
+      "name": "Chaos Cerastus Knight Lancer"
+    },
+    {
+      "id": "5a2c-b554-1672-2893",
+      "targetId": "2d0e-5b83-b678-56dc",
+      "type": "selectionEntry",
+      "name": "Chaos Questoris Knight Magaera"
+    },
+    {
+      "id": "487c-5155-cdaf-2353",
+      "targetId": "106c-4bdf-79a4-1c70",
+      "type": "selectionEntry",
+      "name": "Chaos Questoris Knight Styrix"
+    },
+    {
+      "id": "b75d-f257-dbe-e1f2",
+      "targetId": "a78d-828b-302b-1bec",
+      "type": "selectionEntry",
+      "name": "Knight Abominant"
+    },
+    {
+      "id": "5b55-e060-64e9-1db5",
+      "targetId": "7a51-8f1f-7290-d9d2",
+      "type": "selectionEntry",
+      "name": "Knight Desecrator"
+    },
+    {
+      "id": "11bc-7659-448b-ee77",
+      "targetId": "0119-8c04-435e-c782",
+      "type": "selectionEntry",
+      "name": "Knight Despoiler"
+    },
+    {
+      "id": "67f2-f447-b47a-5357",
+      "targetId": "61e0-e55b-1926-44df",
+      "type": "selectionEntry",
+      "name": "Knight Rampager"
+    },
+    {
+      "id": "f447-d30c-2276-1762",
+      "targetId": "87ea-c7bd-6df0-f056",
+      "type": "selectionEntry",
+      "name": "Knight Tyrant"
+    },
+    {
+      "id": "d383-2000-2743-285f",
+      "targetId": "753d-4e02-eda3-4809",
+      "type": "selectionEntry",
+      "name": "War Dog Brigand"
+    },
+    {
+      "id": "170-14ae-5346-c8b",
+      "targetId": "8df0-fc3c-8ced-ffce",
+      "type": "selectionEntry",
+      "name": "War Dog Executioner"
+    },
+    {
+      "id": "6063-ed18-4e9c-a40d",
+      "targetId": "6e6d-7950-ce6d-4cd4",
+      "type": "selectionEntry",
+      "name": "War Dog Huntsman"
+    },
+    {
+      "id": "6884-a812-e5ca-5a8d",
+      "targetId": "e96b-ac98-7fd2-a155",
+      "type": "selectionEntry",
+      "name": "War Dog Karnivore"
+    },
+    {
+      "id": "ac91-fe54-bd09-4145",
+      "targetId": "ae7c-3679-a88-6895",
+      "type": "selectionEntry",
+      "name": "War Dog Moirax"
+    },
+    {
+      "id": "6974-5c30-1291-f54d",
+      "targetId": "bbc6-c0ed-24e8-86b7",
+      "type": "selectionEntry",
+      "name": "War Dog Stalker"
+    },
+    {
+      "id": "89e7-84a2-bf27-fa56",
+      "targetId": "c0a2-eb65-6d34-5bc6",
+      "type": "selectionEntry",
+      "name": "Knight Ruinator"
+    },
+    {
+      "id": "0368-0a60-e34a-3438",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "36b0-6d3c-5d21-28f3",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "b8e4-40f2-6789-53d0",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "223f-f780-9db0-d39a",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "0a45-b4a0-05b4-8755",
+      "targetId": "99dc-0f47-85e2-75da",
+      "name": "War Dog"
+    },
+    {
+      "id": "8c55-b07e-303f-eee8",
+      "targetId": "370b-1eb7-eac6-491c",
+      "name": "Executioner"
+    },
+    {
+      "id": "5682-88cf-584e-d5b6",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "4ba8-3cd2-fe30-8847",
+      "targetId": "b02a-a6e2-3eb4-4872",
+      "type": "selectionEntry",
+      "name": "Houndpack Lance Character"
+    },
+    {
+      "id": "792d-a094-bd08-80cb",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "53c4-b779-0ede-647b",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "d0e2-a29c-b8e8-e44f",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "4c84-8a9e-3fbc-3de8",
+      "targetId": "97fd-09c5-60a8-63c4",
+      "type": "profile",
+      "name": "Damaged: 1-5 wounds remaining"
+    },
+    {
+      "id": "ee05-6f4a-b0b2-200b",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "7686-5fc0-fc07-1f3e",
+      "targetId": "4e9b-b002-b008-6077",
+      "type": "profile",
+      "name": "*Invulnerable Save"
+    },
+    {
+      "id": "df42-5d71-b03d-14d3",
+      "targetId": "6638-278a-5331-d1ff",
+      "type": "selectionEntry",
+      "name": "Armoured feet"
+    },
+    {
+      "id": "8afc-4d9b-d2b9-956d",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "ba33-2cd1-31a0-d050",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "acd5-512d-654f-a53d",
+      "targetId": "dfe8-cea0-8d16-db95",
+      "type": "selectionEntry",
+      "name": "Diabolus heavy stubber"
+    },
+    {
+      "id": "16b6-8c9b-4c5d-92f2",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "919e-2f99-b24d-1d69",
+      "targetId": "e0dc-e414-aa41-8ebd",
+      "type": "selectionEntry",
+      "name": "Daemonbreath meltagun"
+    },
+    {
+      "id": "7c04-1909-df8c-9f5f",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "07f8-92ca-3824-16ad",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "01ca-830d-6fa8-c3fb",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "44cd-5baa-33dd-1ef5",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "a6ba-2ec6-4003-a058",
+      "targetId": "4986-bf86-beb4-13ac",
+      "name": "Damage Dx Weapon"
+    },
+    {
+      "id": "efad-ac51-a0a1-048c",
+      "targetId": "7cdb-fb99-44a9-8849",
+      "type": "rule",
+      "name": "Melta"
+    },
+    {
+      "id": "5fb7-42a1-d375-b75b",
+      "targetId": "4986-bf86-beb4-13ac",
+      "name": "Damage Dx Weapon"
+    },
+    {
+      "id": "c57f-0544-2fb4-ce3f",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "653a-fc58-6168-3cea",
+      "targetId": "7cdb-fb99-44a9-8849",
+      "type": "rule",
+      "name": "Melta"
+    },
+    {
+      "id": "b83a-72e8-7a4d-d48d",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "2442-20ce-eae0-79b3",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "0537-4690-feb4-f55f",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "ba04-e0e7-7709-75b7",
+      "targetId": "4ddd-4e29-acdd-5e6d",
+      "type": "rule",
+      "name": "Indirect Fire"
+    },
+    {
+      "id": "4336-a70c-6d53-77c4",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "474d-a979-0984-a6a5",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "69b0-8bfd-4782-f891",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "3b5a-ef5c-24ad-af0d",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "6c1c-4c5a-6711-328d",
+      "targetId": "99dc-0f47-85e2-75da",
+      "name": "War Dog"
+    },
+    {
+      "id": "7462-4680-b83d-064d",
+      "targetId": "27fa-0f87-9be4-5db1",
+      "name": "Stalker"
+    },
+    {
+      "id": "e953-ddda-60f9-78e0",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "e26d-a244-a6fb-bce1",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "4848-303f-a31d-2548",
+      "targetId": "b02a-a6e2-3eb4-4872",
+      "type": "selectionEntry",
+      "name": "Houndpack Lance Character"
+    },
+    {
+      "id": "b54a-fa52-327b-bbbd",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "0388-7187-ccba-58ec",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "f5f5-6433-ddd6-23aa",
+      "targetId": "97fd-09c5-60a8-63c4",
+      "type": "profile",
+      "name": "Damaged: 1-5 wounds remaining"
+    },
+    {
+      "id": "b065-8569-91d8-423a",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "81f4-17ee-d873-24d0",
+      "targetId": "ada6-bac1-ffe0-d6f7",
+      "type": "rule",
+      "name": "Scouts"
+    },
+    {
+      "id": "f404-dd31-3f91-de8f",
+      "targetId": "4e9b-b002-b008-6077",
+      "type": "profile",
+      "name": "*Invulnerable Save"
+    },
+    {
+      "id": "537a-10d9-d537-4a0d",
+      "targetId": "dfe8-cea0-8d16-db95",
+      "type": "selectionEntry",
+      "name": "Diabolus heavy stubber"
+    },
+    {
+      "id": "e552-246b-b03a-5ef9",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "0186-508d-0e0e-22cd",
+      "targetId": "773c-c2e1-0261-d8f4",
+      "type": "selectionEntry",
+      "name": "Havoc multi-launcher"
+    },
+    {
+      "id": "fec5-5697-593e-fe48",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "234f-aa25-c8fd-7124",
+      "targetId": "a30d-6752-d912-315e",
+      "type": "selectionEntry",
+      "name": "Avenger chaincannon"
+    },
+    {
+      "id": "afea-15ec-c3e7-1fe0",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "0d87-322a-841d-a21b",
+      "targetId": "0b63-2988-ec78-7913",
+      "type": "selectionEntry",
+      "name": "Daemonbreath spear"
+    },
+    {
+      "id": "fa0a-2c3f-8f3b-422c",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "0269-9c9f-e914-a8c8",
+      "targetId": "c4a1-e0b1-20c1-7092",
+      "type": "selectionEntry",
+      "name": "Slaughterclaw"
+    },
+    {
+      "id": "b0e7-566f-b363-774b",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "49d0-f4a4-dfbf-9e33",
+      "targetId": "34bd-d83f-3753-d642",
+      "type": "selectionEntry",
+      "name": "Reaper chaintalon"
+    },
+    {
+      "id": "774c-6b62-e964-4806",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "e723-2423-466a-923e",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "529f-468f-5f49-a684",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "ae5a-779f-a067-03a4",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "07cf-1000-c46c-1fce",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "6023-5063-8842-2df6",
+      "targetId": "99dc-0f47-85e2-75da",
+      "name": "War Dog"
+    },
+    {
+      "id": "c34d-d6f5-8e71-6910",
+      "targetId": "7177-ef6b-50ae-82e2",
+      "name": "Karnivore"
+    },
+    {
+      "id": "7361-83ce-a6f5-a1b4",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "7dab-f413-a641-6ddc",
+      "targetId": "b02a-a6e2-3eb4-4872",
+      "type": "selectionEntry",
+      "name": "Houndpack Lance Character"
+    },
+    {
+      "id": "d1ed-a9f9-29a5-39b5",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "8e83-bd72-6285-86c7",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "3de4-fb78-e6de-dca5",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "928a-574c-f429-72f8",
+      "targetId": "97fd-09c5-60a8-63c4",
+      "type": "profile",
+      "name": "Damaged: 1-5 wounds remaining"
+    },
+    {
+      "id": "81c8-fc6f-d880-245b",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "fbd6-48b3-54d3-bc65",
+      "targetId": "4e9b-b002-b008-6077",
+      "type": "profile",
+      "name": "*Invulnerable Save"
+    },
+    {
+      "id": "b3ae-7573-fc44-9228",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "f9be-d38c-f39c-fd6e",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "9449-9dac-876f-c9ba",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "c96d-b1a0-1797-7835",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "12c3-4c6a-108f-807a",
+      "targetId": "dfe8-cea0-8d16-db95",
+      "type": "selectionEntry",
+      "name": "Diabolus heavy stubber"
+    },
+    {
+      "id": "98e3-1935-77b1-ab3c",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "1cc6-dcc6-a65e-fbc2",
+      "targetId": "773c-c2e1-0261-d8f4",
+      "type": "selectionEntry",
+      "name": "Havoc multi-launcher"
+    },
+    {
+      "id": "6d85-b273-5718-7d6e",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "de39-13fa-1218-2a8c",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "7df1-6e0b-8afc-20a4",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "96e1-0018-ecf2-a9dd",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "b9f3-d53d-9289-c19d",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "80f4-05e3-83ed-248f",
+      "targetId": "99dc-0f47-85e2-75da",
+      "name": "War Dog"
+    },
+    {
+      "id": "a129-8249-a19a-67cf",
+      "targetId": "8364-7dd6-fadc-a5d2",
+      "name": "Brigand"
+    },
+    {
+      "id": "bcea-61fc-f700-6cb3",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "5aa9-4d05-6955-3767",
+      "targetId": "b02a-a6e2-3eb4-4872",
+      "type": "selectionEntry",
+      "name": "Houndpack Lance Character"
+    },
+    {
+      "id": "8fab-d9a1-36f3-e659",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "d826-0c70-a502-dfaf",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "44f6-cdb6-f568-5c55",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "aaab-a55c-8c11-d7bf",
+      "targetId": "97fd-09c5-60a8-63c4",
+      "type": "profile",
+      "name": "Damaged: 1-5 wounds remaining"
+    },
+    {
+      "id": "0b42-7bab-c9fa-55d2",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "1a80-0a6f-6441-c484",
+      "targetId": "4e9b-b002-b008-6077",
+      "type": "profile",
+      "name": "*Invulnerable Save"
+    },
+    {
+      "id": "151e-e8b6-67f1-ec9f",
+      "targetId": "6638-278a-5331-d1ff",
+      "type": "selectionEntry",
+      "name": "Armoured feet"
+    },
+    {
+      "id": "8404-89be-a3ee-4291",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "cf74-09ac-84ee-31d8",
+      "targetId": "a30d-6752-d912-315e",
+      "type": "selectionEntry",
+      "name": "Avenger chaincannon"
+    },
+    {
+      "id": "ee23-b7b6-7c69-9ffd",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "8e53-240c-6aee-d942",
+      "targetId": "0b63-2988-ec78-7913",
+      "type": "selectionEntry",
+      "name": "Daemonbreath spear"
+    },
+    {
+      "id": "9e1b-ccb6-dbdb-c5de",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "15c2-bab2-b57a-527f",
+      "targetId": "dfe8-cea0-8d16-db95",
+      "type": "selectionEntry",
+      "name": "Diabolus heavy stubber"
+    },
+    {
+      "id": "b41b-6dbf-61e3-3cbd",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "abb1-9d63-b31a-7502",
+      "targetId": "773c-c2e1-0261-d8f4",
+      "type": "selectionEntry",
+      "name": "Havoc multi-launcher"
+    },
+    {
+      "id": "88c7-e872-9d31-5c45",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "e4bb-f359-72e7-530e",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "0423-e74f-cb59-5472",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "e391-f4d8-0acc-7f6e",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "880b-7c48-3878-9686",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "f05e-6435-e235-905a",
+      "targetId": "99dc-0f47-85e2-75da",
+      "name": "War Dog"
+    },
+    {
+      "id": "aa12-7b52-9d70-7307",
+      "targetId": "f8a3-f5fa-4e85-cc47",
+      "name": "Huntsman"
+    },
+    {
+      "id": "2437-83ec-308e-2458",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "99b9-ab7c-b97c-8e42",
+      "targetId": "b02a-a6e2-3eb4-4872",
+      "type": "selectionEntry",
+      "name": "Houndpack Lance Character"
+    },
+    {
+      "id": "5af7-8ff6-e129-d239",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "ee8f-1904-9fe6-9a1e",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "1a98-6dbb-f7bc-ac12",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "ab81-818e-ca5f-92a5",
+      "targetId": "97fd-09c5-60a8-63c4",
+      "type": "profile",
+      "name": "Damaged: 1-5 wounds remaining"
+    },
+    {
+      "id": "6477-6d84-788a-83a9",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "4f42-08ac-d533-3ba4",
+      "targetId": "4e9b-b002-b008-6077",
+      "type": "profile",
+      "name": "*Invulnerable Save"
+    },
+    {
+      "id": "82fd-bd3c-02de-de75",
+      "targetId": "0b63-2988-ec78-7913",
+      "type": "selectionEntry",
+      "name": "Daemonbreath spear"
+    },
+    {
+      "id": "0a46-b4b4-53cd-472d",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "bb34-3b2a-0479-6932",
+      "targetId": "34bd-d83f-3753-d642",
+      "type": "selectionEntry",
+      "name": "Reaper chaintalon"
+    },
+    {
+      "id": "2a0e-4377-8db8-4c39",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "6031-5519-22e8-6091",
+      "targetId": "dfe8-cea0-8d16-db95",
+      "type": "selectionEntry",
+      "name": "Diabolus heavy stubber"
+    },
+    {
+      "id": "24d5-aee0-508e-66fc",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "f631-c2fc-a38d-b547",
+      "targetId": "e0dc-e414-aa41-8ebd",
+      "type": "selectionEntry",
+      "name": "Daemonbreath meltagun"
+    },
+    {
+      "id": "2c2e-d24a-34a0-34c4",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "44c3-c530-ad6b-a543",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "2299-f898-4dd4-2ecb",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "1c2a-4e6a-802d-155c",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "faf2-b60d-6262-e14c",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "fa09-a0f9-2bf6-7c05",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "1649-077c-57ff-7626",
+      "targetId": "f2d9-b5e8-4183-cb0b",
+      "name": "Abhorrent"
+    },
+    {
+      "id": "ec16-d3f7-c2de-fee2",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "04d6-1cd5-aac8-dadc",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "27c8-c872-58a5-6890",
+      "targetId": "8eb7-f737-7228-1ba4",
+      "name": "Knight Despoiler"
+    },
+    {
+      "id": "6812-2eb0-1bef-5c68",
+      "targetId": "4462-be90-ddf7-c404",
+      "name": "Knight Character"
+    },
+    {
+      "id": "2bd8-cc9e-35e4-9973",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "bcb6-035f-779e-0685",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "0a70-37b2-7d46-7e55",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "31a0-b1e6-1ecb-3c7c",
+      "targetId": "5e13-1624-d280-418d",
+      "type": "rule",
+      "name": "Super-Heavy Walker"
+    },
+    {
+      "id": "81ca-78d2-2489-0bee",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "daaf-7ef7-c7cb-462b",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "e4ea-9586-78bd-615b",
+      "targetId": "12ce-2a62-9fea-74bd",
+      "type": "profile",
+      "name": "Damaged: 1-9 wounds remaining"
+    },
+    {
+      "id": "0b67-c7a8-b249-135d",
+      "targetId": "4e9b-b002-b008-6077",
+      "type": "profile",
+      "name": "*Invulnerable Save"
+    },
+    {
+      "id": "eba3-1037-ea59-76f3",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "a75f-b7da-f8d1-8131",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "c1dd-59b2-2488-4c68",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "4b16-d1fe-e59a-af23",
+      "targetId": "a37b-438f-7e62-486e",
+      "type": "selectionEntry",
+      "name": "Havoc missile pod"
+    },
+    {
+      "id": "202e-e024-9fcb-9873",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "04b7-80b0-c63d-fa78",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "9bee-2752-294d-c782",
+      "targetId": "005c-b2d1-4432-415a",
+      "type": "selectionEntry",
+      "name": "Ruinspear rocket pod"
+    },
+    {
+      "id": "2a03-edc9-c491-c9dd",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "7423-00fe-5509-a455",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "4887-7e59-99bf-873e",
+      "targetId": "08ba-94c4-8833-a27d",
+      "type": "selectionEntry",
+      "name": "Hellstorm autocannons"
+    },
+    {
+      "id": "692a-e5e3-93e8-0e64",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "1596-eb20-83c0-eac4",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "b862-bf16-4b95-f802",
+      "targetId": "5eca-c264-36cf-172e",
+      "type": "selectionEntry",
+      "name": "Reaper chainsword"
+    },
+    {
+      "id": "daf2-ac68-546d-87cd",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "64ce-f13e-387f-4888",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "a983-291e-f14c-bb76",
+      "targetId": "3f43-5865-ddd8-ea87",
+      "type": "selectionEntry",
+      "name": "Daemonbreath thermal cannon"
+    },
+    {
+      "id": "6803-a1dd-ddbd-7815",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "bdbd-2e9b-2abb-d057",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "64f7-3eb8-ba6b-130a",
+      "targetId": "89c4-132e-6ad6-2a08",
+      "type": "selectionEntry",
+      "name": "Despoiler gatling cannon"
+    },
+    {
+      "id": "3711-c728-87b2-73c2",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "0561-853d-d840-d956",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "5abc-89d7-ddc6-388e",
+      "targetId": "f4a1-7f17-ec57-6c69",
+      "type": "selectionEntry",
+      "name": "Heavy darkflamer"
+    },
+    {
+      "id": "b739-f539-8c37-1020",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "2552-2fc9-aea6-9422",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "b9eb-6a03-61da-eeba",
+      "targetId": "a0e9-d24d-0927-8670",
+      "type": "selectionEntry",
+      "name": "Despoiler battle cannon"
+    },
+    {
+      "id": "2162-116f-ab73-cec4",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "b63a-0ba2-1bb2-e19e",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "0c8e-0f17-1d3a-6550",
+      "targetId": "dfe8-cea0-8d16-db95",
+      "type": "selectionEntry",
+      "name": "Diabolus heavy stubber"
+    },
+    {
+      "id": "2b4a-db5e-97c3-07da",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "0ec1-6ce0-94c4-e9d0",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "0943-19c0-9efa-e46c",
+      "targetId": "5623-efa6-bed8-fa42",
+      "type": "selectionEntry",
+      "name": "Warpstrike claw"
+    },
+    {
+      "id": "661b-6a48-c812-b735",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "613d-eab7-5d33-4dfc",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "6005-8d6b-36b5-50ff",
+      "targetId": "3f43-5865-ddd8-ea87",
+      "type": "selectionEntry",
+      "name": "Daemonbreath thermal cannon"
+    },
+    {
+      "id": "7b6b-63b6-0dba-2afc",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "2427-dfe7-ca93-8350",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "b03e-af01-dbb1-a130",
+      "targetId": "89c4-132e-6ad6-2a08",
+      "type": "selectionEntry",
+      "name": "Despoiler gatling cannon"
+    },
+    {
+      "id": "7fc4-c88f-e4c7-b5fe",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "1cca-a685-c5ee-17df",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "f200-24f5-4a35-0072",
+      "targetId": "f4a1-7f17-ec57-6c69",
+      "type": "selectionEntry",
+      "name": "Heavy darkflamer"
+    },
+    {
+      "id": "0512-8c42-2e28-689f",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "ff08-e58f-94eb-cf36",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "1788-725c-32ef-ac38",
+      "targetId": "a0e9-d24d-0927-8670",
+      "type": "selectionEntry",
+      "name": "Despoiler battle cannon"
+    },
+    {
+      "id": "da92-a0bd-c236-1f65",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "0dd0-5083-3c9f-a235",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "1dfe-df87-0c72-5697",
+      "targetId": "dfe8-cea0-8d16-db95",
+      "type": "selectionEntry",
+      "name": "Diabolus heavy stubber"
+    },
+    {
+      "id": "260a-d27b-1611-4b6e",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "4411-b1be-44fe-4e4e",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "bef4-9f67-21db-1f47",
+      "targetId": "dfe8-cea0-8d16-db95",
+      "type": "selectionEntry",
+      "name": "Diabolus heavy stubber"
+    },
+    {
+      "id": "e103-cec8-9105-b7f7",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "5807-95a0-a8c9-c1b1",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "65bc-c48f-4251-43fd",
+      "targetId": "e0dc-e414-aa41-8ebd",
+      "type": "selectionEntry",
+      "name": "Daemonbreath meltagun"
+    },
+    {
+      "id": "3717-32d3-f466-0ae4",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "0df2-6091-c038-baf0",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "81e1-2b83-73ad-80d8",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "f540-575f-4871-fb8b",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "e919-cea0-5df4-e329",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "efd3-cf16-d23a-3be7",
+      "targetId": "4986-bf86-beb4-13ac",
+      "name": "Damage Dx Weapon"
+    },
+    {
+      "id": "3588-d4b8-c655-760d",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "60d3-a705-b469-b063",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "dab9-b553-b68b-dd60",
+      "targetId": "7cdb-fb99-44a9-8849",
+      "type": "rule",
+      "name": "Melta"
+    },
+    {
+      "id": "9d56-c4be-3741-b7a6",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "e08f-fd69-7ddd-6742",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "af95-40e9-c175-ede5",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "a0e0-2cca-12ca-6503",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "2e21-c6f8-2a72-6ace",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "9af4-6ce5-6328-cf88",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "b123-90c7-bd42-0303",
+      "targetId": "4ddd-4e29-acdd-5e6d",
+      "type": "rule",
+      "name": "Indirect Fire"
+    },
+    {
+      "id": "2eec-ffbb-87fa-a1bc",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "afc0-674b-b236-f46a",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "6247-4960-49c5-bb4b",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "2926-3d91-f5f7-aaca",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "308b-cd10-dbab-0837",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "c232-9578-3848-94b2",
+      "targetId": "4986-bf86-beb4-13ac",
+      "name": "Damage Dx Weapon"
+    },
+    {
+      "id": "100a-de02-eb4e-bae2",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "1d36-4ddf-948e-b5ba",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "fd17-0902-70fc-d3d9",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "8bff-8c38-6b3e-8ef3",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "4e65-028c-a562-bbcd",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "774d-acb8-988b-ccfc",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "2c9b-9e78-6c79-64db",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "660c-b497-3004-aed4",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "2835-4ec6-c0a2-1779",
+      "targetId": "f2d9-b5e8-4183-cb0b",
+      "name": "Abhorrent"
+    },
+    {
+      "id": "e3ca-b3d9-2f67-baa2",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "eaa4-33c9-5baa-b1b8",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "0a41-a5fd-ad5b-3c9d",
+      "targetId": "7e37-1f00-4c53-1379",
+      "name": "Knight Desecrator"
+    },
+    {
+      "id": "9a48-08dd-5816-4a9f",
+      "targetId": "4462-be90-ddf7-c404",
+      "name": "Knight Character"
+    },
+    {
+      "id": "1257-15b0-642f-28a6",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "2d17-c6a6-2772-8994",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "89c2-6778-25bd-9d8a",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "c023-0954-374a-0af7",
+      "targetId": "5e13-1624-d280-418d",
+      "type": "rule",
+      "name": "Super-Heavy Walker"
+    },
+    {
+      "id": "f9e4-dd11-791b-44eb",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "053e-d6d6-3ef0-be8e",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "ed66-ef4e-c2-b782",
+      "targetId": "12ce-2a62-9fea-74bd",
+      "type": "profile",
+      "name": "Damaged: 1-9 wounds remaining"
+    },
+    {
+      "id": "d0be-44df-8f46-ae6a",
+      "targetId": "4e9b-b002-b008-6077",
+      "type": "profile",
+      "name": "*Invulnerable Save"
+    },
+    {
+      "id": "c85d-dff0-6ac4-bcf4",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "fb29-1437-cfeb-5b66",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "f434-d094-0943-4dcb",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "4376-7147-5e72-5f4c",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "3d80-41c2-0ec0-82e9",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "6a2c-a83d-25f6-283c",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "0fa9-a7ff-0aa8-6110",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "d415-fd15-415d-4aac",
+      "targetId": "5eca-c264-36cf-172e",
+      "type": "selectionEntry",
+      "name": "Reaper chainsword"
+    },
+    {
+      "id": "25a5-7370-a745-a5b6",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "9cdb-ae82-a48b-582f",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "571a-5fae-d415-fad0",
+      "targetId": "5623-efa6-bed8-fa42",
+      "type": "selectionEntry",
+      "name": "Warpstrike claw"
+    },
+    {
+      "id": "4292-e137-274d-5c25",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "06f7-7f66-2ab4-26d5",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "f27d-c31d-7b2b-4034",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "998c-5b83-86cc-161d",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "dbda-0475-b997-2832",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "750d-e816-cbb6-b18d",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "0503-4440-b9ef-9f47",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "d153-c525-98eb-659b",
+      "targetId": "f2d9-b5e8-4183-cb0b",
+      "name": "Abhorrent"
+    },
+    {
+      "id": "86fe-3ded-4dd3-444a",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "fbd7-b64d-fca1-16e3",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "7992-cf5d-613e-3bd1",
+      "targetId": "d97b-d8fc-e1ac-0d8c",
+      "name": "Knight Rampager"
+    },
+    {
+      "id": "1087-1c30-f56c-bc04",
+      "targetId": "4462-be90-ddf7-c404",
+      "name": "Knight Character"
+    },
+    {
+      "id": "469d-83e5-b2e0-cabe",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "dfda-8ea5-fe54-a08d",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "e81d-7b46-e479-9e3f",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "ca19-5a88-8a4f-9bcc",
+      "targetId": "5e13-1624-d280-418d",
+      "type": "rule",
+      "name": "Super-Heavy Walker"
+    },
+    {
+      "id": "87d7-7ff3-2681-0667",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "6ad4-77bf-0a46-8d85",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "13cb-a4f0-dc88-7b1f",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "a17-18d3-8c51-c8b4",
+      "targetId": "12ce-2a62-9fea-74bd",
+      "type": "profile",
+      "name": "Damaged: 1-9 wounds remaining"
+    },
+    {
+      "id": "316f-d8c8-ab3c-8135",
+      "targetId": "4e9b-b002-b008-6077",
+      "type": "profile",
+      "name": "*Invulnerable Save"
+    },
+    {
+      "id": "c49a-b329-1c9d-5a1b",
+      "targetId": "dfe8-cea0-8d16-db95",
+      "type": "selectionEntry",
+      "name": "Diabolus heavy stubber"
+    },
+    {
+      "id": "ae66-bd64-526d-0b0b",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "b4f1-8c6a-d8c0-fb07",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "35ad-99c5-330e-7685",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "8acd-a29a-c362-3624",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "3bd4-ab14-67d4-77eb",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "cef7-0cf7-f456-4f76",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "cdfc-29ce-871a-ae14",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "bcc2-551c-71ca-78ce",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "1fd6-d4b9-4d27-316f",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "7507-4719-6824-26ce",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "bfe7-3069-044e-849d",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "f4c3-fe19-cdd3-686f",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "f9bb-ddff-8ce6-c5fc",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "0b65-ea83-88bb-1886",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "34a1-e176-b832-56ec",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "9098-c275-6a76-a938",
+      "targetId": "f2d9-b5e8-4183-cb0b",
+      "name": "Abhorrent"
+    },
+    {
+      "id": "8fb1-d570-b810-9015",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "2a17-ff6f-e2bf-4bdc",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "1bc7-2b3c-b3ca-db6b",
+      "targetId": "9d18-ceff-963a-cc29",
+      "name": "Knight Abominant"
+    },
+    {
+      "id": "34ef-49fe-c470-a6d3",
+      "targetId": "13bf-2bee-3ae0-b414",
+      "name": "Psyker"
+    },
+    {
+      "id": "a014-5b7e-cade-4580",
+      "targetId": "4462-be90-ddf7-c404",
+      "name": "Knight Character"
+    },
+    {
+      "id": "996e-dc1d-7b86-86a5",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "5568-df88-d09e-d873",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "f6a9-057a-2c49-1d84",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "c560-9d76-7c1c-eb2c",
+      "targetId": "5e13-1624-d280-418d",
+      "type": "rule",
+      "name": "Super-Heavy Walker"
+    },
+    {
+      "id": "c4a8-84fa-a02e-2f16",
+      "targetId": "4e9b-b002-b008-6077",
+      "type": "profile",
+      "name": "*Invulnerable Save"
+    },
+    {
+      "id": "3b4a-cc9d-2650-476a",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "8b67-d967-873f-8919",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "c9f9-667d-d596-a1d7",
+      "targetId": "12ce-2a62-9fea-74bd",
+      "type": "profile",
+      "name": "Damaged: 1-9 wounds remaining"
+    },
+    {
+      "id": "9de4-70d2-6508-ef37",
+      "targetId": "dfe8-cea0-8d16-db95",
+      "type": "selectionEntry",
+      "name": "Diabolus heavy stubber"
+    },
+    {
+      "id": "7d21-a310-227c-0204",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "4add-0617-6cb4-1736",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "78e0-0cee-092f-6bd7",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "f79b-470f-6294-b868",
+      "targetId": "115b-79dc-f723-d761",
+      "type": "rule",
+      "name": "Extra Attacks"
+    },
+    {
+      "id": "630c-7a3f-4ee1-5179",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "a1c8-dc4f-62d6-14e3",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "14c0-c0cf-7672-facb",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "1834-8f8b-43ad-b990",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "1bec-1733-c709-d1ee",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "a471-5d8a-bf20-f145",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "5a7e-4861-1783-a3d7",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "c0d7-2e76-5db0-1561",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "b3bc-1e51-1383-9cb8",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "4641-2d4a-e9c1-7d55",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "79e8-4342-7042-f28a",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "3136-dd9d-071e-ca9e",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "664e-c026-443c-bc3b",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "6ec6-4ee8-c101-b098",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "f5fe-5a1d-42d6-1363",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "13fe-aea6-b322-361a",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "e79f-cc61-74b3-0cd5",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "6432-b379-d16c-b402",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "599c-1cd9-9782-a8e6",
+      "targetId": "552f-2667-65a7-f914",
+      "name": "Knight Tyrant"
+    },
+    {
+      "id": "b380-e511-ea41-accb",
+      "targetId": "4462-be90-ddf7-c404",
+      "name": "Knight Character"
+    },
+    {
+      "id": "9bbe-d228-29d0-2286",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "6ea7-07d2-808c-044a",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "f11f-50ee-c3da-3db8",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "2cba-8848-b0b6-dda9",
+      "targetId": "5e13-1624-d280-418d",
+      "type": "rule",
+      "name": "Super-Heavy Walker"
+    },
+    {
+      "id": "a905-6eac-7efc-779b",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "3e23-1899-b1ea-0d4f",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "bd9f-efd3-8aee-df65",
+      "targetId": "7400-7387-dae-781f",
+      "type": "profile",
+      "name": "Damaged: 1-10 wounds remaining"
+    },
+    {
+      "id": "3c96-c167-5c0d-9c7f",
+      "targetId": "4e9b-b002-b008-6077",
+      "type": "profile",
+      "name": "*Invulnerable Save"
+    },
+    {
+      "id": "ad13-7e6e-93b4-05b1",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "e33e-467a-2168-7ebf",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "5f7a-6a5f-64c3-a501",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "2ec0-8ec5-650e-5935",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "2db0-f7f7-6f87-df07",
+      "targetId": "4986-bf86-beb4-13ac",
+      "name": "Damage Dx Weapon"
+    },
+    {
+      "id": "10e3-9e7c-5881-a066",
+      "targetId": "7cdb-fb99-44a9-8849",
+      "type": "rule",
+      "name": "Melta"
+    },
+    {
+      "id": "d23c-dad8-1943-001a",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "bced-a71d-02a4-4c85",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "f3a6-cba3-c0d3-cc3f",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "5366-5659-299c-1743",
+      "targetId": "fb24-d907-e7e7-04f7",
+      "type": "selectionEntry",
+      "name": "Gheiststrike missile launcher"
+    },
+    {
+      "id": "7474-6d3d-e868-d037",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "660c-4817-ef98-1e27",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "f9c6-25dc-90a8-e312",
+      "targetId": "6a8b-6d2e-fd7b-5e12",
+      "type": "selectionEntry",
+      "name": "Twin desecrator cannon"
+    },
+    {
+      "id": "859b-064a-d484-1f09",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "1001-41ed-e64f-7994",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "45b6-980e-350b-564c",
+      "targetId": "fb24-d907-e7e7-04f7",
+      "type": "selectionEntry",
+      "name": "Gheiststrike missile launcher"
+    },
+    {
+      "id": "56e2-d7d9-e137-3952",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "c76f-9cea-1467-6419",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "c54c-94f7-e066-0891",
+      "targetId": "6a8b-6d2e-fd7b-5e12",
+      "type": "selectionEntry",
+      "name": "Twin desecrator cannon"
+    },
+    {
+      "id": "721d-01ef-ee72-581c",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "caf1-7acb-7fa7-1df8",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "05de-9f9a-637e-9d82",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "aa69-0302-bd90-ddba",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "5b90-ea71-7a0c-a254",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "4ffc-8de3-50ce-ad05",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "45b9-889d-debb-f819",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "8ef0-9ce4-7805-8c69",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "a28d-9e04-2f47-4b1d",
+      "targetId": "8367-374c-f87-c627",
+      "type": "rule",
+      "name": "Hazardous"
+    },
+    {
+      "id": "96cd-f949-f9ec-984c",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "2e7a-58ed-c872-ae19",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "369b-1ee4-8c96-fb18",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "6eca-c785-3bec-1147",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "1b11-fed9-883d-88c5",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "21ae-587f-331e-dc4b",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "fa47-5b45-c66c-020d",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "f34b-f5ae-1fc4-50cd",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "4a83-2d85-1874-6bf8",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "1b94-1c5c-2494-e31a",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "bd2b-4aeb-d23c-77a3",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "ef3a-7513-6c4c-1182",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "c793-f138-db75-5bed",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "00d0-5c9b-de5f-1e1e",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "da1e-ed20-cf41-2082",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "b081-9320-2983-7b55",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "134c-456f-4b4c-938f",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "993e-99b4-c211-4ece",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "aa92-1427-bfb7-7d44",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "b096-02c3-53ca-81a3",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "3bf6-9a18-39c1-b589",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "3439-06f3-42ea-6d21",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "0a09-0742-ebff-1586",
+      "targetId": "5c0e-4c31-d51b-e470",
+      "name": "Warlord"
+    },
+    {
+      "id": "7334-5ffe-8bbc-bc8b",
+      "targetId": "4ac9-fd30-1e3d-b249",
+      "name": "Configuration"
+    },
+    {
+      "id": "9365-c81b-4e86-6386",
+      "targetId": "6fe0-3dbe-f7e0-10bb",
+      "name": "Purge the Foe"
+    },
+    {
+      "id": "f176-ef11-0b57-bbb5",
+      "targetId": "1cc1-f11a-4e8f-1bcc",
+      "name": "Take and Hold"
+    },
+    {
+      "id": "3c3a-60d2-4b4d-96c4",
+      "targetId": "1cc1-f11a-4e8f-1bcc",
+      "name": "Take and Hold"
+    },
+    {
+      "id": "76ff-2763-47d3-40b5",
+      "targetId": "b4a7-5083-fe94-4d24",
+      "name": "Reconnaissance"
+    },
+    {
+      "id": "3191-33d3-ffbb-6b8b",
+      "targetId": "0936-9767-1cc7-52ae",
+      "name": "Priority Assets"
+    },
+    {
+      "id": "b317-02cd-0e3c-9080",
+      "targetId": "7d80-2de5-816e-9d2b",
+      "name": "3DP Detachment"
+    },
+    {
+      "id": "58d4-7d85-4cb0-d7a4",
+      "targetId": "6fe0-3dbe-f7e0-10bb",
+      "name": "Purge the Foe"
+    },
+    {
+      "id": "aa6f-9eea-1015-a0b1",
+      "targetId": "ecf8-cf72-7d5b-1b5b",
+      "name": "Disruption"
+    },
+    {
+      "id": "11e7-d2bb-42ed-91e8",
+      "targetId": "0936-9767-1cc7-52ae",
+      "name": "Priority Assets"
+    },
+    {
+      "id": "c17a-089c-45c4-545a",
+      "targetId": "b4a7-5083-fe94-4d24",
+      "name": "Reconnaissance"
+    },
+    {
+      "id": "d058-9569-d41d-df22",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "af06-bfbc-b068-fd86",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "a7d4-196c-8d80-1492",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "948b-85fd-616c-98d3",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "e9f0-44e5-8b10-d32",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "5ae1-e768-493a-39e",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "a1-3a3b-67d3-4da1",
+      "targetId": "4ba6-5e16-28e6-835a",
+      "name": "Acastus"
+    },
+    {
+      "id": "b38c-9b39-38ed-ea03",
+      "targetId": "1ae4-6e5e-c5b3-37fa",
+      "name": "Knight Asterius"
+    },
+    {
+      "id": "695c-6394-b978-d01d",
+      "targetId": "b927-8eeb-7cc3-8dec",
+      "name": "Frame"
+    },
+    {
+      "id": "7741-96e2-f837-4773",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "4ef1-9977-116f-d4b8",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "2b3-6e05-b3a3-4b04",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "7536-4ece-da3f-ff96",
+      "targetId": "5e13-1624-d280-418d",
+      "type": "rule",
+      "name": "Super-Heavy Walker"
+    },
+    {
+      "id": "9538-9dad-5e30-2c0",
+      "targetId": "7400-7387-dae-781f",
+      "type": "profile",
+      "name": "Damaged: 1-10 wounds remaining"
+    },
+    {
+      "id": "9374-8790-4eec-aeac",
+      "targetId": "4e9b-b002-b008-6077",
+      "type": "profile",
+      "name": "*Invulnerable Save"
+    },
+    {
+      "id": "f107-bee9-8aaa-8945",
+      "targetId": "28a-8545-4104-4ffa",
+      "type": "selectionEntry",
+      "name": "Titanic feet"
+    },
+    {
+      "id": "5d1f-c5d6-39be-9033",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "2887-bb4e-2592-2617",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "1623-51e0-79b6-c180",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "1902-69a2-7280-920b",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "2e8c-c8cb-7c15-b760",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "d59f-2ba0-3b47-5ae9",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "6923-bd94-df65-46fe",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "856c-ee85-28a-71d0",
+      "targetId": "4ddd-4e29-acdd-5e6d",
+      "type": "rule",
+      "name": "Indirect Fire"
+    },
+    {
+      "id": "a3f5-e4d1-29df-fd60",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "7b8a-3301-c32f-63af",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "5f79-8891-e90e-353d",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "8bdd-1eb2-c261-9f85",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "bcf3-e2d3-e488-4a2c",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "df0c-ad2a-2206-7f1b",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "7a1c-73c1-4dd7-710a",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "78cc-ad6-6d46-6a5a",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "5412-e79e-763c-3348",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "7925-3868-95c1-387b",
+      "targetId": "4ba6-5e16-28e6-835a",
+      "name": "Acastus"
+    },
+    {
+      "id": "59c7-f4e8-1642-e81d",
+      "targetId": "ecea-92b8-f73b-4b95",
+      "name": "Knight Porphyrion"
+    },
+    {
+      "id": "3271-2563-bdde-ce23",
+      "targetId": "b927-8eeb-7cc3-8dec",
+      "name": "Frame"
+    },
+    {
+      "id": "575a-2b6e-bfd5-f66c",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "91e6-5be1-c93-f189",
+      "targetId": "7400-7387-dae-781f",
+      "type": "profile",
+      "name": "Damaged: 1-10 wounds remaining"
+    },
+    {
+      "id": "774-8a3f-b98c-2e8d",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "93eb-c5b0-872e-cc77",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "a226-6784-bacd-ed18",
+      "targetId": "5e13-1624-d280-418d",
+      "type": "rule",
+      "name": "Super-Heavy Walker"
+    },
+    {
+      "id": "0a1f-d9c6-a40c-4564",
+      "targetId": "4e9b-b002-b008-6077",
+      "type": "profile",
+      "name": "*Invulnerable Save"
+    },
+    {
+      "id": "dffa-b61a-4edc-4c24",
+      "targetId": "28a-8545-4104-4ffa",
+      "type": "selectionEntry",
+      "name": "Titanic feet"
+    },
+    {
+      "id": "8f47-d982-ea63-56c4",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "5e44-dc5d-6756-b8c5",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "7546-10a1-1f7a-b6be",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "54f9-6ecd-8287-68a3",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "cfb6-b1a7-ae61-b15f",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "ebf1-cddb-8b63-359c",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "3503-af10-190a-31e5",
+      "targetId": "4ddd-4e29-acdd-5e6d",
+      "type": "rule",
+      "name": "Indirect Fire"
+    },
+    {
+      "id": "e250-3ff0-24ca-4e8d",
+      "targetId": "4986-bf86-beb4-13ac",
+      "name": "Damage Dx Weapon"
+    },
+    {
+      "id": "5360-78fa-1cc2-e9e4",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "dc4c-1ca6-dd61-8b7",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "8f70-4cab-70de-ab14",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "18a1-6af7-afef-2877",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "614a-1e9f-b730-39ad",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "5adc-d1eb-a5a2-53a",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "1415-2fca-643d-6f8d",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "a7e2-c661-d196-c9d4",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "122-800f-b396-fb6a",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "fbe7-c9e6-e945-1882",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "d89f-d8bc-4b7b-8b7f",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "812e-d3b1-f4f0-99a5",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "7e18-3d57-43dd-e66c",
+      "targetId": "b6d3-1a49-8a2a-b157",
+      "name": "Cerastus"
+    },
+    {
+      "id": "a84a-dcd6-acf0-b01b",
+      "targetId": "4aae-167f-1680-f405",
+      "name": "Knight Lancer"
+    },
+    {
+      "id": "422d-696e-c6e7-f0b7",
+      "targetId": "4462-be90-ddf7-c404",
+      "name": "Knight Character"
+    },
+    {
+      "id": "ddf3-df84-9d12-a9c",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "6d86-e945-7080-e219",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "088c-6198-cdc9-5a58",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "fddc-6260-698f-40e",
+      "targetId": "7400-7387-dae-781f",
+      "type": "profile",
+      "name": "Damaged: 1-10 wounds remaining"
+    },
+    {
+      "id": "38ac-b5b2-7db9-f4a3",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "778c-9b9-8529-c419",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "dc7b-e107-b327-4001",
+      "targetId": "5e13-1624-d280-418d",
+      "type": "rule",
+      "name": "Super-Heavy Walker"
+    },
+    {
+      "id": "7cf0-219b-dbef-56b3",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "48a6-96ac-08d6-3caa",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "381b-ba2f-4320-acf9",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "7427-c081-1af5-3d9e",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "e1bb-eaa4-f739-ea92",
+      "targetId": "2ebc-abdf-8129-6c57",
+      "type": "rule",
+      "name": "Lance"
+    },
+    {
+      "id": "2e82-39f2-9209-77b1",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "2bc4-004e-9435-eea8",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "e9bd-c4f0-8f88-27f7",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "ce57-a3e3-c88b-d8e1",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "dacf-3451-42cd-c728",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "e316-433a-bea9-812c",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "60e0-a3a9-88d9-efa",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "d847-51bf-4c96-861c",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "4961-698b-999-b302",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "e084-266f-196-b91b",
+      "targetId": "b6d3-1a49-8a2a-b157",
+      "name": "Cerastus"
+    },
+    {
+      "id": "4c70-4fb0-d9b1-78a4",
+      "targetId": "2a12-3d53-7288-3c2b",
+      "name": "Knight Castigator"
+    },
+    {
+      "id": "9276-7193-4584-57a2",
+      "targetId": "4462-be90-ddf7-c404",
+      "name": "Knight Character"
+    },
+    {
+      "id": "9913-328a-bf1-b720",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "9157-d054-4289-709",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "207e-1c6a-b8ec-4115",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "bee1-486f-fcc8-3192",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "bcce-9f90-f744-80e0",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "a1c9-29ef-8029-36e9",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "a4a4-248c-a0c1-87d3",
+      "targetId": "5e13-1624-d280-418d",
+      "type": "rule",
+      "name": "Super-Heavy Walker"
+    },
+    {
+      "id": "500-6af5-592-7e7",
+      "targetId": "7400-7387-dae-781f",
+      "type": "profile",
+      "name": "Damaged: 1-10 wounds remaining"
+    },
+    {
+      "id": "cbd2-ab4a-9416-1ffb",
+      "targetId": "4e9b-b002-b008-6077",
+      "type": "profile",
+      "name": "*Invulnerable Save"
+    },
+    {
+      "id": "5418-2959-34c7-8b01",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "6b9a-ae42-5717-a4f8",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "4371-1be3-6f3c-e594",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "a61c-57fd-f1a6-459e",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "dfb3-d8df-3ab8-5052",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "ec04-beca-ceb8-7ff2",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "8f64-d597-8e3b-4b00",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "b055-b7d-faaf-c582",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "cb54-547d-cff9-8b90",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "8fc7-ceeb-204b-3fd2",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "3e8a-84df-363-70c2",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "1d07-14d2-455d-f832",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "80f8-1d7e-6499-9aad",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "8d42-b509-2bb3-25fb",
+      "targetId": "b6d3-1a49-8a2a-b157",
+      "name": "Cerastus"
+    },
+    {
+      "id": "a919-6426-38d8-76bf",
+      "targetId": "584e-5840-20b0-1646",
+      "name": "Knight Acheron"
+    },
+    {
+      "id": "0501-6251-44c9-c28c",
+      "targetId": "4462-be90-ddf7-c404",
+      "name": "Knight Character"
+    },
+    {
+      "id": "a656-aec8-fd97-88eb",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "12be-1b78-dc24-7226",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "600d-5bc6-1c76-7488",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "814c-54a0-9ed8-6cb1",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "a836-d284-5da1-45f2",
+      "targetId": "7400-7387-dae-781f",
+      "type": "profile",
+      "name": "Damaged: 1-10 wounds remaining"
+    },
+    {
+      "id": "cc30-31f9-d62d-48b7",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "a431-ff8-a3f-a1a5",
+      "targetId": "5e13-1624-d280-418d",
+      "type": "rule",
+      "name": "Super-Heavy Walker"
+    },
+    {
+      "id": "174a-6809-5222-9f1b",
+      "targetId": "4e9b-b002-b008-6077",
+      "type": "profile",
+      "name": "*Invulnerable Save"
+    },
+    {
+      "id": "bb09-ccbf-be40-5f47",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "298e-78b6-296f-2a71",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "12bd-65ea-e9da-e23b",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "5e65-6320-5c66-c3bf",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "edf8-1cc4-69df-72a4",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "cc52-36cd-89de-a610",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "638c-e51c-0f79-9acd",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "fb71-bd29-0c15-06f5",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "2920-5403-a0bc-3625",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "26d8-dd20-738c-b1d5",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "69d0-50b3-b7b2-2ce4",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "958c-113c-b898-fa16",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "e30b-55b7-2513-8af2",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "6f89-1785-e160-9b48",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "f657-d8f9-c130-8534",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "b134-cb2a-4439-8797",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "4773-9898-3024-14a1",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "1ab7-ab75-7ba6-258a",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "d474-fd7a-22fc-e9bc",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "5ea0-35d0-6710-8550",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "5a1b-3de7-3ec3-cd8c",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "9895-7745-b9cd-9ed",
+      "targetId": "b6d3-1a49-8a2a-b157",
+      "name": "Cerastus"
+    },
+    {
+      "id": "7dee-a882-8d92-b91d",
+      "targetId": "6a6d-8f73-3f79-59c9",
+      "name": "Knight Atrapos"
+    },
+    {
+      "id": "6f4f-19f0-1076-8eda",
+      "targetId": "4462-be90-ddf7-c404",
+      "name": "Knight Character"
+    },
+    {
+      "id": "5256-7de5-ee8-47cc",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "abc9-dffe-e86-48e6",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "f734-3317-5da6-1cc8",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "4561-ed51-fd45-f7ac",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "fc4f-3207-7c3d-932c",
+      "targetId": "7400-7387-dae-781f",
+      "type": "profile",
+      "name": "Damaged: 1-10 wounds remaining"
+    },
+    {
+      "id": "a047-2bb4-a481-8542",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "881f-e74a-194a-d75d",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "8fb2-c7cc-fd8-f9ea",
+      "targetId": "5e13-1624-d280-418d",
+      "type": "rule",
+      "name": "Super-Heavy Walker"
+    },
+    {
+      "id": "db19-6e7f-9776-0534",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "191d-7e68-59b6-d810",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "ca1b-860c-8d06-f57a",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "7dd6-cde9-142c-d7f0",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "1797-8df8-970d-553e",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "bbf1-387f-d380-46e7",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "7399-e324-f06b-5b78",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "8e15-79ad-4148-c07d",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "cde1-7e8f-89a-a459",
+      "targetId": "8367-374c-f87-c627",
+      "type": "rule",
+      "name": "Hazardous"
+    },
+    {
+      "id": "4b5a-cedb-cc77-064f",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "d968-9f10-4045-952a",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "4814-bfa9-5590-55dd",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "e339-2678-5dc0-ff16",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "f6fe-ca30-8438-de6c",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "7238-f5e9-167b-b273",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "e9e3-5b98-458-3e6a",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "a7cd-b637-95a4-ee0e",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "bead-bbaf-bdc9-1001",
+      "targetId": "f2d9-b5e8-4183-cb0b",
+      "name": "Abhorrent"
+    },
+    {
+      "id": "bf5e-cb43-30c4-8bef",
+      "targetId": "bacd-8441-eba2-f27",
+      "name": "Knight Magaera"
+    },
+    {
+      "id": "4dbf-d74b-a2fa-d062",
+      "targetId": "4462-be90-ddf7-c404",
+      "name": "Knight Character"
+    },
+    {
+      "id": "91a8-01c6-01aa-7c28",
+      "targetId": "b927-8eeb-7cc3-8dec",
+      "name": "Frame"
+    },
+    {
+      "id": "4f81-b996-3a1e-5880",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "6f91-415a-2532-103f",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "8241-0097-0f3a-efbf",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "6434-33e1-93a1-8fd8",
+      "targetId": "12ce-2a62-9fea-74bd",
+      "type": "profile",
+      "name": "Damaged: 1-9 wounds remaining"
+    },
+    {
+      "id": "93d9-a91d-9135-c859",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "e0f7-8e3e-7a32-51af",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "c204-d4e2-a47e-ed16",
+      "targetId": "5e13-1624-d280-418d",
+      "type": "rule",
+      "name": "Super-Heavy Walker"
+    },
+    {
+      "id": "e70d-97f1-3540-3e87",
+      "targetId": "73ac-6b3a-8480-d08a",
+      "type": "profile",
+      "name": "Huntmaster (Aura)"
+    },
+    {
+      "id": "f6a0-9589-ad1c-687c",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "9fb3-f5da-54ec-95f8",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "a7a4-d703-1662-f496",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "71ab-de8e-bf93-ec73",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "d7ef-476f-eec8-4c87",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "883a-ff87-85f0-d34b",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "7718-28dd-b903-4249",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "3eb5-448c-2284-ac77",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "781a-8964-f92c-9a19",
+      "targetId": "5eca-c264-36cf-172e",
+      "type": "selectionEntry",
+      "name": "Reaper chainsword"
+    },
+    {
+      "id": "a9fe-c58c-b2b5-cc0b",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "322c-69d2-9874-3fff",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "ad3c-f5c8-c04e-a2fc",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "e32e-ea0b-44a4-dfff",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "47fd-c119-2856-bae8",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "c69e-4d57-d32f-3a1c",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "f6ce-35ff-8798-6a6e",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "b01b-5213-8f1d-57e3",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "b516-975a-52e0-2a63",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "42ec-1e45-949e-dc4b",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "92bf-6dae-c717-95cc",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "3556-779a-4174-8137",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "f268-d084-571e-67b6",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "5aa5-b712-bec2-2bfa",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "503c-4767-a915-b2a7",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "cfb6-4f05-9f0e-936c",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "fc15-6e75-fa5-8765",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "a7ba-2fe5-af9a-3d1",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "c23d-975c-b191-56a6",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "dfe-40f2-8431-6186",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "19f2-c6a0-5ff5-e0c0",
+      "targetId": "f2d9-b5e8-4183-cb0b",
+      "name": "Abhorrent"
+    },
+    {
+      "id": "900e-8c1a-e988-8ada",
+      "targetId": "c220-ff0a-f567-33ec",
+      "name": "Knight Styrix"
+    },
+    {
+      "id": "195f-5e3c-79f1-af45",
+      "targetId": "4462-be90-ddf7-c404",
+      "name": "Knight Character"
+    },
+    {
+      "id": "c22d-4c2b-b8b7-1efa",
+      "targetId": "b927-8eeb-7cc3-8dec",
+      "name": "Frame"
+    },
+    {
+      "id": "3d19-5948-cb2f-2fa1",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "df6c-95aa-c1b3-f41a",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "1cca-c7e1-87e4-53a2",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "9fb-5f3d-ddb5-2723",
+      "targetId": "12ce-2a62-9fea-74bd",
+      "type": "profile",
+      "name": "Damaged: 1-9 wounds remaining"
+    },
+    {
+      "id": "94ba-eb84-8519-6b15",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "82f0-908f-8f58-a62e",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "5b52-a7e7-e494-ce42",
+      "targetId": "5e13-1624-d280-418d",
+      "type": "rule",
+      "name": "Super-Heavy Walker"
+    },
+    {
+      "id": "c438-eec1-7b81-09b3",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "5732-d6dc-cdb9-b727",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "9dc-9ed7-276f-a87f",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "1e58-f8ed-73d3-084e",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "afb0-3d45-9a79-fc99",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "f032-0126-a8ef-7f3f",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "c9e4-da5c-410b-a41f",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "c5e4-f5ff-c528-f1a3",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "b43c-0819-d73b-5ccf",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "827-f925-c319-7b2c",
+      "targetId": "5eca-c264-36cf-172e",
+      "type": "selectionEntry",
+      "name": "Reaper chainsword"
+    },
+    {
+      "id": "42b7-69cd-8b62-fb94",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "0b74-0ea1-5e57-aa8b",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "f961-2388-667f-d44f",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "a312-6bae-6766-f969",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "0c23-2a6c-a1d7-8732",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "d764-d655-bafe-6239",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "53df-f414-1397-5933",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "d8bf-a62a-7867-2e36",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "34b8-9477-d211-241c",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "0314-5b78-9af4-6cc2",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "116a-9d84-88b4-4de3",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "ab34-5b33-fdaa-fc8b",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "d8a6-b30c-18d4-bd18",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "4f5a-5d74-4b13-323a",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "648d-5e62-3f73-a541",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "3a45-b388-5145-4408",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "72c8-b011-37de-bdd3",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "9189-990d-17a7-6b60",
+      "targetId": "99dc-0f47-85e2-75da",
+      "name": "War Dog"
+    },
+    {
+      "id": "a51f-4e25-618c-444",
+      "targetId": "47a1-f548-3346-b0df",
+      "name": "Moirax"
+    },
+    {
+      "id": "3ba7-fc8b-61f3-6b69",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "c695-4c67-99d5-fa1f",
+      "targetId": "b02a-a6e2-3eb4-4872",
+      "type": "selectionEntry",
+      "name": "Houndpack Lance Character"
+    },
+    {
+      "id": "3dcc-ee46-cdae-0593",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "4364-bf1a-3ae0-704d",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "409e-76fe-4b03-783d",
+      "targetId": "97fd-09c5-60a8-63c4",
+      "type": "profile",
+      "name": "Damaged: 1-5 wounds remaining"
+    },
+    {
+      "id": "d7d4-a4a3-e070-a620",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "a2d6-de7b-4726-c5b1",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "2e30-ae47-1bdc-3516",
+      "targetId": "4e9b-b002-b008-6077",
+      "type": "profile",
+      "name": "*Invulnerable Save"
+    },
+    {
+      "id": "a67b-c001-46f-8ae3",
+      "targetId": "6638-278a-5331-d1ff",
+      "type": "selectionEntry",
+      "name": "Armoured feet"
+    },
+    {
+      "id": "1b2d-c094-6e03-caa6",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "6f7d-e681-d685-42cd",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "fb5e-e1b5-deb6-d27c",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "7bfc-646c-c41e-24d8",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "f1c9-b25f-3821-df61",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "f851-1dc8-1d8f-da3c",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "04ea-28bf-0332-5ff2",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "d5e-f903-2a29-b1cf",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "f224-9aac-a0ce-2acc",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "455e-cce9-c6d9-1915",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "2e8f-40b2-ae16-74bf",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "6682-5fc6-650c-a215",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "579f-c23e-ddbd-bf65",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "83a1-2f1a-9d9e-242b",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "67c0-71bf-f937-4854",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "cb21-be20-f3e1-6e3f",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "3379-b287-9468-ed0a",
+      "targetId": "bb67-f191-6562-acc7",
+      "name": "Faction: Chaos Knights"
+    },
+    {
+      "id": "7b77-2710-bd9d-8114",
+      "targetId": "dbd4-63-af05-998",
+      "name": "Vehicle"
+    },
+    {
+      "id": "a592-bb7a-dda5-69fd",
+      "targetId": "6dda-e157-334d-e93a",
+      "name": "Walker"
+    },
+    {
+      "id": "37cc-6c44-abfa-454c",
+      "targetId": "5929-ad51-d006-e008",
+      "name": "Titanic"
+    },
+    {
+      "id": "6bef-492a-1156-d3ee",
+      "targetId": "d666-e2c9-b6cc-5716",
+      "name": "Towering"
+    },
+    {
+      "id": "dd95-128c-39df-0228",
+      "targetId": "f2d9-b5e8-4183-cb0b",
+      "name": "Abhorrent"
+    },
+    {
+      "id": "9cfd-2f7d-8407-ed3a",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "6b45-74c1-5db2-ec4c",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "db87-d461-fa29-98c9",
+      "targetId": "3667-4d4c-faf1-2446",
+      "name": "Knight Ruinator"
+    },
+    {
+      "id": "3b42-b15b-97d3-a430",
+      "targetId": "4462-be90-ddf7-c404",
+      "name": "Knight Character"
+    },
+    {
+      "id": "930f-a360-32b6-a9a9",
+      "targetId": "3bee-8c85-68f7-e54b",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "1339-47cd-c929-e50c",
+      "targetId": "18da-1609-c0fb-cf69",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "b341-779c-c5af-7f1f",
+      "targetId": "e91b-3100-3431-e2f8",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "d8a4-595d-9e4d-de38",
+      "targetId": "5e13-1624-d280-418d",
+      "type": "rule",
+      "name": "Super-Heavy Walker"
+    },
+    {
+      "id": "0f5f-b0e4-e443-7dc6",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "c44f-3420-4a51-98e9",
+      "targetId": "d71a-a59f-aafd-3723",
+      "type": "rule",
+      "name": "Harbingers of Dread"
+    },
+    {
+      "id": "0be2-d03c-7ff6-3564",
+      "targetId": "12ce-2a62-9fea-74bd",
+      "type": "profile",
+      "name": "Damaged: 1-9 wounds remaining"
+    },
+    {
+      "id": "ee52-ddc0-e0f5-2b88",
+      "targetId": "4e9b-b002-b008-6077",
+      "type": "profile",
+      "name": "*Invulnerable Save"
+    },
+    {
+      "id": "ab0c-64f9-ddbc-52cd",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "e0ec-35f0-c696-d979",
+      "targetId": "6337-b83b-0d1e-5770",
+      "name": "Attacks Dx+0 Modifier"
+    },
+    {
+      "id": "9822-22a1-dbf9-af72",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "5052-6ce8-bf4b-c7aa",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "5475-3073-7f2c-6af4",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "5969-bb33-9454-4de1",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "1413-9be6-62ae-49f7",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "c154-91cb-3ee7-6b74",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "5cc4-d91c-7c06-ad90",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "45d1-ed9d-0d21-718d",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "f995-0d92-6114-bfa8",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "4b7d-0023-e73d-b01c",
+      "targetId": "6337-b83b-0d1e-5770",
+      "name": "Attacks Dx+0 Modifier"
+    },
+    {
+      "id": "bc37-dbfd-8700-2885",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "61f2-c301-0acc-8c35",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "91db-eac1-be18-e4eb",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "0f65-9708-7401-d65d",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "e695-a14c-5a20-5840",
+      "targetId": "5e13-1624-d280-418d",
+      "type": "rule",
+      "name": "Super-Heavy Walker"
+    },
+    {
+      "id": "a4c7-be17-bcc9-0d2d",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "8424-2cc5-b3d6-e7dd",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "1817-db45-3ee8-742d",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "2a3b-2882-0816-7de7",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "38a7-51d2-6614-8e4a",
+      "targetId": "8367-374c-f87-c627",
+      "type": "rule",
+      "name": "Hazardous"
+    },
+    {
+      "id": "e22e-e055-262b-879c",
+      "targetId": "2dbf-4d49-5d74-85c9",
+      "type": "selectionEntry",
+      "name": "Experience Points"
+    },
+    {
+      "id": "54f1-02b6-893e-e346",
+      "targetId": "1511-18fe-f51e-7b9d",
+      "type": "selectionEntry",
+      "name": "Legendary Veterans"
+    },
+    {
+      "id": "7526-4f3d-a463-57ca",
+      "targetId": "1576-e816-033f-828d",
+      "type": "selectionEntryGroup",
+      "name": "Battle Scars"
+    },
+    {
+      "id": "3cf3-6395-b61c-87d4",
+      "targetId": "1b39-2ce8-644e-8693",
+      "type": "selectionEntryGroup",
+      "name": "Codex Battle Scars"
+    },
+    {
+      "id": "01ae-241d-341f-339a",
+      "targetId": "0511-d9ad-2978-2234",
+      "type": "selectionEntryGroup",
+      "name": "Battle Traits"
+    },
+    {
+      "id": "375d-b6f1-4569-92f1",
+      "targetId": "e288-3e85-3b28-8dd5",
+      "type": "selectionEntryGroup",
+      "name": "Hunt Tactics"
+    },
+    {
+      "id": "f7af-4eb9-dbbd-e181",
+      "targetId": "e7fc-e1b3-e815-9332",
+      "type": "selectionEntryGroup",
+      "name": "Idolator's Offerings"
+    },
+    {
+      "id": "0681-0598-8aac-c653",
+      "targetId": "e919-5b46-974d-a5b1",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relics"
+    },
+    {
+      "id": "1abd-2bba-a219-6435",
+      "targetId": "2d68-936c-92cc-20fc",
+      "type": "selectionEntryGroup",
+      "name": "Codex Crusade Relics"
+    },
+    {
+      "id": "c239-cbcf-136a-a9ab",
+      "targetId": "02f0-7b85-5330-a0fc",
+      "type": "selectionEntryGroup",
+      "name": "Pacts of Damnation"
+    },
+    {
+      "id": "49f4-7d34-7483-ff83",
+      "targetId": "1927-d905-041e-b914",
+      "type": "selectionEntryGroup",
+      "name": "Tyrannic War Battle Honours"
+    },
+    {
+      "id": "265a-cc28-a2da-8db4",
+      "targetId": "66c2-2a46-e7ed-a935",
+      "type": "selectionEntryGroup",
+      "name": "Pariah Nexus Blackstone Upgrades"
+    },
+    {
+      "id": "31f3-28d3-f231-c233",
+      "targetId": "d1a5-4297-168b-11cd",
+      "type": "selectionEntry",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "3feb-efd7-4792-39be",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "378c-f9e3-d92f-e6f8",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "c183-8888-b80f-1e50",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "cc6e-a8b2-1334-d51b",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "c4e6-54c1-2f37-784e",
+      "targetId": "9bf4-280f-bbe2-6fbb",
+      "type": "rule",
+      "name": "Feel No Pain"
+    },
+    {
+      "id": "cd35-0002-b962-3d62",
+      "targetId": "9bf4-280f-bbe2-6fbb",
+      "type": "rule",
+      "name": "Feel No Pain"
+    }
+  ]
+}

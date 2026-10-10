@@ -1,0 +1,644 @@
+{
+  "source": {
+    "repo": "BSData/wh40k-11e",
+    "commit": "cc58ee3b2c23f90af9d00e7bf234cd703b762299",
+    "file": "Imperium - Imperial Fists.json",
+    "sourceUrl": "https://raw.githubusercontent.com/BSData/wh40k-11e/cc58ee3b2c23f90af9d00e7bf234cd703b762299/Imperium%20-%20Imperial%20Fists.json",
+    "sha256": "152c436f2c809b8530396d6f2b119f387cbba90d7141f0343a68a49a4f20304a"
+  },
+  "catalogue": {
+    "id": "5d6e-fd3-330a-11dd",
+    "name": "Imperium - Adeptus Astartes - Imperial Fists",
+    "revision": 3,
+    "library": false,
+    "imports": [
+      {
+        "name": "Imperium - Agents of the Imperium",
+        "targetId": "b00-cd86-4b4c-97ba",
+        "importRootEntries": true
+      },
+      {
+        "name": "Imperium - Space Marines",
+        "targetId": "e0af-67df-9d63-8fb7",
+        "importRootEntries": true
+      }
+    ]
+  },
+  "status": "research-only-unresolved-conditional-values",
+  "profiles": [
+    {
+      "id": "6d34-cff2-ff30-d3cc",
+      "name": "Darnath Lysander",
+      "type": "Unit",
+      "ancestry": [
+        "5d6e-fd3-330a-11dd",
+        "eecd-6976-6410-1e42"
+      ],
+      "stats": {
+        "M": "5\"",
+        "T": "5",
+        "W": "7",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "2ac6-e240-55c0-1e34",
+      "name": "Fist of Dorn",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "5d6e-fd3-330a-11dd",
+        "eecd-6976-6410-1e42",
+        "7560-433a-b4aa-94ca"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "5",
+        "WS": "2+",
+        "S": "10",
+        "AP": "-3",
+        "D": "3"
+      }
+    },
+    {
+      "id": "7c25-2fc1-6ba6-160d",
+      "name": "Tor Garadon",
+      "type": "Unit",
+      "ancestry": [
+        "5d6e-fd3-330a-11dd",
+        "5936-83d6-4e30-915c"
+      ],
+      "stats": {
+        "M": "5\"",
+        "T": "6",
+        "W": "6",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "7dfb-44c4-1d55-3e2f",
+      "name": "Artificer Grav Gun",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "5d6e-fd3-330a-11dd",
+        "5936-83d6-4e30-915c",
+        "660a-455b-8476-3f5d"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "2",
+        "BS": "2+",
+        "S": "5",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "870d-a10c-b215-1395",
+      "name": "Hand of Defiance",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "5d6e-fd3-330a-11dd",
+        "5936-83d6-4e30-915c",
+        "a5c3-5888-85cf-8686"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "5",
+        "WS": "2+",
+        "S": "12",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "f0d0-41c3-13ce-6595",
+      "name": "Pedro Kantor",
+      "type": "Unit",
+      "ancestry": [
+        "5d6e-fd3-330a-11dd",
+        "59e3-5a97-f36d-5b94"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "5",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "49c3-48e8-5856-65d3",
+      "name": "Dorn's Arrow",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "5d6e-fd3-330a-11dd",
+        "59e3-5a97-f36d-5b94",
+        "16e9-568f-de53-22e1"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "2",
+        "BS": "2+",
+        "S": "5",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "faba-867d-75d6-3747",
+      "name": "Fist of Retribution",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "5d6e-fd3-330a-11dd",
+        "59e3-5a97-f36d-5b94",
+        "3bd3-d7d9-3f22-6ce9"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "5",
+        "WS": "2+",
+        "S": "8",
+        "AP": "-3",
+        "D": "3"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "id": "eecd-6976-6410-1e42",
+      "name": "Darnath Lysander",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "5d6e-fd3-330a-11dd"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 100
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "e33e-f051-a514-e459",
+          "targetId": "b4dd-3e1f-41cb-218f",
+          "type": "rule"
+        },
+        {
+          "id": "7c56-1f9c-88eb-d260",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        },
+        {
+          "id": "6bff-e754-761d-a82d",
+          "targetId": "3b76-4053-ece9-6e7d",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "5936-83d6-4e30-915c",
+      "name": "Tor Garadon",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "5d6e-fd3-330a-11dd"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 80
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        },
+        {
+          "name": "Honour Points",
+          "typeId": "8135-9a2f-6627-09e2",
+          "value": 0
+        },
+        {
+          "name": "Relic Fragments",
+          "typeId": "0ece-6541-4662-ece2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "8c7d-7155-9796-3a50",
+          "targetId": "b4dd-3e1f-41cb-218f",
+          "type": "rule"
+        },
+        {
+          "id": "fb43-9d11-63a9-6e64",
+          "targetId": "3b76-4053-ece9-6e7d",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "59e3-5a97-f36d-5b94",
+      "name": "Pedro Kantor",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "5d6e-fd3-330a-11dd"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 80
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        },
+        {
+          "name": "Honour Points",
+          "typeId": "8135-9a2f-6627-09e2",
+          "value": 0
+        },
+        {
+          "name": "Relic Fragments",
+          "typeId": "0ece-6541-4662-ece2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "29f0-ce6-fe9b-5a4b",
+          "targetId": "9bf4-280f-bbe2-6fbb",
+          "type": "rule"
+        },
+        {
+          "id": "5235-8689-3357-5c97",
+          "targetId": "3b76-4053-ece9-6e7d",
+          "type": "rule"
+        },
+        {
+          "id": "4344-cb11-9f52-95d8",
+          "targetId": "b4dd-3e1f-41cb-218f",
+          "type": "rule"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "1781-a2e9-cb3e-1f49",
+      "targetId": "b00-cd86-4b4c-97ba",
+      "type": "catalogue",
+      "name": "Imperium - Agents of the Imperium"
+    },
+    {
+      "id": "6ab-d4bf-f407-e939",
+      "targetId": "e0af-67df-9d63-8fb7",
+      "type": "catalogue",
+      "name": "Imperium - Space Marines"
+    },
+    {
+      "id": "1b9c-5fc3-d8c7-46fa",
+      "targetId": "eecd-6976-6410-1e42",
+      "type": "selectionEntry",
+      "name": "Darnath Lysander"
+    },
+    {
+      "id": "109d-48c6-54ac-eb81",
+      "targetId": "5936-83d6-4e30-915c",
+      "type": "selectionEntry",
+      "name": "Tor Garadon"
+    },
+    {
+      "id": "776a-7bf7-2b4c-3211",
+      "targetId": "59e3-5a97-f36d-5b94",
+      "type": "selectionEntry",
+      "name": "Pedro Kantor"
+    },
+    {
+      "id": "590-2db8-18c9-603f",
+      "targetId": "4f3a-f0f7-6647-348d",
+      "name": "Epic Hero"
+    },
+    {
+      "id": "362c-dbeb-ce12-cc6c",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "872-4241-48c7-6aa1",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "47c8-6892-226f-c2e1",
+      "targetId": "2d7f-1892-2fd0-e29c",
+      "name": "Captain"
+    },
+    {
+      "id": "6645-b5c0-7ca8-af7e",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "e3d5-7dc7-e6b2-4bb5",
+      "targetId": "740a-892c-8958-defa",
+      "name": "Terminator"
+    },
+    {
+      "id": "fc48-11e2-d56f-d62c",
+      "targetId": "6e7-40c-58d9-e402",
+      "name": "Faction: Adeptus Astartes"
+    },
+    {
+      "id": "85e-6a9f-3389-7391",
+      "targetId": "97aa-d0e4-71c7-96c3",
+      "name": "Faction: Imperial Fists"
+    },
+    {
+      "id": "b0ae-251b-e86-d514",
+      "targetId": "f797-f718-df7d-8545",
+      "name": "Darnath Lysander"
+    },
+    {
+      "id": "6fc7-01a6-0c20-18cc",
+      "targetId": "1556-9b56-fba6-4370",
+      "name": "Leader"
+    },
+    {
+      "id": "5731-527b-3b65-d257",
+      "targetId": "caa-f869-3cbd-b48e",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "e33e-f051-a514-e459",
+      "targetId": "b4dd-3e1f-41cb-218f",
+      "type": "rule",
+      "name": "Leader"
+    },
+    {
+      "id": "7c56-1f9c-88eb-d260",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "6bff-e754-761d-a82d",
+      "targetId": "3b76-4053-ece9-6e7d",
+      "type": "rule",
+      "name": "Oath of Moment"
+    },
+    {
+      "id": "7982-5eb4-cdbc-802e",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "2e84-24eb-d738-475b",
+      "targetId": "f842-6e90-bc5a-80f1",
+      "type": "selectionEntryGroup",
+      "name": "Mighty Champions"
+    },
+    {
+      "id": "b01e-8ea7-e951-d692",
+      "targetId": "4f3a-f0f7-6647-348d",
+      "name": "Epic Hero"
+    },
+    {
+      "id": "54c-8499-c11c-4107",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "9aa9-71da-7af-6ea8",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "a197-fe1c-f82-33ab",
+      "targetId": "2d7f-1892-2fd0-e29c",
+      "name": "Captain"
+    },
+    {
+      "id": "a877-5382-56a4-cc86",
+      "targetId": "81f0-f40e-c36c-5a30",
+      "name": "Gravis"
+    },
+    {
+      "id": "8703-e89c-7352-26d2",
+      "targetId": "3d09-3368-9c3c-9009",
+      "name": "Tor Garadon"
+    },
+    {
+      "id": "a669-4750-4427-94c9",
+      "targetId": "6e7-40c-58d9-e402",
+      "name": "Faction: Adeptus Astartes"
+    },
+    {
+      "id": "de4f-4821-a3be-2040",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "27e-dc36-f978-9521",
+      "targetId": "97aa-d0e4-71c7-96c3",
+      "name": "Faction: Imperial Fists"
+    },
+    {
+      "id": "8137-cc71-5e6b-d2c5",
+      "targetId": "1556-9b56-fba6-4370",
+      "name": "Leader"
+    },
+    {
+      "id": "3a51-3c8f-f135-4372",
+      "targetId": "caa-f869-3cbd-b48e",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "8c7d-7155-9796-3a50",
+      "targetId": "b4dd-3e1f-41cb-218f",
+      "type": "rule",
+      "name": "Leader"
+    },
+    {
+      "id": "fb43-9d11-63a9-6e64",
+      "targetId": "3b76-4053-ece9-6e7d",
+      "type": "rule",
+      "name": "Oath of Moment"
+    },
+    {
+      "id": "ed21-2c2-10a2-cb2",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "3103-afa4-1de4-0769",
+      "targetId": "f842-6e90-bc5a-80f1",
+      "type": "selectionEntryGroup",
+      "name": "Mighty Champions"
+    },
+    {
+      "id": "a6bb-a4ac-13d0-6a52",
+      "targetId": "4f3a-f0f7-6647-348d",
+      "name": "Epic Hero"
+    },
+    {
+      "id": "166d-3b85-183a-b6c9",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "a90a-36fb-f6ae-eaf6",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "4029-f738-a17d-ef7c",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "5d3e-2f79-d650-ad8f",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "d083-b8e7-21ba-e587",
+      "targetId": "5bd8-882d-302b-48f3",
+      "name": "Chapter Master"
+    },
+    {
+      "id": "271e-691a-e31b-2df7",
+      "targetId": "6e7-40c-58d9-e402",
+      "name": "Faction: Adeptus Astartes"
+    },
+    {
+      "id": "da8b-37f5-3226-8fb2",
+      "targetId": "97aa-d0e4-71c7-96c3",
+      "name": "Faction: Imperial Fists"
+    },
+    {
+      "id": "f1cf-c7c6-d6fa-adb3",
+      "targetId": "7709-796b-3022-31fe",
+      "name": "Pedro Kantor"
+    },
+    {
+      "id": "f6f3-455e-e3c9-20d5",
+      "targetId": "1556-9b56-fba6-4370",
+      "name": "Leader"
+    },
+    {
+      "id": "42b3-a452-360d-a1d1",
+      "targetId": "caa-f869-3cbd-b48e",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "29f0-ce6-fe9b-5a4b",
+      "targetId": "9bf4-280f-bbe2-6fbb",
+      "type": "rule",
+      "name": "Feel No Pain"
+    },
+    {
+      "id": "5235-8689-3357-5c97",
+      "targetId": "3b76-4053-ece9-6e7d",
+      "type": "rule",
+      "name": "Oath of Moment"
+    },
+    {
+      "id": "4344-cb11-9f52-95d8",
+      "targetId": "b4dd-3e1f-41cb-218f",
+      "type": "rule",
+      "name": "Leader"
+    },
+    {
+      "id": "65bb-797a-e89-7afd",
+      "targetId": "c5c8-8b58-b8b6-7786",
+      "type": "rule",
+      "name": "Rapid Fire"
+    },
+    {
+      "id": "a0a2-e62d-40c5-2dbe",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "5d91-fdb5-e29a-5420",
+      "targetId": "f842-6e90-bc5a-80f1",
+      "type": "selectionEntryGroup",
+      "name": "Mighty Champions"
+    }
+  ]
+}

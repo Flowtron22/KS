@@ -1,0 +1,152 @@
+{
+  "source": {
+    "repo": "BSData/wh40k-11e",
+    "commit": "cc58ee3b2c23f90af9d00e7bf234cd703b762299",
+    "file": "Imperium - Imperial Knights.json",
+    "sourceUrl": "https://raw.githubusercontent.com/BSData/wh40k-11e/cc58ee3b2c23f90af9d00e7bf234cd703b762299/Imperium%20-%20Imperial%20Knights.json",
+    "sha256": "71a41f90bff0389555ab6af37f4255a9f25a7b5a815b83abc6ed169c7fc03aaf"
+  },
+  "catalogue": {
+    "id": "25dd-7aa0-6bf4-f2d5",
+    "name": "Imperium - Imperial Knights",
+    "revision": 2,
+    "library": false,
+    "imports": [
+      {
+        "name": "Imperium - Imperial Knights - Library",
+        "targetId": "1b6d-dc06-5db9-c7d1",
+        "importRootEntries": true
+      },
+      {
+        "name": "Imperium - Agents of the Imperium",
+        "targetId": "b00-cd86-4b4c-97ba",
+        "importRootEntries": true
+      },
+      {
+        "name": "Library - Titans",
+        "targetId": "7481-280e-b55e-7867",
+        "importRootEntries": true
+      },
+      {
+        "name": "Imperium - Adeptus Mechanicus",
+        "targetId": "77b9-2f66-3f9b-5cf3"
+      },
+      {
+        "name": "Unaligned Forces",
+        "targetId": "581a-46b9-5b86-44b7"
+      }
+    ]
+  },
+  "status": "research-only-unresolved-conditional-values",
+  "profiles": [],
+  "entries": [],
+  "references": [
+    {
+      "id": "9b69-6acf-ce6e-7d56",
+      "targetId": "1b6d-dc06-5db9-c7d1",
+      "type": "catalogue",
+      "name": "Imperium - Imperial Knights - Library"
+    },
+    {
+      "id": "a9de-79c6-ff31-ace3",
+      "targetId": "b00-cd86-4b4c-97ba",
+      "type": "catalogue",
+      "name": "Imperium - Agents of the Imperium"
+    },
+    {
+      "id": "993e-4de7-67f6-59d2",
+      "targetId": "7481-280e-b55e-7867",
+      "type": "catalogue",
+      "name": "Library - Titans"
+    },
+    {
+      "id": "d4a9-0d7e-4b3f-4d7c",
+      "targetId": "77b9-2f66-3f9b-5cf3",
+      "type": "catalogue",
+      "name": "Imperium - Adeptus Mechanicus"
+    },
+    {
+      "id": "9718-cb2e-cc4a-29a7",
+      "targetId": "581a-46b9-5b86-44b7",
+      "type": "catalogue",
+      "name": "Unaligned Forces"
+    },
+    {
+      "id": "b9ee-35d4-2177-b643",
+      "targetId": "5a84-ea91-b707-1656",
+      "type": "selectionEntry",
+      "name": "Detachment"
+    },
+    {
+      "id": "6997-af61-9230-8827",
+      "targetId": "e8ef-836a-a9d1-901d",
+      "type": "selectionEntry",
+      "name": "Show/Hide Options"
+    },
+    {
+      "id": "ed42-e197-e4ce-e51d",
+      "targetId": "4ac9-fd30-1e3d-b249",
+      "name": "Configuration"
+    },
+    {
+      "id": "e203-a8c0-7f2a-a08f",
+      "targetId": "e08b-2448-5606-fefb",
+      "type": "selectionEntry",
+      "name": "Show Imperial Agents"
+    },
+    {
+      "id": "80fd-aecc-dbf3-d20f",
+      "targetId": "f26b-79db-80e0-3a3b",
+      "type": "selectionEntry",
+      "name": "Show Titans"
+    },
+    {
+      "id": "5292-3dad-c3d9-75e5",
+      "targetId": "2d9b-610a-dc4d-15ae",
+      "type": "selectionEntry",
+      "name": "Tech-Priest Manipulus"
+    },
+    {
+      "id": "c877-cf82-26d2-cfd8",
+      "targetId": "b897-e4c6-fcb6-6538",
+      "type": "selectionEntry",
+      "name": "Skitarii Marshal"
+    },
+    {
+      "id": "ec2c-94ac-9338-ce57",
+      "targetId": "de59-f65c-181a-8509",
+      "type": "selectionEntry",
+      "name": "Skitarii Rangers"
+    },
+    {
+      "id": "71f9-d22e-3dad-08f0",
+      "targetId": "ba33-c21-bddc-ab0",
+      "type": "selectionEntry",
+      "name": "Skitarii Vanguard"
+    },
+    {
+      "id": "fbfe-7348-5b36-ac1e",
+      "targetId": "6424-ed86-9e15-3e14",
+      "type": "selectionEntry",
+      "name": "Tech-Priest Dominus"
+    },
+    {
+      "id": "5f76-92d5-26fe-d023",
+      "targetId": "eda7-8b4b-3719-af36",
+      "type": "selectionEntry",
+      "name": "Order of Battle"
+    },
+    {
+      "id": "6907-7fd7-5458-facd",
+      "targetId": "68a2-ada5-3cd4-c5a3",
+      "type": "selectionEntryGroup",
+      "name": "Shadow Operations"
+    },
+    {
+      "id": "c20c-43d8-5888-d919",
+      "targetId": "12f3-7f5b-747e-41ca",
+      "type": "selectionEntryGroup",
+      "name": "Chivalric Quests"
+    }
+  ]
+}

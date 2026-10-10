@@ -1,0 +1,13 @@
+**/node_modules/
+**/dist/
+**/.sites/
+**/.openai/
+**/.vercel/
+**/.env
+**/.env.*
+!**/.env.example
+research/raw/
+*.tar.gz
+*.log
+.DS_Store
+Thumbs.db

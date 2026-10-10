@@ -1,0 +1,189 @@
+{
+  "source": {
+    "repo": "BSData/wh40k-11e",
+    "commit": "cc58ee3b2c23f90af9d00e7bf234cd703b762299",
+    "file": "Chaos - Titanicus Traitoris.json",
+    "sourceUrl": "https://raw.githubusercontent.com/BSData/wh40k-11e/cc58ee3b2c23f90af9d00e7bf234cd703b762299/Chaos%20-%20Titanicus%20Traitoris.json",
+    "sha256": "c01e5ee58248a9c057c6de196912f1d3e618aa322cbd21ee1679577d082bc602"
+  },
+  "catalogue": {
+    "id": "880c-c7e-4a43-a0c1",
+    "name": "Chaos - Titanicus Traitoris",
+    "revision": 2,
+    "library": false,
+    "imports": [
+      {
+        "name": "Library - Titans",
+        "targetId": "7481-280e-b55e-7867"
+      },
+      {
+        "name": "Chaos - Daemons Library",
+        "targetId": "b45c-af22-788a-dfd6",
+        "importRootEntries": true
+      },
+      {
+        "name": "Chaos - Chaos Knights Library",
+        "targetId": "8106-aad2-918a-9ac",
+        "importRootEntries": true
+      }
+    ]
+  },
+  "status": "research-only-unresolved-conditional-values",
+  "profiles": [],
+  "entries": [],
+  "references": [
+    {
+      "id": "e771-d190-6840-8e9",
+      "targetId": "7481-280e-b55e-7867",
+      "type": "catalogue",
+      "name": "Library - Titans"
+    },
+    {
+      "id": "f54f-b211-f992-f256",
+      "targetId": "b45c-af22-788a-dfd6",
+      "type": "catalogue",
+      "name": "Chaos - Daemons Library"
+    },
+    {
+      "id": "ba56-2301-e237-f162",
+      "targetId": "8106-aad2-918a-9ac",
+      "type": "catalogue",
+      "name": "Chaos - Chaos Knights Library"
+    },
+    {
+      "id": "f1e5-9e28-9096-27be",
+      "targetId": "b7e8-f3ae-be53-9ba5",
+      "type": "selectionEntry",
+      "name": "Reaver Titan"
+    },
+    {
+      "id": "4ea2-af16-cf4d-eeb1",
+      "targetId": "fe43-3689-1f33-b408",
+      "name": "Faction: Titanicus Traitoris"
+    },
+    {
+      "id": "8944-26e6-a30c-112f",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "e0e2-880c-c074-f1b6",
+      "targetId": "581a-c238-bcf5-7e22",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "1258-53bd-b170-2509",
+      "targetId": "8e6f-4e09-12d5-fafd",
+      "type": "selectionEntry",
+      "name": "Warbringer Nemesis Titan"
+    },
+    {
+      "id": "9b17-495d-6d4b-1acf",
+      "targetId": "fe43-3689-1f33-b408",
+      "name": "Faction: Titanicus Traitoris"
+    },
+    {
+      "id": "5933-8de1-6ba5-d311",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "5665-abac-8d-bfd5",
+      "targetId": "581a-c238-bcf5-7e22",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "6709-2ef7-6205-9dcb",
+      "targetId": "8eb5-a990-6eb0-9b41",
+      "type": "selectionEntry",
+      "name": "Warhound Titan"
+    },
+    {
+      "id": "7849-5dfb-fef0-dc0b",
+      "targetId": "fe43-3689-1f33-b408",
+      "name": "Faction: Titanicus Traitoris"
+    },
+    {
+      "id": "7a66-86a3-9e92-9d0d",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "6365-9944-bc88-835a",
+      "targetId": "581a-c238-bcf5-7e22",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "26dd-509a-d3f4-758c",
+      "targetId": "eafa-cd47-1c2f-61ee",
+      "type": "selectionEntry",
+      "name": "Warlord Titan"
+    },
+    {
+      "id": "f77f-8e46-1391-6860",
+      "targetId": "fe43-3689-1f33-b408",
+      "name": "Faction: Titanicus Traitoris"
+    },
+    {
+      "id": "4937-71c5-7c9f-f34a",
+      "targetId": "4c00-2578-faf5-6918",
+      "name": "Chaos"
+    },
+    {
+      "id": "95d-7797-f8b9-9e24",
+      "targetId": "581a-c238-bcf5-7e22",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "7090-ac3f-9d29-34ca",
+      "targetId": "e8ef-836a-a9d1-901d",
+      "type": "selectionEntry",
+      "name": "Show/Hide Options"
+    },
+    {
+      "id": "c38f-1814-488-8c7b",
+      "targetId": "f5f9-1339-84bb-ae85",
+      "type": "selectionEntry",
+      "name": "Show Khorne Daemons"
+    },
+    {
+      "id": "7030-c4d-414e-dacd",
+      "targetId": "f486-5e38-994c-15ec",
+      "type": "selectionEntry",
+      "name": "Show Nurgle Daemons"
+    },
+    {
+      "id": "fc50-8b26-9a56-90bb",
+      "targetId": "d3ff-16f0-dad2-c03c",
+      "type": "selectionEntry",
+      "name": "Show Slaanesh Daemons"
+    },
+    {
+      "id": "2ea1-14d3-e451-ce9e",
+      "targetId": "1248-8642-b42f-1dca",
+      "type": "selectionEntry",
+      "name": "Show Tzeentch Daemons"
+    },
+    {
+      "id": "d0cf-d17c-c376-69fe",
+      "targetId": "aeb4-96de-7401-eaa3",
+      "type": "selectionEntry",
+      "name": "Show Chaos Knights"
+    },
+    {
+      "id": "9140-5337-e443-3e46",
+      "targetId": "eda7-8b4b-3719-af36",
+      "type": "selectionEntry",
+      "name": "Order of Battle"
+    },
+    {
+      "id": "31d4-baee-3178-aa86",
+      "targetId": "5c0e-4c31-d51b-e470",
+      "name": "Warlord"
+    }
+  ]
+}

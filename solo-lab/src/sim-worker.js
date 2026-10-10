@@ -1,0 +1,2 @@
+import {runBattle} from './engine.js';
+self.onmessage=e=>{try{const {snapshot,trials}=e.data;const scores=[0,0,0];let blue=0,green=0;for(let i=0;i<trials;i++){const r=runBattle(snapshot,(snapshot.seed+i*2654435761)>>>0);scores[r.winner==='Space Marines'?0:r.winner==='Orks'?1:2]++;blue+=r.score[0];green+=r.score[1];}self.postMessage({scores,blue:blue/trials,green:green/trials,trials});}catch(error){self.postMessage({error:error.message});}};

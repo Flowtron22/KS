@@ -1,0 +1,183 @@
+{
+  "source": {
+    "repo": "BSData/wh40k-11e",
+    "commit": "cc58ee3b2c23f90af9d00e7bf234cd703b762299",
+    "file": "Imperium - Adeptus Titanicus.json",
+    "sourceUrl": "https://raw.githubusercontent.com/BSData/wh40k-11e/cc58ee3b2c23f90af9d00e7bf234cd703b762299/Imperium%20-%20Adeptus%20Titanicus.json",
+    "sha256": "ac6550daf34110f986a60ae5b2d62efe887f286f3e02b9335423c4223eac696e"
+  },
+  "catalogue": {
+    "id": "bdc0-c0d-72d7-87e2",
+    "name": "Imperium - Adeptus Titanicus",
+    "revision": 2,
+    "library": false,
+    "imports": [
+      {
+        "name": "Library - Titans",
+        "targetId": "7481-280e-b55e-7867"
+      },
+      {
+        "name": "Imperium - Imperial Knights - Library",
+        "targetId": "1b6d-dc06-5db9-c7d1",
+        "importRootEntries": true
+      },
+      {
+        "name": "Imperium - Agents of the Imperium",
+        "targetId": "b00-cd86-4b4c-97ba",
+        "importRootEntries": true
+      }
+    ]
+  },
+  "status": "research-only-unresolved-conditional-values",
+  "profiles": [],
+  "entries": [],
+  "references": [
+    {
+      "id": "99b7-e32-1d75-c795",
+      "targetId": "7481-280e-b55e-7867",
+      "type": "catalogue",
+      "name": "Library - Titans"
+    },
+    {
+      "id": "3076-508b-776-7a46",
+      "targetId": "1b6d-dc06-5db9-c7d1",
+      "type": "catalogue",
+      "name": "Imperium - Imperial Knights - Library"
+    },
+    {
+      "id": "9c38-61cc-ebb6-ed61",
+      "targetId": "b00-cd86-4b4c-97ba",
+      "type": "catalogue",
+      "name": "Imperium - Agents of the Imperium"
+    },
+    {
+      "id": "e20a-8101-443d-6ae8",
+      "targetId": "b7e8-f3ae-be53-9ba5",
+      "type": "selectionEntry",
+      "name": "Reaver Titan"
+    },
+    {
+      "id": "8665-68ae-1015-4c5",
+      "targetId": "169a-d3f4-23b5-ba7",
+      "name": "Faction: Adeptus Titanicus"
+    },
+    {
+      "id": "a083-c452-bab5-6297",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "4c5b-654a-c3b2-4711",
+      "targetId": "a618-aeb9-f07d-5ed5",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "7f3f-35da-b7ac-a188",
+      "targetId": "8e6f-4e09-12d5-fafd",
+      "type": "selectionEntry",
+      "name": "Warbringer Nemesis Titan"
+    },
+    {
+      "id": "81e1-b173-8aff-5d48",
+      "targetId": "169a-d3f4-23b5-ba7",
+      "name": "Faction: Adeptus Titanicus"
+    },
+    {
+      "id": "67a3-1bf8-461b-98a7",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "4b37-1b97-21dd-71c4",
+      "targetId": "a618-aeb9-f07d-5ed5",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "7465-ac9-b438-7b03",
+      "targetId": "8eb5-a990-6eb0-9b41",
+      "type": "selectionEntry",
+      "name": "Warhound Titan"
+    },
+    {
+      "id": "ad33-3874-9df2-e5",
+      "targetId": "169a-d3f4-23b5-ba7",
+      "name": "Faction: Adeptus Titanicus"
+    },
+    {
+      "id": "ac4a-41af-ae1b-f166",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "5ca4-1083-5e07-5ba",
+      "targetId": "a618-aeb9-f07d-5ed5",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "37ec-de9e-1d3b-a4ae",
+      "targetId": "eafa-cd47-1c2f-61ee",
+      "type": "selectionEntry",
+      "name": "Warlord Titan"
+    },
+    {
+      "id": "8299-e7d7-115e-bf8c",
+      "targetId": "169a-d3f4-23b5-ba7",
+      "name": "Faction: Adeptus Titanicus"
+    },
+    {
+      "id": "2eb-451d-da03-66a8",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "8630-315a-fbcb-c39c",
+      "targetId": "a618-aeb9-f07d-5ed5",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "4feb-117a-4193-bc4a",
+      "targetId": "e8ef-836a-a9d1-901d",
+      "type": "selectionEntry",
+      "name": "Show/Hide Options"
+    },
+    {
+      "id": "f859-abad-f35a-8893",
+      "targetId": "e08b-2448-5606-fefb",
+      "type": "selectionEntry",
+      "name": "Show Imperial Agents"
+    },
+    {
+      "id": "7cea-eee3-1132-d7c3",
+      "targetId": "e82c-6f8c-2b97-a287",
+      "type": "selectionEntry",
+      "name": "Show Imperial Knights"
+    },
+    {
+      "id": "9905-e153-dad7-c0c2",
+      "targetId": "eda7-8b4b-3719-af36",
+      "type": "selectionEntry",
+      "name": "Order of Battle"
+    },
+    {
+      "id": "da50-f908-c5f6-3d9c",
+      "targetId": "68a2-ada5-3cd4-c5a3",
+      "type": "selectionEntryGroup",
+      "name": "Shadow Operations"
+    },
+    {
+      "id": "f539-8620-d638-68e6",
+      "targetId": "12f3-7f5b-747e-41ca",
+      "type": "selectionEntryGroup",
+      "name": "Chivalric Quests"
+    },
+    {
+      "id": "2e56-a5c9-b6c3-3e95",
+      "targetId": "5c0e-4c31-d51b-e470",
+      "name": "Warlord"
+    }
+  ]
+}

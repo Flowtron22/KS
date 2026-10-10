@@ -1,0 +1,5701 @@
+{
+  "source": {
+    "repo": "BSData/wh40k-11e",
+    "commit": "cc58ee3b2c23f90af9d00e7bf234cd703b762299",
+    "file": "Library - Tyranids.json",
+    "sourceUrl": "https://raw.githubusercontent.com/BSData/wh40k-11e/cc58ee3b2c23f90af9d00e7bf234cd703b762299/Library%20-%20Tyranids.json",
+    "sha256": "e9488e1669abd0cce6646b9d8e1e1e12cd8630675ba90223402ed0e890a8d0ea"
+  },
+  "catalogue": {
+    "id": "374d-45f0-5832-001e",
+    "name": "Library - Tyranids",
+    "revision": 5,
+    "library": true,
+    "imports": []
+  },
+  "status": "research-only-unresolved-conditional-values",
+  "profiles": [
+    {
+      "id": "fdd3-f5cd-d338-974c",
+      "name": "Ripper Swarm",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "2",
+        "W": "4",
+        "LD": "8+",
+        "OC": "0"
+      }
+    },
+    {
+      "id": "b3b6-408d-6916-d204",
+      "name": "Winged Hive Tyrant",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "fa68-fcb9-38c-cd0f"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "9",
+        "W": "10",
+        "LD": "7+",
+        "OC": "3"
+      }
+    },
+    {
+      "id": "84d0-f0bf-85c5-2266",
+      "name": "Tyrant talons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "fa68-fcb9-38c-cd0f",
+        "c80c-048b-a074-27b5",
+        "f65e-95a4-be9d-282f"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "5",
+        "WS": "2+",
+        "S": "7",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "6202-88a9-5a3-232a",
+      "name": "Winged Tyranid Prime",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "507d-5ea4-6ef1-bf66"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "5",
+        "W": "6",
+        "LD": "7+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "4433-3a45-4860-4896",
+      "name": "Prime talons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "507d-5ea4-6ef1-bf66",
+        "e2d6-8046-4b2f-2395",
+        "db71-7634-2513-687c"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "2+",
+        "S": "6",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "bcec-58bd-57ff-f402",
+      "name": "Deathleaper",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "bc36-92fe-ecc6-58b3"
+      ],
+      "stats": {
+        "M": "8\"",
+        "T": "6",
+        "W": "7",
+        "LD": "7+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "b7d3-7efe-31aa-5ad0",
+      "name": "Gargoyles",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "9ce8-7a63-15c3-0347",
+        "28f8-9249-bb94-4e30"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "3",
+        "W": "1",
+        "LD": "8+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "a6d6-0e98-847e-f85c",
+      "name": "Blinding venom",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "9ce8-7a63-15c3-0347",
+        "28f8-9249-bb94-4e30",
+        "a20f-00ab-689b-03d2",
+        "d2fe-d8db-74c8-4e51"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "1",
+        "WS": "4+",
+        "S": "3",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "4639-581b-c704-f11e",
+      "name": "Fleshborer",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "9ce8-7a63-15c3-0347",
+        "28f8-9249-bb94-4e30",
+        "a20f-00ab-689b-03d2",
+        "fce9-8c80-4731-4af6"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "1",
+        "BS": "4+",
+        "S": "5",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "6285-3c2c-c776-1d87",
+      "name": "Ravener Prime",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "c10d-772e-a54f-a2b9",
+        "c166-c7cb-a213-51fb"
+      ],
+      "stats": {
+        "M": "10\"",
+        "T": "5",
+        "W": "6",
+        "LD": "7+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "8cd4-90f5-e417-6b7b",
+      "name": "Prime claws and talons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "c10d-772e-a54f-a2b9",
+        "c166-c7cb-a213-51fb",
+        "9212-84a7-58ac-c7d6",
+        "ef54-2b85-a906-048a"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "3035-bd15-bcdd-6abe",
+      "name": "Ravener",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "c10d-772e-a54f-a2b9",
+        "99d8-7263-6899-fd04",
+        "a62b-244e-b877-55e6"
+      ],
+      "stats": {
+        "M": "10\"",
+        "T": "5",
+        "W": "3",
+        "LD": "8+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "4504-edbb-7097-8c93",
+      "name": "Ravener",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "c10d-772e-a54f-a2b9",
+        "99d8-7263-6899-fd04",
+        "3877-9ac4-28c3-97b1"
+      ],
+      "stats": {
+        "M": "10\"",
+        "T": "5",
+        "W": "3",
+        "LD": "8+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "e989-6f09-3a8c-a165",
+      "name": "Venom bolt",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "c10d-772e-a54f-a2b9",
+        "99d8-7263-6899-fd04",
+        "3877-9ac4-28c3-97b1",
+        "a653-73a7-70fe-de81"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D6+3",
+        "BS": "N/A",
+        "S": "6",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "bc12-ffcf-1cd4-98fa",
+      "name": "Lictor",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "da44-72c9-7a27-48aa"
+      ],
+      "stats": {
+        "M": "8\"",
+        "T": "6",
+        "W": "6",
+        "LD": "7+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "c9fa-4640-80ed-c955",
+      "name": "Mawloc",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "2bbb-d811-15f7-1a81"
+      ],
+      "stats": {
+        "M": "10\"",
+        "T": "10",
+        "W": "14",
+        "LD": "8+",
+        "OC": "4"
+      }
+    },
+    {
+      "id": "77f-c6c2-7eb2-2499",
+      "name": "Distendible jaw",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "2bbb-d811-15f7-1a81",
+        "5727-6e31-5a14-93c8",
+        "4894-10b5-80f-264a"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "1",
+        "WS": "3+",
+        "S": "5",
+        "AP": "0",
+        "D": "3"
+      }
+    },
+    {
+      "id": "48dd-9bd0-ba5e-9fe0",
+      "name": "Mawloc scything talons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "2bbb-d811-15f7-1a81",
+        "5727-6e31-5a14-93c8",
+        "1559-94b3-7320-7aac"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "16",
+        "WS": "3+",
+        "S": "8",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "fe95-bd06-986-961b",
+      "name": "Neurolictor",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "642f-9302-4fdc-ab68"
+      ],
+      "stats": {
+        "M": "8\"",
+        "T": "5",
+        "W": "7",
+        "LD": "7+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "10fd-5ae9-79e8-cbd1",
+      "name": "Piercing claws and talons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "642f-9302-4fdc-ab68",
+        "e9a2-14cd-8730-04c5",
+        "60e7-ac95-974c-fd76"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "2+",
+        "S": "6",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "5c09-d793-dbbf-7d14",
+      "name": "Parasite of Mortrex",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "d213-efd8-a2b4-42d2"
+      ],
+      "stats": {
+        "M": "12\"",
+        "T": "5",
+        "W": "5",
+        "LD": "8+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "b266-1a27-3790-923b",
+      "name": "Barbed ovipositor",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "d213-efd8-a2b4-42d2",
+        "2f89-f83d-ba02-03ec",
+        "7507-3bc1-f275-ea8c"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "1",
+        "WS": "2+",
+        "S": "3",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "ba43-6e87-cdf9-9c3a",
+      "name": "Clawed limbs",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "d213-efd8-a2b4-42d2",
+        "2f89-f83d-ba02-03ec",
+        "cc5-9a66-ab15-c652"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "2+",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "5103-b9e6-37f-80a9",
+      "name": "Raveners",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "3f5-f7d6-1ce8-e6b9",
+        "c653-731f-d1b1-1ddc",
+        "79c8-bd29-5655-57c7"
+      ],
+      "stats": {
+        "M": "10\"",
+        "T": "5",
+        "W": "3",
+        "LD": "8+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "2154-199f-cf6e-a6bb",
+      "name": "Ravener claws and talons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "3f5-f7d6-1ce8-e6b9",
+        "c653-731f-d1b1-1ddc",
+        "79c8-bd29-5655-57c7",
+        "ad4d-e5d1-8ffb-da22"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "2913-9d03-6b31-46a8",
+      "name": "Trygon",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "56db-d7c-b349-677f"
+      ],
+      "stats": {
+        "M": "10\"",
+        "T": "10",
+        "W": "14",
+        "LD": "8+",
+        "OC": "4"
+      }
+    },
+    {
+      "id": "67cc-622e-5cec-cb41",
+      "name": "Trygon scything talons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "56db-d7c-b349-677f",
+        "9f03-2e94-3fba-6cb1",
+        "267a-5d9e-9d76-668c"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "12",
+        "WS": "3+",
+        "S": "9",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "2202-44e7-b5c0-ad6b",
+      "name": "Tyrannocyte",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "fada-677a-f6a4-cd12"
+      ],
+      "stats": {
+        "M": "8\"",
+        "T": "9",
+        "W": "10",
+        "LD": "8+",
+        "OC": "2"
+      }
+    },
+    {
+      "id": "3751-5833-40ca-73b8",
+      "name": "Flensing Whips",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "fada-677a-f6a4-cd12",
+        "c121-985e-5ed5-dcd5",
+        "3748-a7ee-58fb-140e"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "4+",
+        "S": "7",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "97d8-b44e-edaf-2f93",
+      "name": "Tyrannocyte Bio-weapons",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "fada-677a-f6a4-cd12",
+        "c121-985e-5ed5-dcd5",
+        "d1e2-bf6f-8c22-f7fb"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "5",
+        "BS": "4+",
+        "S": "5",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "3d5e-8525-726d-86ee",
+      "name": "Von Ryan's Leaper",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "9bd8-ac8c-2d3b-79f6",
+        "ae9a-662b-0fb4-c84c",
+        "e439-47c1-afed-50c4"
+      ],
+      "stats": {
+        "M": "10\"",
+        "T": "5",
+        "W": "3",
+        "LD": "8+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "74d3-4e3e-f6f-229c",
+      "name": "Leaper's talons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "9bd8-ac8c-2d3b-79f6",
+        "ae9a-662b-0fb4-c84c",
+        "e439-47c1-afed-50c4",
+        "9c0-44a0-4bf3-5e14"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "7c98-8d1f-50e2-8d73",
+      "name": "Ravener heavy claws and talons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "9be2-c3dc-90ac-a3ac"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "3",
+        "WS": "3+",
+        "S": "5",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "1c99-99eb-f966-66d4",
+      "name": "Lictor claws and talons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "dc9f-b3bb-9b44-cb92"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "2+",
+        "S": "7",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "3803-1fe1-edde-12e1",
+      "name": "Stranglethorn cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "b9ec-cb81-44f6-49"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "D6+1",
+        "BS": "2+",
+        "S": "7",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "953d-482e-624b-2465",
+      "name": "Heavy venom cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "1504-4096-b992-65c3"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "D3",
+        "BS": "2+",
+        "S": "9",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "8ad2-55e5-a52f-2ca0",
+      "name": "Monstrous bonesword and lash whip",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "effb-d65d-a1b1-51d6"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "2+",
+        "S": "9",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "54a6-4f13-d99b-583c",
+      "name": "Monstrous scything talons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "d0cf-a582-5166-fbba"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "4",
+        "WS": "2+",
+        "S": "7",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "8757-b2b6-6803-c20b",
+      "name": "Node Organism",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "527c-d3c6-c620-c7c6"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "5",
+        "W": "6",
+        "LD": "7+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "f800-7042-4fd5-597f",
+      "name": "Prime Organism",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "6f46-0c77-acd0-3f5d"
+      ],
+      "stats": {
+        "M": "8\"",
+        "T": "9",
+        "W": "9",
+        "LD": "7+",
+        "OC": "3"
+      }
+    },
+    {
+      "id": "ae06-b0d6-c1fa-4335",
+      "name": "Macro Organism",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "a89f-8ad1-3d79-174f"
+      ],
+      "stats": {
+        "M": "8\"",
+        "T": "10",
+        "W": "14",
+        "LD": "8+",
+        "OC": "4"
+      }
+    },
+    {
+      "id": "d526-3e7e-ecd2-97f3",
+      "name": "Acid spray",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "f64-8faa-ac54-73ff"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "D6+6",
+        "BS": "N/A",
+        "S": "6",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "5302-f4ac-62fb-6dcd",
+      "name": "Bio-electric pulse",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "e35-764a-e9e2-7f18"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "6",
+        "BS": "3+",
+        "S": "5",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "a94a-a97b-c54-3ccf",
+      "name": "Fleshborer hive",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "5a91-5299-277-82a9"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "20",
+        "BS": "3+",
+        "S": "5",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "22aa-3a34-8d0-8463",
+      "name": "Psychic overload",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "8124-9c22-8028-433c"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "D6+3",
+        "BS": "3+",
+        "S": "10",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "f1ff-ebef-ac02-b60b",
+      "name": "Psychic scream",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "4b19-26b8-1f71-2768"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "2D6",
+        "BS": "N/A",
+        "S": "5",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "208d-6af9-f50c-f4f2",
+      "name": "Psychoclastic torrent",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "56f9-bb79-7be0-dbf2"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D6",
+        "BS": "N/A",
+        "S": "6",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "1294-c9a1-57fc-d25",
+      "name": "Stinger salvoes",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "5e02-c4ce-b7e6-d59"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "8",
+        "BS": "3+",
+        "S": "5",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "ddd5-70eb-2592-b89d",
+      "name": "Ravenous maw",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "e240-8306-941-b848"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "14",
+        "WS": "3+",
+        "S": "7",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "ab41-fe74-24c7-1b48",
+      "name": "Spinemaw",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "3849-e3e0-4d2d-a259"
+      ],
+      "stats": {
+        "Range": "6\"",
+        "A": "4",
+        "BS": "5+",
+        "S": "3",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "82ab-174c-7668-94",
+      "name": "Chitinous claws and teeth",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "f5e3-ad89-8888-4bd4"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "5+",
+        "S": "2",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "e944-f972-cf18-b5de",
+      "name": "The Red Terror",
+      "type": "Unit",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "7173-1bd9-b60b-6555"
+      ],
+      "stats": {
+        "M": "10\"",
+        "T": "8",
+        "W": "9",
+        "LD": "8+",
+        "OC": "3"
+      }
+    },
+    {
+      "id": "d1a0-6eb3-cb10-4e32",
+      "name": "Gaping maw",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "7173-1bd9-b60b-6555",
+        "b067-ca10-d4df-88b9",
+        "8f4b-dfff-77d2-b215"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "1",
+        "WS": "2+",
+        "S": "5",
+        "AP": "-",
+        "D": "D3+2"
+      }
+    },
+    {
+      "id": "9ae5-c60f-56fe-e9d6",
+      "name": "Scything talons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "7173-1bd9-b60b-6555",
+        "b067-ca10-d4df-88b9",
+        "7190-e583-dade-fdb6"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "12",
+        "WS": "2+",
+        "S": "7",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "149e-7441-dd46-4ed9",
+      "name": "Barbed strangler",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "93f9-6099-8613-801c",
+        "d3b6-4182-da37-3eff"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "D6+1",
+        "BS": "3+",
+        "S": "6",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "21e8-f995-a964-f074",
+      "name": "Bio-plasma",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "93f9-6099-8613-801c",
+        "7ac4-2ae2-fcbc-991d"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D3",
+        "BS": "3+",
+        "S": "7",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "6478-4d28-4367-0213",
+      "name": "Bio-plasmic cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "93f9-6099-8613-801c",
+        "f1c8-e7e8-2d51-8d28"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "D6+3",
+        "BS": "3+",
+        "S": "8",
+        "AP": "-3",
+        "D": "3"
+      }
+    },
+    {
+      "id": "dd51-1028-ca8e-8ac8",
+      "name": "Deathspitter",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "93f9-6099-8613-801c",
+        "93d7-d393-09ec-1934"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "3",
+        "BS": "3+",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "be77-0744-a192-dc30",
+      "name": "Deathspitters with slimer maggots",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "93f9-6099-8613-801c",
+        "511d-698d-fd8b-d2a2"
+      ],
+      "stats": {
+        "Range": "24\"",
+        "A": "6",
+        "BS": "3+",
+        "S": "7",
+        "AP": "-2",
+        "D": "1"
+      }
+    },
+    {
+      "id": "7fcf-c013-877e-0c3f",
+      "name": "Devourer",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "93f9-6099-8613-801c",
+        "29b8-f84a-7fae-0ca4"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "5",
+        "BS": "3+",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "f312-d629-b5b0-3551",
+      "name": "Devourers with brainleech worms",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "93f9-6099-8613-801c",
+        "11d8-2819-8012-c192"
+      ],
+      "stats": {
+        "Range": "18\"",
+        "A": "12",
+        "BS": "3+",
+        "S": "6",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "0b63-1c89-0600-1348",
+      "name": "Heavy venom cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "93f9-6099-8613-801c",
+        "d0d4-d4c0-0a3d-36ec"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "D3",
+        "BS": "3+",
+        "S": "9",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "62b6-b2d1-6dc5-e1c5",
+      "name": "Spine banks",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "93f9-6099-8613-801c",
+        "929f-72b3-24fc-505f"
+      ],
+      "stats": {
+        "Range": "6\"",
+        "A": "5",
+        "BS": "3+",
+        "S": "5",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "4446-ce12-af9d-4914",
+      "name": "Spinefists",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "93f9-6099-8613-801c",
+        "fdd6-852f-8926-0887"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "bf8c-2b28-39ee-d78a",
+      "name": "Stranglethorn cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "93f9-6099-8613-801c",
+        "5d0e-83e2-a805-09a4"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "D6+1",
+        "BS": "3+",
+        "S": "7",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "cc34-993a-57ff-275b",
+      "name": "Thoracic bio-weapon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "93f9-6099-8613-801c",
+        "3f64-afc8-9985-bb9d"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "3",
+        "BS": "3+",
+        "S": "4",
+        "AP": "0",
+        "D": "1"
+      }
+    },
+    {
+      "id": "3b34-d904-9686-b938",
+      "name": "Venom cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "93f9-6099-8613-801c",
+        "e1ad-a6c2-1bfb-19b2"
+      ],
+      "stats": {
+        "Range": "36\"",
+        "A": "D3",
+        "BS": "3+",
+        "S": "9",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "26c3-c179-78e6-24c5",
+      "name": "Rupture cannon",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "93f9-6099-8613-801c",
+        "6a8d-4e0d-46b8-cd3e"
+      ],
+      "stats": {
+        "Range": "48\"",
+        "A": "2",
+        "BS": "3+",
+        "S": "18",
+        "AP": "-4",
+        "D": "2D6"
+      }
+    },
+    {
+      "id": "0050-279b-9abf-3211",
+      "name": "Crushing claws",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "2b3a-57e4-3233-acf4",
+        "89c4-84a2-e194-dfdf"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "5",
+        "WS": "2+",
+        "S": "12",
+        "AP": "-3",
+        "D": "D6+1"
+      }
+    },
+    {
+      "id": "f6b3-7b4a-612d-3ead",
+      "name": "➤ Massive scything talons - strike",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "2b3a-57e4-3233-acf4",
+        "fdc9-5f30-052e-5858"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "5",
+        "WS": "3+",
+        "S": "9",
+        "AP": "-2",
+        "D": "D6"
+      }
+    },
+    {
+      "id": "7385-f1ca-66b0-8537",
+      "name": "➤ Massive scything talons - sweep",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "2b3a-57e4-3233-acf4",
+        "fdc9-5f30-052e-5858"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "10",
+        "WS": "3+",
+        "S": "7",
+        "AP": "-1",
+        "D": "2"
+      }
+    },
+    {
+      "id": "5ffc-12e7-2d98-5c3e",
+      "name": "Monster-beast weapons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "2b3a-57e4-3233-acf4",
+        "b248-a08e-9cbd-4c9f"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "12",
+        "WS": "3+",
+        "S": "9",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "23cf-84a4-44a1-12cf",
+      "name": "Piercing claws and talons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "2b3a-57e4-3233-acf4",
+        "4235-50fe-c415-989f"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "2+",
+        "S": "7",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "67a1-5777-f2dc-d17d",
+      "name": "Ravener claws and talons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "2b3a-57e4-3233-acf4",
+        "378b-9008-185f-2a33"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "7",
+        "WS": "2+",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "8552-af68-a81f-0d18",
+      "name": "Scything talons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "2b3a-57e4-3233-acf4",
+        "e493-012d-97d4-feaa"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "2+",
+        "S": "9",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "b1e2-4df2-3f0e-ec62",
+      "name": "Tyrant-beast weapons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "2b3a-57e4-3233-acf4",
+        "aea6-fbd8-0834-79c2"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "5",
+        "WS": "2+",
+        "S": "7",
+        "AP": "-2",
+        "D": "2"
+      }
+    },
+    {
+      "id": "4a6c-5f97-3aad-78ca",
+      "name": "Warrior-beast weapons",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "72e5-5efe-3fbc-9290",
+        "2b3a-57e4-3233-acf4",
+        "0af4-9f4c-2494-e3fe"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "2+",
+        "S": "5",
+        "AP": "-1",
+        "D": "1"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "id": "fa68-fcb9-38c-cd0f",
+      "name": "Winged Hive Tyrant",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 185
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "4868-8ba6-a021-5567",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "b12e-7b6d-4af8-4757",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        },
+        {
+          "id": "d052-102a-fd71-ef99",
+          "targetId": "395b-a159-b293-27aa",
+          "type": "rule"
+        },
+        {
+          "id": "52e5-4e0d-4d0e-572c",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        },
+        {
+          "id": "edb4-b975-82dc-c551",
+          "targetId": "13-98c1-d481-eb95",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "507d-5ea4-6ef1-bf66",
+      "name": "Winged Tyranid Prime",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 65
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "8a73-df5e-3dbe-473e",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        },
+        {
+          "id": "928c-8494-2e2e-5495",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        },
+        {
+          "id": "563c-dd94-fae4-b249",
+          "targetId": "395b-a159-b293-27aa",
+          "type": "rule"
+        },
+        {
+          "id": "e101-af93-c493-64ad",
+          "targetId": "b4dd-3e1f-41cb-218f",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "bc36-92fe-ecc6-58b3",
+      "name": "Deathleaper",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 80
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "f1a5-240b-243c-eed0",
+          "targetId": "3f46-6dbb-d99b-4ae2",
+          "type": "profile"
+        },
+        {
+          "id": "2837-94c6-2d8-5e26",
+          "targetId": "24-c886-e8ba-5a89",
+          "type": "rule"
+        },
+        {
+          "id": "a6bf-e39f-4b5c-661c",
+          "targetId": "c05d-f4c3-f091-4938",
+          "type": "rule"
+        },
+        {
+          "id": "d638-601e-fc4d-b225",
+          "targetId": "a8a0-8fe7-898-e0f3",
+          "type": "rule"
+        },
+        {
+          "id": "ee29-bee3-d0ff-fc53",
+          "targetId": "bec5-4288-34a6-ccfa",
+          "type": "rule"
+        },
+        {
+          "id": "c239-36a3-7bb9-c712",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        },
+        {
+          "id": "907b-760a-c030-8e18",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "9ce8-7a63-15c3-0347",
+      "name": "Gargoyles",
+      "type": "unit",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 75
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "2ef9-e490-bf66-4ca0",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        },
+        {
+          "id": "fc71-c6e4-15d4-88da",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        },
+        {
+          "id": "c99c-e74c-2bab-10bf",
+          "targetId": "bec5-4288-34a6-ccfa",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "28f8-9249-bb94-4e30",
+      "name": "Gargoyles",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "9ce8-7a63-15c3-0347"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "c10d-772e-a54f-a2b9",
+      "name": "Hyperadapted Raveners",
+      "type": "unit",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 165
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "2520-6b87-ebf8-8cbc",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        },
+        {
+          "id": "f26a-4878-1c2c-def9",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        },
+        {
+          "id": "d314-5ba8-6770-9186",
+          "targetId": "1897-c22c-9597-12b1",
+          "type": "rule"
+        },
+        {
+          "id": "c307-9d76-b81b-42a0",
+          "targetId": "b4dd-3e1f-41cb-218f",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "c166-c7cb-a213-51fb",
+      "name": "Ravener Prime",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "c10d-772e-a54f-a2b9"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "058e-5e13-c803-3861",
+          "targetId": "395b-a159-b293-27aa",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "a62b-244e-b877-55e6",
+      "name": "Ravener",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "c10d-772e-a54f-a2b9",
+        "99d8-7263-6899-fd04"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "3877-9ac4-28c3-97b1",
+      "name": "Ravener w/ Venom bolt",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "c10d-772e-a54f-a2b9",
+        "99d8-7263-6899-fd04"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "da44-72c9-7a27-48aa",
+      "name": "Lictor",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 60
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "6740-d292-a033-c915",
+          "targetId": "3f46-6dbb-d99b-4ae2",
+          "type": "profile"
+        },
+        {
+          "id": "11cd-3193-c8ea-2744",
+          "targetId": "24-c886-e8ba-5a89",
+          "type": "rule"
+        },
+        {
+          "id": "f8ba-c1ed-22bf-60d5",
+          "targetId": "c05d-f4c3-f091-4938",
+          "type": "rule"
+        },
+        {
+          "id": "b2d6-5e38-3984-e04a",
+          "targetId": "a8a0-8fe7-898-e0f3",
+          "type": "rule"
+        },
+        {
+          "id": "4527-86e-e85-1c3d",
+          "targetId": "bec5-4288-34a6-ccfa",
+          "type": "rule"
+        },
+        {
+          "id": "2322-209e-5d26-a06b",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        },
+        {
+          "id": "3cd3-ad11-863b-90b7",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "2bbb-d811-15f7-1a81",
+      "name": "Mawloc",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 130
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "7d08-be71-f23c-d1be",
+          "targetId": "384f-e5ff-31a2-1295",
+          "type": "profile"
+        },
+        {
+          "id": "8d5-1695-657a-85b9",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        },
+        {
+          "id": "4814-8dd1-68fc-98e8",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "642f-9302-4fdc-ab68",
+      "name": "Neurolictor",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 80
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "500d-6298-c46d-d8c1",
+          "targetId": "395b-a159-b293-27aa",
+          "type": "rule"
+        },
+        {
+          "id": "c3e6-e344-1978-7856",
+          "targetId": "a8a0-8fe7-898-e0f3",
+          "type": "rule"
+        },
+        {
+          "id": "8135-18a1-df24-1415",
+          "targetId": "c05d-f4c3-f091-4938",
+          "type": "rule"
+        },
+        {
+          "id": "43e5-d613-7da9-b21c",
+          "targetId": "bec5-4288-34a6-ccfa",
+          "type": "rule"
+        },
+        {
+          "id": "ef47-a251-e3e7-ec73",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        },
+        {
+          "id": "da9b-0900-058b-db0d",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "d213-efd8-a2b4-42d2",
+      "name": "Parasite of Mortrex",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 65
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "21d8-348a-b423-dbe",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        },
+        {
+          "id": "9896-94da-baab-62f5",
+          "targetId": "a8a0-8fe7-898-e0f3",
+          "type": "rule"
+        },
+        {
+          "id": "49f-799d-a6ab-8d36",
+          "targetId": "bec5-4288-34a6-ccfa",
+          "type": "rule"
+        },
+        {
+          "id": "5d13-15eb-7d5c-2962",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        },
+        {
+          "id": "e592-f7b4-fc49-bd73",
+          "targetId": "395b-a159-b293-27aa",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "3f5-f7d6-1ce8-e6b9",
+      "name": "Raveners",
+      "type": "unit",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 125
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "d8d8-bf79-8ad4-cd43",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        },
+        {
+          "id": "c5a3-8e54-e6ed-cf26",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        },
+        {
+          "id": "b464-e8de-a0ca-f72e",
+          "targetId": "bec5-4288-34a6-ccfa",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "79c8-bd29-5655-57c7",
+      "name": "Ravener",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "3f5-f7d6-1ce8-e6b9",
+        "c653-731f-d1b1-1ddc"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "56db-d7c-b349-677f",
+      "name": "Trygon",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 135
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "6f-a0b-fb24-9008",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        },
+        {
+          "id": "c8ec-fa8c-42c5-66e3",
+          "targetId": "384f-e5ff-31a2-1295",
+          "type": "profile"
+        },
+        {
+          "id": "3848-3f5a-37a3-d13",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "fada-677a-f6a4-cd12",
+      "name": "Tyrannocyte",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 80
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "a544-4bb5-d13-36ae",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "9787-c977-2233-c996",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        },
+        {
+          "id": "2c88-3122-88f-1bc3",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "9bd8-ac8c-2d3b-79f6",
+      "name": "Von Ryan's Leapers",
+      "type": "unit",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 55
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "1f56-fd97-61b6-8f50",
+          "targetId": "bec5-4288-34a6-ccfa",
+          "type": "rule"
+        },
+        {
+          "id": "cc4b-f93f-dcc5-9f00",
+          "targetId": "24-c886-e8ba-5a89",
+          "type": "rule"
+        },
+        {
+          "id": "581c-3a4a-404d-ef8a",
+          "targetId": "c05d-f4c3-f091-4938",
+          "type": "rule"
+        },
+        {
+          "id": "4754-2887-c980-83d2",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "e439-47c1-afed-50c4",
+      "name": "Von Ryan's Leaper",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "9bd8-ac8c-2d3b-79f6",
+        "ae9a-662b-0fb4-c84c"
+      ],
+      "costs": [],
+      "profileLinks": []
+    },
+    {
+      "id": "1de2-b57b-aa0a-1f0d",
+      "name": "Ripper Swarms",
+      "type": "unit",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 30
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "5272-0302-af63-9158",
+          "targetId": "533-9226-7e51-ee0",
+          "type": "profile"
+        },
+        {
+          "id": "3ca5-d590-80cf-4ca4",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        },
+        {
+          "id": "701e-696-940-8d2e",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "7242-c911-e611-551e",
+      "name": "Ripper Swarm",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "1de2-b57b-aa0a-1f0d"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "06a7-ba31-c975-9a8c",
+          "targetId": "fdd3-f5cd-d338-974c",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "527c-d3c6-c620-c7c6",
+      "name": "Node Organism [Crucible]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 80
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Diplomatic Power",
+          "typeId": "4d7c-04b6-8a79-837f",
+          "value": 0
+        },
+        {
+          "name": "Military Power",
+          "typeId": "1cbe-d9c9-86a8-2d41",
+          "value": 0
+        },
+        {
+          "name": "Purgation Points",
+          "typeId": "d579-52c1-3e77-dd11",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "55b5-f694-4fc0-bc4e",
+          "targetId": "b4dd-3e1f-41cb-218f",
+          "type": "rule"
+        },
+        {
+          "id": "baf9-7356-8231-3fe2",
+          "targetId": "1897-c22c-9597-12b1",
+          "type": "rule"
+        },
+        {
+          "id": "6a15-60d5-7eca-1397",
+          "targetId": "395b-a159-b293-27aa",
+          "type": "rule"
+        },
+        {
+          "id": "c741-fe73-985d-071e",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        },
+        {
+          "id": "f3ef-9fc3-f878-2cca",
+          "targetId": "5ce6-a3cf-e871-f081",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "6f46-0c77-acd0-3f5d",
+      "name": "Prime Organism [Crucible]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 135
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Diplomatic Power",
+          "typeId": "4d7c-04b6-8a79-837f",
+          "value": 0
+        },
+        {
+          "name": "Military Power",
+          "typeId": "1cbe-d9c9-86a8-2d41",
+          "value": 0
+        },
+        {
+          "name": "Purgation Points",
+          "typeId": "d579-52c1-3e77-dd11",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "2800-d52a-c025-5a83",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "e1da-995e-501a-7628",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        },
+        {
+          "id": "5816-4fa6-2f03-8313",
+          "targetId": "5ce6-a3cf-e871-f081",
+          "type": "rule"
+        },
+        {
+          "id": "ef20-63bd-4477-cfa7",
+          "targetId": "b4dd-3e1f-41cb-218f",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "a89f-8ad1-3d79-174f",
+      "name": "Macro Organism [Crucible]",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 150
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Diplomatic Power",
+          "typeId": "4d7c-04b6-8a79-837f",
+          "value": 0
+        },
+        {
+          "name": "Military Power",
+          "typeId": "1cbe-d9c9-86a8-2d41",
+          "value": 0
+        },
+        {
+          "name": "Purgation Points",
+          "typeId": "d579-52c1-3e77-dd11",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "2198-5205-6541-b8b5",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        },
+        {
+          "id": "54eb-4077-6841-53c1",
+          "targetId": "b68a-5ded-65ac-98c",
+          "type": "rule"
+        },
+        {
+          "id": "6cb7-956a-1074-ee68",
+          "targetId": "5ce6-a3cf-e871-f081",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "4390-b3c7-64d2-c1b8",
+      "name": "Ripper Swarms (Parasite of Mortrex)",
+      "type": "unit",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "5624-e290-aec7-2b91",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        },
+        {
+          "id": "493c-1242-4a33-61cf",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        },
+        {
+          "id": "a947-fe4a-215a-5993",
+          "targetId": "533-9226-7e51-ee0",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "ef46-2ed1-2a04-646b",
+      "name": "Ripper Swarm",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e",
+        "4390-b3c7-64d2-c1b8"
+      ],
+      "costs": [],
+      "profileLinks": [
+        {
+          "id": "e28b-efa1-3532-2e3b",
+          "targetId": "fdd3-f5cd-d338-974c",
+          "type": "profile"
+        }
+      ]
+    },
+    {
+      "id": "7173-1bd9-b60b-6555",
+      "name": "The Red Terror",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "374d-45f0-5832-001e"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 120
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "1400-528a-c6d8-ecc6",
+          "targetId": "7cb5-dd6b-dd87-ad3b",
+          "type": "rule"
+        },
+        {
+          "id": "8973-90e7-6d3f-2e6f",
+          "targetId": "86aa-437f-260b-5cad",
+          "type": "rule"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "843-f94e-913a-e630",
+      "targetId": "9693-cf84-fe69-37a9",
+      "name": "Monster"
+    },
+    {
+      "id": "978a-317d-5f0-93e1",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "2b6c-f19e-9742-72e1",
+      "targetId": "13bf-2bee-3ae0-b414",
+      "name": "Psyker"
+    },
+    {
+      "id": "1bd8-98cd-a897-bf30",
+      "targetId": "4f10-fe01-4b80-8d6b",
+      "name": "Winged Hive Tyrant"
+    },
+    {
+      "id": "e7f6-47ce-a120-989f",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "b781-f296-1e6d-9d8e",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "59a1-9f52-66b7-2a61",
+      "targetId": "c619-2086-bbcf-69c9",
+      "name": "Fly"
+    },
+    {
+      "id": "ad71-d73a-bf7c-b6a8",
+      "targetId": "4129-a453-686a-d38a",
+      "name": "Synapse"
+    },
+    {
+      "id": "be7-36e1-711c-7bf3",
+      "targetId": "5ff0-d52d-e2b8-9de",
+      "name": "Vanguard Invader"
+    },
+    {
+      "id": "d995-1d79-eff6-ae59",
+      "targetId": "101a-751-2ee4-c46e",
+      "name": "Hive Tyrant"
+    },
+    {
+      "id": "4fc9-cd8c-b426-f2d4",
+      "targetId": "ceab-62d9-31bf-7c61",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "e797-cbb5-dc66-bd25",
+      "targetId": "fa5b-f646-b960-a8d3",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "8957-fb0c-30f9-2518",
+      "targetId": "2fa5-0a8d-013e-fc12",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "4868-8ba6-a021-5567",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "b12e-7b6d-4af8-4757",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "d052-102a-fd71-ef99",
+      "targetId": "395b-a159-b293-27aa",
+      "type": "rule",
+      "name": "Shadow in the Warp"
+    },
+    {
+      "id": "52e5-4e0d-4d0e-572c",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "edb4-b975-82dc-c551",
+      "targetId": "13-98c1-d481-eb95",
+      "type": "profile",
+      "name": "Will of the Hive Mind"
+    },
+    {
+      "id": "0c06-aa16-1a51-7447",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "276e-2216-7b73-61dd",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "2019-583b-ca88-546c",
+      "targetId": "d0cf-a582-5166-fbba",
+      "type": "selectionEntry",
+      "name": "Monstrous scything talons"
+    },
+    {
+      "id": "156a-f8ea-b6a7-896f",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "79d7-2c8d-a55e-af25",
+      "targetId": "b9ec-cb81-44f6-49",
+      "type": "selectionEntry",
+      "name": "Stranglethorn cannon"
+    },
+    {
+      "id": "cb34-bba9-59fa-46f5",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "46a7-e00d-e612-2a6d",
+      "targetId": "1504-4096-b992-65c3",
+      "type": "selectionEntry",
+      "name": "Heavy venom cannon"
+    },
+    {
+      "id": "731f-5673-10e2-f009",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "777b-826-ebd3-6a1a",
+      "targetId": "effb-d65d-a1b1-51d6",
+      "type": "selectionEntry",
+      "name": "Monstrous bonesword and lash whip"
+    },
+    {
+      "id": "00a4-6334-0e18-b55d",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "8c3d-baaf-703c-b6d3",
+      "targetId": "d5b9-2986-70fe-f755",
+      "name": "Winged Tyranid Prime"
+    },
+    {
+      "id": "8916-d916-988f-18e9",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "e299-e207-7dcc-f028",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "c073-976c-2772-ddd9",
+      "targetId": "c619-2086-bbcf-69c9",
+      "name": "Fly"
+    },
+    {
+      "id": "205-c1cd-2518-7b21",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "a80a-cea7-3939-88cf",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "c6bf-150-4bb-2ab0",
+      "targetId": "4129-a453-686a-d38a",
+      "name": "Synapse"
+    },
+    {
+      "id": "c121-e044-63cc-5766",
+      "targetId": "5ff0-d52d-e2b8-9de",
+      "name": "Vanguard Invader"
+    },
+    {
+      "id": "a58f-4dad-a420-8270",
+      "targetId": "1556-9b56-fba6-4370",
+      "name": "Leader"
+    },
+    {
+      "id": "cafa-9b65-e363-2844",
+      "targetId": "ceab-62d9-31bf-7c61",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "a00-6a4f-539-68e3",
+      "targetId": "fa5b-f646-b960-a8d3",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "eeb1-6e4f-6fea-065f",
+      "targetId": "2fa5-0a8d-013e-fc12",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "8a73-df5e-3dbe-473e",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "928c-8494-2e2e-5495",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "563c-dd94-fae4-b249",
+      "targetId": "395b-a159-b293-27aa",
+      "type": "rule",
+      "name": "Shadow in the Warp"
+    },
+    {
+      "id": "e101-af93-c493-64ad",
+      "targetId": "b4dd-3e1f-41cb-218f",
+      "type": "rule",
+      "name": "Leader"
+    },
+    {
+      "id": "add5-af91-8dbb-e898",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "300a-e5bd-ef94-02ab",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "f9a1-43a4-46e8-5f7d",
+      "targetId": "4f3a-f0f7-6647-348d",
+      "name": "Epic Hero"
+    },
+    {
+      "id": "58de-19ad-2ff1-3ab6",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "6b1-91ac-1a08-7c42",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "7742-813-5489-2a28",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "6c47-8186-4f01-2e4e",
+      "targetId": "6467-972f-c95c-d414",
+      "name": "Deathleaper"
+    },
+    {
+      "id": "56b8-830a-946f-14f7",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "7886-fdc8-a4b4-69ca",
+      "targetId": "5ff0-d52d-e2b8-9de",
+      "name": "Vanguard Invader"
+    },
+    {
+      "id": "a0fb-e513-2877-7b1a",
+      "targetId": "dc9f-b3bb-9b44-cb92",
+      "type": "selectionEntry",
+      "name": "Lictor claws and talons"
+    },
+    {
+      "id": "82b2-c335-94dc-3d4c",
+      "targetId": "ceab-62d9-31bf-7c61",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "f1a5-240b-243c-eed0",
+      "targetId": "3f46-6dbb-d99b-4ae2",
+      "type": "profile",
+      "name": "Feeder Tendrils"
+    },
+    {
+      "id": "2837-94c6-2d8-5e26",
+      "targetId": "24-c886-e8ba-5a89",
+      "type": "rule",
+      "name": "Fights First"
+    },
+    {
+      "id": "a6bf-e39f-4b5c-661c",
+      "targetId": "c05d-f4c3-f091-4938",
+      "type": "rule",
+      "name": "Infiltrators"
+    },
+    {
+      "id": "d638-601e-fc4d-b225",
+      "targetId": "a8a0-8fe7-898-e0f3",
+      "type": "rule",
+      "name": "Lone Operative"
+    },
+    {
+      "id": "ee29-bee3-d0ff-fc53",
+      "targetId": "bec5-4288-34a6-ccfa",
+      "type": "rule",
+      "name": "Stealth"
+    },
+    {
+      "id": "c239-36a3-7bb9-c712",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "907b-760a-c030-8e18",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "ccf8-3960-98be-1fec",
+      "targetId": "f842-6e90-bc5a-80f1",
+      "type": "selectionEntryGroup",
+      "name": "Mighty Champions"
+    },
+    {
+      "id": "05e0-5cfe-bec9-6b27",
+      "targetId": "e338-111e-d0c6-b687",
+      "name": "Battleline"
+    },
+    {
+      "id": "08ab-add0-8d1d-ef69",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "7c7c-52d0-bf1e-fd92",
+      "targetId": "c619-2086-bbcf-69c9",
+      "name": "Fly"
+    },
+    {
+      "id": "d33f-0394-7b99-e5b5",
+      "targetId": "9c11-60f5-4859-9099",
+      "name": "Gargoyles"
+    },
+    {
+      "id": "66f1-f493-0232-8357",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "c0af-d0df-bd3e-423f",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "d6f0-a339-a70e-eb8a",
+      "targetId": "c5eb-961b-14b1-ae50",
+      "name": "Endless Multitude"
+    },
+    {
+      "id": "f858-76bd-c219-6554",
+      "targetId": "5ff0-d52d-e2b8-9de",
+      "name": "Vanguard Invader"
+    },
+    {
+      "id": "e080-88f3-4070-5689",
+      "targetId": "2fa5-0a8d-013e-fc12",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "2ef9-e490-bf66-4ca0",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "fc71-c6e4-15d4-88da",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "c99c-e74c-2bab-10bf",
+      "targetId": "bec5-4288-34a6-ccfa",
+      "type": "rule",
+      "name": "Stealth"
+    },
+    {
+      "id": "91f9-146c-7ef6-f255",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "013f-a016-a535-b248",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "b226-6b66-808a-4676",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "4b67-8f6e-f6f0-d13e",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "bf41-154f-a080-68fa",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "62c9-4247-b3c7-cd74",
+      "targetId": "5ff0-d52d-e2b8-9de",
+      "name": "Vanguard Invader"
+    },
+    {
+      "id": "c9f4-a0b3-0fa2-6a7d",
+      "targetId": "9e1e-ad1d-e864-7164",
+      "name": "Burrowers"
+    },
+    {
+      "id": "4735-bba0-8132-618e",
+      "targetId": "54a9-c42f-3578-c683",
+      "name": "Hyperadapted Raveners"
+    },
+    {
+      "id": "8ba2-1753-823a-84a7",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "3868-9f77-8425-1e41",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "19dd-1ceb-2890-153d",
+      "targetId": "1556-9b56-fba6-4370",
+      "name": "Leader"
+    },
+    {
+      "id": "4d62-6cd2-7202-1915",
+      "targetId": "2fa5-0a8d-013e-fc12",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "2520-6b87-ebf8-8cbc",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "f26a-4878-1c2c-def9",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "d314-5ba8-6770-9186",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "c307-9d76-b81b-42a0",
+      "targetId": "b4dd-3e1f-41cb-218f",
+      "type": "rule",
+      "name": "Leader"
+    },
+    {
+      "id": "5bed-d69e-8dc1-558c",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "b5c6-63cd-2d60-782e",
+      "targetId": "4129-a453-686a-d38a",
+      "name": "Synapse"
+    },
+    {
+      "id": "0f30-1fbe-b9e1-6161",
+      "targetId": "ceab-62d9-31bf-7c61",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "8476-be40-8e76-6872",
+      "targetId": "fa5b-f646-b960-a8d3",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "058e-5e13-c803-3861",
+      "targetId": "395b-a159-b293-27aa",
+      "type": "rule",
+      "name": "Shadow in the Warp"
+    },
+    {
+      "id": "2217-601b-6668-0ad1",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "1a04-80ab-bb9a-3492",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "77a9-f846-9c09-9030",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "0f01-d4e3-dc13-dbd2",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "52ef-fc8f-4670-82aa",
+      "targetId": "9be2-c3dc-90ac-a3ac",
+      "type": "selectionEntry",
+      "name": "Ravener heavy claws and talons"
+    },
+    {
+      "id": "4df4-6afc-328d-2d12",
+      "targetId": "9be2-c3dc-90ac-a3ac",
+      "type": "selectionEntry",
+      "name": "Ravener heavy claws and talons"
+    },
+    {
+      "id": "6d1b-8330-04b5-3cce",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "fb6c-647f-5472-bdbd",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "85c8-6457-d35b-dee4",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "365e-bab3-d258-0d35",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "2c1a-3eea-46eb-7eb1",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "d2d7-ea6c-cc56-cb1",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "3a0a-e9ea-95f9-3de1",
+      "targetId": "1ff-bd00-eca8-bff7",
+      "name": "Lictor"
+    },
+    {
+      "id": "e3f7-e7b7-5138-f720",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "8fc-d6e-e7bc-f8c",
+      "targetId": "5ff0-d52d-e2b8-9de",
+      "name": "Vanguard Invader"
+    },
+    {
+      "id": "f455-6e25-684b-6e8b",
+      "targetId": "2fa5-0a8d-013e-fc12",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "cef3-2698-193e-7eb4",
+      "targetId": "ceab-62d9-31bf-7c61",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "0f07-5b01-fa75-ebcb",
+      "targetId": "9208-f62b-e38e-721e",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements - Upgrades"
+    },
+    {
+      "id": "6740-d292-a033-c915",
+      "targetId": "3f46-6dbb-d99b-4ae2",
+      "type": "profile",
+      "name": "Feeder Tendrils"
+    },
+    {
+      "id": "11cd-3193-c8ea-2744",
+      "targetId": "24-c886-e8ba-5a89",
+      "type": "rule",
+      "name": "Fights First"
+    },
+    {
+      "id": "f8ba-c1ed-22bf-60d5",
+      "targetId": "c05d-f4c3-f091-4938",
+      "type": "rule",
+      "name": "Infiltrators"
+    },
+    {
+      "id": "b2d6-5e38-3984-e04a",
+      "targetId": "a8a0-8fe7-898-e0f3",
+      "type": "rule",
+      "name": "Lone Operative"
+    },
+    {
+      "id": "4527-86e-e85-1c3d",
+      "targetId": "bec5-4288-34a6-ccfa",
+      "type": "rule",
+      "name": "Stealth"
+    },
+    {
+      "id": "2322-209e-5d26-a06b",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "3cd3-ad11-863b-90b7",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "baa2-9f2b-a204-96ce",
+      "targetId": "dc9f-b3bb-9b44-cb92",
+      "type": "selectionEntry",
+      "name": "Lictor claws and talons"
+    },
+    {
+      "id": "6789-2896-18bb-49ab",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "f3a9-d3cb-9ee-5241",
+      "targetId": "c729-fe17-f963-16b2",
+      "name": "Mawloc"
+    },
+    {
+      "id": "d8aa-4780-31e1-ab53",
+      "targetId": "9693-cf84-fe69-37a9",
+      "name": "Monster"
+    },
+    {
+      "id": "53f2-d491-ba54-2af0",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "88e-e466-4c10-e9e4",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "3c73-177b-31be-492a",
+      "targetId": "5ff0-d52d-e2b8-9de",
+      "name": "Vanguard Invader"
+    },
+    {
+      "id": "f0a4-12b8-ad4a-e150",
+      "targetId": "2fa5-0a8d-013e-fc12",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "7d08-be71-f23c-d1be",
+      "targetId": "384f-e5ff-31a2-1295",
+      "type": "profile",
+      "name": "Damaged: 1-5 Wounds Remaining"
+    },
+    {
+      "id": "8d5-1695-657a-85b9",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "4814-8dd1-68fc-98e8",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "62e4-3150-826c-88d6",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "6eb5-9765-bd99-de3d",
+      "targetId": "115b-79dc-f723-d761",
+      "type": "rule",
+      "name": "Extra Attacks"
+    },
+    {
+      "id": "1eb9-3e70-5d-5b6c",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "28ca-9f37-dd72-b772",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "a0fa-f633-2a52-86d0",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "c3ee-fbd0-ef69-d624",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "f32a-bf75-375e-fd3a",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "6e20-4803-c60e-d4b5",
+      "targetId": "de12-e6b6-16c1-47b0",
+      "name": "Neurolictor"
+    },
+    {
+      "id": "d1cf-b4b6-2a74-ebe2",
+      "targetId": "5ff0-d52d-e2b8-9de",
+      "name": "Vanguard Invader"
+    },
+    {
+      "id": "5444-14e5-924a-a067",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "dcdb-634f-47f4-8a5d",
+      "targetId": "4129-a453-686a-d38a",
+      "name": "Synapse"
+    },
+    {
+      "id": "5369-b631-a802-81ce",
+      "targetId": "2fa5-0a8d-013e-fc12",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "1374-3645-0ebe-6d01",
+      "targetId": "ceab-62d9-31bf-7c61",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "d440-eb05-46c2-0c4e",
+      "targetId": "9208-f62b-e38e-721e",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements - Upgrades"
+    },
+    {
+      "id": "500d-6298-c46d-d8c1",
+      "targetId": "395b-a159-b293-27aa",
+      "type": "rule",
+      "name": "Shadow in the Warp"
+    },
+    {
+      "id": "c3e6-e344-1978-7856",
+      "targetId": "a8a0-8fe7-898-e0f3",
+      "type": "rule",
+      "name": "Lone Operative"
+    },
+    {
+      "id": "8135-18a1-df24-1415",
+      "targetId": "c05d-f4c3-f091-4938",
+      "type": "rule",
+      "name": "Infiltrators"
+    },
+    {
+      "id": "43e5-d613-7da9-b21c",
+      "targetId": "bec5-4288-34a6-ccfa",
+      "type": "rule",
+      "name": "Stealth"
+    },
+    {
+      "id": "ef47-a251-e3e7-ec73",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "da9b-0900-058b-db0d",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "6476-1609-d38a-d318",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "68b3-cf59-4258-a5c9",
+      "targetId": "9143-31ae-e0a6-6007",
+      "type": "rule",
+      "name": "Precision"
+    },
+    {
+      "id": "dbb8-1177-ca8-c41c",
+      "targetId": "6646-3625-4f52-f47c",
+      "name": "Parasite of Mortrex"
+    },
+    {
+      "id": "cffa-a3c7-9d4f-fbcd",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "4e30-900-90cf-901",
+      "targetId": "c619-2086-bbcf-69c9",
+      "name": "Fly"
+    },
+    {
+      "id": "b9a6-d855-bfe1-5b23",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "b4bb-15ac-b4d0-e3fa",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "3c92-5469-8c59-9bce",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "1e37-ab13-5b2b-723b",
+      "targetId": "5ff0-d52d-e2b8-9de",
+      "name": "Vanguard Invader"
+    },
+    {
+      "id": "4385-be5d-d940-b462",
+      "targetId": "4129-a453-686a-d38a",
+      "name": "Synapse"
+    },
+    {
+      "id": "268b-1435-81be-2aaa",
+      "targetId": "fa5b-f646-b960-a8d3",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "1d8c-61cd-7450-a058",
+      "targetId": "ceab-62d9-31bf-7c61",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "6db2-9c48-d9d6-ff39",
+      "targetId": "2fa5-0a8d-013e-fc12",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "21d8-348a-b423-dbe",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "9896-94da-baab-62f5",
+      "targetId": "a8a0-8fe7-898-e0f3",
+      "type": "rule",
+      "name": "Lone Operative"
+    },
+    {
+      "id": "49f-799d-a6ab-8d36",
+      "targetId": "bec5-4288-34a6-ccfa",
+      "type": "rule",
+      "name": "Stealth"
+    },
+    {
+      "id": "5d13-15eb-7d5c-2962",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "e592-f7b4-fc49-bd73",
+      "targetId": "395b-a159-b293-27aa",
+      "type": "rule",
+      "name": "Shadow in the Warp"
+    },
+    {
+      "id": "8fa5-8d1d-c159-acd4",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "13c2-1b2c-6a25-9127",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "7dd0-c778-a04a-a0e2",
+      "targetId": "115b-79dc-f723-d761",
+      "type": "rule",
+      "name": "Extra Attacks"
+    },
+    {
+      "id": "4290-9acf-691e-e906",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "f215-b14e-6133-a35f",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "6fa6-4021-ce17-940b",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "402c-a1c6-8f15-3e09",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "e682-eda-bfba-9add",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "dbc9-44b2-259b-64d8",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "251-3fa1-5b44-9377",
+      "targetId": "1785-c8af-b343-a1a6",
+      "name": "Raveners"
+    },
+    {
+      "id": "bce4-d53c-fe2d-a250",
+      "targetId": "5ff0-d52d-e2b8-9de",
+      "name": "Vanguard Invader"
+    },
+    {
+      "id": "3bef-76cb-fb1a-6c38",
+      "targetId": "9e1e-ad1d-e864-7164",
+      "name": "Burrowers"
+    },
+    {
+      "id": "bf61-876d-b1ea-fe7b",
+      "targetId": "2fa5-0a8d-013e-fc12",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "5a94-e725-d771-6f44",
+      "targetId": "ceab-62d9-31bf-7c61",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "d8d8-bf79-8ad4-cd43",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "c5a3-8e54-e6ed-cf26",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "b464-e8de-a0ca-f72e",
+      "targetId": "bec5-4288-34a6-ccfa",
+      "type": "rule",
+      "name": "Stealth"
+    },
+    {
+      "id": "e625-0033-8b39-db26",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "3529-9df8-906-937e",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "df2a-3614-ebd2-8b7",
+      "targetId": "c3a7-fdae-a434-6eff",
+      "name": "Trygon"
+    },
+    {
+      "id": "a829-323-20c4-473",
+      "targetId": "9693-cf84-fe69-37a9",
+      "name": "Monster"
+    },
+    {
+      "id": "7b79-1069-5ae-eee",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "6c34-b85f-7172-37e5",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "9af4-f9f5-867e-1b54",
+      "targetId": "5ff0-d52d-e2b8-9de",
+      "name": "Vanguard Invader"
+    },
+    {
+      "id": "bb6d-b14b-21f6-3519",
+      "targetId": "2fa5-0a8d-013e-fc12",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "88a0-58bc-2c37-0b00",
+      "targetId": "ceab-62d9-31bf-7c61",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "74f6-41d0-648c-3d42",
+      "targetId": "fa5b-f646-b960-a8d3",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements"
+    },
+    {
+      "id": "6f-a0b-fb24-9008",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "c8ec-fa8c-42c5-66e3",
+      "targetId": "384f-e5ff-31a2-1295",
+      "type": "profile",
+      "name": "Damaged: 1-5 Wounds Remaining"
+    },
+    {
+      "id": "3848-3f5a-37a3-d13",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "03d1-b58e-2498-09fe",
+      "targetId": "e35-764a-e9e2-7f18",
+      "type": "selectionEntry",
+      "name": "Bio-electric pulse"
+    },
+    {
+      "id": "964b-6512-6acc-c4c1",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "a4da-86aa-a02d-6021",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "e23f-a3dc-eb2c-308",
+      "targetId": "ba07-411c-2832-1f79",
+      "name": "Dedicated Transport"
+    },
+    {
+      "id": "f184-84ec-396a-9059",
+      "targetId": "75e8-57c4-40e3-1817",
+      "name": "Transport"
+    },
+    {
+      "id": "2bf1-ada2-859a-dc90",
+      "targetId": "9693-cf84-fe69-37a9",
+      "name": "Monster"
+    },
+    {
+      "id": "9a36-b026-692c-50ec",
+      "targetId": "c619-2086-bbcf-69c9",
+      "name": "Fly"
+    },
+    {
+      "id": "e6d5-db04-a14f-3ecc",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "b43e-721a-dcc2-ad3",
+      "targetId": "6438-b712-55f4-c84c",
+      "name": "Tyrannocyte"
+    },
+    {
+      "id": "74cf-4dbc-78d1-a876",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "c8f2-e34f-dfae-991e",
+      "targetId": "5ff0-d52d-e2b8-9de",
+      "name": "Vanguard Invader"
+    },
+    {
+      "id": "c771-08ff-798f-69a5",
+      "targetId": "2fa5-0a8d-013e-fc12",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "a544-4bb5-d13-36ae",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "9787-c977-2233-c996",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "2c88-3122-88f-1bc3",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "2310-7c32-226a-4524",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "dfb1-547b-aaa0-6465",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "d613-54fd-ce49-6a92",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "c8fe-f95b-2fcd-51cb",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "1804-bf39-c636-984d",
+      "targetId": "cdd2-3183-20ad-6126",
+      "name": "Von Ryan's Leapers"
+    },
+    {
+      "id": "c0d9-ffce-29e8-303",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "7ecf-d300-4407-ecdc",
+      "targetId": "5ff0-d52d-e2b8-9de",
+      "name": "Vanguard Invader"
+    },
+    {
+      "id": "6acf-3ddf-fa8e-d4d8",
+      "targetId": "2fa5-0a8d-013e-fc12",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "b1dc-c22a-b592-afbd",
+      "targetId": "ceab-62d9-31bf-7c61",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "b0b1-f06c-fe3d-5790",
+      "targetId": "9208-f62b-e38e-721e",
+      "type": "selectionEntryGroup",
+      "name": "Enhancements - Upgrades"
+    },
+    {
+      "id": "1f56-fd97-61b6-8f50",
+      "targetId": "bec5-4288-34a6-ccfa",
+      "type": "rule",
+      "name": "Stealth"
+    },
+    {
+      "id": "cc4b-f93f-dcc5-9f00",
+      "targetId": "24-c886-e8ba-5a89",
+      "type": "rule",
+      "name": "Fights First"
+    },
+    {
+      "id": "581c-3a4a-404d-ef8a",
+      "targetId": "c05d-f4c3-f091-4938",
+      "type": "rule",
+      "name": "Infiltrators"
+    },
+    {
+      "id": "4754-2887-c980-83d2",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "7cab-8311-ec6a-db52",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "463c-5eaf-3d99-5917",
+      "targetId": "5c0e-4c31-d51b-e470",
+      "name": "Warlord"
+    },
+    {
+      "id": "9ccb-598-6042-f1ae",
+      "targetId": "472-dea9-70ef-a8e4",
+      "name": "Ripper Swarm"
+    },
+    {
+      "id": "849d-dbc9-c194-fd16",
+      "targetId": "b00b-5bae-444f-964e",
+      "name": "Swarm"
+    },
+    {
+      "id": "e607-37d1-a868-e7f2",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "89e2-f78a-680a-f1b3",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "3f3b-faea-6e8e-c9fa",
+      "targetId": "8258-a58e-7cf0-a2c3",
+      "name": "Harvester"
+    },
+    {
+      "id": "0873-17ec-1fb4-899b",
+      "targetId": "ceab-62d9-31bf-7c61",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "5272-0302-af63-9158",
+      "targetId": "533-9226-7e51-ee0",
+      "type": "profile",
+      "name": "Chitinous Horrors (Aura)"
+    },
+    {
+      "id": "3ca5-d590-80cf-4ca4",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "701e-696-940-8d2e",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "c0bc-a7f5-6e10-03a5",
+      "targetId": "f5e3-ad89-8888-4bd4",
+      "type": "selectionEntry",
+      "name": "Chitinous claws and teeth"
+    },
+    {
+      "id": "06a7-ba31-c975-9a8c",
+      "targetId": "fdd3-f5cd-d338-974c",
+      "type": "profile",
+      "name": "Ripper Swarm"
+    },
+    {
+      "id": "cf82-1352-6bba-70cf",
+      "targetId": "3849-e3e0-4d2d-a259",
+      "type": "selectionEntry",
+      "name": "Spinemaw"
+    },
+    {
+      "id": "cc06-5539-2de5-5147",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "7ec5-30c2-df11-c9f1",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    },
+    {
+      "id": "8a34-7930-f1b1-d2f3",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "e196-2859-2251-444e",
+      "targetId": "9143-31ae-e0a6-6007",
+      "type": "rule",
+      "name": "Precision"
+    },
+    {
+      "id": "251b-2365-2bcd-4825",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "8def-543c-9b61-3f4a",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "5a2f-ad13-1115-d313",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "4747-258b-7b16-7dac",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "a401-8242-8687-ef8f",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "1773-ff1d-cf13-1278",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "6196-36e6-881a-7178",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "3985-176d-31c6-404d",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "3b0-6790-786-73ba",
+      "targetId": "115b-79dc-f723-d761",
+      "type": "rule",
+      "name": "Extra Attacks"
+    },
+    {
+      "id": "c80d-71aa-1981-8314",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "558d-dff7-f755-5b4c",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "a832-766d-3344-1ab6",
+      "targetId": "e2bc-fc0c-1099-3e75",
+      "name": "Crucible"
+    },
+    {
+      "id": "26e4-559e-8b56-65d5",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "4b25-54c5-8ed0-7fd5",
+      "targetId": "4129-a453-686a-d38a",
+      "name": "Synapse"
+    },
+    {
+      "id": "61e1-372c-cbc6-ed49",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "849c-1254-664a-d187",
+      "targetId": "9bdf-31c1-4763-4074",
+      "name": "Node Organism"
+    },
+    {
+      "id": "539e-da99-d114-e9d3",
+      "targetId": "1556-9b56-fba6-4370",
+      "name": "Leader"
+    },
+    {
+      "id": "8778-7748-cdc4-0f93",
+      "targetId": "ceab-62d9-31bf-7c61",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "ffc6-310f-20a4-c3ac",
+      "targetId": "2fa5-0a8d-013e-fc12",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "2119-ffed-1b2a-bd88",
+      "targetId": "9c71-7661-3b6b-a27c",
+      "type": "selectionEntryGroup",
+      "name": "Specialisms"
+    },
+    {
+      "id": "5e35-be11-5bd2-be1a",
+      "targetId": "3e82-2186-c604-2a76",
+      "type": "selectionEntryGroup",
+      "name": "Ability"
+    },
+    {
+      "id": "b1b0-3d4a-1f7d-567e",
+      "targetId": "72e5-5efe-3fbc-9290",
+      "type": "selectionEntryGroup",
+      "name": "Weapons"
+    },
+    {
+      "id": "55b5-f694-4fc0-bc4e",
+      "targetId": "b4dd-3e1f-41cb-218f",
+      "type": "rule",
+      "name": "Leader"
+    },
+    {
+      "id": "baf9-7356-8231-3fe2",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "6a15-60d5-7eca-1397",
+      "targetId": "395b-a159-b293-27aa",
+      "type": "rule",
+      "name": "Shadow in the Warp"
+    },
+    {
+      "id": "c741-fe73-985d-071e",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "f3ef-9fc3-f878-2cca",
+      "targetId": "5ce6-a3cf-e871-f081",
+      "type": "rule",
+      "name": "Crucible"
+    },
+    {
+      "id": "722b-6a96-2523-1383",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "6fc7-9e84-c8da-be71",
+      "targetId": "e2bc-fc0c-1099-3e75",
+      "name": "Crucible"
+    },
+    {
+      "id": "87c4-c545-6a27-b2c6",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "4d07-795b-9418-6a28",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "fd9e-77dc-93d8-6fe8",
+      "targetId": "9693-cf84-fe69-37a9",
+      "name": "Monster"
+    },
+    {
+      "id": "8874-0236-5457-76aa",
+      "targetId": "9d02-d413-f447-d005",
+      "name": "Prime Organism"
+    },
+    {
+      "id": "f5cd-46a9-1b3a-4822",
+      "targetId": "1556-9b56-fba6-4370",
+      "name": "Leader"
+    },
+    {
+      "id": "4da5-c2c0-b250-05ac",
+      "targetId": "ceab-62d9-31bf-7c61",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "167c-9812-2ce4-1ddf",
+      "targetId": "2fa5-0a8d-013e-fc12",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "e6e5-e163-95ca-9075",
+      "targetId": "9c71-7661-3b6b-a27c",
+      "type": "selectionEntryGroup",
+      "name": "Specialisms"
+    },
+    {
+      "id": "ab2c-0db7-f6c8-918b",
+      "targetId": "3e82-2186-c604-2a76",
+      "type": "selectionEntryGroup",
+      "name": "Ability"
+    },
+    {
+      "id": "aad7-0d53-364d-6d1b",
+      "targetId": "72e5-5efe-3fbc-9290",
+      "type": "selectionEntryGroup",
+      "name": "Weapons"
+    },
+    {
+      "id": "2800-d52a-c025-5a83",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "e1da-995e-501a-7628",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "5816-4fa6-2f03-8313",
+      "targetId": "5ce6-a3cf-e871-f081",
+      "type": "rule",
+      "name": "Crucible"
+    },
+    {
+      "id": "ef20-63bd-4477-cfa7",
+      "targetId": "b4dd-3e1f-41cb-218f",
+      "type": "rule",
+      "name": "Leader"
+    },
+    {
+      "id": "f296-7c40-b57c-308f",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "bd66-bfb6-df43-41b3",
+      "targetId": "e2bc-fc0c-1099-3e75",
+      "name": "Crucible"
+    },
+    {
+      "id": "11bf-21a0-5f3b-6991",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "2510-99be-b064-a8bf",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "d0c7-2162-0c47-654f",
+      "targetId": "9693-cf84-fe69-37a9",
+      "name": "Monster"
+    },
+    {
+      "id": "a679-5b16-d4a9-9e2e",
+      "targetId": "bf51-e0ef-737a-6d54",
+      "name": "Macro Organism"
+    },
+    {
+      "id": "c61c-d618-ec49-8a17",
+      "targetId": "ceab-62d9-31bf-7c61",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "327e-4e53-7dc4-49ea",
+      "targetId": "2fa5-0a8d-013e-fc12",
+      "type": "selectionEntryGroup",
+      "name": "Crusade"
+    },
+    {
+      "id": "c4bd-c42b-8d03-b74b",
+      "targetId": "9c71-7661-3b6b-a27c",
+      "type": "selectionEntryGroup",
+      "name": "Specialisms"
+    },
+    {
+      "id": "ed33-ad5b-774b-3378",
+      "targetId": "3e82-2186-c604-2a76",
+      "type": "selectionEntryGroup",
+      "name": "Ability"
+    },
+    {
+      "id": "6edc-8a7a-8b36-fd56",
+      "targetId": "72e5-5efe-3fbc-9290",
+      "type": "selectionEntryGroup",
+      "name": "Weapons"
+    },
+    {
+      "id": "2198-5205-6541-b8b5",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "54eb-4077-6841-53c1",
+      "targetId": "b68a-5ded-65ac-98c",
+      "type": "rule",
+      "name": "Deadly Demise"
+    },
+    {
+      "id": "6cb7-956a-1074-ee68",
+      "targetId": "5ce6-a3cf-e871-f081",
+      "type": "rule",
+      "name": "Crucible"
+    },
+    {
+      "id": "375b-0a91-5ed0-137b",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "a15b-c86-ae68-771a",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "04f6-bcec-4dc9-d10d",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "18cf-7b7-f925-c7a4",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "3cf6-eb48-a904-421d",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "d213-8e7-d285-d096",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "8dfd-1ffe-f23f-eea8",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "693c-d436-b73a-6c04",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "ab04-d87c-1274-951c",
+      "targetId": "4546-4a0c-b3be-e84c",
+      "name": "Psychic Weapon"
+    },
+    {
+      "id": "6c05-3f0f-2bcc-3d0d",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "e8fb-9901-f6a8-e7a1",
+      "targetId": "e9c4-2bb8-12ee-cd1b",
+      "type": "rule",
+      "name": "Psychic"
+    },
+    {
+      "id": "5b88-50d6-3de2-9f48",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "f98b-3a47-7098-af25",
+      "targetId": "4546-4a0c-b3be-e84c",
+      "name": "Psychic Weapon"
+    },
+    {
+      "id": "9c69-9d3a-9e53-93b2",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "5780-d573-06c1-4c85",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "71b8-66ba-7034-81ee",
+      "targetId": "064a-0470-60eb-e3ef",
+      "name": "Torrent Weapon"
+    },
+    {
+      "id": "3f4e-3c84-9a08-bc12",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "219f-eec2-0b8d-8db5",
+      "targetId": "e9c4-2bb8-12ee-cd1b",
+      "type": "rule",
+      "name": "Psychic"
+    },
+    {
+      "id": "a224-7846-02cc-e8cd",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "c691-6c5a-bb46-8288",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "6e5a-de52-ea63-85e1",
+      "targetId": "064a-0470-60eb-e3ef",
+      "name": "Torrent Weapon"
+    },
+    {
+      "id": "9dcf-4505-b3d3-f8c1",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "fe02-158a-a892-e358",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "7f46-21af-d427-528f",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "8040-0a96-5c20-9b93",
+      "targetId": "472-dea9-70ef-a8e4",
+      "name": "Ripper Swarm"
+    },
+    {
+      "id": "6674-86fa-9d07-8e76",
+      "targetId": "b00b-5bae-444f-964e",
+      "name": "Swarm"
+    },
+    {
+      "id": "f54d-1608-8122-02c2",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "5e33-f5e9-b15f-21e7",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "5c4a-6721-0652-b2fd",
+      "targetId": "8258-a58e-7cf0-a2c3",
+      "name": "Harvester"
+    },
+    {
+      "id": "6e30-fb0f-f325-c81f",
+      "targetId": "eef1-be80-500a-edfc",
+      "name": "Reference"
+    },
+    {
+      "id": "5624-e290-aec7-2b91",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "493c-1242-4a33-61cf",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "a947-fe4a-215a-5993",
+      "targetId": "533-9226-7e51-ee0",
+      "type": "profile",
+      "name": "Chitinous Horrors (Aura)"
+    },
+    {
+      "id": "aa25-5256-a49c-d65e",
+      "targetId": "f5e3-ad89-8888-4bd4",
+      "type": "selectionEntry",
+      "name": "Chitinous claws and teeth"
+    },
+    {
+      "id": "e28b-efa1-3532-2e3b",
+      "targetId": "fdd3-f5cd-d338-974c",
+      "type": "profile",
+      "name": "Ripper Swarm"
+    },
+    {
+      "id": "439d-bce3-0809-7714",
+      "targetId": "3849-e3e0-4d2d-a259",
+      "type": "selectionEntry",
+      "name": "Spinemaw"
+    },
+    {
+      "id": "fc28-ae00-65f7-9161",
+      "targetId": "8bf7-8812-923d-29e4",
+      "type": "rule",
+      "name": "Pistol"
+    },
+    {
+      "id": "de0a-505d-c465-5ab4",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "387c-220d-2821-3ae6",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "19de-6534-d803-87d8",
+      "targetId": "7850-cc5a-c191-b80d",
+      "name": "Great Devourer"
+    },
+    {
+      "id": "73e3-f410-73b6-f140",
+      "targetId": "d1d8-6ae0-1be7-e9e",
+      "name": "Faction: Tyranids"
+    },
+    {
+      "id": "b553-0346-8c8b-aa25",
+      "targetId": "5ff0-d52d-e2b8-9de",
+      "name": "Vanguard Invader"
+    },
+    {
+      "id": "4559-a375-d53f-797b",
+      "targetId": "4f3a-f0f7-6647-348d",
+      "name": "Epic Hero"
+    },
+    {
+      "id": "6160-b74b-d354-46d7",
+      "targetId": "9693-cf84-fe69-37a9",
+      "name": "Monster"
+    },
+    {
+      "id": "17b5-88b1-8cee-5172",
+      "targetId": "d60b-23a2-629e-dc7e",
+      "name": "The Red Terror"
+    },
+    {
+      "id": "8a97-6239-6b44-f696",
+      "targetId": "9e1e-ad1d-e864-7164",
+      "name": "Burrowers"
+    },
+    {
+      "id": "e65a-eebe-3ebc-9242",
+      "targetId": "355c-0ee6-3cde-6c71",
+      "name": "Mobile"
+    },
+    {
+      "id": "f866-abf5-a5a5-1bfb",
+      "targetId": "ceab-62d9-31bf-7c61",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "1400-528a-c6d8-ecc6",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "8973-90e7-6d3f-2e6f",
+      "targetId": "86aa-437f-260b-5cad",
+      "type": "rule",
+      "name": "Synapse"
+    },
+    {
+      "id": "30cf-a04f-c288-d884",
+      "targetId": "115b-79dc-f723-d761",
+      "type": "rule",
+      "name": "Extra Attacks"
+    },
+    {
+      "id": "b071-1d06-606a-58e5",
+      "targetId": "9143-31ae-e0a6-6007",
+      "type": "rule",
+      "name": "Precision"
+    },
+    {
+      "id": "562b-3504-b736-09c9",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "c0a2-d958-7f66-be70",
+      "targetId": "f842-6e90-bc5a-80f1",
+      "type": "selectionEntryGroup",
+      "name": "Mighty Champions"
+    },
+    {
+      "id": "3387-f5ff-d9ec-b8a9",
+      "targetId": "5a79-2c0b-66e4-2122",
+      "type": "selectionEntryGroup",
+      "name": "Boarding Actions Enhancements"
+    },
+    {
+      "id": "f53d-a37c-851d-d22f",
+      "targetId": "fc3b-5a53-47b1-4b2d",
+      "type": "selectionEntryGroup",
+      "name": "Breaching Operation Enhancements"
+    },
+    {
+      "id": "873f-87dc-ca5c-1fa2",
+      "targetId": "bec5-4288-34a6-ccfa",
+      "type": "rule",
+      "name": "Stealth"
+    },
+    {
+      "id": "d781-c0da-f2e7-6322",
+      "targetId": "4129-a453-686a-d38a",
+      "name": "Synapse"
+    },
+    {
+      "id": "2960-0b33-203e-67db",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "9846-686b-f400-4a98",
+      "targetId": "d1d1-611e-5191-1095",
+      "type": "rule",
+      "name": "Lethal Hits"
+    },
+    {
+      "id": "5f26-df4e-1827-4811",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "86ae-9b25-ffe3-cdfe",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "3f90-9ce7-6369-0733",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "835a-9bee-f35c-c5ac",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "4d33-286e-ee11-3628",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "36d2-2c57-a370-45f8",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "0c87-15eb-c06c-7a57",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "02cf-da57-c8da-fac6",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "29fc-6a4b-fe2d-2355",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "51ee-0d5c-a897-8b06",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "c2ee-c921-7c5c-ad29",
+      "targetId": "24e1-c66e-98e9-135b",
+      "type": "selectionEntry",
+      "name": "Infestation Swarm"
+    },
+    {
+      "id": "7386-4f13-cdc4-e68b",
+      "targetId": "1cc1-f11a-4e8f-1bcc",
+      "name": "Take and Hold"
+    },
+    {
+      "id": "6f71-7835-798f-65d1",
+      "targetId": "7d80-2de5-816e-9d2b",
+      "name": "3DP Detachment"
+    },
+    {
+      "id": "2522-3812-3f91-e9c9",
+      "targetId": "0936-9767-1cc7-52ae",
+      "name": "Priority Assets"
+    },
+    {
+      "id": "e445-0a10-8fd8-7a27",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "20ca-b606-4aa3-b402",
+      "targetId": "d1d1-611e-5191-1095",
+      "type": "rule",
+      "name": "Lethal Hits"
+    },
+    {
+      "id": "1d17-2d61-ae0b-44cf",
+      "targetId": "9143-31ae-e0a6-6007",
+      "type": "rule",
+      "name": "Precision"
+    },
+    {
+      "id": "f947-5da3-dc14-2036",
+      "targetId": "0936-9767-1cc7-52ae",
+      "name": "Priority Assets"
+    },
+    {
+      "id": "6041-a3c0-ce9d-9e50",
+      "targetId": "6fe0-3dbe-f7e0-10bb",
+      "name": "Purge the Foe"
+    },
+    {
+      "id": "638f-af21-840c-c24b",
+      "targetId": "ecf8-cf72-7d5b-1b5b",
+      "name": "Disruption"
+    },
+    {
+      "id": "e0ec-b8b6-49f7-882e",
+      "targetId": "1cc1-f11a-4e8f-1bcc",
+      "name": "Take and Hold"
+    },
+    {
+      "id": "aea3-4e4d-7d7a-427f",
+      "targetId": "b4a7-5083-fe94-4d24",
+      "name": "Reconnaissance"
+    },
+    {
+      "id": "03f6-1a2d-33f2-c7c3",
+      "targetId": "1cc1-f11a-4e8f-1bcc",
+      "name": "Take and Hold"
+    },
+    {
+      "id": "df4a-ea20-d5af-e051",
+      "targetId": "ecf8-cf72-7d5b-1b5b",
+      "name": "Disruption"
+    },
+    {
+      "id": "3b1f-590e-b7ac-b987",
+      "targetId": "7d80-2de5-816e-9d2b",
+      "name": "3DP Detachment"
+    },
+    {
+      "id": "d3e4-d288-7321-694b",
+      "targetId": "b4a7-5083-fe94-4d24",
+      "name": "Reconnaissance"
+    },
+    {
+      "id": "11a6-e1aa-1566-3303",
+      "targetId": "1ce8-4f31-68c3-7bb0",
+      "type": "rule",
+      "name": "Synaptic Web"
+    },
+    {
+      "id": "3b57-9700-3d9d-6dc5",
+      "targetId": "1ce8-4f31-68c3-7bb0",
+      "type": "rule",
+      "name": "Synaptic Web"
+    },
+    {
+      "id": "bb37-70b8-6f54-2df9",
+      "targetId": "1ce8-4f31-68c3-7bb0",
+      "type": "rule",
+      "name": "Synaptic Web"
+    },
+    {
+      "id": "0d2b-5482-24ad-222b",
+      "targetId": "ecf8-cf72-7d5b-1b5b",
+      "name": "Disruption"
+    },
+    {
+      "id": "0cef-706f-a938-10b0",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "819e-c726-8cee-ce14",
+      "targetId": "1cc1-f11a-4e8f-1bcc",
+      "name": "Take and Hold"
+    },
+    {
+      "id": "bd7f-8244-6095-b0cf",
+      "targetId": "8632-ccbf-8430-3428",
+      "type": "profile",
+      "name": "Protean Purpose"
+    },
+    {
+      "id": "566d-4abe-f15d-70c5",
+      "targetId": "2dbf-4d49-5d74-85c9",
+      "type": "selectionEntry",
+      "name": "Experience Points"
+    },
+    {
+      "id": "db3b-3a47-de40-0c7a",
+      "targetId": "1511-18fe-f51e-7b9d",
+      "type": "selectionEntry",
+      "name": "Legendary Veterans"
+    },
+    {
+      "id": "3e9a-f22c-6fbd-797d",
+      "targetId": "1576-e816-033f-828d",
+      "type": "selectionEntryGroup",
+      "name": "Battle Scars"
+    },
+    {
+      "id": "0337-087f-daca-eb40",
+      "targetId": "205f-d2cc-3221-78e5",
+      "type": "selectionEntryGroup",
+      "name": "Codex Battle Scars"
+    },
+    {
+      "id": "c632-8f0c-747f-a805",
+      "targetId": "0511-d9ad-2978-2234",
+      "type": "selectionEntryGroup",
+      "name": "Battle Traits"
+    },
+    {
+      "id": "4a21-3df4-5e15-68a9",
+      "targetId": "b0c3-a5d5-36e4-6f0d",
+      "type": "selectionEntryGroup",
+      "name": "Codex Battle Traits"
+    },
+    {
+      "id": "f909-a7b6-9d9d-e01a",
+      "targetId": "e919-5b46-974d-a5b1",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relics"
+    },
+    {
+      "id": "76f6-2ee1-e70f-2edc",
+      "targetId": "35d6-9354-05fd-3a9e",
+      "type": "selectionEntryGroup",
+      "name": "Codex Crusade Relics"
+    },
+    {
+      "id": "c630-a434-5f39-4dc9",
+      "targetId": "1927-d905-041e-b914",
+      "type": "selectionEntryGroup",
+      "name": "Tyrannic War Battle Honours"
+    },
+    {
+      "id": "cdf8-5383-1d57-15c8",
+      "targetId": "66c2-2a46-e7ed-a935",
+      "type": "selectionEntryGroup",
+      "name": "Pariah Nexus Blackstone Upgrades"
+    },
+    {
+      "id": "cb64-1168-cd9e-8ced",
+      "targetId": "d1a5-4297-168b-11cd",
+      "type": "selectionEntry",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "8f5e-f8de-b175-a4a4",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "648e-bebb-8722-7685",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "b9a2-7c0b-93f9-ad86",
+      "targetId": "24e1-c66e-98e9-135b",
+      "type": "selectionEntry",
+      "name": "Infestation Swarm"
+    },
+    {
+      "id": "5b2d-2fe2-d1ac-fbd1",
+      "targetId": "93df-6aba-9508-326f",
+      "name": "Hosts"
+    },
+    {
+      "id": "c609-e141-5e79-3476",
+      "targetId": "1cc1-f11a-4e8f-1bcc",
+      "name": "Take and Hold"
+    },
+    {
+      "id": "c0f3-6db9-7c0b-884b",
+      "targetId": "7d80-2de5-816e-9d2b",
+      "name": "3DP Detachment"
+    },
+    {
+      "id": "5b6c-bd3b-24a6-5690",
+      "targetId": "b4a7-5083-fe94-4d24",
+      "name": "Reconnaissance"
+    },
+    {
+      "id": "d4eb-1f63-596f-0248",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "6890-0ca1-a2b2-0c1e",
+      "targetId": "1897-c22c-9597-12b1",
+      "type": "rule",
+      "name": "Sustained Hits"
+    },
+    {
+      "id": "d07e-4fd3-33bf-1301",
+      "targetId": "0936-9767-1cc7-52ae",
+      "name": "Priority Assets"
+    },
+    {
+      "id": "b8c7-3a79-436f-706e",
+      "targetId": "1cc1-f11a-4e8f-1bcc",
+      "name": "Take and Hold"
+    },
+    {
+      "id": "a779-329f-ebae-671a",
+      "targetId": "b4a7-5083-fe94-4d24",
+      "name": "Reconnaissance"
+    },
+    {
+      "id": "849c-6f12-0ff4-1936",
+      "targetId": "1cc1-f11a-4e8f-1bcc",
+      "name": "Take and Hold"
+    },
+    {
+      "id": "9ca2-3a59-4722-46f7",
+      "targetId": "6fe0-3dbe-f7e0-10bb",
+      "name": "Purge the Foe"
+    },
+    {
+      "id": "dd8c-45c0-b26f-6fc2",
+      "targetId": "4c34-1bd0-8565-fd5a",
+      "type": "rule",
+      "name": "Insidious Ambushers"
+    },
+    {
+      "id": "7f97-5a65-3cb8-d131",
+      "targetId": "4c34-1bd0-8565-fd5a",
+      "type": "rule",
+      "name": "Insidious Ambushers"
+    },
+    {
+      "id": "daa2-8eba-027f-9970",
+      "targetId": "ecf8-cf72-7d5b-1b5b",
+      "name": "Disruption"
+    },
+    {
+      "id": "cb56-67ed-9933-6a80",
+      "targetId": "0936-9767-1cc7-52ae",
+      "name": "Priority Assets"
+    },
+    {
+      "id": "3a07-0a86-e7c9-6ccc",
+      "targetId": "93df-6aba-9508-326f",
+      "name": "Hosts"
+    },
+    {
+      "id": "5217-b131-3185-5529",
+      "targetId": "b4a7-5083-fe94-4d24",
+      "name": "Reconnaissance"
+    },
+    {
+      "id": "bbff-5224-3ed0-254b",
+      "targetId": "d1d1-611e-5191-1095",
+      "type": "rule",
+      "name": "Lethal Hits"
+    },
+    {
+      "id": "d775-27a1-4ddb-5677",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "f5cd-0b62-579c-ce59",
+      "targetId": "395b-a159-b293-27aa",
+      "type": "rule",
+      "name": "Shadow in the Warp"
+    },
+    {
+      "id": "f22d-0c32-938d-5d3c",
+      "targetId": "bec5-4288-34a6-ccfa",
+      "type": "rule",
+      "name": "Stealth"
+    },
+    {
+      "id": "7dc1-a237-b688-e41f",
+      "targetId": "24-c886-e8ba-5a89",
+      "type": "rule",
+      "name": "Fights First"
+    },
+    {
+      "id": "56a8-39a6-70ac-34e1",
+      "targetId": "c05d-f4c3-f091-4938",
+      "type": "rule",
+      "name": "Infiltrators"
+    },
+    {
+      "id": "77a7-8906-b2e5-2ab1",
+      "targetId": "a8a0-8fe7-898-e0f3",
+      "type": "rule",
+      "name": "Lone Operative"
+    },
+    {
+      "id": "81d5-fe49-2542-0150",
+      "targetId": "7cb5-dd6b-dd87-ad3b",
+      "type": "rule",
+      "name": "Deep Strike"
+    },
+    {
+      "id": "7f99-e145-0bd9-6a37",
+      "targetId": "f64-8faa-ac54-73ff",
+      "type": "selectionEntry",
+      "name": "Acid spray"
+    },
+    {
+      "id": "ba87-6b4b-328d-46ae",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "a742-6b4c-8377-63f9",
+      "targetId": "e35-764a-e9e2-7f18",
+      "type": "selectionEntry",
+      "name": "Bio-electric pulse"
+    },
+    {
+      "id": "3ea6-0d8d-5a7d-c565",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "75c7-d233-aed6-9723",
+      "targetId": "5a91-5299-277-82a9",
+      "type": "selectionEntry",
+      "name": "Fleshborer hive"
+    },
+    {
+      "id": "3250-8322-fe1b-4230",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "fb29-bfce-e42e-0a98",
+      "targetId": "8124-9c22-8028-433c",
+      "type": "selectionEntry",
+      "name": "Psychic overload"
+    },
+    {
+      "id": "60ec-bd71-6dee-ce0e",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "967e-90c5-c7fc-847b",
+      "targetId": "4b19-26b8-1f71-2768",
+      "type": "selectionEntry",
+      "name": "Psychic scream"
+    },
+    {
+      "id": "a143-e5fc-c69d-ee3e",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "86c3-9862-4549-4951",
+      "targetId": "56f9-bb79-7be0-dbf2",
+      "type": "selectionEntry",
+      "name": "Psychoclastic torrent"
+    },
+    {
+      "id": "ab0d-82c2-896d-747e",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "9257-7e00-82ff-f06b",
+      "targetId": "5e02-c4ce-b7e6-d59",
+      "type": "selectionEntry",
+      "name": "Stinger salvoes"
+    },
+    {
+      "id": "32c9-735c-e723-b6f8",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "a7be-3dac-8326-0df8",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "f748-1086-67be-288c",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "00f6-cc96-9492-40a5",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "cdcd-5c1e-5316-eb09",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "a918-da8f-5591-90a3",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "fce2-68e2-0239-bd97",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "60db-f1de-d07a-4b25",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "9bac-8640-773f-3a59",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "c11a-39e1-6263-91fa",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "c0e9-648e-b8de-87e0",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "f476-f709-1170-d9e7",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "383d-dbfb-e9f4-2369",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "07a4-ba5a-fd3c-cff1",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "a477-384e-fa2c-0a87",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "1b82-a3f0-cec2-f872",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "1bf1-0bc4-1d2e-5704",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "fccc-f605-2151-8e10",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "8ef6-d1fb-7d16-53f0",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "0d13-3d29-21f0-8ddc",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "8221-65f5-7fb4-4ca0",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "5488-d82b-0fa3-dca7",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "855e-2ebf-6321-b28c",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "1576-d8c6-f33e-2784",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "06ba-490a-e105-910e",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "623d-8030-7707-cd50",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "5863-7f04-a768-8b11",
+      "targetId": "e106-0758-7137-2432",
+      "name": "Assault Weapon"
+    },
+    {
+      "id": "5444-4e31-74cc-53da",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "8906-6b1b-edca-701f",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "c815-5fb1-fc68-3cb0",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "7299-6ae5-31e6-c552",
+      "targetId": "1db0-c6b5-19db-8d0c",
+      "name": "Pistol Weapon"
+    },
+    {
+      "id": "283b-bd94-9576-392f",
+      "targetId": "e106-0758-7137-2432",
+      "name": "Assault Weapon"
+    },
+    {
+      "id": "3815-c078-4d21-70ca",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "f824-0407-9815-b6c6",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "8804-98ca-3473-c99a",
+      "targetId": "8bf7-8812-923d-29e4",
+      "type": "rule",
+      "name": "Pistol"
+    },
+    {
+      "id": "5a80-7000-a1c9-f2b7",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "0be9-ea30-5daa-df80",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "6b0f-3f90-3580-8288",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "2049-56a8-6fb4-9cc7",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "83b0-8dc5-0cf9-6cd1",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "6ccc-f167-3985-043f",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "c9e9-2539-ea33-6965",
+      "targetId": "fc8a-8c24-bae9-cc1c",
+      "type": "rule",
+      "name": "Assault"
+    },
+    {
+      "id": "3d52-1b7c-4145-af17",
+      "targetId": "e993-e086-6de1-12af",
+      "name": "Attacks Dx Weapon"
+    },
+    {
+      "id": "12b8-9da4-0184-66c3",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "a4a5-89ca-2633-319e",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "3a92-e170-ea5c-1a9b",
+      "targetId": "6c1f-1cf7-ff25-c99e",
+      "type": "rule",
+      "name": "Blast"
+    },
+    {
+      "id": "fbd9-f06b-e8bc-4225",
+      "targetId": "eeda-8544-a2f3-3fab",
+      "name": "Ranged Weapon"
+    },
+    {
+      "id": "a466-2d26-0a05-6b12",
+      "targetId": "4986-bf86-beb4-13ac",
+      "name": "Damage Dx Weapon"
+    },
+    {
+      "id": "a276-18ad-af3d-f7c0",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "fa20-eb58-2998-858e",
+      "targetId": "1202-10a8-78e9-4c67",
+      "type": "rule",
+      "name": "Heavy"
+    },
+    {
+      "id": "fede-2114-a9a1-b803",
+      "targetId": "d0cf-a582-5166-fbba",
+      "type": "selectionEntry",
+      "name": "Monstrous scything talons"
+    },
+    {
+      "id": "920a-d3d0-7b0d-9d54",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "88f3-5730-4964-8973",
+      "targetId": "effb-d65d-a1b1-51d6",
+      "type": "selectionEntry",
+      "name": "Monstrous bonesword and lash whip"
+    },
+    {
+      "id": "059e-6022-804e-a36e",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "6715-274d-6709-676a",
+      "targetId": "e240-8306-941-b848",
+      "type": "selectionEntry",
+      "name": "Ravenous maw"
+    },
+    {
+      "id": "c5c3-203d-7c9b-ff47",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "4ac3-3434-664c-f9d2",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "b205-8bea-3c04-e513",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "62e6-647c-49fd-0994",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "687b-23ed-e175-da3d",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "1a65-a0e2-843a-4000",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "18f8-3fc0-1d1b-5d5f",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "ee5c-1c56-3c05-a510",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "113f-8441-1149-66c2",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "d609-d213-df24-f4fe",
+      "targetId": "9143-31ae-e0a6-6007",
+      "type": "rule",
+      "name": "Precision"
+    },
+    {
+      "id": "2c07-075b-9edd-3885",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "8c07-8cc0-b2d8-c0e7",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "2b72-85f3-5de7-0539",
+      "targetId": "cf93-ad4d-2f08-a79d",
+      "type": "rule",
+      "name": "Twin-linked"
+    },
+    {
+      "id": "a012-ff72-c7cc-2275",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "69c5-2541-ee91-c353",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "1cdf-e440-eef3-c077",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "a593-0c80-1c8b-bc23",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "8b8f-c62d-bd57-5b68",
+      "targetId": "ccdd-3987-11ed-90cd",
+      "name": "Melee Weapon"
+    },
+    {
+      "id": "729c-ffd6-949a-d2c1",
+      "targetId": "f715-a306-e448-9c1b",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Upgrades"
+    },
+    {
+      "id": "f146-6cdb-1ade-71ce",
+      "targetId": "f9da-852a-d7f0-92e9",
+      "type": "selectionEntryGroup",
+      "name": "Weapon Modifications"
+    },
+    {
+      "id": "cc77-4a7f-89f8-68db",
+      "targetId": "b678-4a99-210e-931f",
+      "type": "selectionEntryGroup",
+      "name": "Crusade Relic Upgrades"
+    },
+    {
+      "id": "98aa-23ed-bbcf-23e8",
+      "targetId": "4aaa-2ba5-4b0c-d2ba",
+      "type": "selectionEntry",
+      "name": "Slayer Sabres upgrade"
+    },
+    {
+      "id": "aaf1-5125-3c6a-a637",
+      "targetId": "3167-0f5b-caba-d96e",
+      "type": "selectionEntryGroup",
+      "name": "Boarding Actiions Upgrades"
+    },
+    {
+      "id": "5b71-f0d0-291c-6c32",
+      "targetId": "4111-82e3-9444-e942",
+      "type": "rule",
+      "name": "Anti"
+    }
+  ]
+}

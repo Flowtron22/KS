@@ -1,0 +1,530 @@
+{
+  "source": {
+    "repo": "BSData/wh40k-11e",
+    "commit": "cc58ee3b2c23f90af9d00e7bf234cd703b762299",
+    "file": "Imperium - Salamanders.json",
+    "sourceUrl": "https://raw.githubusercontent.com/BSData/wh40k-11e/cc58ee3b2c23f90af9d00e7bf234cd703b762299/Imperium%20-%20Salamanders.json",
+    "sha256": "42805569c40837b3d85a00b5a88c6e717e3594cd93776f17732a032f1dd12bc0"
+  },
+  "catalogue": {
+    "id": "2261-79a5-19d9-1668",
+    "name": "Imperium - Adeptus Astartes - Salamanders",
+    "revision": 5,
+    "library": false,
+    "imports": [
+      {
+        "name": "Imperium - Space Marines",
+        "targetId": "e0af-67df-9d63-8fb7",
+        "importRootEntries": true
+      },
+      {
+        "name": "Imperium - Imperial Knights - Library",
+        "targetId": "1b6d-dc06-5db9-c7d1"
+      },
+      {
+        "name": "Imperium - Agents of the Imperium",
+        "targetId": "b00-cd86-4b4c-97ba",
+        "importRootEntries": true
+      }
+    ]
+  },
+  "status": "research-only-unresolved-conditional-values",
+  "profiles": [
+    {
+      "id": "ab0c-f1b5-f23b-8b1b",
+      "name": "Adrax Agatone",
+      "type": "Unit",
+      "ancestry": [
+        "2261-79a5-19d9-1668",
+        "98c-87ea-f51b-1475"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "5",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "415e-ed00-24ac-5c",
+      "name": "Drakkis",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "2261-79a5-19d9-1668",
+        "98c-87ea-f51b-1475",
+        "b529-1803-d893-87e5"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D6+3",
+        "BS": "N/A",
+        "S": "4",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "f92a-9295-1bfb-2942",
+      "name": "Malleus Noctum",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "2261-79a5-19d9-1668",
+        "98c-87ea-f51b-1475",
+        "d249-ea36-1254-17cb"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "5",
+        "WS": "2+",
+        "S": "10",
+        "AP": "-2",
+        "D": "3"
+      }
+    },
+    {
+      "id": "6fee-8346-c51-d116",
+      "name": "Vulkan He'stan",
+      "type": "Unit",
+      "ancestry": [
+        "2261-79a5-19d9-1668",
+        "b351-fccc-2121-1e1e"
+      ],
+      "stats": {
+        "M": "6\"",
+        "T": "4",
+        "W": "5",
+        "LD": "6+",
+        "OC": "1"
+      }
+    },
+    {
+      "id": "ff1f-1295-8a6d-5d8b",
+      "name": "Gauntlet of the Forge",
+      "type": "Ranged Weapons",
+      "ancestry": [
+        "2261-79a5-19d9-1668",
+        "b351-fccc-2121-1e1e",
+        "76b1-5886-1825-8e3b"
+      ],
+      "stats": {
+        "Range": "12\"",
+        "A": "D6+3",
+        "BS": "N/A",
+        "S": "6",
+        "AP": "-1",
+        "D": "1"
+      }
+    },
+    {
+      "id": "2c29-73e2-c601-b9ec",
+      "name": "Spear of Vulkan",
+      "type": "Melee Weapons",
+      "ancestry": [
+        "2261-79a5-19d9-1668",
+        "b351-fccc-2121-1e1e",
+        "ee9-93ca-662-362b"
+      ],
+      "stats": {
+        "Range": "Melee",
+        "A": "6",
+        "WS": "2+",
+        "S": "6",
+        "AP": "-2",
+        "D": "2"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "id": "98c-87ea-f51b-1475",
+      "name": "Adrax Agatone",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "2261-79a5-19d9-1668"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 80
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        },
+        {
+          "name": "Honour Points",
+          "typeId": "8135-9a2f-6627-09e2",
+          "value": 0
+        },
+        {
+          "name": "Relic Fragments",
+          "typeId": "0ece-6541-4662-ece2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "d0eb-256-1ed9-837f",
+          "targetId": "3b76-4053-ece9-6e7d",
+          "type": "rule"
+        },
+        {
+          "id": "12c-329b-42bb-2cef",
+          "targetId": "b4dd-3e1f-41cb-218f",
+          "type": "rule"
+        }
+      ]
+    },
+    {
+      "id": "b351-fccc-2121-1e1e",
+      "name": "Vulkan He'stan",
+      "type": "model",
+      "hidden": false,
+      "ancestry": [
+        "2261-79a5-19d9-1668"
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeId": "51b2-306e-1021-d207",
+          "value": 95
+        },
+        {
+          "name": "Crusade Points",
+          "typeId": "b03b-c239-15a5-da55",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeId": "75bb-ded1-c86d-bdf0",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeId": "a623-fe74-1d33-cddf",
+          "value": 0
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeId": "716d-91b7-d55a-1022",
+          "value": 0
+        },
+        {
+          "name": "Blackstone Fragments",
+          "typeId": "ac6b-ced3-9b5e-9a6e",
+          "value": 0
+        },
+        {
+          "name": "Detachment Points",
+          "typeId": "82ae-1066-5107-6ae0",
+          "value": 0
+        },
+        {
+          "name": "Enhancements",
+          "typeId": "f759-1bc4-cb3a-f0d2",
+          "value": 0
+        },
+        {
+          "name": "Honour Points",
+          "typeId": "8135-9a2f-6627-09e2",
+          "value": 0
+        },
+        {
+          "name": "Relic Fragments",
+          "typeId": "0ece-6541-4662-ece2",
+          "value": 0
+        }
+      ],
+      "profileLinks": [
+        {
+          "id": "c49e-c9ab-25f7-7030",
+          "targetId": "b4dd-3e1f-41cb-218f",
+          "type": "rule"
+        },
+        {
+          "id": "8d4b-f29e-31ec-3b3f",
+          "targetId": "3b76-4053-ece9-6e7d",
+          "type": "rule"
+        },
+        {
+          "id": "a1db-d524-ec90-a522",
+          "targetId": "9bf4-280f-bbe2-6fbb",
+          "type": "rule"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "8bc3-7260-40f5-5674",
+      "targetId": "e0af-67df-9d63-8fb7",
+      "type": "catalogue",
+      "name": "Imperium - Space Marines"
+    },
+    {
+      "id": "3100-654a-4c35-f95c",
+      "targetId": "1b6d-dc06-5db9-c7d1",
+      "type": "catalogue",
+      "name": "Imperium - Imperial Knights - Library"
+    },
+    {
+      "id": "661e-916a-c8ec-22a3",
+      "targetId": "b00-cd86-4b4c-97ba",
+      "type": "catalogue",
+      "name": "Imperium - Agents of the Imperium"
+    },
+    {
+      "id": "287a-5c60-5a7e-80a8",
+      "targetId": "98c-87ea-f51b-1475",
+      "type": "selectionEntry",
+      "name": "Adrax Agatone"
+    },
+    {
+      "id": "e1d6-3316-2209-dc77",
+      "targetId": "b351-fccc-2121-1e1e",
+      "type": "selectionEntry",
+      "name": "Vulkan He'stan"
+    },
+    {
+      "id": "1282-41e9-8a69-5fd",
+      "targetId": "4f3a-f0f7-6647-348d",
+      "name": "Epic Hero"
+    },
+    {
+      "id": "886a-337c-7ab3-337",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "3773-c872-827a-aa54",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "5274-9223-7089-3a8a",
+      "targetId": "2d7f-1892-2fd0-e29c",
+      "name": "Captain"
+    },
+    {
+      "id": "ab47-e4c8-b31d-9fd",
+      "targetId": "fca1-9ff0-bf21-b99f",
+      "name": "Adrax Agatone"
+    },
+    {
+      "id": "d030-3816-5abc-8c0d",
+      "targetId": "6e7-40c-58d9-e402",
+      "name": "Faction: Adeptus Astartes"
+    },
+    {
+      "id": "bf0a-ea82-1240-a05d",
+      "targetId": "65e4-13-4fa8-b36c",
+      "name": "Faction: Salamanders"
+    },
+    {
+      "id": "4919-ae01-fd5-1fae",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "ee69-f2f4-6841-4eff",
+      "targetId": "5179-8ede-45e3-49a2",
+      "name": "Tacticus"
+    },
+    {
+      "id": "f037-33dc-c632-413e",
+      "targetId": "1556-9b56-fba6-4370",
+      "name": "Leader"
+    },
+    {
+      "id": "62fb-9eb1-d30b-2c9d",
+      "targetId": "caa-f869-3cbd-b48e",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "d0eb-256-1ed9-837f",
+      "targetId": "3b76-4053-ece9-6e7d",
+      "type": "rule",
+      "name": "Oath of Moment"
+    },
+    {
+      "id": "12c-329b-42bb-2cef",
+      "targetId": "b4dd-3e1f-41cb-218f",
+      "type": "rule",
+      "name": "Leader"
+    },
+    {
+      "id": "a796-62f8-d409-b383",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "b23d-de3c-4855-89a8",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "29cf-7bf3-972c-40f0",
+      "targetId": "8bf7-8812-923d-29e4",
+      "type": "rule",
+      "name": "Pistol"
+    },
+    {
+      "id": "eec7-ac02-2757-f6fa",
+      "targetId": "f842-6e90-bc5a-80f1",
+      "type": "selectionEntryGroup",
+      "name": "Mighty Champions"
+    },
+    {
+      "id": "3cdc-7e-724d-4abf",
+      "targetId": "4f3a-f0f7-6647-348d",
+      "name": "Epic Hero"
+    },
+    {
+      "id": "6c65-c32d-44c5-ed9d",
+      "targetId": "9cfd-1c32-585f-7d5c",
+      "name": "Character"
+    },
+    {
+      "id": "c4e0-d666-ae8-8863",
+      "targetId": "cf47-a0d7-7207-29dc",
+      "name": "Infantry"
+    },
+    {
+      "id": "5c33-3b29-a317-9d86",
+      "targetId": "2d7f-1892-2fd0-e29c",
+      "name": "Captain"
+    },
+    {
+      "id": "fb9b-35f9-91b4-68e4",
+      "targetId": "aff3-d6a3-2a95-9dc",
+      "name": "Imperium"
+    },
+    {
+      "id": "44cd-fed9-6c00-20e0",
+      "targetId": "5a61-81ac-eb7c-a87e",
+      "name": "Grenades"
+    },
+    {
+      "id": "a2ee-f7d7-7b7f-cd29",
+      "targetId": "8425-f97a-408-9f8a",
+      "name": "Vulkan He'stan"
+    },
+    {
+      "id": "1cb3-b8ed-c64e-bb98",
+      "targetId": "6e7-40c-58d9-e402",
+      "name": "Faction: Adeptus Astartes"
+    },
+    {
+      "id": "7eb1-2884-2ae1-1ae2",
+      "targetId": "65e4-13-4fa8-b36c",
+      "name": "Faction: Salamanders"
+    },
+    {
+      "id": "457a-1162-5fb5-8856",
+      "targetId": "5179-8ede-45e3-49a2",
+      "name": "Tacticus"
+    },
+    {
+      "id": "620b-4413-a47e-02d2",
+      "targetId": "1556-9b56-fba6-4370",
+      "name": "Leader"
+    },
+    {
+      "id": "8e3-ab74-8815-3767",
+      "targetId": "b273-b85e-4018-a0cd",
+      "type": "selectionEntry",
+      "name": "Bolt pistol"
+    },
+    {
+      "id": "30af-5b98-54a-b316",
+      "targetId": "caa-f869-3cbd-b48e",
+      "type": "selectionEntry",
+      "name": "Warlord"
+    },
+    {
+      "id": "c49e-c9ab-25f7-7030",
+      "targetId": "b4dd-3e1f-41cb-218f",
+      "type": "rule",
+      "name": "Leader"
+    },
+    {
+      "id": "8d4b-f29e-31ec-3b3f",
+      "targetId": "3b76-4053-ece9-6e7d",
+      "type": "rule",
+      "name": "Oath of Moment"
+    },
+    {
+      "id": "a1db-d524-ec90-a522",
+      "targetId": "9bf4-280f-bbe2-6fbb",
+      "type": "rule",
+      "name": "Feel No Pain"
+    },
+    {
+      "id": "fb12-a5c8-5040-4ebf",
+      "targetId": "4640-43e7-30b-215a",
+      "type": "rule",
+      "name": "Ignores Cover"
+    },
+    {
+      "id": "9bca-1939-59b-4827",
+      "targetId": "5edf-d619-23e0-9b56",
+      "type": "rule",
+      "name": "Torrent"
+    },
+    {
+      "id": "22ec-f5db-175c-d4ec",
+      "targetId": "8bf7-8812-923d-29e4",
+      "type": "rule",
+      "name": "Pistol"
+    },
+    {
+      "id": "6c9a-f7c6-d1d7-693a",
+      "targetId": "be1e-ac8e-1e2c-3528",
+      "type": "rule",
+      "name": "Devastating Wounds"
+    },
+    {
+      "id": "e269-8080-d75e-fb92",
+      "targetId": "f842-6e90-bc5a-80f1",
+      "type": "selectionEntryGroup",
+      "name": "Mighty Champions"
+    }
+  ]
+}
