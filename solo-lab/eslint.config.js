@@ -14,7 +14,7 @@ export default [
   {
     files: ['src/**/*.js'],
     languageOptions: {
-      globals: readonly(['document', 'window', 'localStorage', 'fetch', 'Worker', 'URL', 'Blob', 'setTimeout', 'clearTimeout', 'crypto', 'matchMedia', 'self']),
+      globals: readonly(['document', 'window', 'localStorage', 'fetch', 'Worker', 'URL', 'Blob', 'setTimeout', 'clearTimeout', 'crypto', 'matchMedia', 'self', 'navigator', 'File']),
     },
   },
   {

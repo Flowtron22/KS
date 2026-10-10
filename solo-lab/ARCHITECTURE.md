@@ -14,6 +14,10 @@ The attack engine and faction data are independent of the browser. The app uses 
 | `src/ui-html.js` | Escape text and create escaped select options. |
 | `src/rule-picker.js` | Render source rule choices and prepare confirmed numerical effects. |
 | `src/combat.js`, `combat-effects.js`, `rule-effects.js` | Validate and resolve attack mechanics without DOM access. |
+| `src/army-loadout.js` | Derive weapon counts from per-model choices; validate save structure and review composition constraints. |
+| `src/army-equipment-view.js` | Render source equipment controls and bind equipment edits. |
+| `src/army-share.js` | Build share content, draw paginated PNGs and manage local preview/download. |
+| `tools/wargear-compiler.mjs` | Preserve equipment groups, bundles, defaults and static constraints from the pinned selection graph. |
 | `tools/` and `public/` | Import pinned community data and retain its provenance. No runtime fetching of third-party rule pages. |
 
 Render the final HTML directly. Do not construct a legacy page and move nodes around to simulate another layout. Template modules must remain usable without `document`; text from imports, custom profiles and saved scenarios must be escaped before entering HTML.
