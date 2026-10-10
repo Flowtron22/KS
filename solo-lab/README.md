@@ -14,7 +14,9 @@ Supported effects: hit/wound modifiers capped at +/-1, re-roll 1s or failed hit/
 
 **Run simulations** repeats the same scenario 1,000, 10,000 or 50,000 times in a web worker. Results show wounds lost and models destroyed on each side, chance of unit destruction, a 95% Wilson interval, and the wounds-lost distribution. Lost wounds are capped at remaining health; they are not uncapped raw damage. Every trial resets both units. Monte Carlo uncertainty does not account for omitted rules.
 
-The same random seed reproduces a sequence or simulation batch. **New seed** generates another seed. Save/load one scenario locally or export/import scenario JSON. Export rolls and simulation results with the scenario and seed. Combat scenarios use `combat-lab-1`; legacy battlefield saves cannot be imported. Nothing is written back into Army List models after combat.
+The dashboard places the dice table and result summary above compact unit cards. Defence, weapon stats, abilities, calculation details and exports expand on demand. A single roll shows actual losses and faded destroyed tokens; repeated simulations feature the target destruction chance and average losses.
+
+**Roll attacks** generates a fresh seed by default. Open **Roll settings** and enable **Replay this seed** to repeat the displayed seed. The same seed reproduces a sequence or simulation batch. **New seed** generates another seed. Save/load one scenario locally or export/import scenario JSON. Export rolls and simulation results with the scenario and seed. Combat scenarios use `combat-lab-1`; legacy battlefield saves cannot be imported. Nothing is written back into Army List models after combat.
 
 ## Faction abilities and weapon keywords
 

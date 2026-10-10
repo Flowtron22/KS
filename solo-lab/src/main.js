@@ -1,5 +1,14 @@
 import "./battle.css";
 import "./combat.css";
+import "./dashboard.css";
+import {
+  mountCombatLayout,
+  compactUnit,
+  renderArena,
+  updateProfileBadges,
+  renderSingleRoll,
+  dieFace,
+} from "./combat-layout.js";
 import { rulePicker, prepareRules } from "./rule-picker.js";
 import {
   EFFECT_DEFAULTS,
@@ -73,6 +82,7 @@ $("app").innerHTML =
 <div class="experiment-controls panel"><label>Random seed<input id="seed" type="number" min="0" max="4294967295" value="40000"></label><button id="new-seed" class="mini">New seed ↻</button><label>Dice animation<select id="pace"><option value="normal">Normal</option><option value="fast">Fast</option><option value="instant">Instant</option></select></label><button id="roll" class="button orange">⚄ Roll attacks</button><label>Number of simulations<select id="trials"><option value="1000">1,000</option><option value="10000" selected>10,000</option><option value="50000">50,000</option></select></label><button id="simulate" class="button dark">Run simulations →</button></div>
 <div class="experiment-output"><section class="panel"><div class="panel-top"><span class="eyebrow">ATTACK SEQUENCE</span><button id="export-roll" class="mini" disabled>Export rolls JSON</button></div><div id="dice-output" aria-live="polite"></div></section><section class="panel"><div class="panel-top"><span class="eyebrow">SIMULATION RESULTS</span><button id="export-results" class="mini" disabled>Export results JSON</button></div><div id="results" aria-live="polite"></div></section></div><div class="scenario-files"><button id="export-scenario" class="mini">Export scenario JSON</button><label class="import-label">Import scenario JSON<input id="import-scenario" type="file" accept="application/json" hidden></label></div></section>
 <section id="army-view" hidden><div id="army-builder-root"></div></section><footer><span>40K COMBAT LAB · PROTOTYPE</span><span>Community stat snapshot · 9 Oct 2026 · points not officially verified</span><a href="https://github.com/BSData/wh40k-11e/tree/cc58ee3b2c23f90af9d00e7bf234cd703b762299" target="_blank" rel="noreferrer">Data source ↗</a></footer></main>`;
+mountCombatLayout();
 function notice(s) {
   $("notice").textContent = s;
 }
@@ -267,6 +277,9 @@ const saves = [
     ["failed", "Re-roll failed"],
   ];
 function renderUnit(i) {
+  const open = Array.from($("unit-" + i).querySelectorAll("details[open]"))
+    .map((el) => "details." + el.className.split(" ")[0])
+    .filter((s) => s !== "details.");
   const pick = picks[i],
     u = scenario.units[i],
     source = pick.data?.units.find((u) => u.id === pick.unit),
@@ -305,9 +318,11 @@ function renderUnit(i) {
      "",
    )}${opt("", "Custom profile", pick.weapon)}</select></label><div class="weapon-fields">${field(i, "bearers", "Models using weapon", u.bearers, 0, u.models)}${field(i, "weapon.attacks", "A per model", w.attacks, null, null, "text")}${field(i, "weapon.hit", scenario.phase === "fight" ? "WS" : "BS", w.hit, 2, 6)}${field(i, "weapon.strength", "S", w.strength, 1, 100)}${field(i, "weapon.ap", "AP", w.ap, -10, 0)}${field(i, "weapon.damage", "D", w.damage, null, null, "text")}</div><p class="fine">A and D accept numbers or dice: D3, D6, 2D6+1. Edit profile values for your experiment.</p>
  <details class="modifiers"><summary>Modifiers and re-rolls</summary><div class="defence-fields">${select(i, "weapon.hitMod", "Hit modifier", mods, w.hitMod)}${select(i, "weapon.woundMod", "Wound modifier", mods, w.woundMod)}${select(i, "weapon.hitReroll", "Hit re-rolls", rerolls, w.hitReroll)}${select(i, "weapon.woundReroll", "Wound re-rolls", rerolls, w.woundReroll)}</div><p class="fine">Manual effects only. These controls do not activate a named ability or Stratagem.</p></details>${effectsPanel(i, u, pick)}<div class="sequence-preview" id="preview-${i}"></div></div>`;
+  compactUnit($("unit-" + i), u, open);
   bindUnit(i);
 }
 function preview() {
+  renderArena(scenario);
   scenario.units.forEach((u, i) => prepareRules(u, picks[i], scenario.phase));
   for (let i = 0; i < 2; i++) {
     const u = scenario.units[i],
@@ -315,6 +330,7 @@ function preview() {
       effect = effectiveAttack(u, v, scenario.phase),
       w = effect.weapon,
       st = saveTarget(effect.defender, w, scenario.phase);
+    updateProfileBadges($("unit-" + i), u);
     $("preview-" + i).textContent =
       `${u.bearers} × (${w.attacks}${effect.attacksBonus ? " + " + effect.attacksBonus : ""}) attacks → ${w.hit}+ to hit${w.hitMod ? " (" + (w.hitMod > 0 ? "+" : "") + w.hitMod + ")" : ""} → ${woundTarget(w.strength, effect.defender.toughness)}+ to wound${w.woundMod ? " (" + (w.woundMod > 0 ? "+" : "") + w.woundMod + ")" : ""} → ${st > 6 ? "no successful save" : st + "+ save"} → ${w.damage}${effect.damageBonus ? " + " + effect.damageBonus : ""} damage`;
     const e = u.effects,
@@ -368,13 +384,16 @@ function preview() {
     `${esc(scenario.units[0].models + " " + scenario.units[0].name)} <span>VS</span> ${esc(scenario.units[1].models + " " + scenario.units[1].name)}`;
 }
 function changed() {
+  document.querySelector(".simulation-stage").classList.remove("has-roll");
   results = null;
   lastRoll = null;
   $("results").innerHTML =
-    '<div class="empty-results"><h3>How reliable is this matchup?</h3><p>Repeat this scenario across thousands of dice rolls.</p></div>';
+    '<div class="empty-results"><span class="odds-mark">%</span><h3>How often does it work?</h3><p>Run simulations to see average damage and the chance of destroying each unit.</p></div>';
   $("dice-output").innerHTML =
-    '<div class="dice-idle"><span class="idle-die">⚄</span><h3>ROLL TO HIT</h3><p>Resolve one experiment, step by step.</p></div>';
+    '<div class="dice-idle"><span class="idle-die">⚄</span><div><h3>Let the dice decide.</h3><p>Roll attacks once, or run thousands to test the odds.</p></div></div>';
   $("export-results").disabled = $("export-roll").disabled = true;
+  $("table-status").textContent = "Ready to roll";
+  $("outcome-title").textContent = "EXPECTED RESULT";
   preview();
 }
 function bindUnit(i) {
@@ -475,12 +494,6 @@ function bindUnit(i) {
         $("unit-" + i).querySelector('[data-field="bearers"]').value =
           u.bearers;
         $("unit-" + i).querySelector('[data-field="bearers"]').max = u.models;
-        root.querySelector(".model-tokens").innerHTML =
-          Array.from(
-            { length: Math.max(0, Math.min(12, u.models)) },
-            () => "<span>✠</span>",
-          ).join("") +
-          (u.models > 12 ? `<small>+${u.models - 12}</small>` : "");
       }
       if (key === "wounds") {
         $("unit-" + i).querySelector('[data-field="frontWounds"]').value =
@@ -620,12 +633,12 @@ async function chooseSaved(i) {
   }
 }
 function render() {
+  $("fight").classList.toggle("active", scenario.phase === "fight");
+  $("shoot").classList.toggle("active", scenario.phase === "shoot");
   for (let i = 0; i < 2; i++) renderUnit(i);
   $("first").value = String(scenario.first);
   $("fight-back").checked = scenario.fightBack;
   $("fight-back").disabled = scenario.phase === "shoot";
-  $("fight").classList.toggle("active", scenario.phase === "fight");
-  $("shoot").classList.toggle("active", scenario.phase === "shoot");
   $("seed").value = scenario.seed;
   preview();
 }
@@ -760,9 +773,7 @@ async function example() {
   );
   render();
   changed();
-  notice(
-    "5 Custodian Guard Sodality with Guardian Spears vs 1 Cerastus Knight Lancer, strike profile. Experimental model count; no ability selected yet.",
-  );
+  notice("Custodes vs Lancer loaded. No abilities selected.");
 }
 function diceRow(label, rolls, detail) {
   return `<div class="dice-stage"><div class="stage-heading">${esc(label)}<b>${esc(detail)}</b></div><div class="dice-pool">${
@@ -770,7 +781,7 @@ function diceRow(label, rolls, detail) {
       .slice(0, 60)
       .map(
         (d) =>
-          `<span class="die ${d.pass ? "" : "fail"}" title="${esc(d.original ? "Re-rolled " + d.original + " → " + d.value : d.value)}">${d.value}${d.original ? "<small>↻</small>" : ""}</span>`,
+          `<span class="die ${d.pass ? "" : "fail"}" title="${esc(d.original ? "Re-rolled " + d.original + " → " + d.value : d.value)}">${dieFace(d.value)}${d.original ? "<small>↻</small>" : ""}</span>`,
       )
       .join("") || "<small>No rolls</small>"
   }${rolls.length > 60 ? `<small>+${rolls.length - 60} rolls in JSON</small>` : ""}</div></div>`;
@@ -813,11 +824,16 @@ function sequence(e, s) {
 }
 $("roll").onclick = async () => {
   try {
+    if (!$("replay-seed").checked) {
+      scenario.seed = crypto.getRandomValues(new Uint32Array(1))[0];
+      $("seed").value = scenario.seed;
+    }
     const s = checked(),
       pace = $("pace").value;
     notice("");
     setBusy(true);
     const r = runScenario(s, seeded(s.seed), true);
+    document.querySelector(".simulation-stage").classList.add("has-roll");
     lastRoll = { scenario: s, seed: s.seed, ...r };
     $("dice-output").innerHTML =
       r.events.map((e) => sequence(e, s)).join("") +
@@ -834,11 +850,17 @@ $("roll").onclick = async () => {
     for (const el of $("dice-output").querySelectorAll(
       ".dice-stage,.roll-result",
     )) {
+      $("table-status").textContent =
+        el.querySelector(".stage-heading")?.firstChild?.textContent ??
+        "Damage resolved";
       el.classList.add("revealed");
       if (delay) await new Promise((r) => setTimeout(r, delay));
     }
+    renderArena(s, r.killed);
+    $("table-status").textContent = "Roll complete";
+    if (!results) renderSingleRoll(r, s);
     notice(
-      `Resolved with seed ${s.seed}. Use New seed for another roll; the same seed reproduces the sequence.`,
+      `Roll complete · seed ${s.seed}. Enable Replay this seed in Roll settings to repeat it.`,
     );
   } catch (e) {
     notice(e.message);
@@ -847,25 +869,28 @@ $("roll").onclick = async () => {
   }
 };
 function renderResults(r, s) {
+  $("outcome-title").textContent = "EXPECTED RESULT";
+  const target = 1 - s.first;
+  const side = (i) => {
+    const out = r.sides[i];
+    const entries = Object.entries(out.histogram)
+      .map(([d, n]) => [+d, n])
+      .sort((a, b) => a[0] - b[0]);
+    const max = Math.max(...entries.map((e) => e[1]));
+    return `<section class="result-unit"><h3>${esc(s.units[i].name)}<span>damage received</span></h3><div class="result-stats"><div><strong>${out.damage.toFixed(2)}</strong><small>Average wounds lost</small></div><div><strong>${out.killed.toFixed(2)}</strong><small>Average models destroyed</small></div><div><strong>${(out.destroyChance * 100).toFixed(1)}%</strong><small>Chance unit is destroyed</small></div></div><details><summary>Distribution & confidence</summary><p>95% interval for destruction: ${(out.interval[0] * 100).toFixed(1)}–${(out.interval[1] * 100).toFixed(1)}%</p><div class="histogram">${entries.map(([d, n]) => `<div><span>${d} W</span><i style="width:${(n / max) * 100}%"></i><b>${((n / r.trials) * 100).toFixed(1)}%</b></div>`).join("")}</div></details></section>`;
+  };
   $("results").innerHTML =
-    `<div class="result-heading"><strong>${r.trials.toLocaleString()} simulations</strong><small>Seed ${s.seed} · ${s.phase === "fight" ? "Fight" : "Shooting"} phase · ${esc(s.units[s.first].name)} attacks first</small></div>${r.sides
-      .map((out, i) => {
-        const entries = Object.entries(out.histogram)
-            .map(([d, n]) => [+d, n])
-            .sort((a, b) => a[0] - b[0]),
-          max = Math.max(...entries.map((e) => e[1]));
-        return `<section class="result-unit"><h3>${esc(s.units[i].name)} <span>damage received</span></h3><div class="result-stats"><div><strong>${out.damage.toFixed(2)}</strong><small>Average wounds lost</small></div><div><strong>${out.killed.toFixed(2)}</strong><small>Average models destroyed</small></div><div><strong>${(out.destroyChance * 100).toFixed(1)}%</strong><small>Chance unit is destroyed</small></div></div><p>95% interval for destruction: ${(out.interval[0] * 100).toFixed(1)}–${(out.interval[1] * 100).toFixed(1)}%</p><details><summary>Wounds lost distribution</summary><div class="histogram">${entries.map(([d, n]) => `<div><span>${d} W</span><i style="width:${(n / max) * 100}%"></i><b>${((n / r.trials) * 100).toFixed(1)}%</b></div>`).join("")}</div></details></section>`;
-      })
-      .join(
-        "",
-      )}<p class="result-footnote">Wounds lost are capped at the unit’s remaining wounds. Each trial resets both units. Intervals describe sampling uncertainty, not missing rules.</p>`;
+    `<div class="outcome-score"><span>Destroy the target</span><strong>${(r.sides[target].destroyChance * 100).toFixed(1)}<small>%</small></strong><p>${esc(s.units[target].name)}</p></div><div class="result-heading"><strong>${r.trials.toLocaleString()} simulations</strong><small>${esc(s.units[s.first].name)} attacks first · ${s.phase === "fight" ? "Fight" : "Shooting"}</small></div>${side(target)}${s.phase === "fight" && s.fightBack ? `<details class="return-results"><summary>Survivors fight back</summary>${side(s.first)}</details>` : ""}<p class="result-footnote">Each trial starts fresh. <span>Seed ${s.seed}</span></p>`;
 }
+
 $("simulate").onclick = () => {
   try {
     const s = checked(),
       trials = Number($("trials").value);
     setBusy(true);
     notice("Simulating…");
+    renderArena(s);
+    $("table-status").textContent = "Testing the odds…";
     worker = new Worker(new URL("./combat-worker.js", import.meta.url), {
       type: "module",
     });
@@ -892,6 +917,8 @@ $("simulate").onclick = () => {
       renderResults(data.result, s);
       setBusy(false);
       notice("Simulation complete.");
+      $("table-status").textContent =
+        data.result.trials.toLocaleString() + " simulations complete";
     };
     worker.onerror = () => {
       worker.terminate();
@@ -998,7 +1025,7 @@ async function switchView(next) {
   $("description").textContent =
     next === "army"
       ? "Build and save your armies. Choose saved units in the Combat calculator."
-      : "Pick a matchup. Roll the attacks. Find out how often it works.";
+      : "Pick two units. Watch the dice. Test the odds.";
   if (next === "army") {
     $("title").textContent = "ARMY LISTS";
     if (!armyMounted) {
