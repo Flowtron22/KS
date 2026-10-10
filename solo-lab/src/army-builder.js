@@ -19,7 +19,7 @@ const esc = (s) =>
       ],
   );
 const marks = { Imperium: "✠", Chaos: "✶", Xenos: "◇" };
-export async function mountArmyBuilder(root, onDeploy) {
+export async function mountArmyBuilder(root) {
   root.innerHTML =
     '<p class="muted">Loading 11th-edition faction catalogues…</p>';
   const index = await (await fetch("/armies/index.json")).json(),
@@ -189,7 +189,7 @@ export async function mountArmyBuilder(root, onDeploy) {
         "Review your army",
         "Check your points, Warlord and attachments before saving.",
       ) +
-      `<div class="review-grid">${armyList()}<section class="panel review-checks"><h3>Army checks</h3>${s.issues.length ? `<ul>${s.issues.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>` : '<p class="check-pass">✓ Basic army checks passed.</p>'}<p class="fine">Full army legality is not validated yet. Check flagged equipment restrictions, Enhancement eligibility, Bodyguard choices, allies and conditional costs.</p><button id="save-review" class="button orange">Save army</button><button id="export-review" class="button">Export army JSON</button><button id="share-army" class="button orange">Share army image</button><button id="basic-deploy" class="button">Open Combat calculator</button><p class="fine">The Combat calculator lets you set up a separate unit-versus-unit experiment.</p></section></div>`
+      `<div class="review-grid">${armyList()}<section class="panel review-checks"><h3>Army checks</h3>${s.issues.length ? `<ul>${s.issues.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>` : '<p class="check-pass">✓ Basic army checks passed.</p>'}<button id="save-review" class="button orange">Save army</button><button id="export-review" class="button">Export army JSON</button><button id="share-army" class="button orange">Share army image</button></section></div>`
     );
   }
   function render() {
@@ -396,10 +396,6 @@ export async function mountArmyBuilder(root, onDeploy) {
         message = err.message;
         render();
       }
-    });
-    on("basic-deploy", "onclick", () => {
-      save();
-      onDeploy();
     });
   }
   function exportArmy() {

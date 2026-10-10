@@ -659,9 +659,7 @@ async function switchView(next) {
     if (!armyMounted) {
       try {
         const { mountArmyBuilder } = await import("./army-builder.js");
-        await mountArmyBuilder($("army-builder-root"), () =>
-          switchView("combat"),
-        );
+        await mountArmyBuilder($("army-builder-root"));
         armyMounted = true;
       } catch (e) {
         notice(e.message);
