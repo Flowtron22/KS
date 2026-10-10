@@ -1,3 +1,68 @@
+.effects-panel {
+  margin-top: 16px;
+  border-top: 1px solid #3c4650;
+  padding-top: 0;
+}
+.effects-panel .weapon-header {
+  border-top: 0;
+  margin-top: 0;
+}
+.katah-panel {
+  background: #322c204d;
+  border: 1px solid #6b5838;
+  padding: 14px;
+  margin: 0 0 14px;
+}
+.katah-checks,
+.keyword-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.effects-panel a {
+  color: #d6b677;
+}
+.effects-panel .data-warning {
+  font-size: 10px;
+  line-height: 1.7;
+  color: #cfae76;
+  border-left: 2px solid #ad7845;
+  padding: 8px 10px;
+  margin-bottom: 14px;
+  background: #34261b66;
+}
+.data-warning .mini {
+  display: block;
+  color: #e1c58c;
+  padding: 7px 0 0;
+}
+.effects-summary:not(:empty) {
+  border-top: 1px solid #37434c;
+  padding-top: 10px;
+  margin-top: 12px;
+}
+.effects-summary span {
+  display: inline-block;
+  background: #403723;
+  color: #e0c281;
+  border: 1px solid #6b5937;
+  padding: 4px 7px;
+  font: 600 11px Rajdhani;
+  margin: 0 5px 5px 0;
+}
+.effects-summary p {
+  font-size: 10px;
+  line-height: 1.7;
+  color: #a4b2bc;
+}
+.effects-panel input[type="text"] {
+  width: 100%;
+}
+.applied-roll-effects {
+  font-size: 10px;
+  color: #bda370;
+  margin-top: 10px;
+}
 main {
   max-width: 1500px;
 }

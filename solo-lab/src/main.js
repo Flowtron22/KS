@@ -1,6 +1,12 @@
 import "./battle.css";
 import "./combat.css";
 import {
+  EFFECT_DEFAULTS,
+  KATAHS,
+  KATAH_SOURCE,
+  effectiveAttack,
+} from "./combat-effects.js";
+import {
   validateScenario,
   seeded,
   runScenario,
@@ -62,7 +68,7 @@ $("app").innerHTML =
 <main><div class="page-heading"><div><div class="eyebrow">ONE PHASE / TWO UNITS</div><h1 id="title">WHAT DOES YOUR UNIT DO?</h1><p id="description">Pick a matchup. Roll the attacks. Find out how often it works.</p></div><div class="heading-actions"><button id="save-scenario" class="button">Save scenario</button><button id="load-scenario" class="button">Load saved</button><button id="example" class="button dark">Custodes vs Lancer</button></div></div><div id="notice" role="status" aria-live="polite"></div>
 <section id="combat-view"><div class="scenario-bar panel"><div class="phase-switch"><button id="fight" class="active">Fight phase</button><button id="shoot">Shooting phase</button></div><label>Attacks first<select id="first"><option value="0">Unit A</option><option value="1">Unit B</option></select></label><label class="check"><input id="fight-back" type="checkbox" checked> Survivors fight back</label><button id="swap" class="button">Swap units ⇄</button></div>
 <div class="matchup"><section id="unit-0" class="panel combat-unit"></section><div class="versus">VS</div><section id="unit-1" class="panel combat-unit"></section></div>
-<section class="rules-note"><strong>What this calculates</strong><p>One weapon profile per unit, shared by the chosen weapon bearers. All models in a unit use the same Toughness, Save and Wounds. Normal damage does not spill between models. Fight back uses surviving models, with selected weapon bearers surviving first. Each run starts fresh.</p><p><b>Abilities, weapon keywords, Detachments, Enhancements and Stratagems are not applied automatically.</b> Set supported effects manually. Range, charges, engagement and fight order are assumed.</p></section>
+<section class="rules-note"><strong>What this calculates</strong><p>One weapon profile per unit, shared by the chosen weapon bearers. All models in a unit use the same Toughness, Save and Wounds. Normal damage does not spill between models. Fight back uses surviving models, with selected weapon bearers surviving first. Each run starts fresh.</p><p><b>Only selected Ka’tahs and configured effects are applied. Other abilities, weapon keywords, Detachments, Enhancements and Stratagems are not applied automatically.</b> Set supported effects manually. Range, charges, engagement and fight order are assumed.</p></section>
 <div class="experiment-controls panel"><label>Random seed<input id="seed" type="number" min="0" max="4294967295" value="40000"></label><button id="new-seed" class="mini">New seed ↻</button><label>Dice animation<select id="pace"><option value="normal">Normal</option><option value="fast">Fast</option><option value="instant">Instant</option></select></label><button id="roll" class="button orange">⚄ Roll attacks</button><label>Number of simulations<select id="trials"><option value="1000">1,000</option><option value="10000" selected>10,000</option><option value="50000">50,000</option></select></label><button id="simulate" class="button dark">Run simulations →</button></div>
 <div class="experiment-output"><section class="panel"><div class="panel-top"><span class="eyebrow">ATTACK SEQUENCE</span><button id="export-roll" class="mini" disabled>Export rolls JSON</button></div><div id="dice-output" aria-live="polite"></div></section><section class="panel"><div class="panel-top"><span class="eyebrow">SIMULATION RESULTS</span><button id="export-results" class="mini" disabled>Export results JSON</button></div><div id="results" aria-live="polite"></div></section></div><div class="scenario-files"><button id="export-scenario" class="mini">Export scenario JSON</button><label class="import-label">Import scenario JSON<input id="import-scenario" type="file" accept="application/json" hidden></label></div></section>
 <section id="army-view" hidden><div id="army-builder-root"></div></section><footer><span>40K COMBAT LAB · PROTOTYPE</span><span>Community stat snapshot · 9 Oct 2026 · points not officially verified</span><a href="https://github.com/BSData/wh40k-11e/tree/cc58ee3b2c23f90af9d00e7bf234cd703b762299" target="_blank" rel="noreferrer">Data source ↗</a></footer></main>`;
@@ -95,6 +101,15 @@ function applyWeapon(i) {
     strength: num(p.stats.S) ?? 0,
     ap: /^-?\d+$/.test(p.stats.AP ?? "") ? -Math.abs(Number(p.stats.AP)) : 0,
   });
+  if (scenario.units[i].guardCodex && p.name === "Guardian Spear") {
+    Object.assign(w, {
+      attacks: scenario.phase === "fight" ? "6" : "2",
+      hit: 2,
+      strength: scenario.phase === "fight" ? 8 : 5,
+      ap: scenario.phase === "fight" ? -2 : -1,
+      damage: "2",
+    });
+  }
   if (!num(p.stats.WS ?? p.stats.BS) || !num(p.stats.S))
     notice(
       "This weapon needs manual characteristics. Automatic-hit weapons and keywords are not supported.",
@@ -116,19 +131,106 @@ function unitFromCatalogue(i, u, models = u.models.min) {
     frontWounds: num(stats.W) ?? 0,
     bearers: models,
     cover: false,
+    effects: {
+      ...EFFECT_DEFAULTS,
+      custodes: picks[i].data?.name === "Adeptus Custodes",
+      targetType: u.categories.includes("Vehicle")
+        ? "vehicle"
+        : u.categories.includes("Monster")
+          ? "monster"
+          : u.categories.includes("Infantry")
+            ? "infantry"
+            : "other",
+      katahEligible: u.name === "Custodian Guard",
+      readied: u.name === "Custodian Guard",
+    },
     weapon: { ...baseWeapon },
   };
+  if (
+    u.name === "Custodian Guard" &&
+    picks[i].data?.name === "Adeptus Custodes"
+  )
+    upgradeGuard(i);
   applyWeapon(i);
   if (!num(stats.W) || !num(stats.T) || !num(stats.Sv))
     notice(
       "Incomplete unit profile: check and enter characteristics manually.",
     );
 }
+function upgradeGuard(i) {
+  Object.assign(scenario.units[i], {
+    guardCodex: true,
+    name: "Custodian Guard Sodality",
+    toughness: 7,
+    wounds: 5,
+    frontWounds: 5,
+    save: 2,
+    invuln: 4,
+  });
+  const source = picks[i].data.units.find((u) => u.id === picks[i].unit);
+  picks[i].profile = source.profiles.find((p) => p.type === "Unit")?.id;
+  picks[i].weapon =
+    weapons(source).find((p) => p.name === "Guardian Spear")?.id ?? "";
+}
 function field(i, k, label, value, min, max, type = "number") {
   return `<label>${label}<input data-field="${k}" aria-label="Unit ${i ? "B" : "A"} ${label}" type="${type}" ${type === "number" ? `min="${min}" max="${max}" step="1"` : ""} value="${esc(value)}"></label>`;
 }
 function select(i, k, label, values, value) {
   return `<label>${label}<select data-field="${k}" aria-label="Unit ${i ? "B" : "A"} ${label}">${values.map(([v, l]) => opt(v, l, value)).join("")}</select></label>`;
+}
+function effectsPanel(i, u, pick) {
+  const e = u.effects,
+    check = (key, label) =>
+      `<label class="check"><input data-field="effects.${key}" aria-label="Unit ${i ? "B" : "A"} ${label}" type="checkbox" ${e[key] ? "checked" : ""}>${label}</label>`;
+  const custodes = pick.data?.name === "Adeptus Custodes";
+  return `<section class="effects-panel"><div class="weapon-header"><span class="eyebrow">ABILITIES & AURAS</span><small>Choose effects for this scenario</small></div>
+ ${custodes ? `<div class="katah-panel"><label>Martial Ka’tah<select data-field="effects.katah" aria-label="Unit ${i ? "B" : "A"} Martial Ka’tah">${KATAHS.map(([id, label]) => opt(id, label, e.katah)).join("")}<option disabled>Conservai — actions (outside this calculator)</option><option disabled>Calistus — movement (outside this calculator)</option></select></label><div class="katah-checks">${check("katahEligible", "Unit has Martial Ka’tah")}${check("readied", "Unit is readied")}</div><p class="fine">September 2026 Codex. Only one Ka’tah is selected; phase and target conditions are checked. Eligibility and readiness are your scenario assumptions. <a href="${KATAH_SOURCE}" target="_blank" rel="noreferrer">Rule source ↗</a></p></div><div class="katah-checks">${check("custodes", "Unit has ADEPTUS CUSTODES keyword")}${check("captainGeneral", "Trajann’s Captain-General aura (within 6 inches)")}${u.guardCodex ? check("impenetrableDefence", "Impenetrable Defence: either unit is in range of an objective") : ""}</div><p class="fine">Captain-General grants hit and wound re-rolls of 1 to eligible Custodes, excluding Monsters and Vehicles. Confirm aura range yourself. Impenetrable Defence grants Sustained Hits 1 against other targets; repeated Sustained Hits effects use the highest value.</p><p class="data-warning">${u.guardCodex ? "Guard uses the September preview: T7, W5, Guardian Spear A6 / S8 in melee. Squads contain 3 models; larger counts here are experimental. Assault and Rapid Fire are not automatic." : "This Custodes profile uses the older community snapshot. Verify its characteristics."} Other Custodes and Army Lists still use the older snapshot. <a href="https://www.warhammer-community.com/en-gb/articles/2xxurx9j/first-look-adeptus-custodes-datasheets/" target="_blank" rel="noreferrer">Datasheet and aura source ↗</a>${!u.guardCodex && pick.data.units.find((entry) => entry.id === pick.unit)?.name === "Custodian Guard" ? '<button data-guard-update class="mini">Use September Guard profile →</button>' : ""}</p>` : ""}
+ <div class="defence-fields">${select(
+   i,
+   "effects.targetType",
+   "Unit target type",
+   [
+     ["infantry", "Infantry"],
+     ["monster", "Monster"],
+     ["vehicle", "Vehicle"],
+     ["other", "Other"],
+   ],
+   e.targetType,
+ )}${select(
+   i,
+   "effects.sustainedHits",
+   "Sustained Hits",
+   [
+     [0, "None"],
+     [1, "1"],
+     [2, "2"],
+     [3, "3"],
+   ],
+   e.sustainedHits,
+ )}${select(
+   i,
+   "effects.criticalHit",
+   "Critical Hit",
+   [
+     [6, "6+"],
+     [5, "5+"],
+     [4, "4+"],
+   ],
+   e.criticalHit,
+ )}</div><div class="keyword-checks">${check("lethalHits", "Lethal Hits")}</div>
+ <details class="modifiers"><summary>Buffs, debuffs and defensive effects</summary><div class="defence-fields">${select(
+   i,
+   "effects.skillBonus",
+   "BS/WS improvement",
+   [
+     [-2, "Worsen by 2"],
+     [-1, "Worsen by 1"],
+     [0, "None"],
+     [1, "Improve by 1"],
+     [2, "Improve by 2"],
+   ],
+   e.skillBonus,
+ )}${field(i, "effects.strengthBonus", "Strength bonus", e.strengthBonus, -5, 5)}${field(i, "effects.attacksBonus", "Extra A per model", e.attacksBonus, 0, 5)}${field(i, "effects.apBonus", "AP improvement", e.apBonus, 0, 3)}${field(i, "effects.damageBonus", "Extra damage", e.damageBonus, 0, 5)}${select(i, "effects.incomingHitMod", "Enemy hit rolls", mods, e.incomingHitMod)}${select(i, "effects.incomingWoundMod", "Enemy wound rolls", mods, e.incomingWoundMod)}${field(i, "effects.apReduction", "Worsen incoming AP", e.apReduction, 0, 3)}${field(i, "effects.damageReduction", "Reduce incoming damage", e.damageReduction, 0, 5)}</div>${check("ignoreHitMods", "Ignore hit roll modifiers")}${check("ignoreWoundMods", "Ignore wound roll modifiers")}${field(i, "effects.note", "Ability or aura note", e.note, null, null, "text")}<p class="fine">Manual effects apply in the selected phase. Your note labels them; it does not activate a rule. Check aura range and eligibility yourself. Damage reduction has a minimum of 1; hit and wound modifiers are capped at ±1.</p></details><div id="effects-summary-${i}" class="effects-summary" aria-live="polite"></div></section>`;
 }
 const saves = [
     [2, "2+"],
@@ -168,27 +270,74 @@ function renderUnit(i) {
  <h2>${esc(u.name)}</h2><div class="model-tokens" aria-hidden="true">${Array.from({ length: Math.min(12, u.models) }, () => "<span>✠</span>").join("")}${u.models > 12 ? `<small>+${u.models - 12}</small>` : ""}</div><label>Defensive profile<select data-profile aria-label="Unit ${i ? "B" : "A"} defensive profile">${(
    source?.profiles ?? []
  )
-   .filter((p) => p.type === "Unit")
-   .map((p) => opt(p.id, p.name, pick.profile))
+   .filter((p) => p.type === "Unit" && (!u.guardCodex || p.id === pick.profile))
+   .map((p) =>
+     opt(
+       p.id,
+       u.guardCodex ? "Guard Sodality · September preview" : p.name,
+       pick.profile,
+     ),
+   )
    .join("")}</select></label>
  <div class="characteristics">${field(i, "models", "Models", u.models, 1, 100)}${field(i, "toughness", "T", u.toughness, 1, 100)}${select(i, "save", "Sv", saves, u.save)}${field(i, "wounds", "W per model", u.wounds, 1, 100)}</div><div class="defence-fields">${select(i, "invuln", "Invulnerable Save", saves, u.invuln)}${select(i, "fnp", "Feel No Pain", saves, u.fnp)}${field(i, "frontWounds", "Wounds left on first model", u.frontWounds, 1, u.wounds)}</div><label class="check"><input data-field="cover" type="checkbox" ${u.cover ? "checked" : ""} ${scenario.phase === "fight" ? "disabled" : ""}> Benefit of Cover (shooting only)</label>
  <div class="weapon-header"><span class="eyebrow">${scenario.phase === "fight" ? "MELEE" : "RANGED"} WEAPON PROFILE</span><small>One profile per sequence</small></div><label>Weapon<select data-weapon aria-label="Unit ${i ? "B" : "A"} weapon">${weapons(
    source,
  )
+   .filter((p) => !u.guardCodex || p.name === "Guardian Spear")
    .map((p) => opt(p.id, p.name, pick.weapon))
    .join(
      "",
    )}${opt("", "Custom profile", pick.weapon)}</select></label><div class="weapon-fields">${field(i, "bearers", "Models using weapon", u.bearers, 0, u.models)}${field(i, "weapon.attacks", "A per model", w.attacks, null, null, "text")}${field(i, "weapon.hit", scenario.phase === "fight" ? "WS" : "BS", w.hit, 2, 6)}${field(i, "weapon.strength", "S", w.strength, 1, 100)}${field(i, "weapon.ap", "AP", w.ap, -10, 0)}${field(i, "weapon.damage", "D", w.damage, null, null, "text")}</div><p class="fine">A and D accept numbers or dice: D3, D6, 2D6+1. Edit profile values for your experiment.</p>
- <details class="modifiers"><summary>Modifiers and re-rolls</summary><div class="defence-fields">${select(i, "weapon.hitMod", "Hit modifier", mods, w.hitMod)}${select(i, "weapon.woundMod", "Wound modifier", mods, w.woundMod)}${select(i, "weapon.hitReroll", "Hit re-rolls", rerolls, w.hitReroll)}${select(i, "weapon.woundReroll", "Wound re-rolls", rerolls, w.woundReroll)}</div><p class="fine">Manual effects only. These controls do not activate a named ability or Stratagem.</p></details><div class="sequence-preview" id="preview-${i}"></div></div>`;
+ <details class="modifiers"><summary>Modifiers and re-rolls</summary><div class="defence-fields">${select(i, "weapon.hitMod", "Hit modifier", mods, w.hitMod)}${select(i, "weapon.woundMod", "Wound modifier", mods, w.woundMod)}${select(i, "weapon.hitReroll", "Hit re-rolls", rerolls, w.hitReroll)}${select(i, "weapon.woundReroll", "Wound re-rolls", rerolls, w.woundReroll)}</div><p class="fine">Manual effects only. These controls do not activate a named ability or Stratagem.</p></details>${effectsPanel(i, u, pick)}<div class="sequence-preview" id="preview-${i}"></div></div>`;
   bindUnit(i);
 }
 function preview() {
   for (let i = 0; i < 2; i++) {
     const u = scenario.units[i],
       v = scenario.units[1 - i],
-      st = saveTarget(v, u.weapon, scenario.phase);
+      effect = effectiveAttack(u, v, scenario.phase),
+      w = effect.weapon,
+      st = saveTarget(v, w, scenario.phase);
     $("preview-" + i).textContent =
-      `${u.bearers} × ${u.weapon.attacks} attacks → ${u.weapon.hit}+ to hit${u.weapon.hitMod ? " (" + (u.weapon.hitMod > 0 ? "+" : "") + u.weapon.hitMod + ")" : ""} → ${woundTarget(u.weapon.strength, v.toughness)}+ to wound${u.weapon.woundMod ? " (" + (u.weapon.woundMod > 0 ? "+" : "") + u.weapon.woundMod + ")" : ""} → ${st > 6 ? "no successful save" : st + "+ save"} → ${u.weapon.damage} damage`;
+      `${u.bearers} × (${w.attacks}${effect.attacksBonus ? " + " + effect.attacksBonus : ""}) attacks → ${w.hit}+ to hit${w.hitMod ? " (" + (w.hitMod > 0 ? "+" : "") + w.hitMod + ")" : ""} → ${woundTarget(w.strength, v.toughness)}+ to wound${w.woundMod ? " (" + (w.woundMod > 0 ? "+" : "") + w.woundMod + ")" : ""} → ${st > 6 ? "no successful save" : st + "+ save"} → ${w.damage}${effect.damageBonus ? " + " + effect.damageBonus : ""} damage`;
+    const e = u.effects,
+      conditions = [];
+    if (
+      e.captainGeneral &&
+      (!e.custodes || ["monster", "vehicle"].includes(e.targetType))
+    )
+      conditions.push(
+        "Captain-General inactive: requires a Custodes unit excluding Monsters and Vehicles.",
+      );
+    if (
+      e.impenetrableDefence &&
+      (!u.guardCodex || ["monster", "vehicle"].includes(v.effects.targetType))
+    )
+      conditions.push(
+        "Impenetrable Defence inactive: requires current Guard attacking a non-Monster/Vehicle target.",
+      );
+    if (e.katah !== "none") {
+      if (!e.katahEligible || !e.readied)
+        conditions.push("Ka’tah inactive: confirm ability and readiness.");
+      else if ((scenario.phase === "shoot") !== (e.katah === "salvus"))
+        conditions.push("Ka’tah inactive in this phase.");
+      else if (
+        e.katah === "rendax" &&
+        !["monster", "vehicle"].includes(v.effects.targetType)
+      )
+        conditions.push("Rendax inactive: target is not a Monster or Vehicle.");
+      else if (
+        e.katah === "dacatarai" &&
+        ["monster", "vehicle"].includes(v.effects.targetType)
+      )
+        conditions.push("Dacatarai inactive against Monster/Vehicle targets.");
+      else if (e.katah === "kaptaris")
+        conditions.push(
+          "Kaptaris applies to enemy melee attacks targeting this unit.",
+        );
+    }
+    $("effects-summary-" + i).innerHTML =
+      `${effect.applied.map((label) => `<span>${esc(label)}</span>`).join("")}${conditions.map((label) => `<p>${esc(label)}</p>`).join("")}${e.note ? `<p>Manual note: ${esc(e.note)}</p>` : ""}`;
   }
   $("title").innerHTML =
     `${esc(scenario.units[0].models + " " + scenario.units[0].name)} <span>VS</span> ${esc(scenario.units[1].models + " " + scenario.units[1].name)}`;
@@ -258,6 +407,14 @@ function bindUnit(i) {
       frontWounds: num(stats.W) ?? 1,
       invuln: num(stats.InSv) ?? 7,
     });
+    if (scenario.units[i].guardCodex)
+      Object.assign(scenario.units[i], {
+        toughness: 7,
+        save: 2,
+        wounds: 5,
+        frontWounds: 5,
+        invuln: 4,
+      });
     renderUnit(i);
     changed();
   };
@@ -279,7 +436,7 @@ function bindUnit(i) {
           ? el.checked
           : el.type === "number"
             ? Number(el.value)
-            : ["save", "invuln", "fnp", "hitMod", "woundMod"].includes(k)
+            : typeof obj[k] === "number"
               ? Number(el.value)
               : el.value;
       if (key === "models") {
@@ -293,20 +450,35 @@ function bindUnit(i) {
         $("unit-" + i).querySelector('[data-field="bearers"]').value =
           u.bearers;
         $("unit-" + i).querySelector('[data-field="bearers"]').max = u.models;
-        root.querySelector('.model-tokens').innerHTML = Array.from(
-          {length: Math.max(0, Math.min(12, u.models))}, () => '<span>✠</span>',
-        ).join('') + (u.models > 12 ? `<small>+${u.models-12}</small>` : '');
+        root.querySelector(".model-tokens").innerHTML =
+          Array.from(
+            { length: Math.max(0, Math.min(12, u.models)) },
+            () => "<span>✠</span>",
+          ).join("") +
+          (u.models > 12 ? `<small>+${u.models - 12}</small>` : "");
       }
       if (key === "wounds") {
         $("unit-" + i).querySelector('[data-field="frontWounds"]').value =
           u.frontWounds;
-        $("unit-" + i).querySelector('[data-field="frontWounds"]').max = u.wounds;
+        $("unit-" + i).querySelector('[data-field="frontWounds"]').max =
+          u.wounds;
       }
     };
     if (el.tagName === "SELECT") el.onchange = update;
     else el.oninput = update;
   });
   root.querySelector("[data-saved]").onclick = () => chooseSaved(i);
+  const guardUpdate = root.querySelector("[data-guard-update]");
+  if (guardUpdate)
+    guardUpdate.onclick = () => {
+      upgradeGuard(i);
+      applyWeapon(i);
+      renderUnit(i);
+      changed();
+      notice(
+        "September Guard defensive and Guardian Spear characteristics applied. Other Custodes profiles remain community data.",
+      );
+    };
 }
 async function chooseSaved(i) {
   try {
@@ -420,6 +592,20 @@ async function restore(value) {
   }
   scenario = next;
   picks = nextPicks;
+  scenario.units.forEach((u, i) => {
+    const source = picks[i].data.units.find((v) => v.id === picks[i].unit);
+    u.effects = {
+      ...EFFECT_DEFAULTS,
+      targetType: source.categories.includes("Vehicle")
+        ? "vehicle"
+        : source.categories.includes("Monster")
+          ? "monster"
+          : source.categories.includes("Infantry")
+            ? "infantry"
+            : "other",
+      ...u.effects,
+    };
+  });
   render();
   changed();
   notice("Scenario loaded.");
@@ -451,7 +637,7 @@ async function example() {
   render();
   changed();
   notice(
-    "5 Custodian Guard with Guardian Spears vs 1 Cerastus Knight Lancer, strike profile. Abilities and keywords are excluded.",
+    "5 Custodian Guard Sodality with Guardian Spears vs 1 Cerastus Knight Lancer, strike profile. Experimental model count; no ability selected yet.",
   );
 }
 function diceRow(label, rolls, detail) {
@@ -475,8 +661,18 @@ function sequence(e, s) {
       diceRow("Number of attacks", t.attackDice, e.attacks + " attacks"),
     );
   rows.push(
-    diceRow("Hit rolls", t.hit, e.hits + " hits"),
-    diceRow("Wound rolls", t.wound, e.wounds + " wounds"),
+    diceRow(
+      "Hit rolls",
+      t.hit,
+      e.hits + " hits" + (e.extraHits ? " · " + e.extraHits + " extra" : ""),
+    ),
+    diceRow(
+      "Wound rolls",
+      t.wound,
+      e.wounds +
+        " wounds" +
+        (e.autoWounds ? " · " + e.autoWounds + " automatic" : ""),
+    ),
     diceRow("Saving throws", t.save, e.unsaved + " failed saves"),
     diceRow("Damage", t.damage, e.damageRolled + " rolled"),
   );
@@ -488,7 +684,7 @@ function sequence(e, s) {
         t.fnp.filter((d) => d.pass).length + " ignored",
       ),
     );
-  return `<article class="attack-sequence"><div class="roll-heading"><strong>${esc(u.name)} → ${esc(v.name)}</strong><small>${esc(u.weapon.name)} · ${e.attacks} attacks · ${e.woundTarget}+ to wound · ${e.saveTarget > 6 ? "no successful save" : e.saveTarget + "+ save"}</small></div><div class="dice-stages">${rows.join("")}</div><div class="roll-result">${e.damageLost} wounds lost · ${e.killed} models destroyed · ${e.modelsLeft} models / ${e.remaining} wounds left</div></article>`;
+  return `<article class="attack-sequence"><div class="roll-heading"><strong>${esc(u.name)} → ${esc(v.name)}</strong><small>${esc(u.weapon.name)} · ${e.attacks} attacks · ${e.woundTarget}+ to wound · ${e.saveTarget > 6 ? "no successful save" : e.saveTarget + "+ save"}</small>${e.appliedEffects.length ? `<p class="applied-roll-effects">${e.appliedEffects.map(esc).join(" · ")}</p>` : ""}</div><div class="dice-stages">${rows.join("")}</div><div class="roll-result">${e.damageLost} wounds lost · ${e.killed} models destroyed · ${e.modelsLeft} models / ${e.remaining} wounds left</div></article>`;
 }
 $("roll").onclick = async () => {
   try {

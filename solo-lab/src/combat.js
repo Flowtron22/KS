@@ -1,4 +1,5 @@
-// Homogeneous units, one weapon profile per attack sequence. No automatic abilities.
+import { EFFECT_DEFAULTS, KATAHS, effectiveAttack } from "./combat-effects.js";
+// Homogeneous units, one weapon profile per attack sequence; explicit effects only.
 export function expression(value) {
   const s = String(value).replace(/\s/g, "").toUpperCase();
   if (/^\d+$/.test(s) && +s <= 100) return { flat: +s, count: 0, sides: 0 };
@@ -61,12 +62,47 @@ export function validateScenario(s) {
     ])
       integer(u[k], min, max, k);
     if (typeof u.cover !== "boolean") throw Error("Invalid cover setting.");
+    if (u.guardCodex !== undefined && typeof u.guardCodex !== "boolean")
+      throw Error("Invalid Guard profile setting.");
+    const e = { ...EFFECT_DEFAULTS, ...u.effects };
+    if (
+      !KATAHS.some(([id]) => id === e.katah) ||
+      !["other", "infantry", "monster", "vehicle"].includes(e.targetType)
+    )
+      throw Error("Invalid ability or target type.");
+    for (const k of [
+      "katahEligible",
+      "custodes",
+      "captainGeneral",
+      "impenetrableDefence",
+      "readied",
+      "lethalHits",
+      "ignoreHitMods",
+      "ignoreWoundMods",
+    ])
+      if (typeof e[k] !== "boolean") throw Error("Invalid effect setting.");
+    for (const [k, min, max] of [
+      ["sustainedHits", 0, 3],
+      ["criticalHit", 4, 6],
+      ["skillBonus", -2, 2],
+      ["strengthBonus", -5, 5],
+      ["attacksBonus", 0, 5],
+      ["apBonus", 0, 3],
+      ["damageBonus", 0, 5],
+      ["incomingHitMod", -1, 1],
+      ["incomingWoundMod", -1, 1],
+      ["apReduction", 0, 3],
+      ["damageReduction", 0, 5],
+    ])
+      integer(e[k], min, max, k);
+    if (typeof e.note !== "string" || e.note.length > 150)
+      throw Error("Effect note is too long.");
     const w = u.weapon;
     if (!w || typeof w.name !== "string" || w.name.length > 200)
       throw Error("Choose a weapon profile.");
     const a = expression(w.attacks);
     expression(w.damage);
-    if ((a.flat + a.count * a.sides) * u.bearers > 2000)
+    if ((a.flat + a.count * a.sides + e.attacksBonus) * u.bearers > 2000)
       throw Error(
         "This lab supports up to 2,000 attacks per unit per sequence.",
       );
@@ -92,17 +128,27 @@ export function saveTarget(target, weapon, phase) {
       : 0;
   return Math.max(2, Math.min(target.save - weapon.ap - cover, target.invuln));
 }
-function check(rng, target, modifier, reroll, critical, trace) {
+function check(
+  rng,
+  target,
+  modifier,
+  reroll,
+  critical,
+  trace,
+  threshold = 6,
+  onRoll = () => {},
+) {
   let v = die(rng),
     original = null;
   const passes = (n) =>
-    n !== 1 && ((critical && n === 6) || n + modifier >= target);
+    n !== 1 && ((critical && n >= threshold) || n + modifier >= target);
   if ((reroll === "ones" && v === 1) || (reroll === "failed" && !passes(v))) {
     original = v;
     v = die(rng);
   }
   const pass = passes(v);
   trace?.push({ value: v, pass, original });
+  onRoll(v, pass);
   return pass;
 }
 export function resolveAttack(
@@ -114,7 +160,8 @@ export function resolveAttack(
   trace = false,
   attackerHp = null,
 ) {
-  const w = attacker.weapon,
+  const effects = effectiveAttack(attacker, defender, phase);
+  const w = effects.weapon,
     hit = [],
     wound = [],
     save = [],
@@ -132,15 +179,38 @@ export function resolveAttack(
     unsaved = 0,
     damageRolled = 0,
     damageLost = 0;
+  let autoWounds = 0,
+    extraHits = 0;
   for (let i = 0; i < bearers; i++)
-    attacks += amount(a, rng, trace ? attackDice : null);
+    attacks += amount(a, rng, trace ? attackDice : null) + effects.attacksBonus;
   const wt = woundTarget(w.strength, defender.toughness),
     st = saveTarget(defender, w, phase);
   for (let i = 0; i < attacks; i++) {
-    if (check(rng, w.hit, w.hitMod, w.hitReroll, true, trace ? hit : null))
+    let critical = false;
+    if (
+      check(
+        rng,
+        w.hit,
+        w.hitMod,
+        w.hitReroll,
+        true,
+        trace ? hit : null,
+        effects.criticalHit,
+        (value, pass) => {
+          critical = pass && value >= effects.criticalHit;
+        },
+      )
+    ) {
       hits++;
+      if (critical) {
+        extraHits += effects.sustainedHits;
+        if (effects.lethalHits) autoWounds++;
+      }
+    }
   }
-  for (let i = 0; i < hits; i++)
+  hits += extraHits;
+  wounds = autoWounds;
+  for (let i = 0; i < hits - autoWounds; i++)
     if (check(rng, wt, w.woundMod, w.woundReroll, true, trace ? wound : null))
       wounds++;
   const before = hp.length;
@@ -149,9 +219,10 @@ export function resolveAttack(
     if (!hp.length) break;
     if (check(rng, st, 0, "none", false, trace ? save : null)) continue;
     unsaved++;
-    let n = amount(d, rng, null);
+    let n = amount(d, rng, null) + effects.damageBonus;
     damageRolled += n;
     if (trace) damage.push({ value: n, pass: true, expression: w.damage });
+    if (n > 0) n = Math.max(1, n - effects.damageReduction);
     if (defender.fnp <= 6) {
       let lost = 0;
       for (let j = 0; j < n; j++)
@@ -167,6 +238,9 @@ export function resolveAttack(
   return {
     attacks,
     hits,
+    extraHits,
+    autoWounds,
+    appliedEffects: effects.applied,
     wounds,
     unsaved,
     damageRolled,
