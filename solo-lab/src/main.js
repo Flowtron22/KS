@@ -652,7 +652,7 @@ async function switchView(next) {
   notice("");
   $("description").textContent =
     next === "army"
-      ? "Build and save your armies. Choose saved units in the Combat calculator."
+      ? "Build, save and share your army lists."
       : "Pick two units. Watch the dice. Test the odds.";
   if (next === "army") {
     $("title").textContent = "ARMY LISTS";
