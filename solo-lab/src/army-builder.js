@@ -175,7 +175,7 @@ export async function mountArmyBuilder(root, onDeploy) {
       a.units
         .map((r) => {
           const u = data.units.find((u) => u.id === r.unitId);
-          return `<div class="army-selected-unit ${selected === r.id ? "chosen" : ""}"><button data-edit-unit="${r.id}"><strong>${esc(u.name)}</strong><small>${r.models} models${r.warlord ? " · WARLORD" : ""}${r.attachment ? " · ATTACHED" : ""}</small></button><b>${unitPoints(u, r) ?? "?"}<small>PTS</small></b><button class="mini" data-remove-unit="${r.id}" aria-label="Remove ${esc(u.name)}">×</button></div>`;
+          return `<div class="army-selected-unit ${selected === r.id ? "chosen" : ""}"><button data-edit-unit="${r.id}"><strong>${esc(u.name)}</strong><small>${r.models} models${r.warlord ? " · WARLORD" : ""}${r.attachment ? " · ATTACHED" : ""}</small></button><b>${unitPoints(u, r, a) ?? "?"}<small>PTS</small></b><button class="mini" data-remove-unit="${r.id}" aria-label="Remove ${esc(u.name)}">×</button></div>`;
         })
         .join("") ||
       '<div class="empty-army"><span>＋</span><h3>Your army starts here.</h3><p>Add units from the catalogue.<br>Select a unit to configure it.</p></div>'
@@ -457,7 +457,7 @@ export async function mountArmyBuilder(root, onDeploy) {
         .join(" · "),
     )}</p>${stat ? `<div class="stat-grid">${["M", "T", "Sv", "W", "LD", "OC"].map((k) => `<div><small>${k === "LD" ? "Ld" : k}</small><strong>${esc(stat.stats[k] ?? "–")}</strong></div>`).join("")}</div>` : ""}${
       row
-        ? `<div class="config-fields"><label>Models<input id="config-models" type="number" min="${unit.models.min}" max="${unit.models.max}" value="${row.models}"></label><strong>${unitPoints(unit, row) ?? "?"} points</strong></div><p class="fine">Source model range: ${unit.models.min}–${unit.models.max}. Choose equipment for each model below.</p>${unit.categories.includes("Character") ? `<label class="warlord-choice"><input id="config-warlord" type="checkbox" ${row.warlord ? "checked" : ""}> Warlord</label>` : ""}${
+        ? `<div class="config-fields"><label>Models<input id="config-models" type="number" min="${unit.models.min}" max="${unit.models.max}" value="${row.models}"></label><strong>${unitPoints(unit, row, armies[side]) ?? "?"} points</strong></div><p class="fine">Source model range: ${unit.models.min}–${unit.models.max}. Choose equipment for each model below.</p>${unit.categories.includes("Character") ? `<label class="warlord-choice"><input id="config-warlord" type="checkbox" ${row.warlord ? "checked" : ""}> Warlord</label>` : ""}${
             unit.categories.some((c) => ["Leader", "Support"].includes(c))
               ? `<label>Attach ${unit.categories.includes("Support") ? "Support" : "Leader"} to<select id="config-attachment"><option value="">${unit.categories.includes("Support") ? "Choose a Bodyguard unit" : "Unattached"}</option>${options(
                   current()
@@ -490,7 +490,7 @@ export async function mountArmyBuilder(root, onDeploy) {
     }<details><summary>Weapon characteristics</summary><div class="weapon-table-wrap"><table class="builder-weapons"><thead><tr>${["Weapon", "Range", "A", "BS / WS", "S", "AP", "D"].map((s) => `<th>${s}</th>`).join("")}</tr></thead><tbody>${weapons.map((w) => `<tr>${[w.name, w.stats.Range ?? "Melee", w.stats.A, w.stats.BS ?? w.stats.WS, w.stats.S, w.stats.AP, w.stats.D].map((v) => `<td>${esc(v ?? "–")}</td>`).join("")}</tr>`).join("")}</tbody></table></div></details><p class="fine">Characteristics only. Abilities and weapon keywords are not included in the battle engine.</p><button id="done-config" class="button orange">${row ? "Done" : "Back to units"}</button></section></div>`;
     function refreshTotals() {
       target.querySelector(".config-fields strong").textContent =
-        (unitPoints(unit, row) ?? "?") + " points";
+        (unitPoints(unit, row, armies[side]) ?? "?") + " points";
       const panel = root.querySelector(".army-list-panel");
       if (panel) {
         panel.outerHTML = armyList();

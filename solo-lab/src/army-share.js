@@ -37,7 +37,7 @@ export function armyShareData(army, data) {
         return {
           name: unit.name,
           models: row.models,
-          points: unitPoints(unit, row),
+          points: unitPoints(unit, row, army),
           warlord: row.warlord,
           composition: [...composition].map(
             ([name, count]) => count + " × " + name,

@@ -1,4 +1,5 @@
 import { compileEquipment } from "./wargear-compiler.mjs";
+import { duplicatePriceRule } from "./duplicate-price.mjs";
 import { readFile, readdir, mkdir, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 const rawDir = new URL("../../research/raw/", import.meta.url),
@@ -311,8 +312,10 @@ function unit(u, map, origin, c) {
     )
       groupedPrice = true;
   });
+  const duplicatePriceRules = modifiers
+    .map(m => duplicatePriceRule(m, u.targetId ?? u.id)).filter(Boolean);
   const conditionalPrice =
-    modifiers.length !== priceRules.length || groupedPrice || !cost;
+    modifiers.length !== priceRules.length + duplicatePriceRules.length || groupedPrice || !cost;
   const sizes = [
     ...new Set([
       range.min,
@@ -369,6 +372,7 @@ function unit(u, map, origin, c) {
     sizes,
     points: cost?.value ?? null,
     priceRules,
+    duplicatePriceRules,
     conditionalPrice,
     profiles: [...profiles.values()],
     equipment: compileEquipment(u, {

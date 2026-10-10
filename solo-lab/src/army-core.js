@@ -47,13 +47,20 @@ function compare(q, n) {
     }[q.type] ?? false
   );
 }
-export function unitPoints(unit, row) {
+export function unitPoints(unit, row, army) {
   let value = unit.points;
   for (const r of unit.priceRules)
     if (r.conditions.every((q) => compare(q, row.models))) {
       if (r.type === "set") value = r.value;
       else if (r.type === "increment" && value !== null) value += r.value;
     }
+  if (army && value !== null) {
+    const index = army.units.indexOf(row);
+    const previous = army.units.slice(0, Math.max(0, index))
+      .filter(r => r.unitId === row.unitId).length;
+    for (const rule of unit.duplicatePriceRules ?? [])
+      value += Math.floor(previous / rule.every) * rule.value;
+  }
   if (row.pointsOverride !== null) value = row.pointsOverride;
   if (value === null) return null;
   if (row.enhancement)
@@ -86,7 +93,7 @@ export function armySummary(army, data) {
     issues.push(
       ...loadoutIssues(unit, row).map((issue) => unit.name + ": " + issue),
     );
-    const pts = unitPoints(unit, row);
+    const pts = unitPoints(unit, row, army);
     if (pts === null) {
       unknown++;
       issues.push(`${unit.name}: unit points need review.`);
