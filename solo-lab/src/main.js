@@ -1,21 +1,19 @@
 import "./battle.css";
 import "./combat.css";
 import "./dashboard.css";
+import { combatShell } from "./combat-shell.js";
+import { bindUnitControls } from "./combat-unit-controller.js";
+import { renderUnitCard, weaponProfiles } from "./combat-unit-view.js";
+import { capturePanels, restorePanels } from "./ui-panels.js";
+import { escapeHtml as esc, option as opt } from "./ui-html.js";
+import { renderArena, updateProfileBadges } from "./combat-layout.js";
 import {
-  mountCombatLayout,
-  compactUnit,
-  renderArena,
-  updateProfileBadges,
-  renderSingleRoll,
-  dieFace,
-} from "./combat-layout.js";
-import { rulePicker, prepareRules } from "./rule-picker.js";
-import {
-  EFFECT_DEFAULTS,
-  KATAHS,
-  KATAH_SOURCE,
-  effectiveAttack,
-} from "./combat-effects.js";
+  sequenceReport,
+  simulationReport,
+  singleRollReport,
+} from "./combat-reports.js";
+import { prepareRules } from "./rule-picker.js";
+import { EFFECT_DEFAULTS, effectiveAttack } from "./combat-effects.js";
 import {
   validateScenario,
   seeded,
@@ -24,22 +22,8 @@ import {
   saveTarget,
 } from "./combat.js";
 
-const $ = (id) => document.getElementById(id),
-  esc = (s) =>
-    String(s ?? "").replace(
-      /[&<>"']/g,
-      (c) =>
-        ({
-          "&": "&amp;",
-          "<": "&lt;",
-          ">": "&gt;",
-          '"': "&quot;",
-          "'": "&#39;",
-        })[c],
-    );
+const $ = (id) => document.getElementById(id);
 const num = (s) => (/^\d+\+?$/.test(String(s ?? "")) ? parseInt(s) : null);
-const opt = (v, label, selected) =>
-  `<option value="${esc(v)}" ${String(v) === String(selected) ? "selected" : ""}>${esc(label)}</option>`;
 const baseWeapon = {
   name: "Custom weapon",
   attacks: "1",
@@ -67,22 +51,8 @@ let index,
   results = null,
   lastRoll = null,
   armyMounted = false;
-const weapons = (u) =>
-  (u?.profiles ?? []).filter(
-    (p) =>
-      p.type ===
-      (scenario.phase === "fight" ? "Melee Weapons" : "Ranged Weapons"),
-  );
-$("app").innerHTML =
-  `<header><a class="brand" href="#"><span class="brand-seal">✠</span><span>40K<span class="brand-sub">COMBAT LAB</span></span></a><nav aria-label="Workspace"><button id="combat-tab" class="nav active">Combat calculator</button><button id="army-tab" class="nav">Army Lists</button></nav><span class="version"><i></i> EXPERIMENT</span></header>
-<main><div class="page-heading"><div><div class="eyebrow">ONE PHASE / TWO UNITS</div><h1 id="title">WHAT DOES YOUR UNIT DO?</h1><p id="description">Pick a matchup. Roll the attacks. Find out how often it works.</p></div><div class="heading-actions"><button id="save-scenario" class="button">Save scenario</button><button id="load-scenario" class="button">Load saved</button><button id="example" class="button dark">Custodes vs Lancer</button></div></div><div id="notice" role="status" aria-live="polite"></div>
-<section id="combat-view"><div class="scenario-bar panel"><div class="phase-switch"><button id="fight" class="active">Fight phase</button><button id="shoot">Shooting phase</button></div><label>Attacks first<select id="first"><option value="0">Unit A</option><option value="1">Unit B</option></select></label><label class="check"><input id="fight-back" type="checkbox" checked> Survivors fight back</label><button id="swap" class="button">Swap units ⇄</button></div>
-<div class="matchup"><section id="unit-0" class="panel combat-unit"></section><div class="versus">VS</div><section id="unit-1" class="panel combat-unit"></section></div>
-<section class="rules-note"><strong>What this calculates</strong><p>One weapon profile per unit, shared by the chosen weapon bearers. All models in a unit use the same Toughness, Save and Wounds. Normal damage does not spill between models. Fight back uses surviving models, with selected weapon bearers surviving first. Each run starts fresh.</p><p><b>Only selected Ka’tahs, confirmed ability effects and configured effects are applied. Other abilities, weapon keywords, Detachments, Enhancements and Stratagems are not applied automatically.</b> Set supported effects manually. Range, charges, engagement and fight order are assumed.</p></section>
-<div class="experiment-controls panel"><label>Random seed<input id="seed" type="number" min="0" max="4294967295" value="40000"></label><button id="new-seed" class="mini">New seed ↻</button><label>Dice animation<select id="pace"><option value="normal">Normal</option><option value="fast">Fast</option><option value="instant">Instant</option></select></label><button id="roll" class="button orange">⚄ Roll attacks</button><label>Number of simulations<select id="trials"><option value="1000">1,000</option><option value="10000" selected>10,000</option><option value="50000">50,000</option></select></label><button id="simulate" class="button dark">Run simulations →</button></div>
-<div class="experiment-output"><section class="panel"><div class="panel-top"><span class="eyebrow">ATTACK SEQUENCE</span><button id="export-roll" class="mini" disabled>Export rolls JSON</button></div><div id="dice-output" aria-live="polite"></div></section><section class="panel"><div class="panel-top"><span class="eyebrow">SIMULATION RESULTS</span><button id="export-results" class="mini" disabled>Export results JSON</button></div><div id="results" aria-live="polite"></div></section></div><div class="scenario-files"><button id="export-scenario" class="mini">Export scenario JSON</button><label class="import-label">Import scenario JSON<input id="import-scenario" type="file" accept="application/json" hidden></label></div></section>
-<section id="army-view" hidden><div id="army-builder-root"></div></section><footer><span>40K COMBAT LAB · PROTOTYPE</span><span>Community stat snapshot · 9 Oct 2026 · points not officially verified</span><a href="https://github.com/BSData/wh40k-11e/tree/cc58ee3b2c23f90af9d00e7bf234cd703b762299" target="_blank" rel="noreferrer">Data source ↗</a></footer></main>`;
-mountCombatLayout();
+const weapons = (u) => weaponProfiles(u, scenario.phase);
+$("app").innerHTML = combatShell();
 function notice(s) {
   $("notice").textContent = s;
 }
@@ -198,127 +168,15 @@ function upgradeGuard(i) {
   picks[i].weapon =
     weapons(source).find((p) => p.name === "Guardian Spear")?.id ?? "";
 }
-function field(i, k, label, value, min, max, type = "number") {
-  return `<label>${label}<input data-field="${k}" aria-label="Unit ${i ? "B" : "A"} ${label}" type="${type}" ${type === "number" ? `min="${min}" max="${max}" step="1"` : ""} value="${esc(value)}"></label>`;
-}
-function select(i, k, label, values, value) {
-  return `<label>${label}<select data-field="${k}" aria-label="Unit ${i ? "B" : "A"} ${label}">${values.map(([v, l]) => opt(v, l, value)).join("")}</select></label>`;
-}
-function effectsPanel(i, u, pick) {
-  const e = u.effects,
-    check = (key, label) =>
-      `<label class="check"><input data-field="effects.${key}" aria-label="Unit ${i ? "B" : "A"} ${label}" type="checkbox" ${e[key] ? "checked" : ""}>${label}</label>`;
-  const custodes = pick.data?.name === "Adeptus Custodes";
-  return `<section class="effects-panel"><div class="weapon-header"><span class="eyebrow">ABILITIES & AURAS</span><small>Choose effects for this scenario</small></div>
- ${custodes ? `<div class="katah-panel"><label>Martial Ka’tah<select data-field="effects.katah" aria-label="Unit ${i ? "B" : "A"} Martial Ka’tah">${KATAHS.map(([id, label]) => opt(id, label, e.katah)).join("")}<option disabled>Conservai — actions (outside this calculator)</option><option disabled>Calistus — movement (outside this calculator)</option></select></label><div class="katah-checks">${check("katahEligible", "Unit has Martial Ka’tah")}${check("readied", "Unit is readied")}</div><p class="fine">September 2026 Codex. Only one Ka’tah is selected; phase and target conditions are checked. Eligibility and readiness are your scenario assumptions. <a href="${KATAH_SOURCE}" target="_blank" rel="noreferrer">Rule source ↗</a></p></div><div class="katah-checks">${check("custodes", "Unit has ADEPTUS CUSTODES keyword")}${check("captainGeneral", "Trajann’s Captain-General aura (within 6 inches)")}${u.guardCodex ? check("impenetrableDefence", "Impenetrable Defence: either unit is in range of an objective") : ""}</div><p class="fine">Captain-General grants hit and wound re-rolls of 1 to eligible Custodes, excluding Monsters and Vehicles. Confirm aura range yourself. Impenetrable Defence grants Sustained Hits 1 against other targets; repeated Sustained Hits effects use the highest value.</p><p class="data-warning">${u.guardCodex ? "Guard uses the September preview: T7, W5, Guardian Spear A6 / S8 in melee. Squads contain 3 models; larger counts here are experimental. Assault movement is outside this calculator; enable weapon keywords for Rapid Fire." : "This Custodes profile uses the older community snapshot. Verify its characteristics."} Other Custodes and Army Lists still use the older snapshot. <a href="https://www.warhammer-community.com/en-gb/articles/2xxurx9j/first-look-adeptus-custodes-datasheets/" target="_blank" rel="noreferrer">Datasheet and aura source ↗</a>${!u.guardCodex && pick.data.units.find((entry) => entry.id === pick.unit)?.name === "Custodian Guard" ? '<button data-guard-update class="mini">Use September Guard profile →</button>' : ""}</p>` : ""}
- ${rulePicker(i, u, pick, esc)}<div class="defence-fields">${select(
-   i,
-   "effects.targetType",
-   "Unit target type",
-   [
-     ["infantry", "Infantry"],
-     ["monster", "Monster"],
-     ["vehicle", "Vehicle"],
-     ["other", "Other"],
-   ],
-   e.targetType,
- )}${select(
-   i,
-   "effects.sustainedHits",
-   "Sustained Hits",
-   [
-     [0, "None"],
-     [1, "1"],
-     [2, "2"],
-     [3, "3"],
-   ],
-   e.sustainedHits,
- )}${select(
-   i,
-   "effects.criticalHit",
-   "Critical Hit",
-   [
-     [6, "6+"],
-     [5, "5+"],
-     [4, "4+"],
-   ],
-   e.criticalHit,
- )}</div><div class="keyword-checks">${check("lethalHits", "Lethal Hits")}</div>
- <details class="modifiers"><summary>Buffs, debuffs and defensive effects</summary><div class="defence-fields">${select(
-   i,
-   "effects.skillBonus",
-   "BS/WS improvement",
-   [
-     [-2, "Worsen by 2"],
-     [-1, "Worsen by 1"],
-     [0, "None"],
-     [1, "Improve by 1"],
-     [2, "Improve by 2"],
-   ],
-   e.skillBonus,
- )}${field(i, "effects.strengthBonus", "Strength bonus", e.strengthBonus, -5, 5)}${field(i, "effects.attacksBonus", "Extra A per model", e.attacksBonus, 0, 5)}${field(i, "effects.apBonus", "AP improvement", e.apBonus, 0, 3)}${field(i, "effects.damageBonus", "Extra damage", e.damageBonus, 0, 5)}${select(i, "effects.incomingHitMod", "Enemy hit rolls", mods, e.incomingHitMod)}${select(i, "effects.incomingWoundMod", "Enemy wound rolls", mods, e.incomingWoundMod)}${field(i, "effects.apReduction", "Worsen incoming AP", e.apReduction, 0, 3)}${field(i, "effects.damageReduction", "Reduce incoming damage", e.damageReduction, 0, 5)}</div>${check("ignoreHitMods", "Ignore hit roll modifiers")}${check("ignoreWoundMods", "Ignore wound roll modifiers")}${field(i, "effects.note", "Ability or aura note", e.note, null, null, "text")}<p class="fine">Manual effects apply in the selected phase. Your note labels them; it does not activate a rule. Check aura range and eligibility yourself. Damage reduction has a minimum of 1; hit and wound modifiers are capped at ±1.</p></details><div id="effects-summary-${i}" class="effects-summary" aria-live="polite"></div></section>`;
-}
-const saves = [
-    [2, "2+"],
-    [3, "3+"],
-    [4, "4+"],
-    [5, "5+"],
-    [6, "6+"],
-    [7, "None"],
-  ],
-  mods = [
-    [-1, "−1"],
-    [0, "None"],
-    [1, "+1"],
-  ],
-  rerolls = [
-    ["none", "None"],
-    ["ones", "Re-roll 1s"],
-    ["failed", "Re-roll failed"],
-  ];
 function renderUnit(i) {
-  const open = Array.from($("unit-" + i).querySelectorAll("details[open]"))
-    .map((el) => "details." + el.className.split(" ")[0])
-    .filter((s) => s !== "details.");
-  const pick = picks[i],
-    u = scenario.units[i],
-    source = pick.data?.units.find((u) => u.id === pick.unit),
-    w = u.weapon,
-    query = pick.search ?? "";
-  const filtered = (pick.data?.units ?? []).filter(
-    (u) =>
-      (!u.legend &&
-        !u.narrative &&
-        !u.allied &&
-        u.profiles.some((p) => p.type === "Unit") &&
-        u.name.toLowerCase().includes(query.toLowerCase())) ||
-      u.id === pick.unit,
-  );
-  $("unit-" + i).innerHTML =
-    `<div class="panel-top"><span class="eyebrow">UNIT ${i ? "B" : "A"} / ${i === scenario.first ? "ATTACKS FIRST" : "TARGET"}</span><span class="small-tag">${esc(pick.data?.name ?? "CUSTOM")}</span></div><div class="unit-body"><div class="unit-picker"><label>Faction<select data-faction aria-label="Unit ${i ? "B" : "A"} faction">${index.factions.map((f) => opt(f.id, f.name, pick.faction)).join("")}</select></label><label>Search units<input data-search aria-label="Unit ${i ? "B" : "A"} search units" type="search" placeholder="Search catalogue…" value="${esc(query)}"></label><label>Unit<select data-unit aria-label="Unit ${i ? "B" : "A"} unit">${filtered.map((u) => opt(u.id, u.name, pick.unit)).join("")}</select></label><button data-saved class="mini">Choose from saved Army ${i ? "B" : "A"} →</button><div id="saved-${i}"></div></div>
- <h2>${esc(u.name)}</h2><div class="model-tokens" aria-hidden="true">${Array.from({ length: Math.min(12, u.models) }, () => "<span>✠</span>").join("")}${u.models > 12 ? `<small>+${u.models - 12}</small>` : ""}</div><label>Defensive profile<select data-profile aria-label="Unit ${i ? "B" : "A"} defensive profile">${(
-   source?.profiles ?? []
- )
-   .filter((p) => p.type === "Unit" && (!u.guardCodex || p.id === pick.profile))
-   .map((p) =>
-     opt(
-       p.id,
-       u.guardCodex ? "Guard Sodality · September preview" : p.name,
-       pick.profile,
-     ),
-   )
-   .join("")}</select></label>
- <div class="characteristics">${field(i, "models", "Models", u.models, 1, 100)}${field(i, "toughness", "T", u.toughness, 1, 100)}${select(i, "save", "Sv", saves, u.save)}${field(i, "wounds", "W per model", u.wounds, 1, 100)}</div><div class="defence-fields">${select(i, "invuln", "Invulnerable Save", saves, u.invuln)}${select(i, "fnp", "Feel No Pain", saves, u.fnp)}${field(i, "frontWounds", "Wounds left on first model", u.frontWounds, 1, u.wounds)}</div><label class="check"><input data-field="cover" type="checkbox" ${u.cover ? "checked" : ""} ${scenario.phase === "fight" ? "disabled" : ""}> Benefit of Cover (shooting only)</label>
- <div class="weapon-header"><span class="eyebrow">${scenario.phase === "fight" ? "MELEE" : "RANGED"} WEAPON PROFILE</span><small>One profile per sequence</small></div><label>Weapon<select data-weapon aria-label="Unit ${i ? "B" : "A"} weapon">${weapons(
-   source,
- )
-   .filter((p) => !u.guardCodex || p.name === "Guardian Spear")
-   .map((p) => opt(p.id, p.name, pick.weapon))
-   .join(
-     "",
-   )}${opt("", "Custom profile", pick.weapon)}</select></label><div class="weapon-fields">${field(i, "bearers", "Models using weapon", u.bearers, 0, u.models)}${field(i, "weapon.attacks", "A per model", w.attacks, null, null, "text")}${field(i, "weapon.hit", scenario.phase === "fight" ? "WS" : "BS", w.hit, 2, 6)}${field(i, "weapon.strength", "S", w.strength, 1, 100)}${field(i, "weapon.ap", "AP", w.ap, -10, 0)}${field(i, "weapon.damage", "D", w.damage, null, null, "text")}</div><p class="fine">A and D accept numbers or dice: D3, D6, 2D6+1. Edit profile values for your experiment.</p>
- <details class="modifiers"><summary>Modifiers and re-rolls</summary><div class="defence-fields">${select(i, "weapon.hitMod", "Hit modifier", mods, w.hitMod)}${select(i, "weapon.woundMod", "Wound modifier", mods, w.woundMod)}${select(i, "weapon.hitReroll", "Hit re-rolls", rerolls, w.hitReroll)}${select(i, "weapon.woundReroll", "Wound re-rolls", rerolls, w.woundReroll)}</div><p class="fine">Manual effects only. These controls do not activate a named ability or Stratagem.</p></details>${effectsPanel(i, u, pick)}<div class="sequence-preview" id="preview-${i}"></div></div>`;
-  compactUnit($("unit-" + i), u, open);
+  const root = $("unit-" + i);
+  const open = capturePanels(root);
+  root.innerHTML = renderUnitCard(i, scenario.units[i], picks[i], {
+    factions: index.factions,
+    phase: scenario.phase,
+    first: scenario.first,
+  });
+  restorePanels(root, open);
   bindUnit(i);
 }
 function preview() {
@@ -330,7 +188,7 @@ function preview() {
       effect = effectiveAttack(u, v, scenario.phase),
       w = effect.weapon,
       st = saveTarget(effect.defender, w, scenario.phase);
-    updateProfileBadges($("unit-" + i), u);
+    updateProfileBadges($("unit-" + i), u, scenario.phase);
     $("preview-" + i).textContent =
       `${u.bearers} × (${w.attacks}${effect.attacksBonus ? " + " + effect.attacksBonus : ""}) attacks → ${w.hit}+ to hit${w.hitMod ? " (" + (w.hitMod > 0 ? "+" : "") + w.hitMod + ")" : ""} → ${woundTarget(w.strength, effect.defender.toughness)}+ to wound${w.woundMod ? " (" + (w.woundMod > 0 ? "+" : "") + w.woundMod + ")" : ""} → ${st > 6 ? "no successful save" : st + "+ save"} → ${w.damage}${effect.damageBonus ? " + " + effect.damageBonus : ""} damage`;
     const e = u.effects,
@@ -397,212 +255,25 @@ function changed() {
   preview();
 }
 function bindUnit(i) {
-  const root = $("unit-" + i),
-    pick = picks[i];
-  root.querySelector("[data-faction]").onchange = async (e) => {
-    setBusy(true);
-    try {
-      pick.data = await catalogue(e.target.value);
-      pick.faction = pick.data.id;
-      pick.search = "";
-      const u = pick.data.units.find(
-        (u) =>
-          !u.legend &&
-          !u.narrative &&
-          !u.allied &&
-          u.profiles.some((p) => p.type === "Unit"),
-      );
-      if (!u) throw Error("No unit profiles found.");
-      unitFromCatalogue(i, u);
-      renderUnit(i);
-      changed();
-    } catch (e) {
-      notice(e.message);
-    } finally {
-      setBusy(false);
-    }
-  };
-  root.querySelector("[data-search]").oninput = (e) => {
-    pick.search = e.target.value;
-    const caret = e.target.selectionStart;
-    renderUnit(i);
-    const el = $("unit-" + i).querySelector("[data-search]");
-    el.focus();
-    el.setSelectionRange(caret, caret);
-    preview();
-  };
-  root.querySelector("[data-unit]").onchange = (e) => {
-    unitFromCatalogue(
-      i,
-      pick.data.units.find((u) => u.id === e.target.value),
-    );
-    renderUnit(i);
-    changed();
-  };
-  root.querySelector("[data-profile]").onchange = (e) => {
-    pick.profile = e.target.value;
-    const stats = pick.data.units
-      .find((u) => u.id === pick.unit)
-      .profiles.find((p) => p.id === pick.profile).stats;
-    Object.assign(scenario.units[i], {
-      toughness: num(stats.T) ?? 0,
-      save: num(stats.Sv) ?? 7,
-      wounds: num(stats.W) ?? 0,
-      frontWounds: num(stats.W) ?? 1,
-      invuln: num(stats.InSv) ?? 7,
-    });
-    if (scenario.units[i].guardCodex)
-      Object.assign(scenario.units[i], {
-        toughness: 7,
-        save: 2,
-        wounds: 5,
-        frontWounds: 5,
-        invuln: 4,
-      });
-    renderUnit(i);
-    changed();
-  };
-  root.querySelector("[data-weapon]").onchange = (e) => {
-    pick.weapon = e.target.value;
-    applyWeapon(i);
-    renderUnit(i);
-    changed();
-  };
-  root.querySelectorAll("[data-field]").forEach((el) => {
-    const update = () => {
-      const [key, sub] = el.dataset.field.split("."),
-        u = scenario.units[i],
-        obj = sub ? u[key] : u,
-        k = sub ?? key,
-        allBearers = u.bearers === u.models;
-      obj[k] =
-        el.type === "checkbox"
-          ? el.checked
-          : el.type === "number"
-            ? Number(el.value)
-            : typeof obj[k] === "number"
-              ? Number(el.value)
-              : el.value;
-      if (key === "models") {
-        u.bearers = allBearers ? u.models : Math.min(u.bearers, u.models);
-      }
-      if (key === "wounds") {
-        u.frontWounds = Math.min(u.frontWounds, u.wounds);
-      }
-      changed();
-      if (key === "models") {
-        $("unit-" + i).querySelector('[data-field="bearers"]').value =
-          u.bearers;
-        $("unit-" + i).querySelector('[data-field="bearers"]').max = u.models;
-      }
-      if (key === "wounds") {
-        $("unit-" + i).querySelector('[data-field="frontWounds"]').value =
-          u.frontWounds;
-        $("unit-" + i).querySelector('[data-field="frontWounds"]').max =
-          u.wounds;
-      }
-    };
-    if (el.tagName === "SELECT") el.onchange = update;
-    else el.oninput = update;
+  bindUnitControls(i, $("unit-" + i), {
+    pick: picks[i],
+    getScenario: () => scenario,
+    catalogue,
+    num,
+    unitFromCatalogue,
+    renderUnit,
+    changed,
+    preview,
+    setBusy,
+    notice,
+    applyWeapon,
+    chooseSaved,
+    upgradeGuard,
   });
-  root.querySelector("[data-saved]").onclick = () => chooseSaved(i);
-  const refreshRules = (focusSearch = false) => {
-    const weaponOpen = root.querySelector(".weapon-rule-panel").open;
-    renderUnit(i);
-    const nextRoot = $("unit-" + i);
-    nextRoot.querySelector(".rule-library").open = true;
-    nextRoot.querySelector(".weapon-rule-panel").open = weaponOpen;
-    if (focusSearch) {
-      const input = nextRoot.querySelector("[data-rule-search]");
-      input.focus();
-      input.setSelectionRange(input.value.length, input.value.length);
-    }
-    changed();
-  };
-  root.querySelector("[data-rule-scope]").onchange = (e) => {
-    pick.ruleScope = e.target.value;
-    refreshRules();
-  };
-  root.querySelector("[data-rule-search]").oninput = (e) => {
-    pick.ruleSearch = e.target.value;
-    refreshRules(true);
-  };
-  root.querySelector("[data-rule-choice]").onchange = (e) => {
-    const u = scenario.units[i];
-    if (e.target.value && !u.ruleSelections.includes(e.target.value)) {
-      if (u.ruleSelections.length >= 30) {
-        notice("Maximum 30 named rules per scenario unit.");
-        return;
-      }
-      u.ruleSelections.push(e.target.value);
-      try {
-        prepareRules(u, pick, scenario.phase);
-      } catch (err) {
-        u.ruleSelections.pop();
-        notice(err.message);
-        refreshRules();
-        return;
-      }
-      u.rulesConfirmed = false;
-    }
-    refreshRules();
-  };
-  root.querySelectorAll("[data-rule-remove]").forEach(
-    (el) =>
-      (el.onclick = () => {
-        scenario.units[i].ruleSelections = scenario.units[
-          i
-        ].ruleSelections.filter((id) => id !== el.dataset.ruleRemove);
-        if (scenario.units[i].ruleComponents)
-          delete scenario.units[i].ruleComponents[el.dataset.ruleRemove];
-        refreshRules();
-      }),
-  );
-  root.querySelectorAll("[data-rule-check]").forEach(
-    (el) =>
-      (el.onchange = () => {
-        const u = scenario.units[i],
-          key = el.dataset.ruleCheck;
-        if (["rulesConfirmed", "weaponRules"].includes(key))
-          u[key] = el.checked;
-        else {
-          u.weaponConditions ??= {};
-          u.weaponConditions[key] = el.checked;
-        }
-        changed();
-      }),
-  );
-  root.querySelectorAll("[data-rule-component]").forEach(
-    (el) =>
-      (el.onchange = () => {
-        const u = scenario.units[i],
-          id = el.dataset.ruleComponent,
-          key = el.dataset.componentKey;
-        u.ruleComponents ??= {};
-        const keys = new Set(
-          u.ruleComponents[id] ??
-            Object.keys(pick.data.combatRules.definitions[id].effects),
-        );
-        if (el.checked) keys.add(key);
-        else keys.delete(key);
-        u.ruleComponents[id] = [...keys];
-        changed();
-      }),
-  );
-  const guardUpdate = root.querySelector("[data-guard-update]");
-  if (guardUpdate)
-    guardUpdate.onclick = () => {
-      upgradeGuard(i);
-      scenario.units[i].ruleSelections = [];
-      applyWeapon(i);
-      renderUnit(i);
-      changed();
-      notice(
-        "September Guard defensive and Guardian Spear characteristics applied. Other Custodes profiles remain community data.",
-      );
-    };
 }
 async function chooseSaved(i) {
+  if (busy) return;
+  setBusy(true);
   try {
     const army = JSON.parse(localStorage.getItem("ks-armies-11e") ?? "null")?.[
       i
@@ -630,6 +301,8 @@ async function chooseSaved(i) {
     };
   } catch (e) {
     notice(e.message);
+  } finally {
+    setBusy(false);
   }
 }
 function render() {
@@ -775,54 +448,8 @@ async function example() {
   changed();
   notice("Custodes vs Lancer loaded. No abilities selected.");
 }
-function diceRow(label, rolls, detail) {
-  return `<div class="dice-stage"><div class="stage-heading">${esc(label)}<b>${esc(detail)}</b></div><div class="dice-pool">${
-    rolls
-      .slice(0, 60)
-      .map(
-        (d) =>
-          `<span class="die ${d.pass ? "" : "fail"}" title="${esc(d.original ? "Re-rolled " + d.original + " → " + d.value : d.value)}">${dieFace(d.value)}${d.original ? "<small>↻</small>" : ""}</span>`,
-      )
-      .join("") || "<small>No rolls</small>"
-  }${rolls.length > 60 ? `<small>+${rolls.length - 60} rolls in JSON</small>` : ""}</div></div>`;
-}
-function sequence(e, s) {
-  const u = s.units[e.side],
-    v = s.units[1 - e.side],
-    t = e.trace,
-    rows = [];
-  if (t.attackDice.length)
-    rows.push(
-      diceRow("Number of attacks", t.attackDice, e.attacks + " attacks"),
-    );
-  rows.push(
-    diceRow(
-      "Hit rolls",
-      t.hit,
-      e.hits + " hits" + (e.extraHits ? " · " + e.extraHits + " extra" : ""),
-    ),
-    diceRow(
-      "Wound rolls",
-      t.wound,
-      e.wounds +
-        " wounds" +
-        (e.autoWounds ? " · " + e.autoWounds + " automatic" : "") +
-        (e.devastating ? " · " + e.devastating + " devastating" : ""),
-    ),
-    diceRow("Saving throws", t.save, e.unsaved + " failed saves"),
-    diceRow("Damage", t.damage, e.damageRolled + " rolled"),
-  );
-  if (t.fnp.length)
-    rows.push(
-      diceRow(
-        "Feel No Pain",
-        t.fnp,
-        t.fnp.filter((d) => d.pass).length + " ignored",
-      ),
-    );
-  return `<article class="attack-sequence"><div class="roll-heading"><strong>${esc(u.name)} → ${esc(v.name)}</strong><small>${esc(u.weapon.name)} · ${e.attacks} attacks · ${e.woundTarget}+ to wound · ${e.saveTarget > 6 ? "no successful save" : e.saveTarget + "+ save"}</small>${e.appliedEffects.length ? `<p class="applied-roll-effects">${e.appliedEffects.map(esc).join(" · ")}</p>` : ""}</div><div class="dice-stages">${rows.join("")}</div><div class="roll-result">${e.damageLost} wounds lost · ${e.killed} models destroyed · ${e.modelsLeft} models / ${e.remaining} wounds left</div></article>`;
-}
 $("roll").onclick = async () => {
+  if (busy) return;
   try {
     if (!$("replay-seed").checked) {
       scenario.seed = crypto.getRandomValues(new Uint32Array(1))[0];
@@ -836,7 +463,7 @@ $("roll").onclick = async () => {
     document.querySelector(".simulation-stage").classList.add("has-roll");
     lastRoll = { scenario: s, seed: s.seed, ...r };
     $("dice-output").innerHTML =
-      r.events.map((e) => sequence(e, s)).join("") +
+      r.events.map((e) => sequenceReport(e, s)).join("") +
       (s.phase === "fight" && s.fightBack && r.events.length === 1
         ? '<p class="no-return">Target destroyed: no attacks back.</p>'
         : "");
@@ -858,7 +485,10 @@ $("roll").onclick = async () => {
     }
     renderArena(s, r.killed);
     $("table-status").textContent = "Roll complete";
-    if (!results) renderSingleRoll(r, s);
+    if (!results) {
+      $("outcome-title").textContent = "THIS ROLL";
+      $("results").innerHTML = singleRollReport(r, s);
+    }
     notice(
       `Roll complete · seed ${s.seed}. Enable Replay this seed in Roll settings to repeat it.`,
     );
@@ -870,20 +500,10 @@ $("roll").onclick = async () => {
 };
 function renderResults(r, s) {
   $("outcome-title").textContent = "EXPECTED RESULT";
-  const target = 1 - s.first;
-  const side = (i) => {
-    const out = r.sides[i];
-    const entries = Object.entries(out.histogram)
-      .map(([d, n]) => [+d, n])
-      .sort((a, b) => a[0] - b[0]);
-    const max = Math.max(...entries.map((e) => e[1]));
-    return `<section class="result-unit"><h3>${esc(s.units[i].name)}<span>damage received</span></h3><div class="result-stats"><div><strong>${out.damage.toFixed(2)}</strong><small>Average wounds lost</small></div><div><strong>${out.killed.toFixed(2)}</strong><small>Average models destroyed</small></div><div><strong>${(out.destroyChance * 100).toFixed(1)}%</strong><small>Chance unit is destroyed</small></div></div><details><summary>Distribution & confidence</summary><p>95% interval for destruction: ${(out.interval[0] * 100).toFixed(1)}–${(out.interval[1] * 100).toFixed(1)}%</p><div class="histogram">${entries.map(([d, n]) => `<div><span>${d} W</span><i style="width:${(n / max) * 100}%"></i><b>${((n / r.trials) * 100).toFixed(1)}%</b></div>`).join("")}</div></details></section>`;
-  };
-  $("results").innerHTML =
-    `<div class="outcome-score"><span>Destroy the target</span><strong>${(r.sides[target].destroyChance * 100).toFixed(1)}<small>%</small></strong><p>${esc(s.units[target].name)}</p></div><div class="result-heading"><strong>${r.trials.toLocaleString()} simulations</strong><small>${esc(s.units[s.first].name)} attacks first · ${s.phase === "fight" ? "Fight" : "Shooting"}</small></div>${side(target)}${s.phase === "fight" && s.fightBack ? `<details class="return-results"><summary>Survivors fight back</summary>${side(s.first)}</details>` : ""}<p class="result-footnote">Each trial starts fresh. <span>Seed ${s.seed}</span></p>`;
+  $("results").innerHTML = simulationReport(r, s);
 }
-
 $("simulate").onclick = () => {
+  if (busy) return;
   try {
     const s = checked(),
       trials = Number($("trials").value);
@@ -976,12 +596,16 @@ $("save-scenario").onclick = () => {
   }
 };
 $("load-scenario").onclick = async () => {
+  if (busy) return;
+  setBusy(true);
   try {
     const value = localStorage.getItem("ks-combat-scenario");
     if (!value) throw Error("No saved combat scenario in this browser.");
     await restore(JSON.parse(value));
   } catch (e) {
     notice(e.message);
+  } finally {
+    setBusy(false);
   }
 };
 $("export-scenario").onclick = () => {
@@ -994,6 +618,8 @@ $("export-scenario").onclick = () => {
 $("export-results").onclick = () => download("combat-results.json", results);
 $("export-roll").onclick = () => download("combat-rolls.json", lastRoll);
 $("import-scenario").onchange = async (e) => {
+  if (busy) return;
+  setBusy(true);
   try {
     const f = e.target.files[0];
     if (!f) return;
@@ -1003,9 +629,11 @@ $("import-scenario").onchange = async (e) => {
     notice(e.message);
   } finally {
     e.target.value = "";
+    setBusy(false);
   }
 };
 $("example").onclick = async () => {
+  if (busy) return;
   setBusy(true);
   try {
     await example();

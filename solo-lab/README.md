@@ -46,4 +46,6 @@ Production: https://codex-imperium.vercel.app. Vercel builds from the repository
 
 ## Development and verification
 
-Run `npm ci`, `npm run dev`, `npm test`, and `npm run build`. Tests cover faction data/army validation and attack calculations: Strength thresholds, AP/cover/invulnerable saves, damage allocation, Feel No Pain, re-rolls, dice expressions, surviving attacks back, deterministic seeds and agreement with an analytic damage expectation. Browser checks cover profile selection, phase/order changes, worker simulations, saved army handoff, scenario persistence, validation and responsive layout.
+See [ARCHITECTURE.md](ARCHITECTURE.md) for module boundaries and rules for extending the calculator.
+
+Run `npm ci`, `npm run dev`, `npm run lint`, `npm test`, and `npm run build`. Tests cover faction data/army validation and attack calculations: Strength thresholds, AP/cover/invulnerable saves, damage allocation, Feel No Pain, re-rolls, dice expressions, surviving attacks back, deterministic seeds and agreement with an analytic damage expectation. Browser checks cover profile selection, phase/order changes, worker simulations, saved army handoff, scenario persistence, validation and responsive layout.
