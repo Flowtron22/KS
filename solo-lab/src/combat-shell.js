@@ -23,6 +23,6 @@ export function combatShell() {
   <details class="file-tools"><summary>Save files & export results</summary><div class="report-exports"><button id="export-roll" class="mini" disabled>Export rolls JSON</button><button id="export-results" class="mini" disabled>Export results JSON</button></div><div class="scenario-files"><button id="export-scenario" class="mini">Export scenario JSON</button><label class="import-label">Import scenario JSON<input id="import-scenario" type="file" accept="application/json" hidden></label></div></details>
  </section>
  <section id="army-view" hidden><div id="army-builder-root"></div></section>
- <footer><span>40K COMBAT LAB · PROTOTYPE</span><span>Community stat snapshot · 9 Oct 2026 · points not officially verified</span><a href="https://github.com/BSData/wh40k-11e/tree/cc58ee3b2c23f90af9d00e7bf234cd703b762299" target="_blank" rel="noreferrer">Data source ↗</a></footer>
+ <footer><span>CODEX IMPERIUM · PROTOTYPE</span><span>Community stat snapshot · 9 Oct 2026 · points not officially verified</span><a href="https://github.com/BSData/wh40k-11e/tree/cc58ee3b2c23f90af9d00e7bf234cd703b762299" target="_blank" rel="noreferrer">Data source ↗</a></footer>
 </main>`;
 }
