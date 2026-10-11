@@ -260,6 +260,9 @@ function unit(u, map, origin, c) {
       const enhancement = (n.costs ?? []).some(
         (k) => k.name === "Enhancements" && k.value > 0,
       );
+      const enhancementCaps = (n.constraints ?? []).filter((constraint) =>
+        constraint.field === "selections" && constraint.type === "max" && ["roster", "force"].includes(constraint.scope)).map((constraint) => constraint.value);
+      const enhancementMax = enhancementCaps.length ? Math.min(...enhancementCaps) : 1;
       const weapon = ps.some((p) => /Weapons/i.test(p.type));
       const equipment =
         !enhancement &&
@@ -275,8 +278,12 @@ function unit(u, map, origin, c) {
           bounds: bounds(n),
           type: enhancement ? "enhancement" : weapon ? "weapon" : "equipment",
           requiredDetachments: enhancement
-            ? [...new Set([...ancestors, n].flatMap((parent) => enhancementDetachments(parent, map)))]
+            ? [...new Set([...ancestors.filter((parent) => /Enhancements?/i.test(parent.name ?? "")), n].flatMap((parent) => enhancementDetachments(parent, map)))]
             : [],
+          ...(enhancement ? {
+            armyMax: enhancementMax,
+            upgrade: enhancementMax > 1,
+          } : {}),
           points: n.costs?.find((c) => c.name === "pts")?.value ?? 0,
         });
     }

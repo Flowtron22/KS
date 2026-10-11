@@ -8,7 +8,7 @@ import {
 } from "./army-library.js";
 import { armyLibraryView } from "./army-library-view.js";
 import { armyGroup, groupArmyItems } from "./army-groups.js";
-import { enhancementAllowed } from "./army-enhancements.js";
+import { enhancementAllowed, enhancementAvailability, enhancementBudget } from "./army-enhancements.js";
 import { armyRosterView } from "./army-roster-view.js";
 import { unitAvailability, modelCountAllowed } from "./unit-limits.js";
 import { attachmentRole, attachmentCandidates } from "./army-attachments.js";
@@ -540,7 +540,7 @@ export async function mountArmyBuilder(root) {
               : ""
           }${
             enhancements.length
-              ? `<label>Enhancement<select id="config-enhancement"><option value="">None</option>${enhancements.map((o) => `<option value="${esc(o.id)}" ${o.id === row.enhancement ? "selected" : ""} ${enhancementAllowed(o, unit, current()) ? "" : "disabled"}>${esc(o.name)} · ${o.points} pts${enhancementAllowed(o, unit, current()) ? "" : " · Unavailable"}</option>`).join("")}</select></label>`
+              ? `<label>Enhancement (${row.enhancement ? 1 : 0}/1) · Army ${enhancementBudget(current(), data).used}/${enhancementBudget(current(), data).max}<select id="config-enhancement"><option value="">None</option>${enhancements.map((o) => `<option value="${esc(o.id)}" ${o.id === row.enhancement ? "selected" : ""} ${enhancementAvailability(o, unit, current(), data, row).available ? "" : "disabled"}>${esc(o.name)} · ${o.points} pts${enhancementAvailability(o, unit, current(), data, row).available ? "" : " · " + esc(enhancementAvailability(o, unit, current(), data, row).reason)}</option>`).join("")}</select></label>`
               : ""
           }${equipmentView(unit, row)}<label>Loadout / model composition notes<textarea id="config-notes" maxlength="2000" rows="2" placeholder="Sergeant equipment, weapon replacements, special models…">${esc(row.notes)}</textarea></label>${unit.conditionalPrice || unit.points === null ? `<label>Reviewed unit points override<input id="config-override" type="number" min="0" max="100000" placeholder="Use source calculation" value="${row.pointsOverride ?? ""}"></label><p class="fine">Override the unit cost after checking conditional rules. Enhancement and paid wargear costs are added separately.</p>` : ""}`
         : ""
@@ -586,7 +586,9 @@ export async function mountArmyBuilder(root) {
       render();
     });
     on("config-enhancement", "onchange", (e) => {
-      row.enhancement = e.target.value || null;
+      const value = e.target.value;
+      if (value && !enhancementAvailability(unit.options.find((option) => option.id === value), unit, current(), data, row).available) return;
+      row.enhancement = value || null;
       save();
       render();
     });

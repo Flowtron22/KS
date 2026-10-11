@@ -6,7 +6,7 @@ import {
 } from "./army-loadout.js";
 import { modelCountAllowed, unitCopyLimit } from "./unit-limits.js";
 import { attachmentIssues } from "./army-attachments.js";
-import { enhancementIssues } from "./army-enhancements.js";
+import { enhancementIssues, armyEnhancementIssues } from "./army-enhancements.js";
 export const PACK = "40k-11e-cc58ee3";
 export function newArmy(faction) {
   return {
@@ -143,16 +143,7 @@ export function armySummary(army, data) {
     if (n > cap)
       issues.push(`${u.name}: ${n} copies exceeds the basic limit of ${cap}.`);
   }
-  if (
-    army.units.filter((r) => r.enhancement).length >
-    (army.battleSize === "incursion" ? 2 : 4)
-  )
-    issues.push(
-      "Enhancement count exceeds the basic battle-size limit; Upgrade grouping needs manual review.",
-    );
-  const enhancements = army.units.map((row) => row.enhancement).filter(Boolean);
-  if (new Set(enhancements).size !== enhancements.length)
-    issues.push("Each Enhancement can only be selected once.");
+  issues.push(...armyEnhancementIssues(army, data));
   return { total, unknown, dp, budget, allowed, issues: [...new Set(issues)] };
 }
 export function validateArmy(value, data) {
