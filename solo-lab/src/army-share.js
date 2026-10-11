@@ -1,6 +1,8 @@
 import { armySummary, unitPoints } from "./army-core.js";
+import { createArmyExport, rosterLabel } from "./army-export.js";
 import { escapeHtml as esc } from "./ui-html.js";
 export function armyShareData(army, data) {
+  army = createArmyExport(army, data);
   const summary = armySummary(army, data);
   return {
     name: army.name,
@@ -16,44 +18,47 @@ export function armyShareData(army, data) {
       (id) =>
         data.detachments.find((d) => d.id === id)?.name ?? "Unknown Detachment",
     ),
-    issues: summary.issues,
-    units: army.units
-      .map((row) => {
-        const unit = data.units.find((u) => u.id === row.unitId);
-        const weapons = new Map(),
-          composition = new Map();
-        for (const model of row.loadout?.models ?? []) {
-          const name = unit.equipment?.models.find(
-            (t) => t.id === model.type,
-          )?.name;
-          if (name) composition.set(name, (composition.get(name) ?? 0) + 1);
+    validation: army.validation,
+    issues: army.validation.issues,
+    units: army.units.map((row) => {
+      const unit = data.units.find((u) => u.id === row.unitId);
+      const weapons = new Map(),
+        composition = new Map();
+      for (const model of row.loadout?.models ?? []) {
+        const name = unit.equipment?.models.find(
+          (t) => t.id === model.type,
+        )?.name;
+        if (name) composition.set(name, (composition.get(name) ?? 0) + 1);
+      }
+      for (const [id, count] of Object.entries(row.wargear))
+        if (count) {
+          const name =
+            unit.options.find((o) => o.id === id)?.name ?? "Unknown weapon";
+          weapons.set(name, (weapons.get(name) ?? 0) + count);
         }
-        for (const [id, count] of Object.entries(row.wargear))
-          if (count) {
-            const name =
-              unit.options.find((o) => o.id === id)?.name ?? "Unknown weapon";
-            weapons.set(name, (weapons.get(name) ?? 0) + count);
-          }
-        return {
-          name: unit.name,
-          models: row.models,
-          points: unitPoints(unit, row, army),
-          warlord: row.warlord,
-          composition: [...composition].map(
-            ([name, count]) => count + " × " + name,
-          ),
-          weapons: [...weapons].map(([name, count]) => count + " × " + name),
-          enhancement: unit.options.find((o) => o.id === row.enhancement)?.name,
-          attachment: army.units.find((r) => r.id === row.attachment)?.unitId,
-          notes: row.notes,
-        };
-      })
-      .map((u) => ({
-        ...u,
-        attachment: u.attachment
-          ? data.units.find((x) => x.id === u.attachment)?.name
+      return {
+        id: row.id,
+        name: unit.name,
+        label: rosterLabel(army, row, data),
+        models: row.models,
+        points: unitPoints(unit, row, army),
+        warlord: row.warlord,
+        composition: [...composition].map(
+          ([name, count]) => count + " × " + name,
+        ),
+        weapons: [...weapons].map(([name, count]) => count + " × " + name),
+        enhancement: unit.options.find((o) => o.id === row.enhancement)?.name,
+        attachmentId: row.attachment,
+        attachment: row.attachment
+          ? rosterLabel(
+              army,
+              army.units.find((r) => r.id === row.attachment),
+              data,
+            )
           : null,
-      })),
+        notes: row.notes,
+      };
+    }),
   };
 }
 function lines(ctx, text, width) {
@@ -132,7 +137,12 @@ export function renderArmyImages(info) {
   block("Force Disposition · " + info.disposition, 24, "#a8b4c1", 30);
   for (const u of info.units) {
     block(
-      u.models + " × " + u.name + "   ·   " + (u.points ?? "?") + " pts",
+      u.models +
+        " × " +
+        (u.label ?? u.name) +
+        "   ·   " +
+        (u.points ?? "?") +
+        " pts",
       30,
       "#fff5de",
       8,
@@ -174,7 +184,7 @@ export function renderArmyImages(info) {
       : [b],
   );
   for (const b of boundedBlocks) {
-    if (height + b.height > 9956 && page.length) {
+    if (height + b.height > 9896 && page.length) {
       pages.push(page);
       page = [];
       height = margin * 2;
@@ -186,14 +196,21 @@ export function renderArmyImages(info) {
   return pages.map((page, index) => {
     const canvas = document.createElement("canvas");
     canvas.width = width;
-    canvas.height = page.reduce((n, b) => n + b.height, margin * 2 + 44);
+    canvas.height = page.reduce((n, b) => n + b.height, margin * 2 + 104);
     const ctx = canvas.getContext("2d");
     ctx.fillStyle = "#10171f";
     ctx.fillRect(0, 0, width, canvas.height);
     ctx.strokeStyle = "#c3a86d";
     ctx.lineWidth = 2;
     ctx.strokeRect(22, 22, width - 44, canvas.height - 44);
-    let y = margin;
+    const validation = info.validation ?? {
+      label: info.issues.length ? "NEEDS REVIEW" : "DRAFT",
+    };
+    ctx.font = "700 24px Arial";
+    ctx.fillStyle = validation.label === "ERRORS" ? "#ff9b86" : "#f4d080";
+    ctx.textBaseline = "top";
+    ctx.fillText(validation.label + " · COMMUNITY DATA", margin, margin);
+    let y = margin + 60;
     ctx.textBaseline = "top";
     for (const b of page) {
       ctx.font = (b.bold ? "700 " : "400 ") + b.size + "px Arial";

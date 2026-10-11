@@ -1,11 +1,14 @@
 // Preserve selection structure; never infer replacement groups from weapon names.
 export function compileEquipment(unit, { children, bounds, options }) {
-  const weapons = new Set(
-    options.filter((o) => o.type === "weapon").map((o) => o.id),
+  const weapons = new Map(
+    options
+      .filter((o) => ["weapon", "equipment"].includes(o.type))
+      .map((o) => [o.id, o.type]),
   );
   const review = new Set();
   const pending = [];
   function compile(n, seen = new Set()) {
+    if (n !== unit && /Enhancements?/i.test(n.name ?? "")) return null;
     const key = n.targetId ?? n.id;
     if (seen.has(key)) return null;
     const next = new Set(seen).add(key);
@@ -14,7 +17,15 @@ export function compileEquipment(unit, { children, bounds, options }) {
       .filter((x) => !x.hidden)
       .map((x) => compile(x, next))
       .filter(Boolean);
-    if (!nodes.length && !weapons.has(n.id)) return null;
+    if (!nodes.length && !weapons.has(n.id)) {
+      if (
+        n.type === "upgrade" &&
+        !options.some((o) => o.id === n.id && o.type === "enhancement") &&
+        !/Enhancement|Warlord|Experience|Honour/i.test(n.name ?? "")
+      )
+        review.add(n.name + ": equipment option needs source review.");
+      return null;
+    }
     const b = bounds(n);
     const constraintIds = new Set(
       (n.constraints ?? [])
@@ -41,7 +52,7 @@ export function compileEquipment(unit, { children, bounds, options }) {
         id: n.id,
         sourceId: n.targetId ?? n.id,
         name: n.name,
-        kind: "weapon",
+        kind: weapons.get(n.id),
         ...b,
       };
     return {

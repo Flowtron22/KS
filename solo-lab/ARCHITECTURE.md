@@ -15,11 +15,14 @@ The attack engine and faction data are independent of the browser. The app uses 
 | `src/rule-picker.js` | Render source rule choices and prepare confirmed numerical effects. |
 | `src/combat.js`, `combat-effects.js`, `rule-effects.js` | Validate and resolve attack mechanics without DOM access. |
 | `src/unit-limits.js` | Share datasheet model ranges and source-backed copy limits between builder and calculator. |
+| `src/army-attachments.js` | Share source-backed Bodyguard eligibility, attachment slots, named exceptions and graph checks. |
+| `src/army-export.js` | Recompute export status and points from one roster snapshot; retain unique unit identities. |
 | `src/equipment-limits.js` | Count selected model/weapon identities and evaluate compiled squad restrictions. |
 | `src/army-loadout.js` | Derive weapon counts from per-model choices; validate save structure and review composition constraints. |
 | `src/army-equipment-view.js` | Render source equipment controls and bind equipment edits. |
 | `src/army-share.js` | Build share content, draw paginated PNGs and manage local preview/download. |
 | `tools/wargear-compiler.mjs` | Preserve equipment groups, defaults, static limits and recognized unit-wide conditions. Keep unsupported conditions explicit. |
+| `tools/attachment-compiler.mjs` | Compile named Bodyguards and supported additional-attachment clauses; retain unresolved conditions for review. |
 | `tools/` and `public/` | Import pinned community data and retain its provenance. No runtime fetching of third-party rule pages. |
 
 Render the final HTML directly. Do not construct a legacy page and move nodes around to simulate another layout. Template modules must remain usable without `document`; text from imports, custom profiles and saved scenarios must be escaped before entering HTML.

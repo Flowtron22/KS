@@ -1,4 +1,5 @@
 import { compileModelRange } from "./model-range-compiler.mjs";
+import { compileAttachment } from "./attachment-compiler.mjs";
 import { compileEquipment } from "./wargear-compiler.mjs";
 import { duplicatePriceRule } from "./duplicate-price.mjs";
 import { compileCopyLimits } from "./unit-limits-compiler.mjs";
@@ -197,6 +198,7 @@ function unit(u, map, origin, c) {
   const range = modelRange(u, map),
     profiles = new Map(),
     options = [],
+    attachmentProfiles = [],
     categories = [
       ...new Set(
         (u.categoryLinks ?? [])
@@ -205,6 +207,14 @@ function unit(u, map, origin, c) {
       ),
     ];
   flatten(u, map, (n, path) => {
+    if (!path.length)
+      attachmentProfiles.push(
+        ...(n.profiles ?? []),
+        ...(n.infoLinks ?? [])
+          .filter((l) => l.type === "profile")
+          .map((l) => map.get(l.targetId))
+          .filter(Boolean),
+      );
     for (const p of [
       ...(n.profiles ?? []),
       ...(n.infoLinks ?? [])
@@ -228,22 +238,28 @@ function unit(u, map, origin, c) {
       n.type === "upgrade" &&
       !/Warlord|Detachment|Honour|Experience/i.test(n.name ?? "")
     ) {
-      const ps = [
+      const rawProfiles = [
         ...(n.profiles ?? []),
         ...(n.infoLinks ?? []).map((l) => map.get(l.targetId)).filter(Boolean),
-      ]
-        .map(profile)
-        .filter(Boolean);
+      ];
+      const ps = rawProfiles.map(profile).filter(Boolean);
       const enhancement = (n.costs ?? []).some(
         (k) => k.name === "Enhancements" && k.value > 0,
       );
-      if (enhancement || ps.some((p) => /Weapons/i.test(p.type)))
+      const weapon = ps.some((p) => /Weapons/i.test(p.type));
+      const equipment =
+        !enhancement &&
+        !weapon &&
+        !path.some((name) => /Enhancements?/i.test(name)) &&
+        rawProfiles.some((p) => p.typeName === "Abilities") &&
+        !children(n, map).length;
+      if (enhancement || weapon || equipment)
         options.push({
           id: n.id,
           name: n.name,
           path,
           bounds: bounds(n),
-          type: enhancement ? "enhancement" : "weapon",
+          type: enhancement ? "enhancement" : weapon ? "weapon" : "equipment",
           requiredDetachments: enhancement
             ? enhancementDetachments(n, map)
             : [],
@@ -357,6 +373,7 @@ function unit(u, map, origin, c) {
     allied,
     origin: originName,
     models: range,
+    attachment: compileAttachment(attachmentProfiles, categories),
     copyLimits: compileCopyLimits(u, map),
     sizes,
     points: cost?.value ?? null,

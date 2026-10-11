@@ -1,4 +1,10 @@
 import { unitAvailability, modelCountAllowed } from "./unit-limits.js";
+import { attachmentRole, attachmentCandidates } from "./army-attachments.js";
+import {
+  armyValidation,
+  createArmyExport,
+  rosterLabel,
+} from "./army-export.js";
 import { equipmentView, bindEquipment } from "./army-equipment-view.js";
 import { resizeLoadout } from "./army-loadout.js";
 import { openArmyShare } from "./army-share.js";
@@ -192,13 +198,14 @@ export async function mountArmyBuilder(root) {
   }
   function review() {
     const s = summary();
+    const validation = armyValidation(current(), s);
     return (
       stageHead(
         5,
         "Review your army",
         "Check your points, Warlord and attachments before saving.",
       ) +
-      `<div class="review-grid">${armyList()}<section class="panel review-checks"><h3>Army checks</h3>${s.issues.length ? `<ul>${s.issues.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>` : '<p class="check-pass">✓ Basic army checks passed.</p>'}<button id="save-review" class="button orange">Save army</button><button id="export-review" class="button">Export army JSON</button><button id="share-army" class="button orange">Share army image</button></section></div>`
+      `<div class="review-grid">${armyList()}<section class="panel review-checks"><h3>Army checks</h3><p class="army-validation" data-status="${validation.status}">${validation.label}</p>${validation.issues.length ? `<ul>${validation.issues.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>` : ""}<button id="save-review" class="button orange">Save army</button><button id="export-review" class="button">Export army JSON</button><button id="share-army" class="button orange">Share army image</button></section></div>`
     );
   }
   function render() {
@@ -416,11 +423,7 @@ export async function mountArmyBuilder(root) {
     });
   }
   function exportArmy() {
-    const payload = {
-        ...current(),
-        source: data.source,
-        validation: { complete: false, issues: summary().issues },
-      },
+    const payload = createArmyExport(current(), data),
       blob = new Blob([JSON.stringify(payload, null, 2)], {
         type: "application/json",
       }),
@@ -472,22 +475,14 @@ export async function mountArmyBuilder(root) {
     )}</p>${stat ? `<div class="stat-grid">${["M", "T", "Sv", "W", "LD", "OC"].map((k) => `<div><small>${k === "LD" ? "Ld" : k}</small><strong>${esc(stat.stats[k] ?? "–")}</strong></div>`).join("")}</div>` : ""}${
       row
         ? `<div class="config-fields"><label>Models<input id="config-models" type="number" min="${unit.models.min}" max="${unit.models.max}" value="${row.models}"></label><strong>${unitPoints(unit, row, armies[side]) ?? "?"} points</strong></div><p class="fine">Source model range: ${unit.models.min}–${unit.models.max}. Choose equipment for each model below.</p>${unit.categories.includes("Character") ? `<label class="warlord-choice"><input id="config-warlord" type="checkbox" ${row.warlord ? "checked" : ""}> Warlord</label>` : ""}${
-            unit.categories.some((c) => ["Leader", "Support"].includes(c))
-              ? `<label>Attach ${unit.categories.includes("Support") ? "Support" : "Leader"} to<select id="config-attachment"><option value="">${unit.categories.includes("Support") ? "Choose a Bodyguard unit" : "Unattached"}</option>${options(
-                  current()
-                    .units.filter(
-                      (r) =>
-                        r.id !== row.id &&
-                        !data.units
-                          .find((u) => u.id === r.unitId)
-                          .categories.includes("Character"),
-                    )
-                    .map((r) => ({
-                      id: r.id,
-                      name: data.units.find((u) => u.id === r.unitId).name,
-                    })),
+            attachmentRole(unit)
+              ? `<label>Attach ${attachmentRole(unit)} to<select id="config-attachment"><option value="">${attachmentRole(unit) === "Support" ? "Choose a Bodyguard unit" : "Unattached"}</option>${options(
+                  attachmentCandidates(current(), data, row).map((r) => ({
+                    id: r.id,
+                    name: rosterLabel(current(), r, data),
+                  })),
                   row.attachment,
-                )}</select></label><p class="fine">Specific Bodyguard eligibility is not checked yet.</p>`
+                )}${row.attachment && !attachmentCandidates(current(), data, row).some((r) => r.id === row.attachment) ? `<option value="${esc(row.attachment)}" selected disabled>Current attachment · needs review</option>` : ""}</select></label>`
               : ""
           }${
             enhancements.length

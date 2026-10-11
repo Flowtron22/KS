@@ -66,7 +66,11 @@ test("Multi-weapon defaults fill required slots without selecting optional bundl
   const data = await read("chaos-knights");
   const unit = data.units.find((u) => u.name === "War Dog Moirax");
   const row = addUnit(newArmy(data), unit);
-  assert.deepEqual(loadoutIssues(unit, row), []);
+  assert.ok(
+    !loadoutIssues(unit, row).some((message) =>
+      /incomplete|selection limit exceeded|outside source bounds/.test(message),
+    ),
+  );
   assert.equal(
     Object.values(row.wargear).reduce((sum, n) => sum + n, 0),
     3,

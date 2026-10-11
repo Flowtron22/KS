@@ -31,7 +31,7 @@ export function equipmentSelectionCounts(unit, models) {
     : [unit.equipment.tree];
   function weapons(n, m, selected = false) {
     if (!n) return;
-    if (n.kind === "weapon") {
+    if (["weapon", "equipment"].includes(n.kind)) {
       const qty =
         m.quantities?.[n.id] ?? (selected ? Math.max(1, n.min) : n.min);
       add(n.id, qty);

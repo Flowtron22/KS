@@ -24,3 +24,6 @@
 }
 
 .unit-copy-count{flex:none;min-width:28px;text-align:center;color:#a9b6c3;font-size:11px}
+.army-validation { padding: 10px 14px; border: 1px solid #aa9154; color: #f4d080; font-weight: 700; letter-spacing: .05em; }
+.army-validation[data-status="errors"] { border-color: #cf684f; color: #ffae98; }
+.army-validation[data-status="checks-passed"] { border-color: #458c84; color: #8addce; }

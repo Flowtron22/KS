@@ -28,7 +28,9 @@ export function defaultQuantities(tree, quantities = {}, choice = false) {
   if (
     tree.kind === "group" &&
     tree.max !== 1 &&
-    tree.children.every((n) => ["weapon", "bundle"].includes(n.kind))
+    tree.children.every((n) =>
+      ["weapon", "equipment", "bundle"].includes(n.kind),
+    )
   ) {
     let remaining =
       tree.min -
@@ -176,7 +178,7 @@ export function loadoutCounts(unit, loadout) {
     : [unit.equipment?.tree];
   function visit(n, m, selected = false) {
     if (!n) return;
-    if (n.kind === "weapon") {
+    if (["weapon", "equipment"].includes(n.kind)) {
       const qty = m.quantities[n.id] ?? (selected ? Math.max(1, n.min) : n.min);
       if (qty) counts[n.id] = (counts[n.id] ?? 0) + qty;
       return;
@@ -241,7 +243,7 @@ export function loadoutIssues(unit, row) {
         issues.push(n.name + ": equipment quantity outside source bounds.");
       if (!qty) return;
     }
-    if (n.kind === "weapon") {
+    if (["weapon", "equipment"].includes(n.kind)) {
       const q = m.quantities[n.id] ?? (selected ? Math.max(1, n.min) : n.min);
       if (
         !Number.isInteger(q) ||
@@ -266,7 +268,7 @@ export function loadoutIssues(unit, row) {
       const selected = (n.children ?? []).reduce(
         (sum, c) =>
           sum +
-          (["weapon", "bundle"].includes(c.kind)
+          (["weapon", "equipment", "bundle"].includes(c.kind)
             ? (m.quantities[c.id] ?? c.min)
             : 1),
         0,
@@ -297,7 +299,10 @@ export function validateLoadout(unit, row) {
     choiceIds = new Map();
   function walk(n) {
     if (!n) return;
-    if (n.kind === "weapon" || (n.kind === "bundle" && n.max !== null))
+    if (
+      ["weapon", "equipment"].includes(n.kind) ||
+      (n.kind === "bundle" && n.max !== null)
+    )
       weapons.set(n.id, n);
     if (n.kind === "group" && n.max === 1)
       choiceIds.set(n.id, new Set(n.children.map((c) => c.id)));

@@ -37,7 +37,7 @@ export function equipmentView(unit, row) {
   const counts = equipmentSelectionCounts(unit, row.loadout.models);
   function node(n, m, index, selected = false) {
     const bounds = equipmentBounds(n, counts);
-    if (n.kind === "weapon") {
+    if (["weapon", "equipment"].includes(n.kind)) {
       const count =
         m.quantities[n.id] ?? (selected ? Math.max(1, n.min) : n.min);
       if (selected || n.min === n.max)
@@ -82,7 +82,9 @@ export function equipmentView(unit, row) {
           )
           .join("") +
         "</select></label>" +
-        (chosen && chosen.kind !== "weapon" ? node(chosen, m, index, true) : "")
+        (chosen && !["weapon", "equipment"].includes(chosen.kind)
+          ? node(chosen, m, index, true)
+          : "")
       );
     }
     if (n.kind === "bundle" && n.max !== null && !selected) {

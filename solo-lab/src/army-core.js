@@ -5,6 +5,7 @@ import {
   validateLoadout,
 } from "./army-loadout.js";
 import { modelCountAllowed, unitCopyLimit } from "./unit-limits.js";
+import { attachmentIssues } from "./army-attachments.js";
 export const PACK = "40k-11e-cc58ee3";
 export function newArmy(faction) {
   return {
@@ -72,14 +73,15 @@ export function unitPoints(unit, row, army) {
       )?.points ?? 0;
   for (const [id, count] of Object.entries(row.wargear))
     value +=
-      (unit.options.find((o) => o.id === id && o.type === "weapon")?.points ??
-        0) * count;
+      (unit.options.find(
+        (o) => o.id === id && ["weapon", "equipment"].includes(o.type),
+      )?.points ?? 0) * count;
   return value;
 }
 export function armySummary(army, data) {
   let total = 0,
     unknown = 0;
-  const issues = [],
+  const issues = attachmentIssues(army, data),
     budget = army.battleSize === "incursion" ? 2 : 3,
     counts = new Map(),
     dp = army.detachments.reduce(
@@ -93,7 +95,9 @@ export function armySummary(army, data) {
       continue;
     }
     issues.push(
-      ...loadoutIssues(unit, row).map((issue) => unit.name + ": " + issue),
+      ...loadoutIssues(unit, row).map((issue) =>
+        issue.startsWith(unit.name + ":") ? issue : unit.name + ": " + issue,
+      ),
     );
     const pts = unitPoints(unit, row, army);
     if (pts === null) {
@@ -107,17 +111,6 @@ export function armySummary(army, data) {
       issues.push(`${unit.name}: conditional points need review.`);
     if (unit.allied)
       issues.push(`${unit.name}: check allied-unit eligibility.`);
-    if (row.attachment) {
-      const target = army.units.find((r) => r.id === row.attachment);
-      if (
-        !target ||
-        target === row ||
-        data.units
-          .find((u) => u.id === target.unitId)
-          ?.categories.includes("Character")
-      )
-        issues.push(`${unit.name}: choose a non-Character Bodyguard unit.`);
-    }
   }
   if (total > army.limit)
     issues.unshift(`${total - army.limit} points over the limit.`);
@@ -147,24 +140,6 @@ export function armySummary(army, data) {
       cap = unitCopyLimit(u, army);
     if (n > cap)
       issues.push(`${u.name}: ${n} copies exceeds the basic limit of ${cap}.`);
-  }
-  for (const r of army.units) {
-    const u = data.units.find((u) => u.id === r.unitId);
-    if (u?.categories.includes("Support") && !r.attachment)
-      issues.push(`${u.name}: Support needs a Bodyguard attachment.`);
-  }
-  for (const target of army.units) {
-    for (const role of ["Leader", "Support"])
-      if (
-        army.units.filter(
-          (r) =>
-            r.attachment === target.id &&
-            data.units
-              .find((u) => u.id === r.unitId)
-              ?.categories.includes(role),
-        ).length > 1
-      )
-        issues.push(`Only one ${role} can attach to each Bodyguard unit.`);
   }
   if (
     army.units.filter((r) => r.enhancement).length >
@@ -237,7 +212,9 @@ export function validateArmy(value, data) {
       Array.isArray(row.wargear) ||
       Object.entries(row.wargear).some(
         ([id, n]) =>
-          !u.options.some((o) => o.type === "weapon" && o.id === id) ||
+          !u.options.some(
+            (o) => ["weapon", "equipment"].includes(o.type) && o.id === id,
+          ) ||
           !Number.isInteger(n) ||
           n < 0 ||
           n > 100,

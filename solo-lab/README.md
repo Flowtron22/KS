@@ -54,6 +54,10 @@ Run `npm ci`, `npm run dev`, `npm run lint`, `npm test`, and `npm run build`. Te
 
 ### Army and experiment limits
 
+Attachment choices use source Bodyguard lists, role slots and recognized named exceptions. Chains retain each original roster row and are checked for cycles. Unsupported conditions remain marked for review. Equipment includes weapons and non-weapon options such as flare launchers and survey augurs, with source replacement groups shared by validation and the editor.
+
+Review, JSON and every PNG page use the same export status: Draft, Errors, Needs review or Basic checks passed. Drafts remain editable/exportable. Exports retain issues, source provenance, unique unit/attachment IDs and recalculated points; duplicate units have numbered labels. Basic checks passed is not full tournament certification. Manual points overrides are marked for review.
+
 Army Lists displays selected/maximum copies and blocks adding beyond source-backed limits, including Epic Heroes, Battleline and Dedicated Transports. Model counts use the imported datasheet range. Supported squad composition, shared weapon caps and conditional quantity rules apply to equipment edits. Existing incomplete imports remain editable and are flagged at review. Unsupported faction/Detachment and equipment conditions still require source review; these checks do not certify every army rule.
 
 The Combat calculator defaults to datasheet maximum counts and allows fewer models for casualties. Experiment mode unlocks up to 100 models per side and is saved/exported with the scenario. Disabling it reduces oversized counts and weapon bearers to the current maximum. Legacy oversized scenarios load explicitly in Experiment mode; new scenarios cannot claim normal mode while exceeding limits. The selected September Guard profile uses its three-model maximum.
