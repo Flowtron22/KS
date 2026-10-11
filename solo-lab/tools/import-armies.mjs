@@ -373,7 +373,11 @@ function unit(u, map, origin, c) {
     allied,
     origin: originName,
     models: range,
-    attachment: compileAttachment(attachmentProfiles, categories),
+    attachment: compileAttachment(
+      attachmentProfiles,
+      categories,
+      u.associations,
+    ),
     copyLimits: compileCopyLimits(u, map),
     sizes,
     points: cost?.value ?? null,
