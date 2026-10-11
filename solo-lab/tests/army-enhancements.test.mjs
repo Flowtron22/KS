@@ -4,10 +4,59 @@ import { readFile } from "node:fs/promises";
 import { enhancementAllowed, enhancementAvailability, enhancementBudget, armyEnhancementIssues } from "../src/army-enhancements.js";
 import { newArmy, addUnit, armySummary } from "../src/army-core.js";
 import { armyValidation } from "../src/army-export.js";
+import { matchesUnitKeywords } from "../src/unit-keywords.js";
+import { equipmentView } from "../src/army-equipment-view.js";
 
 async function catalogue(name) {
   return JSON.parse(await readFile(new URL(`../public/armies/${name}.json`, import.meta.url), "utf8"));
 }
+
+test("Slash bearer alternatives restore Cybork Boosta without weakening Detachment or bearer limits", async () => {
+  const data = await catalogue("orks"), army = newArmy(data);
+  const dreadMob = data.detachments.find((entry) => entry.name === "Dread Mob");
+  for (const name of ["Big Mek", "Big Mek Dakkarig", "Big Mek with Shokk Attack Gun", "Mek"]) {
+    const unit = data.units.find((entry) => entry.name === name);
+    const option = unit.options.find((entry) => entry.name === "Cybork Boosta");
+    assert.ok(option, name);
+    army.detachments = [];
+    assert.equal(enhancementAllowed(option, unit, army), false, name);
+    army.detachments = [dreadMob.id];
+    assert.equal(enhancementAllowed(option, unit, army), true, name);
+  }
+  const warboss = data.units.find((entry) => entry.name === "Warboss");
+  assert.equal(enhancementAllowed(warboss.options.find((entry) => entry.name === "Cybork Boosta"), warboss, army), false);
+  assert.equal(matchesUnitKeywords({name:"Other",categories:["Big Mek Dakkarig"]}, "BIG MEK/MEK"), false);
+});
+
+test("Slash Upgrade alternatives remain unit-specific", async () => {
+  const data = await catalogue("orks"), army = newArmy(data);
+  army.detachments = [data.detachments.find((entry) => entry.name === "Taktikal Brigade").id];
+  for (const name of ["Kommandos", "Stormboyz", "Boyz"]) {
+    const unit = data.units.find((entry) => entry.name === name);
+    const option = unit.options.find((entry) => entry.name === "Throat-slittas");
+    assert.equal(enhancementAllowed(option, unit, army), name !== "Boyz", name);
+  }
+});
+
+test("Big Mek equipment exposes both replacement groups and fixed Dakkarig weapons", async () => {
+  const data = await catalogue("orks"), army = newArmy(data);
+  const mek = data.units.find((entry) => entry.name === "Big Mek");
+  const html = equipmentView(mek, addUnit(army, mek));
+  for (const name of ["Drilla", "Power Klaw", "Kustom mega-blasta", "Traktor Blasta"])
+    assert.ok(html.includes(name), name);
+  assert.equal((html.match(/data-equipment-choice=/g) ?? []).length, 2);
+  const rig = data.units.find((entry) => entry.name === "Big Mek Dakkarig");
+  const fixed = equipmentView(rig, addUnit(army, rig));
+  assert.doesNotMatch(fixed, /data-equipment-choice=/);
+  for (const name of ["Blitzkannon", "Multi-busta Launcha", "Stompy Feet"])
+    assert.ok(fixed.includes(name), name);
+  const shokk = data.units.find((entry) => entry.name === "Big Mek with Shokk Attack Gun");
+  assert.equal(shokk.points, 110);
+  const shokkView = equipmentView(shokk, addUnit(army, shokk));
+  assert.doesNotMatch(shokkView, /data-equipment-choice=/);
+  for (const name of ["Shokk Attack Gun", "Big Mek&#39;s Toolz"])
+    assert.ok(shokkView.includes(name), name);
+});
 
 test("Knight Enhancements inherit the parent Detachment restriction and follow changes", async () => {
   const data = await catalogue("imperial-knights");

@@ -63,4 +63,12 @@ Changes: remove automatic Guard preview activation; show an explicit preview act
 
 Rechecked BSData on 12 October: latest commit is still `3988a8bdd210f9d31ea5b6782d0016688ccb6815`, carrying the Marine update warning. Official MFM access remains unavailable. Completing the Marine refresh and the full new Custodes Codex requires the released official datasheets, points and Leader targets or a complete verified upstream update. No Reddit/review points were substituted.
 
+## Missing Big Mek choices — 12 October 2026
+
+Confirmed a runtime eligibility bug: the compiled bearer phrase `BIG MEK/MEK` was matched as one keyword. This hid Cybork Boosta despite the catalogue's structured predicate correctly allowing either keyword. Keyword matching now recognises slash-separated alternatives as whole phrases. This also restores `KOMMANDOS/STORMBOYZ` choices such as Throat-slittas, while preserving Detachment gates, bearer exclusions and army limits. Tests cover Cybork Boosta on Big Mek, Dakkarig, Shokk Attack Gun and Mek, and rejection on Warboss/unrelated keywords.
+
+The user's specific datasheet is Big Mek with Shokk Attack Gun (110 points). The pinned catalogue gives it two fixed weapons, Shokk Attack Gun and Big Mek's Toolz, and no ordinary weapon replacement group. Its Enhancement/Upgrade eligibility is separate from that fixed equipment. Big Mek is a different datasheet with Drilla/Power Klaw and Kustom mega-blasta/Traktor Blasta replacement groups, already exposed by the equipment picker. Tests check both these alternatives and the fixed Shokk/Dakkarig equipment. No replacement weapons were invented for the Shokk datasheet.
+
+The supplied tournament images are comparison cases, not complete datasheets or proof of every selection's legality. Noxious Blightbringer's Rejuvenating Swarm is already present; Marine examples still depend on the unreconciled Codex data discussed above.
+
 Run `node solo-lab/tools/audit-army-rules.mjs` to regenerate [the per-faction structural report](army-rules-audit.json). Shared units occur in multiple chapter catalogues; its counts are catalogue entries, not unique miniatures or a percentage of official-rule accuracy.
