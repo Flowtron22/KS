@@ -1,4 +1,5 @@
-import { armyGroup, groupArmyItems } from "./army-groups.js";
+import { armyGroup } from "./army-groups.js";
+import { armyShareGroups } from "./army-share-groups.js";
 import { armySummary, unitPoints } from "./army-core.js";
 import { createArmyExport, rosterLabel } from "./army-export.js";
 import { escapeHtml as esc } from "./ui-html.js";
@@ -99,15 +100,19 @@ export function renderArmyImages(info) {
     available = width - margin * 2,
     measure = document.createElement("canvas").getContext("2d");
   const blocks = [];
+  let indent = 0,
+    cluster = null;
   function block(text, size = 26, color = "#d5d9de", gap = 12, bold = false) {
     measure.font = (bold ? "700 " : "400 ") + size + "px Arial";
-    const rows = lines(measure, text, available);
+    const rows = lines(measure, text, available - indent);
     blocks.push({
       rows,
       size,
       color,
       gap,
       bold,
+      indent,
+      cluster,
       height: rows.length * (size + 10) + gap,
     });
   }
@@ -137,39 +142,43 @@ export function renderArmyImages(info) {
     true,
   );
   block("Force Disposition · " + info.disposition, 24, "#a8b4c1", 30);
-  for (const group of groupArmyItems(
-    info.units,
-    (unit) => unit.group ?? "other",
-  )) {
+  for (const group of armyShareGroups(info.units)) {
     block(group.name.toUpperCase(), 24, "#c3a86d", 20, true);
-    for (const u of group.items) {
-      block(
-        u.models +
-          " × " +
-          (u.label ?? u.name) +
-          "   ·   " +
-          (u.points ?? "?") +
-          " pts",
-        30,
-        "#fff5de",
-        8,
-        true,
-      );
-      if (u.composition?.length)
-        block(u.composition.join(" · "), 22, "#a8b4c1", 8);
-      if (u.warlord) block("WARLORD", 20, "#f4d080", 8, true);
-      if (u.enhancement)
-        block("Enhancement · " + u.enhancement, 24, "#c3a86d", 8);
-      if (u.attachment)
-        block("Attached to · " + u.attachment, 22, "#a8b4c1", 8);
-      block(
-        u.weapons.join(" · ") || "Equipment not configured",
-        24,
-        "#c4ccd6",
-        8,
-      );
-      if (u.notes) block(u.notes, 22, "#a8b4c1", 8);
+    for (const formation of group.items) {
+      cluster = formation;
+      for (const { unit: u, depth } of formation.entries) {
+        indent = Math.min(depth, 2) * 36;
+        block(
+          (depth ? "↳ " : "") +
+            u.models +
+            " × " +
+            (u.label ?? u.name) +
+            "   ·   " +
+            (u.points ?? "?") +
+            " pts",
+          depth ? 27 : 30,
+          "#fff5de",
+          8,
+          true,
+        );
+        if (u.composition?.length)
+          block(u.composition.join(" · "), 22, "#a8b4c1", 8);
+        if (u.warlord) block("WARLORD", 20, "#f4d080", 8, true);
+        if (u.enhancement)
+          block("Enhancement · " + u.enhancement, 24, "#c3a86d", 8);
+        if (u.attachment && !depth)
+          block("Attached to · " + u.attachment, 22, "#a8b4c1", 8);
+        block(
+          u.weapons.join(" · ") || "Equipment not configured",
+          24,
+          "#c4ccd6",
+          8,
+        );
+        if (u.notes) block(u.notes, 22, "#a8b4c1", 8);
+      }
+      indent = 0;
       block("────────────────────────────────────", 20, "#35414d", 24);
+      cluster = null;
     }
   }
   if (info.issues.length) {
@@ -192,7 +201,27 @@ export function renderArmyImages(info) {
         }))
       : [b],
   );
+  const clusterHeights = new Map();
+  for (const b of boundedBlocks)
+    if (b.cluster)
+      clusterHeights.set(
+        b.cluster,
+        (clusterHeights.get(b.cluster) ?? 0) + b.height,
+      );
+  let previousCluster = null;
   for (const b of boundedBlocks) {
+    const clusterHeight = b.cluster && clusterHeights.get(b.cluster);
+    if (
+      b.cluster !== previousCluster &&
+      clusterHeight <= 9768 &&
+      height + clusterHeight > 9896 &&
+      page.length
+    ) {
+      pages.push(page);
+      page = [];
+      height = margin * 2;
+    }
+    previousCluster = b.cluster;
     if (height + b.height > 9896 && page.length) {
       pages.push(page);
       page = [];
@@ -225,7 +254,7 @@ export function renderArmyImages(info) {
       ctx.font = (b.bold ? "700 " : "400 ") + b.size + "px Arial";
       ctx.fillStyle = b.color;
       for (const line of b.rows) {
-        ctx.fillText(line, margin, y);
+        ctx.fillText(line, margin + b.indent, y);
         y += b.size + 10;
       }
       y += b.gap;

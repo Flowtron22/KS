@@ -85,7 +85,6 @@ test("Grouped roster and image preserve every row, attachments and escalating po
       ].includes(text),
     );
     assert.deepEqual(headings, [
-      "CHARACTERS",
       "BATTLELINE",
       "DEDICATED TRANSPORTS",
       "OTHER DATASHEETS",
@@ -100,4 +99,3 @@ test("Grouped roster and image preserve every row, attachments and escalating po
     else globalThis.document = old;
   }
 });
-
