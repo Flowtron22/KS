@@ -1,0 +1,8 @@
+import { escapeHtml as esc } from "./ui-html.js";
+import { ARMY_LIMIT } from "./army-library.js";
+
+export function armyLibraryView(library, index, loading) {
+  const { armies, names, active } = library;
+  const full = armies.length >= ARMY_LIMIT;
+  return `<div class="army-library"><div class="army-library-picker"><label><span class="army-library-label">Your armies <b>${armies.length} / ${ARMY_LIMIT}</b></span><select id="army-library-select" aria-label="Choose army" ${loading ? "disabled" : ""}>${armies.map((army, i) => `<option value="${i}" ${i === active ? "selected" : ""}>${esc(names[i])}${army ? " · " + esc(index.factions.find((f) => f.id === army.faction)?.name ?? "Unknown faction") : " · Choose faction"}</option>`).join("")}</select></label><button class="button orange" id="new-army" ${full || loading ? "disabled" : ""}>＋ New army</button></div><details class="army-library-manage" data-panel="army-library-manage"><summary>Manage army</summary><div><label>Army name<input id="library-army-name" maxlength="100" value="${esc(names[active])}"></label><button class="button" id="rename-army" ${loading ? "disabled" : ""}>Rename</button><button class="button" id="duplicate-army" ${full || !armies[active] || loading ? "disabled" : ""}>Duplicate</button><button class="button" id="delete-army" ${loading ? "disabled" : ""}>Delete army</button></div><div id="delete-army-confirm" hidden><span>Delete ${esc(names[active])}?</span><button class="button orange" id="confirm-delete-army">Delete</button><button class="button" id="cancel-delete-army">Cancel</button></div></details></div>`;
+}

@@ -1,3 +1,4 @@
+import { readArmyLibrary } from "./army-library.js";
 import "./battle.css";
 import "./combat.css";
 import "./dashboard.css";
@@ -281,30 +282,48 @@ async function chooseSaved(i) {
   if (busy) return;
   setBusy(true);
   try {
-    const army = JSON.parse(localStorage.getItem("ks-armies-11e") ?? "null")?.[
-      i
-    ];
-    if (!army?.units?.length)
-      throw Error(`Save units in Army ${i ? "B" : "A"} first.`);
-    const data = await catalogue(army.faction);
-    $("saved-" + i).innerHTML =
-      `<label>Saved unit<select id="saved-select-${i}"><option value="">Choose a unit…</option>${army.units.map((r) => opt(r.id, `${r.models} ${data.units.find((u) => u.id === r.unitId)?.name ?? "Unknown unit"}`, null)).join("")}</select></label>`;
-    $("saved-select-" + i).onchange = (e) => {
-      const row = army.units.find((r) => r.id === e.target.value);
-      if (!row) return;
-      const unit = data.units.find((u) => u.id === row.unitId);
-      if (!unit) {
-        notice("Saved unit is missing from the snapshot.");
-        return;
+    const library = readArmyLibrary(localStorage);
+    const choices = library.armies
+      .map((army, index) => ({ army, index }))
+      .filter(({ army }) => army?.units?.length);
+    if (!choices.length) throw Error("Add units to a saved army first.");
+    const initial =
+      choices.find(({ index }) => index === library.active) ?? choices[0];
+    const container = $("saved-" + i);
+    container.innerHTML = `<label>Saved army<select id="saved-army-${i}">${choices.map(({ army, index }) => opt(index, army.name, initial.index)).join("")}</select></label><div id="saved-units-${i}"></div>`;
+    async function showSavedArmy(index) {
+      const army = library.armies[index];
+      const data = await catalogue(army.faction);
+      $("saved-units-" + i).innerHTML =
+        `<label>Saved unit<select id="saved-select-${i}"><option value="">Choose a unit…</option>${army.units.map((r) => opt(r.id, `${r.models} ${data.units.find((u) => u.id === r.unitId)?.name ?? "Unknown unit"}`, null)).join("")}</select></label>`;
+      $("saved-select-" + i).onchange = (e) => {
+        const row = army.units.find((r) => r.id === e.target.value);
+        if (!row) return;
+        const unit = data.units.find((u) => u.id === row.unitId);
+        if (!unit) {
+          notice("Saved unit is missing from the snapshot.");
+          return;
+        }
+        picks[i] = { data, faction: data.id, search: "" };
+        unitFromCatalogue(i, unit, row.models);
+        renderUnit(i);
+        changed();
+        notice(
+          "Unit and model count loaded. Choose weapon and defensive profiles; army wargear, attachments and abilities are not applied.",
+        );
+      };
+    }
+    $("saved-army-" + i).onchange = async (event) => {
+      setBusy(true);
+      try {
+        await showSavedArmy(Number(event.target.value));
+      } catch (error) {
+        notice(error.message);
+      } finally {
+        setBusy(false);
       }
-      picks[i] = { data, faction: data.id, search: "" };
-      unitFromCatalogue(i, unit, row.models);
-      renderUnit(i);
-      changed();
-      notice(
-        "Unit and model count loaded. Choose weapon and defensive profiles; army wargear, attachments and abilities are not applied.",
-      );
     };
+    await showSavedArmy(initial.index);
   } catch (e) {
     notice(e.message);
   } finally {

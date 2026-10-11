@@ -1,3 +1,12 @@
+import {
+  ARMY_LIMIT,
+  readArmyLibrary,
+  writeArmyLibrary,
+  addArmySlot,
+  renameArmySlot,
+  removeArmySlot,
+} from "./army-library.js";
+import { armyLibraryView } from "./army-library-view.js";
 import { armyGroup, groupArmyItems } from "./army-groups.js";
 import { armyRosterView } from "./army-roster-view.js";
 import { unitAvailability, modelCountAllowed } from "./unit-limits.js";
@@ -34,7 +43,8 @@ export async function mountArmyBuilder(root) {
     '<p class="muted">Loading 11th-edition faction catalogues…</p>';
   const index = await (await fetch("/armies/index.json")).json(),
     cache = new Map();
-  let side = 0,
+  const library = readArmyLibrary(localStorage);
+  let side = library.active,
     step = 0,
     data = null,
     selected = null,
@@ -45,11 +55,7 @@ export async function mountArmyBuilder(root) {
     allies = false,
     message = "",
     loading = false;
-  let armies = [null, null];
-  try {
-    const saved = JSON.parse(localStorage.getItem("ks-armies-11e") ?? "null");
-    if (Array.isArray(saved) && saved.length === 2) armies = saved;
-  } catch {}
+  const armies = library.armies;
   async function getData(id) {
     if (cache.has(id)) return cache.get(id);
     const f = index.factions.find((f) => f.id === id);
@@ -61,6 +67,8 @@ export async function mountArmyBuilder(root) {
     return d;
   }
   async function resume(startAtFaction = false) {
+    loading = true;
+    render();
     if (armies[side]) {
       try {
         data = await getData(armies[side].faction);
@@ -78,11 +86,13 @@ export async function mountArmyBuilder(root) {
       step = 0;
     }
     selected = null;
+    loading = false;
     render();
   }
   function save() {
     try {
-      localStorage.setItem("ks-armies-11e", JSON.stringify(armies));
+      library.active = side;
+      writeArmyLibrary(localStorage, library);
     } catch {
       message = "Browser storage is full. Export your army JSON to keep it.";
     }
@@ -196,7 +206,7 @@ export async function mountArmyBuilder(root) {
   function armyList() {
     const a = current(),
       s = summary();
-    return `<aside class="panel army-list-panel"><div class="army-list-top"><span class="eyebrow">YOUR ARMY / ${side ? "B" : "A"}</span><h2>${esc(a.name)}</h2><p>${esc(data.name)} · ${a.battleSize === "incursion" ? "Incursion" : "Strike Force"}</p><div class="army-points ${s.total > a.limit ? "over" : ""}"><strong>${s.unknown ? "≥ " : ""}${s.total.toLocaleString()}</strong><span>/ ${a.limit.toLocaleString()}<small>POINTS</small></span></div><div class="points-track"><i style="width:${Math.min(100, (s.total / a.limit) * 100)}%"></i></div><div class="points-remaining">${s.unknown ? s.unknown + " units need points review" : s.total > a.limit ? s.total - a.limit + " points over" : a.limit - s.total + " points remaining"}<b>${s.dp}/${s.budget} DP</b></div><p class="army-detachments">${esc(a.detachments.map((id) => data.detachments.find((d) => d.id === id)?.name).join(" + ") || "No Detachments selected")}</p></div><div class="army-roster">${
+    return `<aside class="panel army-list-panel"><div class="army-list-top"><span class="eyebrow">YOUR ARMY</span><h2>${esc(a.name)}</h2><p>${esc(data.name)} · ${a.battleSize === "incursion" ? "Incursion" : "Strike Force"}</p><div class="army-points ${s.total > a.limit ? "over" : ""}"><strong>${s.unknown ? "≥ " : ""}${s.total.toLocaleString()}</strong><span>/ ${a.limit.toLocaleString()}<small>POINTS</small></span></div><div class="points-track"><i style="width:${Math.min(100, (s.total / a.limit) * 100)}%"></i></div><div class="points-remaining">${s.unknown ? s.unknown + " units need points review" : s.total > a.limit ? s.total - a.limit + " points over" : a.limit - s.total + " points remaining"}<b>${s.dp}/${s.budget} DP</b></div><p class="army-detachments">${esc(a.detachments.map((id) => data.detachments.find((d) => d.id === id)?.name).join(" + ") || "No Detachments selected")}</p></div><div class="army-roster">${
       armyRosterView(a, data, selected) ||
       '<div class="empty-army"><span>＋</span><h3>Your army starts here.</h3><p>Add units from the catalogue.<br>Select a unit to configure it.</p></div>'
     }</div><div class="army-list-bottom"><button class="button orange" data-step="4">Review army →</button><div><button class="mini" id="save-army">Save army</button><button class="mini" id="export-army">Export JSON</button></div></div></aside>`;
@@ -221,7 +231,7 @@ export async function mountArmyBuilder(root) {
         : null,
       fid = focused?.id,
       caret = focused?.selectionStart;
-    root.innerHTML = `<div class="army-builder"><div class="builder-toolbar"><div class="army-side-tabs"><button data-army-side="0" class="${side === 0 ? "active" : ""}">ARMY A <small>${esc(armies[0] ? index.factions.find((f) => f.id === armies[0].faction)?.name : "Choose faction")}</small></button><button data-army-side="1" class="${side === 1 ? "active" : ""}">ARMY B <small>${esc(armies[1] ? index.factions.find((f) => f.id === armies[1].faction)?.name : "Choose faction")}</small></button></div><div><label class="button import-label">Import army JSON<input id="army-import" type="file" accept="application/json" hidden></label><span class="edition-tag">11TH EDITION</span></div></div><div class="builder-steps">${["Faction", "Points", "Detachments", "Units", "Review"].map((name, i) => `<button data-step="${i}" class="${i === step ? "active" : i < step ? "complete" : ""}" ${i && !data ? "disabled" : ""}><span>${i + 1}</span>${name}</button>`).join("")}</div>${message ? `<div class="builder-message" role="status">${esc(message)}</div>` : ""}<div class="builder-body">${loading ? "<p>Loading faction…</p>" : step === 0 ? stageHead(1, "Choose your faction", "Choose a faction, set your points limit and build your army.") + `<input id="faction-search" class="faction-search" type="search" placeholder="Search factions or Space Marine chapters…" aria-label="Search factions" value="${esc(factionSearch)}">` + factionCards() : step === 1 ? pointsStage() : step === 2 ? detachStage() : step === 3 ? `<div class="army-build-grid"><section class="panel catalogue-panel"><div class="panel-top"><span class="eyebrow">${esc(data.name)} / ADD UNITS</span><button class="mini" data-step="2">Edit Detachments</button></div>${unitCatalogue()}</section>${armyList()}</div>` : review()}</div><div class="army-source-note"><strong>Community data · 9 Oct 2026</strong><span>Points and datasheet characteristics from BSData. Conditional rules still need review.</span>${data ? `<a href="${esc(data.source.url)}" target="_blank" rel="noreferrer">View source ↗</a>` : '<a href="https://github.com/BSData/wh40k-11e" target="_blank" rel="noreferrer">View source ↗</a>'}</div><div id="unit-config"></div></div>`;
+    root.innerHTML = `<div class="army-builder"><div class="builder-toolbar">${armyLibraryView(library, index, loading)}<div><label class="button import-label">Import army JSON<input id="army-import" type="file" accept="application/json" hidden></label><span class="edition-tag">11TH EDITION</span></div></div><div class="builder-steps">${["Faction", "Points", "Detachments", "Units", "Review"].map((name, i) => `<button data-step="${i}" class="${i === step ? "active" : i < step ? "complete" : ""}" ${i && !data ? "disabled" : ""}><span>${i + 1}</span>${name}</button>`).join("")}</div>${message ? `<div class="builder-message" role="status">${esc(message)}</div>` : ""}<div class="builder-body">${loading ? "<p>Loading faction…</p>" : step === 0 ? stageHead(1, "Choose your faction", "Choose a faction, set your points limit and build your army.") + `<input id="faction-search" class="faction-search" type="search" placeholder="Search factions or Space Marine chapters…" aria-label="Search factions" value="${esc(factionSearch)}">` + factionCards() : step === 1 ? pointsStage() : step === 2 ? detachStage() : step === 3 ? `<div class="army-build-grid"><section class="panel catalogue-panel"><div class="panel-top"><span class="eyebrow">${esc(data.name)} / ADD UNITS</span><button class="mini" data-step="2">Edit Detachments</button></div>${unitCatalogue()}</section>${armyList()}</div>` : review()}</div><div class="army-source-note"><strong>Community data · 9 Oct 2026</strong><span>Points and datasheet characteristics from BSData. Conditional rules still need review.</span>${data ? `<a href="${esc(data.source.url)}" target="_blank" rel="noreferrer">View source ↗</a>` : '<a href="https://github.com/BSData/wh40k-11e" target="_blank" rel="noreferrer">View source ↗</a>'}</div><div id="unit-config"></div></div>`;
     bind();
     if (selected && step === 3) renderConfig();
     if (fid) {
@@ -234,16 +244,6 @@ export async function mountArmyBuilder(root) {
     restoreArmyScroll(root, scroll);
   }
   function bind() {
-    root.querySelectorAll("[data-army-side]").forEach(
-      (el) =>
-        (el.onclick = async () => {
-          side = Number(el.dataset.armySide);
-          message = "";
-          search = "";
-          role = "All units";
-          await resume();
-        }),
-    );
     root.querySelectorAll("[data-step]").forEach(
       (el) =>
         (el.onclick = () => {
@@ -261,7 +261,11 @@ export async function mountArmyBuilder(root) {
           try {
             const d = await getData(el.dataset.faction);
             data = d;
-            if (current()?.faction !== d.id) armies[side] = newArmy(d);
+            if (current()?.faction !== d.id) {
+              armies[side] = newArmy(d);
+              if (!/^New army \d+$/.test(library.names[side]))
+                armies[side].name = library.names[side];
+            }
             step = 1;
             message = "";
             save();
@@ -276,6 +280,55 @@ export async function mountArmyBuilder(root) {
       const el = root.querySelector("#" + id);
       if (el) el[event] = fn;
     };
+    on("army-library-select", "onchange", async (e) => {
+      if (loading) return;
+      side = Number(e.target.value);
+      library.active = side;
+      message = "";
+      search = "";
+      role = "All units";
+      save();
+      await resume();
+    });
+    async function createSlot(copy) {
+      if (loading || armies.length >= ARMY_LIMIT) return;
+      library.active = side;
+      addArmySlot(library, copy);
+      side = library.active;
+      message = "";
+      search = "";
+      role = "All units";
+      save();
+      await resume();
+    }
+    on("new-army", "onclick", () => createSlot(false));
+    on("duplicate-army", "onclick", () => createSlot(true));
+    on("rename-army", "onclick", () => {
+      try {
+        library.active = side;
+        renameArmySlot(library, root.querySelector("#library-army-name").value);
+        save();
+        message = "";
+        render();
+      } catch (error) {
+        message = error.message;
+        render();
+      }
+    });
+    on("delete-army", "onclick", () => {
+      root.querySelector("#delete-army-confirm").hidden = false;
+    });
+    on("cancel-delete-army", "onclick", () => {
+      root.querySelector("#delete-army-confirm").hidden = true;
+    });
+    on("confirm-delete-army", "onclick", async () => {
+      library.active = side;
+      removeArmySlot(library);
+      side = library.active;
+      save();
+      message = "";
+      await resume();
+    });
     on("faction-search", "oninput", (e) => {
       factionSearch = e.target.value;
       render();

@@ -4,7 +4,7 @@ A browser army builder and unit-versus-unit combat calculator. The previous batt
 
 ## Combat calculator
 
-The starting example is **5 Custodian Guard vs 1 Cerastus Knight Lancer**. Choose factions and units on either side, or choose a unit/model count from the saved Army A/B. Select the defensive profile and one weapon profile per unit. Saved army wargear, attachments, Enhancements and abilities are not applied to combat automatically.
+The starting example is **5 Custodian Guard vs 1 Cerastus Knight Lancer**. Choose factions and units on either side, or choose a unit/model count from any saved named army. Select the defensive profile and one weapon profile per unit. Saved army wargear, attachments, Enhancements and abilities are not applied to combat automatically.
 
 Select Shooting or Fight phase, choose who attacks first, and optionally let surviving models fight back in melee. Configure model counts, Toughness, Save, Invulnerable Save, Wounds per model, wounds remaining on the first model, weapon bearers, A, BS/WS, S, AP and D. Profiles can be overridden for a controlled experiment. Model counts are experimental and are not restricted to legal squad sizes. Every model shares the chosen defensive profile.
 
@@ -61,3 +61,7 @@ Review, JSON and every PNG page use the same export status: Draft, Errors, Needs
 Army Lists displays selected/maximum copies and blocks adding beyond source-backed limits, including Epic Heroes, Battleline and Dedicated Transports. Model counts use the imported datasheet range. Supported squad composition, shared weapon caps and conditional quantity rules apply to equipment edits. Existing incomplete imports remain editable and are flagged at review. Unsupported faction/Detachment and equipment conditions still require source review; these checks do not certify every army rule.
 
 The Combat calculator defaults to datasheet maximum counts and allows fewer models for casualties. Experiment mode unlocks up to 100 models per side and is saved/exported with the scenario. Disabling it reduces oversized counts and weapon bearers to the current maximum. Legacy oversized scenarios load explicitly in Experiment mode; new scenarios cannot claim normal mode while exceeding limits. The selected September Guard profile uses its three-model maximum.
+
+## Army library
+
+Build up to 10 named army lists in browser storage. The header selector switches lists; Manage army offers rename, independent duplication and confirmed deletion. Existing Army A/B lists migrate automatically. JSON and image exports still work per army; export JSON for a portable backup. The Combat calculator can pick units from any saved list.

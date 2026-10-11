@@ -144,7 +144,7 @@ export function renderUnitCard(
    <div class="unit-body"><div class="unit-picker">
     <label>Faction<select data-faction aria-label="Unit ${i ? "B" : "A"} faction">${factions.map((f) => opt(f.id, f.name, pick.faction)).join("")}</select></label>
     <label>Unit<select data-unit aria-label="Unit ${i ? "B" : "A"} unit">${filtered.map((unit) => opt(unit.id, unit.name, pick.unit)).join("")}</select></label>
-    ${panel("catalogue-tools", "catalogue-tools", "Search units / saved army", `<label>Search units<input data-search aria-label="Unit ${i ? "B" : "A"} search units" type="search" placeholder="Search catalogue…" value="${esc(query)}"></label><button data-saved class="mini">Choose from saved Army ${i ? "B" : "A"} →</button><div id="saved-${i}"></div>`)}
+    ${panel("catalogue-tools", "catalogue-tools", "Search units / saved army", `<label>Search units<input data-search aria-label="Unit ${i ? "B" : "A"} search units" type="search" placeholder="Search catalogue…" value="${esc(query)}"></label><button data-saved class="mini">Choose from saved armies →</button><div id="saved-${i}"></div>`)}
    </div>
    <div class="unit-basics">${field(i, "models", "Models", u.models, 1, source ? combatModelMax(source, u, experiment) : 100)}<div class="model-tokens"><span aria-hidden="true">✠</span><b class="profile-badges">T ${esc(u.toughness)} <i>·</i> Sv ${u.save > 6 ? "—" : esc(u.save) + "+"} <i>·</i> W ${esc(u.wounds)}</b></div></div>
    <small class="model-limit-note">${experiment ? "Experimental · up to 100 models" : `Maximum ${maximum} ${maximum === 1 ? "model" : "models"}${maximum > 1 ? " · fewer for casualties" : ""}`}</small>
