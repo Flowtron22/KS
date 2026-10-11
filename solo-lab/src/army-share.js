@@ -1,3 +1,4 @@
+import { armyGroup, groupArmyItems } from "./army-groups.js";
 import { armySummary, unitPoints } from "./army-core.js";
 import { createArmyExport, rosterLabel } from "./army-export.js";
 import { escapeHtml as esc } from "./ui-html.js";
@@ -38,6 +39,7 @@ export function armyShareData(army, data) {
         }
       return {
         id: row.id,
+        group: armyGroup(unit),
         name: unit.name,
         label: rosterLabel(army, row, data),
         models: row.models,
@@ -135,33 +137,40 @@ export function renderArmyImages(info) {
     true,
   );
   block("Force Disposition · " + info.disposition, 24, "#a8b4c1", 30);
-  for (const u of info.units) {
-    block(
-      u.models +
-        " × " +
-        (u.label ?? u.name) +
-        "   ·   " +
-        (u.points ?? "?") +
-        " pts",
-      30,
-      "#fff5de",
-      8,
-      true,
-    );
-    if (u.composition?.length)
-      block(u.composition.join(" · "), 22, "#a8b4c1", 8);
-    if (u.warlord) block("WARLORD", 20, "#f4d080", 8, true);
-    if (u.enhancement)
-      block("Enhancement · " + u.enhancement, 24, "#c3a86d", 8);
-    if (u.attachment) block("Attached to · " + u.attachment, 22, "#a8b4c1", 8);
-    block(
-      u.weapons.join(" · ") || "Equipment not configured",
-      24,
-      "#c4ccd6",
-      8,
-    );
-    if (u.notes) block(u.notes, 22, "#a8b4c1", 8);
-    block("────────────────────────────────────", 20, "#35414d", 24);
+  for (const group of groupArmyItems(
+    info.units,
+    (unit) => unit.group ?? "other",
+  )) {
+    block(group.name.toUpperCase(), 24, "#c3a86d", 20, true);
+    for (const u of group.items) {
+      block(
+        u.models +
+          " × " +
+          (u.label ?? u.name) +
+          "   ·   " +
+          (u.points ?? "?") +
+          " pts",
+        30,
+        "#fff5de",
+        8,
+        true,
+      );
+      if (u.composition?.length)
+        block(u.composition.join(" · "), 22, "#a8b4c1", 8);
+      if (u.warlord) block("WARLORD", 20, "#f4d080", 8, true);
+      if (u.enhancement)
+        block("Enhancement · " + u.enhancement, 24, "#c3a86d", 8);
+      if (u.attachment)
+        block("Attached to · " + u.attachment, 22, "#a8b4c1", 8);
+      block(
+        u.weapons.join(" · ") || "Equipment not configured",
+        24,
+        "#c4ccd6",
+        8,
+      );
+      if (u.notes) block(u.notes, 22, "#a8b4c1", 8);
+      block("────────────────────────────────────", 20, "#35414d", 24);
+    }
   }
   if (info.issues.length) {
     block("REVIEW NEEDED", 20, "#efb39f", 8, true);

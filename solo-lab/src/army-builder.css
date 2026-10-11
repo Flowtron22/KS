@@ -27,3 +27,6 @@
 .army-validation { padding: 10px 14px; border: 1px solid #aa9154; color: #f4d080; font-weight: 700; letter-spacing: .05em; }
 .army-validation[data-status="errors"] { border-color: #cf684f; color: #ffae98; }
 .army-validation[data-status="checks-passed"] { border-color: #458c84; color: #8addce; }
+
+.army-group-heading {display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0;padding:12px 18px;background:#111920;color:#c3a86d;border-bottom:1px solid #303b43;font-size:12px;font-weight:700;letter-spacing:.04em;}
+.army-group-heading span {font-size:11px;color:#96a5b1;font-weight:400;}

@@ -1,3 +1,5 @@
+import { armyGroup, groupArmyItems } from "./army-groups.js";
+import { armyRosterView } from "./army-roster-view.js";
 import { unitAvailability, modelCountAllowed } from "./unit-limits.js";
 import { attachmentRole, attachmentCandidates } from "./army-attachments.js";
 import {
@@ -168,18 +170,26 @@ export async function mountArmyBuilder(root) {
         (allies || !u.allied) &&
         u.name.toLowerCase().includes(search.toLowerCase()) &&
         (role === "All units" ||
-          (role === "Other units" && u.role === "Other units") ||
+          (role === "Other units" && armyGroup(u) === "other") ||
           u.categories.includes(role)),
     );
   }
   function unitCatalogue() {
     const list = filtered();
-    return `<div class="catalogue-controls"><input id="unit-search" type="search" placeholder="Search units…" aria-label="Search units" value="${esc(search)}"><select id="unit-role" aria-label="Unit category">${options(["All units", "Character", "Battleline", "Infantry", "Vehicle", "Monster", "Dedicated Transport", "Other units"], role)}</select></div><div class="catalogue-toggles"><label><input id="show-legends" type="checkbox" ${legends ? "checked" : ""}> Legends / narrative</label><label><input id="show-allies" type="checkbox" ${allies ? "checked" : ""}> Allied entries</label><span>${list.length} units</span></div><div class="unit-catalogue">${
-      list
-        .map((u) => {
-          const { count, max, available } = unitAvailability(u, current());
-          return `<article class="catalogue-row"><button class="catalogue-detail" data-inspect="${u.id}"><span class="catalogue-symbol">${u.role === "Character" ? "✠" : u.role === "Battleline" ? "▥" : u.categories.includes("Vehicle") ? "▰" : "◇"}</span><span><strong>${esc(u.name)}</strong><small>${esc(u.role)} · ${u.models.min === u.models.max ? u.models.min : u.models.min + "–" + u.models.max} models${u.allied ? " · ALLIED" : ""}</small></span></button><span class="catalogue-points">${u.points ?? "?"}<small>PTS${u.conditionalPrice ? " *" : ""}</small></span><span class="unit-copy-count">${count}/${max}</span><button class="add-unit" data-add-unit="${u.id}" aria-label="Add ${esc(u.name)}" ${available ? "" : "disabled"} title="Maximum ${max} units">＋</button></article>`;
-        })
+    return `<div class="catalogue-controls"><input id="unit-search" type="search" placeholder="Search units…" aria-label="Search units" value="${esc(search)}"><select id="unit-role" aria-label="Unit category">${options(["All units", { id: "Character", name: "Characters" }, "Battleline", { id: "Dedicated Transport", name: "Dedicated Transports" }, { id: "Other units", name: "Other Datasheets" }, "Infantry", "Vehicle", "Monster"], role)}</select></div><div class="catalogue-toggles"><label><input id="show-legends" type="checkbox" ${legends ? "checked" : ""}> Legends / narrative</label><label><input id="show-allies" type="checkbox" ${allies ? "checked" : ""}> Allied entries</label><span>${list.length} units</span></div><div class="unit-catalogue">${
+      groupArmyItems(list)
+        .map(
+          (group) =>
+            `<section class="catalogue-group" aria-label="${group.name}"><h3 class="army-group-heading">${group.name}<span>${group.items.length}</span></h3>${group.items
+              .map((u) => {
+                const { count, max, available } = unitAvailability(
+                  u,
+                  current(),
+                );
+                return `<article class="catalogue-row"><button class="catalogue-detail" data-inspect="${u.id}"><span class="catalogue-symbol">${u.role === "Character" ? "✠" : u.role === "Battleline" ? "▥" : u.categories.includes("Vehicle") ? "▰" : "◇"}</span><span><strong>${esc(u.name)}</strong><small>${esc(u.role)} · ${u.models.min === u.models.max ? u.models.min : u.models.min + "–" + u.models.max} models${u.allied ? " · ALLIED" : ""}</small></span></button><span class="catalogue-points">${u.points ?? "?"}<small>PTS${u.conditionalPrice ? " *" : ""}</small></span><span class="unit-copy-count">${count}/${max}</span><button class="add-unit" data-add-unit="${u.id}" aria-label="Add ${esc(u.name)}" ${available ? "" : "disabled"} title="Maximum ${max} units">＋</button></article>`;
+              })
+              .join("")}</section>`,
+        )
         .join("") || '<p class="empty-army">No units match these filters.</p>'
     }</div>`;
   }
@@ -187,12 +197,7 @@ export async function mountArmyBuilder(root) {
     const a = current(),
       s = summary();
     return `<aside class="panel army-list-panel"><div class="army-list-top"><span class="eyebrow">YOUR ARMY / ${side ? "B" : "A"}</span><h2>${esc(a.name)}</h2><p>${esc(data.name)} · ${a.battleSize === "incursion" ? "Incursion" : "Strike Force"}</p><div class="army-points ${s.total > a.limit ? "over" : ""}"><strong>${s.unknown ? "≥ " : ""}${s.total.toLocaleString()}</strong><span>/ ${a.limit.toLocaleString()}<small>POINTS</small></span></div><div class="points-track"><i style="width:${Math.min(100, (s.total / a.limit) * 100)}%"></i></div><div class="points-remaining">${s.unknown ? s.unknown + " units need points review" : s.total > a.limit ? s.total - a.limit + " points over" : a.limit - s.total + " points remaining"}<b>${s.dp}/${s.budget} DP</b></div><p class="army-detachments">${esc(a.detachments.map((id) => data.detachments.find((d) => d.id === id)?.name).join(" + ") || "No Detachments selected")}</p></div><div class="army-roster">${
-      a.units
-        .map((r) => {
-          const u = data.units.find((u) => u.id === r.unitId);
-          return `<div class="army-selected-unit ${selected === r.id ? "chosen" : ""}"><button data-edit-unit="${r.id}"><strong>${esc(u.name)}</strong><small>${r.models} models${r.warlord ? " · WARLORD" : ""}${r.attachment ? " · ATTACHED" : ""}</small></button><b>${unitPoints(u, r, a) ?? "?"}<small>PTS</small></b><button class="mini" data-remove-unit="${r.id}" aria-label="Remove ${esc(u.name)}">×</button></div>`;
-        })
-        .join("") ||
+      armyRosterView(a, data, selected) ||
       '<div class="empty-army"><span>＋</span><h3>Your army starts here.</h3><p>Add units from the catalogue.<br>Select a unit to configure it.</p></div>'
     }</div><div class="army-list-bottom"><button class="button orange" data-step="4">Review army →</button><div><button class="mini" id="save-army">Save army</button><button class="mini" id="export-army">Export JSON</button></div></div></aside>`;
   }
