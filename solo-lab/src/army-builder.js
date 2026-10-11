@@ -2,6 +2,7 @@ import { equipmentView, bindEquipment } from "./army-equipment-view.js";
 import { resizeLoadout } from "./army-loadout.js";
 import { openArmyShare } from "./army-share.js";
 import { capturePanels, restorePanels } from "./ui-panels.js";
+import { captureArmyScroll, restoreArmyScroll } from "./army-scroll.js";
 import {
   newArmy,
   addUnit,
@@ -193,6 +194,8 @@ export async function mountArmyBuilder(root) {
     );
   }
   function render() {
+    const scroll = captureArmyScroll(root);
+    const panels = capturePanels(root);
     const focused = root.contains(document.activeElement)
         ? document.activeElement
         : null,
@@ -203,10 +206,12 @@ export async function mountArmyBuilder(root) {
     if (selected && step === 3) renderConfig();
     if (fid) {
       const el = root.querySelector("#" + fid);
-      el?.focus();
+      el?.focus({ preventScroll: true });
       if (typeof caret === "number" && el?.type === "search")
         el.setSelectionRange(caret, caret);
     }
+    restorePanels(root, panels);
+    restoreArmyScroll(root, scroll);
   }
   function bind() {
     root.querySelectorAll("[data-army-side]").forEach(
@@ -424,6 +429,7 @@ export async function mountArmyBuilder(root) {
     const sameUnit =
       target.querySelector("#config-title")?.textContent === unit.name;
     const openPanels = capturePanels(target);
+    const scroll = captureArmyScroll(root);
     const focused = target.contains(document.activeElement)
       ? document.activeElement
       : null;
@@ -579,7 +585,8 @@ export async function mountArmyBuilder(root) {
           el.dataset[focusEquipment] === focusValue &&
           el.dataset.model === focusModel,
       );
-    (focusTarget ?? target.querySelector("#close-config")).focus();
+    (focusTarget ?? target.querySelector("#close-config")).focus({ preventScroll: true });
+    if (sameUnit) restoreArmyScroll(root, scroll);
   }
   await resume(true);
 }
