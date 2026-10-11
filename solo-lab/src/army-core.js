@@ -7,6 +7,7 @@ import {
 import { modelCountAllowed, unitCopyLimit } from "./unit-limits.js";
 import { attachmentIssues } from "./army-attachments.js";
 import { enhancementIssues, armyEnhancementIssues } from "./army-enhancements.js";
+import { armyAllyIssues } from "./army-allies.js";
 export const PACK = "40k-11e-cc58ee3";
 export function newArmy(faction) {
   return {
@@ -111,8 +112,6 @@ export function armySummary(army, data) {
       issues.push(`${unit.name}: model count is outside the source range.`);
     if (unit.conditionalPrice && row.pointsOverride === null)
       issues.push(`${unit.name}: conditional points need review.`);
-    if (unit.allied)
-      issues.push(`${unit.name}: check allied-unit eligibility.`);
   }
   if (total > army.limit)
     issues.unshift(`${total - army.limit} points over the limit.`);
@@ -144,6 +143,8 @@ export function armySummary(army, data) {
       issues.push(`${u.name}: ${n} copies exceeds the basic limit of ${cap}.`);
   }
   issues.push(...armyEnhancementIssues(army, data));
+  issues.push(...armyAllyIssues(army, data, unitPoints));
+  if (army.units.length) issues.push(...(data.ruleReview ?? []));
   return { total, unknown, dp, budget, allowed, issues: [...new Set(issues)] };
 }
 export function validateArmy(value, data) {

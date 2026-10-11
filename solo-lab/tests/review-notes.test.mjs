@@ -32,7 +32,7 @@ test("Native Mechanicus units only receive ally warnings when selected in anothe
     }
     assert.equal(
       armySummary(army, data).issues.filter((issue) =>
-        issue.includes("allied-unit"),
+        issue.includes("requires Questor Forgepact"),
       ).length,
       faction === "imperial-knights" ? 3 : 0,
     );

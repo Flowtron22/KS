@@ -1,3 +1,4 @@
+import { attachedEnhancementIssues } from "./army-enhancements.js";
 const normalize = (value) =>
   String(value).replace(/[*^_]/g, "").replace(/\s+/g, " ").trim().toLowerCase();
 export function attachmentRole(unit) {
@@ -15,9 +16,13 @@ export function eligibleBodyguard(unit, target) {
   if (!attachmentRole(unit) || !unit.attachment?.targets.length || !target)
     return false;
   const names = [target.name, ...target.categories].map(normalize);
-  return unit.attachment.targets.some((name) =>
-    names.includes(normalize(name)),
-  );
+  return unit.attachment.targets.some((name) => {
+    const normalized = normalize(name);
+    if (names.includes(normalized)) return true;
+    // This is an intersection of keywords, not a datasheet name.
+    return normalized === "battleline imperium infantry" &&
+      ["battleline", "imperium", "infantry"].every((keyword) => names.includes(keyword));
+  });
 }
 function exceptionAllows(source, others, bodyguard) {
   if (!source || !others.length || !bodyguard) return false;
@@ -32,7 +37,7 @@ function exceptionAllows(source, others, bodyguard) {
   );
 }
 export function attachmentIssues(army, data) {
-  const issues = [];
+  const issues = attachedEnhancementIssues(army, data);
   const rows = new Map(army.units.map((row) => [row.id, row]));
   const unit = (row) => data.units.find((u) => u.id === row.unitId);
   function groupUnits(row, seen = new Set()) {
@@ -115,7 +120,7 @@ export function attachmentCandidates(army, data, row) {
       ),
     };
     return !attachmentIssues(candidate, data).some((message) =>
-      /cycle|Only one/.test(message),
+      /cycle|Only one|attached unit Enhancement limit/.test(message),
     );
   });
 }

@@ -3,6 +3,7 @@ import { compileAttachment } from "./attachment-compiler.mjs";
 import { compileEquipment } from "./wargear-compiler.mjs";
 import { duplicatePriceRule } from "./duplicate-price.mjs";
 import { compileCopyLimits } from "./unit-limits-compiler.mjs";
+import { compileEnhancementBearer } from "./enhancement-compiler.mjs";
 import { readFile, readdir, mkdir, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 const rawDir = new URL("../../research/raw/", import.meta.url),
@@ -90,6 +91,8 @@ function makeGraph(c) {
       if (n.id) map.set(n.id, n);
     });
   }
+  const gameSystem = byCatalogue.get(c.gameSystemId);
+  if (gameSystem) load(gameSystem);
   load(c);
   return map;
 }
@@ -283,6 +286,7 @@ function unit(u, map, origin, c) {
           ...(enhancement ? {
             armyMax: enhancementMax,
             upgrade: enhancementMax > 1,
+            bearer: compileEnhancementBearer([...ancestors.filter((parent) => /Enhancements?/i.test(parent.name ?? "")), n], map),
           } : {}),
           points: n.costs?.find((c) => c.name === "pts")?.value ?? 0,
         });
@@ -432,6 +436,7 @@ function unit(u, map, origin, c) {
       categories,
       u.associations,
     ),
+    attachedEnhancementMax: (u.constraints ?? []).find((constraint) => constraint.type === "max" && constraint.traverseAssociationGroup && map.get(constraint.field)?.name === "Enhancements")?.value ?? 1,
     copyLimits: compileCopyLimits(u, map),
     sizes,
     points,
@@ -499,6 +504,11 @@ for (const c of catalogues.filter((c) => c.library === false)) {
     name,
     group,
     auxiliary: /Titanicus|Traitoris/.test(name),
+    ruleReview: name === "Adeptus Custodes"
+      ? ["Adeptus Custodes: this army catalogue predates the September 2026 Codex; rules need source review."]
+      : c.name.includes("Adeptus Astartes")
+        ? ["Space Marines: September 2026 Codex changes are not reconciled in this army catalogue; rules need source review."]
+        : [],
     source: {
       repo: "BSData/wh40k-11e",
       commit,

@@ -93,8 +93,10 @@ test("Multiple selected Detachments grant their own Enhancements; duplicates are
   army.detachments = data.detachments.filter((entry) => ["Valourstrike Lance", "Dominus Foebreakers"].includes(entry.name)).map((entry) => entry.id);
   const enhancement = unit.options.find((entry) => entry.name === "Augury Halo");
   assert.equal(enhancementAllowed(enhancement, unit, army), false);
-  for (const name of ["Bearer of the Iron Chalice", "Blessed Plate"])
-    assert.equal(enhancementAllowed(unit.options.find((entry) => entry.name === name), unit, army), true);
+  assert.equal(enhancementAllowed(unit.options.find((entry) => entry.name === "Bearer of the Iron Chalice"), unit, army), true);
+  assert.equal(enhancementAllowed(unit.options.find((entry) => entry.name === "Blessed Plate"), unit, army), false);
+  const dominus = data.units.find((entry) => entry.name === "Knight Castellan");
+  assert.equal(enhancementAllowed(dominus.options.find((entry) => entry.name === "Blessed Plate"), dominus, army), true);
   const option = unit.options.find((entry) => entry.name === "Bearer of the Iron Chalice");
   addUnit(army, unit).enhancement = option.id;
   addUnit(army, unit).enhancement = option.id;
