@@ -32,4 +32,27 @@ The pinned community snapshot remains `cc58ee3b2c23f90af9d00e7bf234cd703b762299`
 3. Compile the conditional equipment, bearer and attachment cases listed by the structural audit. Some require loadout-dependent or model-specific information beyond simple keywords.
 4. Validate Warlord-specific abilities, transport embarkation and other faction-specific army restrictions. Those are not covered by the basic Character/Warlord check.
 
+## New Recruit cross-check — 11 October 2026
+
+Inspected the live [New Recruit builder](https://www.newrecruit.eu/app) in a temporary guest browser session, using its Warhammer 40,000 11th Edition system. Its My Games page showed a data update 20 hours ago. That is a dataset update indicator, not confirmation that every faction has its latest Codex.
+
+Observed comparisons:
+
+| Case | New Recruit | CODEX Imperium |
+| --- | --- | --- |
+| Custodian Guard | 4–5 models, initial four-model squad 180 points | Same older composition and initial cost; freshness review retained |
+| Guard equipment | Guardian spear; sentinel blade/shield alternative; one vexilla/shield/misericordia model | Same imported model packages and maximum one vexilla model |
+| Crusader in Freeblade Company | Avenger gatling cannon, heavy flamer and feet fixed; thermal cannon/battle cannon alternative; meltagun/stubber alternative; maximum one carapace weapon | Same equipment groups |
+| Crusader cost | Thermal default 395; battle cannon 410; battle cannon plus Mysterious Guardian 445 | Same calculated totals |
+| Freeblade Enhancements | Bringer of Justice 30, Hunter's Eye 25, Mysterious Guardian 35, Sanctuary 20; one per bearer | Same eligible choices, prices and per-bearer limit |
+| Assigned Agents in Strike Force | Character/Retinue choices show two-per-category, Requisitioned one | Same category budgets; exemptions were checked separately against the official FAQ |
+
+The builder displayed a catalogue announcement explicitly excluding Adeptus Astartes variants from completed MFM/Faction Pack updates, pending Space Marines Codex data. This corroborates the freshness review; it does not establish that every other faction has its latest Codex, and the Guard still shows the older composition.
+
+[BSData](https://www.bsdata.net/) says its files are developed for New Recruit compatibility. Our importer uses BSData as well, so agreement can reflect a shared source rather than independent verification. The precise deployed New Recruit commit was not exposed in the inspected UI.
+
+[New Recruit's news](https://www.newrecruit.eu/news) described its June 11th-edition update as experimental, generated from Faction Packs/MFM. This is historical context, not a claim that June's missing Leader support remains missing today. No live attachment pairing or every-faction eligibility sweep was performed in this spot-check.
+
+Use New Recruit as a practical comparison for allowed selections, equipment packages and calculated totals. Keep official current rules as the authority when sources disagree. No runtime rules were changed based solely on this comparison.
+
 Run `node solo-lab/tools/audit-army-rules.mjs` to regenerate [the per-faction structural report](army-rules-audit.json). Shared units occur in multiple chapter catalogues; its counts are catalogue entries, not unique miniatures or a percentage of official-rule accuracy.
