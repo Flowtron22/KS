@@ -13,12 +13,26 @@ test("Datasheets use familiar sections, with characters taking precedence", () =
   );
   assert.equal(armyGroup({ role: "Dedicated Transport" }), "transports");
   assert.equal(armyGroup({ categories: ["Infantry"] }), "other");
+  assert.equal(armyGroup({ categories: ["Character", "Epic Hero"] }), "epic-heroes");
+  assert.equal(armyGroup({ categories: ["Fortification"] }), "fortifications");
   const unit = { categories: ["Battleline"] };
   assert.deepEqual(
     groupArmyItems([unit]).map((g) => g.name),
     ["Battleline"],
   );
   assert.equal(groupArmyItems([unit])[0].items[0], unit);
+});
+
+test("Imperial Knight allies keep separate faction sections in roster and share data", async () => {
+  const data = JSON.parse(await readFile(new URL("../public/armies/imperial-knights.json", import.meta.url), "utf8"));
+  const army = newArmy(data);
+  for (const name of ["Canis Rex", "Knight Crusader", "Skitarii Marshal", "Warhound Titan", "Searchlight"])
+    addUnit(army, data.units.find((unit) => unit.name === name));
+  const groups = groupArmyItems(army.units, (row) => armyGroup(data.units.find((unit) => unit.id === row.unitId)));
+  assert.deepEqual(groups.map((group) => group.name), ["Epic Heroes", "Characters", "Allies: Adeptus Mechanicus", "Allies: Adeptus Titanicus", "Allies: Unaligned Forces"]);
+  assert.equal(groups.flatMap((group) => group.items).length, army.units.length);
+  const shared = armyShareData(army, data);
+  assert.deepEqual(shared.units.map((unit) => unit.group), army.units.map((row) => armyGroup(data.units.find((unit) => unit.id === row.unitId))));
 });
 
 test("Grouped roster and image preserve every row, attachments and escalating points", async () => {

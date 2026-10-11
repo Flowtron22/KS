@@ -8,6 +8,7 @@ import {
 } from "./army-library.js";
 import { armyLibraryView } from "./army-library-view.js";
 import { armyGroup, groupArmyItems } from "./army-groups.js";
+import { enhancementAllowed } from "./army-enhancements.js";
 import { armyRosterView } from "./army-roster-view.js";
 import { unitAvailability, modelCountAllowed } from "./unit-limits.js";
 import { attachmentRole, attachmentCandidates } from "./army-attachments.js";
@@ -180,13 +181,13 @@ export async function mountArmyBuilder(root) {
         (allies || !u.allied) &&
         u.name.toLowerCase().includes(search.toLowerCase()) &&
         (role === "All units" ||
-          (role === "Other units" && armyGroup(u) === "other") ||
+          armyGroup(u) === role ||
           u.categories.includes(role)),
     );
   }
   function unitCatalogue() {
     const list = filtered();
-    return `<div class="catalogue-controls"><input id="unit-search" type="search" placeholder="Search units…" aria-label="Search units" value="${esc(search)}"><select id="unit-role" aria-label="Unit category">${options(["All units", { id: "Character", name: "Characters" }, "Battleline", { id: "Dedicated Transport", name: "Dedicated Transports" }, { id: "Other units", name: "Other Datasheets" }, "Infantry", "Vehicle", "Monster"], role)}</select></div><div class="catalogue-toggles"><label><input id="show-legends" type="checkbox" ${legends ? "checked" : ""}> Legends / narrative</label><label><input id="show-allies" type="checkbox" ${allies ? "checked" : ""}> Allied entries</label><span>${list.length} units</span></div><div class="unit-catalogue">${
+    return `<div class="catalogue-controls"><input id="unit-search" type="search" placeholder="Search units…" aria-label="Search units" value="${esc(search)}"><select id="unit-role" aria-label="Unit category">${options(["All units", ...groupArmyItems(data.units).map(({ id, name }) => ({ id, name })), "Infantry", "Vehicle", "Monster"], role)}</select></div><div class="catalogue-toggles"><label><input id="show-legends" type="checkbox" ${legends ? "checked" : ""}> Legends / narrative</label><label><input id="show-allies" type="checkbox" ${allies ? "checked" : ""}> Allied entries</label><span>${list.length} units</span></div><div class="unit-catalogue">${
       groupArmyItems(list)
         .map(
           (group) =>
@@ -517,13 +518,8 @@ export async function mountArmyBuilder(root) {
     const stat = unit.profiles.find((p) => p.type === "Unit"),
       weapons = unit.profiles.filter((p) => /Weapons/.test(p.type)),
       enhancements = unit.options.filter(
-        (o) =>
-          o.type === "enhancement" &&
-          (!o.requiredDetachments?.length ||
-            o.requiredDetachments.some((id) =>
-              current().detachments.includes(id),
-            ) ||
-            o.id === row?.enhancement),
+        (o) => enhancementAllowed(o, unit, current()) ||
+          (o.type === "enhancement" && o.id === row?.enhancement),
       );
     target.innerHTML = `<div class="config-overlay"><section class="unit-config-panel" role="dialog" aria-modal="true" aria-labelledby="config-title"><div class="panel-top"><span class="eyebrow">${row ? "CONFIGURE UNIT" : "DATASHEET CHARACTERISTICS"}</span><button id="close-config" class="mini" aria-label="Close unit configuration">✕</button></div><h2 id="config-title">${esc(unit.name)}</h2><p class="muted">${esc(
       unit.categories
@@ -544,13 +540,7 @@ export async function mountArmyBuilder(root) {
               : ""
           }${
             enhancements.length
-              ? `<label>Enhancement<select id="config-enhancement"><option value="">None</option>${options(
-                  enhancements.map((o) => ({
-                    id: o.id,
-                    name: o.name + " · " + o.points + " pts",
-                  })),
-                  row.enhancement,
-                )}</select></label><p class="fine">Check the selected Enhancement against your Detachments and unit eligibility.</p>`
+              ? `<label>Enhancement<select id="config-enhancement"><option value="">None</option>${enhancements.map((o) => `<option value="${esc(o.id)}" ${o.id === row.enhancement ? "selected" : ""} ${enhancementAllowed(o, unit, current()) ? "" : "disabled"}>${esc(o.name)} · ${o.points} pts${enhancementAllowed(o, unit, current()) ? "" : " · Unavailable"}</option>`).join("")}</select></label>`
               : ""
           }${equipmentView(unit, row)}<label>Loadout / model composition notes<textarea id="config-notes" maxlength="2000" rows="2" placeholder="Sergeant equipment, weapon replacements, special models…">${esc(row.notes)}</textarea></label>${unit.conditionalPrice || unit.points === null ? `<label>Reviewed unit points override<input id="config-override" type="number" min="0" max="100000" placeholder="Use source calculation" value="${row.pointsOverride ?? ""}"></label><p class="fine">Override the unit cost after checking conditional rules. Enhancement and paid wargear costs are added separately.</p>` : ""}`
         : ""

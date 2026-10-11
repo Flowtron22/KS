@@ -156,13 +156,13 @@ function children(n, map) {
     .map((x) => resolve(x, map))
     .filter((x) => x.id);
 }
-function flatten(n, map, fn, path = [], seen = new Set()) {
+function flatten(n, map, fn, path = [], seen = new Set(), ancestors = []) {
   const key = n.targetId ?? n.id;
   if (seen.has(key) || path.length > 12) return;
-  fn(n, path);
+  fn(n, path, ancestors);
   const next = new Set(seen).add(key);
   for (const x of children(n, map))
-    flatten(x, map, fn, [...path, n.name], next);
+    flatten(x, map, fn, [...path, n.name], next, [...ancestors, n]);
 }
 function roots(c, seen = new Set(), origin = c) {
   if (seen.has(c.id)) return [];
@@ -180,17 +180,31 @@ function roots(c, seen = new Set(), origin = c) {
 function modelRange(u, map) {
   return compileModelRange(u, { children: (n) => children(n, map), bounds });
 }
+const detachmentIndexes = new WeakMap();
 function enhancementDetachments(n, map) {
+  if (!detachmentIndexes.has(map)) {
+    const index = new Map();
+    for (const entry of map.values()) {
+      const resolved = resolve(entry, map);
+      if (resolved.costs?.some((cost) => cost.name === "Detachment Points" && cost.value > 0)) {
+        index.set(entry.id, resolved);
+        if (entry.targetId) index.set(entry.targetId, resolved);
+        index.set(entry.name, resolved);
+      }
+    }
+    detachmentIndexes.set(map, index);
+  }
+  const index = detachmentIndexes.get(map);
   const ids = new Set();
-  walk(n.modifiers, (x) => {
+  walk([n.modifiers, n.modifierGroups], (x) => {
+    if (x.field !== "selections" || !(["lessThan", "atMost", "notInstanceOf"].includes(x.type) || (x.type === "equalTo" && x.value === 0))) return;
+    const target = index.get(x.childId) ?? index.get(x.childName);
     if (
       x.field === "selections" &&
-      ["lessThan", "atMost"].includes(x.type) &&
-      map
-        .get(x.childId)
-        ?.costs?.some((c) => c.name === "Detachment Points" && c.value > 0)
+      (["lessThan", "atMost", "notInstanceOf"].includes(x.type) || (x.type === "equalTo" && x.value === 0)) &&
+      target?.costs?.some((c) => c.name === "Detachment Points" && c.value > 0)
     )
-      ids.add(x.childId);
+      ids.add(target.targetId ?? target.id);
   });
   return [...ids];
 }
@@ -206,7 +220,7 @@ function unit(u, map, origin, c) {
           .filter(Boolean),
       ),
     ];
-  flatten(u, map, (n, path) => {
+  flatten(u, map, (n, path, ancestors) => {
     if (!path.length)
       attachmentProfiles.push(
         ...(n.profiles ?? []),
@@ -261,7 +275,7 @@ function unit(u, map, origin, c) {
           bounds: bounds(n),
           type: enhancement ? "enhancement" : weapon ? "weapon" : "equipment",
           requiredDetachments: enhancement
-            ? enhancementDetachments(n, map)
+            ? [...new Set([...ancestors, n].flatMap((parent) => enhancementDetachments(parent, map)))]
             : [],
           points: n.costs?.find((c) => c.name === "pts")?.value ?? 0,
         });

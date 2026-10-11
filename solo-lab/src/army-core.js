@@ -6,6 +6,7 @@ import {
 } from "./army-loadout.js";
 import { modelCountAllowed, unitCopyLimit } from "./unit-limits.js";
 import { attachmentIssues } from "./army-attachments.js";
+import { enhancementIssues } from "./army-enhancements.js";
 export const PACK = "40k-11e-cc58ee3";
 export function newArmy(faction) {
   return {
@@ -95,6 +96,7 @@ export function armySummary(army, data) {
       continue;
     }
     issues.push(
+      ...enhancementIssues(unit, row, army),
       ...loadoutIssues(unit, row).map((issue) =>
         issue.startsWith(unit.name + ":") ? issue : unit.name + ": " + issue,
       ),
@@ -148,6 +150,9 @@ export function armySummary(army, data) {
     issues.push(
       "Enhancement count exceeds the basic battle-size limit; Upgrade grouping needs manual review.",
     );
+  const enhancements = army.units.map((row) => row.enhancement).filter(Boolean);
+  if (new Set(enhancements).size !== enhancements.length)
+    issues.push("Each Enhancement can only be selected once.");
   return { total, unknown, dp, budget, allowed, issues: [...new Set(issues)] };
 }
 export function validateArmy(value, data) {
