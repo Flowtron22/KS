@@ -51,3 +51,9 @@ Production: https://codex-imperium.vercel.app. Vercel builds from the repository
 See [ARCHITECTURE.md](ARCHITECTURE.md) for module boundaries and rules for extending the calculator.
 
 Run `npm ci`, `npm run dev`, `npm run lint`, `npm test`, and `npm run build`. Tests cover faction data/army validation and attack calculations: Strength thresholds, AP/cover/invulnerable saves, damage allocation, Feel No Pain, re-rolls, dice expressions, surviving attacks back, deterministic seeds and agreement with an analytic damage expectation. Browser checks cover profile selection, phase/order changes, worker simulations, saved army handoff, scenario persistence, validation and responsive layout.
+
+### Army and experiment limits
+
+Army Lists displays selected/maximum copies and blocks adding beyond source-backed limits, including Epic Heroes, Battleline and Dedicated Transports. Model counts use the imported datasheet range. Supported squad composition, shared weapon caps and conditional quantity rules apply to equipment edits. Existing incomplete imports remain editable and are flagged at review. Unsupported faction/Detachment and equipment conditions still require source review; these checks do not certify every army rule.
+
+The Combat calculator defaults to datasheet maximum counts and allows fewer models for casualties. Experiment mode unlocks up to 100 models per side and is saved/exported with the scenario. Disabling it reduces oversized counts and weapon bearers to the current maximum. Legacy oversized scenarios load explicitly in Experiment mode; new scenarios cannot claim normal mode while exceeding limits. The selected September Guard profile uses its three-model maximum.

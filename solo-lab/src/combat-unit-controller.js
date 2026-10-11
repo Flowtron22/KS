@@ -1,4 +1,5 @@
 import { prepareRules } from "./rule-picker.js";
+import { combatModelMax } from "./unit-limits.js";
 
 export function bindUnitControls(i, root, context) {
   const {
@@ -15,6 +16,7 @@ export function bindUnitControls(i, root, context) {
     applyWeapon,
     chooseSaved,
     upgradeGuard,
+    getExperiment,
   } = context;
   root.querySelector("[data-faction]").onchange = async (e) => {
     setBusy(true);
@@ -92,6 +94,19 @@ export function bindUnitControls(i, root, context) {
         obj = sub ? u[key] : u,
         k = sub ?? key,
         allBearers = u.bearers === u.models;
+      if (key === "models") {
+        const source = pick.data.units.find((unit) => unit.id === pick.unit);
+        const max = combatModelMax(source, u, getExperiment());
+        const value = Number(el.value);
+        if (!Number.isInteger(value) || value < 1 || value > max) {
+          if (el.value === "") return;
+          el.value = u.models;
+          notice(
+            `Maximum ${max} models${getExperiment() ? "." : ". Enable Experiment mode for larger counts."}`,
+          );
+          return;
+        }
+      }
       obj[k] =
         el.type === "checkbox"
           ? el.checked

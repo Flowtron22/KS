@@ -14,6 +14,7 @@ import {
 } from "./combat-reports.js";
 import { prepareRules } from "./rule-picker.js";
 import { EFFECT_DEFAULTS, effectiveAttack } from "./combat-effects.js";
+import { combatModelMax, constrainCombatModels } from "./unit-limits.js";
 import {
   validateScenario,
   seeded,
@@ -51,6 +52,7 @@ let index,
   results = null,
   lastRoll = null,
   armyMounted = false;
+let experiment = false;
 const weapons = (u) => weaponProfiles(u, scenario.phase);
 $("app").innerHTML = combatShell();
 function notice(s) {
@@ -147,6 +149,7 @@ function unitFromCatalogue(i, u, models = u.models.min) {
     picks[i].data?.name === "Adeptus Custodes"
   )
     upgradeGuard(i);
+  constrainCombatModels(u, scenario.units[i], experiment);
   applyWeapon(i);
   if (!num(stats.W) || !num(stats.T) || !num(stats.Sv))
     notice(
@@ -167,6 +170,7 @@ function upgradeGuard(i) {
   picks[i].profile = source.profiles.find((p) => p.type === "Unit")?.id;
   picks[i].weapon =
     weapons(source).find((p) => p.name === "Guardian Spear")?.id ?? "";
+  constrainCombatModels(source, scenario.units[i], experiment);
 }
 function renderUnit(i) {
   const root = $("unit-" + i);
@@ -175,6 +179,7 @@ function renderUnit(i) {
     factions: index.factions,
     phase: scenario.phase,
     first: scenario.first,
+    experiment,
   });
   restorePanels(root, open);
   bindUnit(i);
@@ -269,6 +274,7 @@ function bindUnit(i) {
     applyWeapon,
     chooseSaved,
     upgradeGuard,
+    getExperiment: () => experiment,
   });
 }
 async function chooseSaved(i) {
@@ -332,6 +338,11 @@ function setBusy(value) {
   }
 }
 function checked() {
+  scenario.units.forEach((unit, i) => {
+    const source = picks[i].data.units.find((u) => u.id === picks[i].unit);
+    if (unit.models > combatModelMax(source, unit, experiment))
+      throw Error(`${unit.name}: model count exceeds the datasheet maximum.`);
+  });
   scenario.seed = Number($("seed").value);
   scenario.units.forEach((u, i) => prepareRules(u, picks[i], scenario.phase));
   scenario.units.forEach((u, i) => {
@@ -361,6 +372,7 @@ function download(name, value) {
 function payload() {
   return {
     schema: "combat-lab-1",
+    experiment,
     scenario: checked(),
     picks: picks.map(({ faction, unit, profile, weapon }) => ({
       faction,
@@ -400,6 +412,22 @@ async function restore(value) {
     nextPicks.push({ ...p, data, search: "" });
   }
   next.units.forEach((u, i) => prepareRules(u, nextPicks[i], next.phase));
+  if (value.experiment !== undefined && typeof value.experiment !== "boolean")
+    throw Error("Invalid Experiment mode.");
+  const oversized = next.units.some(
+    (u, i) =>
+      u.models >
+      combatModelMax(
+        nextPicks[i].data.units.find((v) => v.id === nextPicks[i].unit),
+        u,
+      ),
+  );
+  if (oversized && value.experiment === false)
+    throw Error(
+      "This scenario exceeds datasheet limits. Enable Experiment mode before exporting it.",
+    );
+  experiment = value.experiment ?? oversized;
+  $("experiment-mode").checked = experiment;
   scenario = next;
   picks = nextPicks;
   scenario.units.forEach((u, i) => {
@@ -418,7 +446,7 @@ async function restore(value) {
   });
   render();
   changed();
-  notice("Scenario loaded.");
+  notice(experiment ? "Experimental scenario loaded." : "Scenario loaded.");
 }
 async function example() {
   const data = await Promise.all(
@@ -577,6 +605,21 @@ $("swap").onclick = () => {
   picks.reverse();
   render();
   changed();
+};
+$("experiment-mode").onchange = (event) => {
+  experiment = event.target.checked;
+  if (!experiment)
+    scenario.units.forEach((unit, i) => {
+      const source = picks[i].data.units.find((u) => u.id === picks[i].unit);
+      constrainCombatModels(source, unit);
+    });
+  render();
+  changed();
+  notice(
+    experiment
+      ? "Experimental counts enabled."
+      : "Datasheet model limits applied.",
+  );
 };
 $("new-seed").onclick = () => {
   $("seed").value = crypto.getRandomValues(new Uint32Array(1))[0];

@@ -22,3 +22,5 @@
   .warlord-choice{min-height:44px}
   .unit-config-panel>#done-config{width:100%;min-height:48px}
 }
+
+.unit-copy-count{flex:none;min-width:28px;text-align:center;color:#a9b6c3;font-size:11px}

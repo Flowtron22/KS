@@ -1,5 +1,7 @@
+import { compileModelRange } from "./model-range-compiler.mjs";
 import { compileEquipment } from "./wargear-compiler.mjs";
 import { duplicatePriceRule } from "./duplicate-price.mjs";
+import { compileCopyLimits } from "./unit-limits-compiler.mjs";
 import { readFile, readdir, mkdir, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 const rawDir = new URL("../../research/raw/", import.meta.url),
@@ -175,24 +177,7 @@ function roots(c, seen = new Set(), origin = c) {
   return result;
 }
 function modelRange(u, map) {
-  function count(n, seen = new Set()) {
-    const key = n.targetId ?? n.id;
-    if (seen.has(key)) return { min: 0, max: 0 };
-    const next = new Set(seen).add(key),
-      ch = children(n, map),
-      b = bounds(n);
-    if (n.type === "model")
-      return { min: b.min, max: b.max ?? Math.max(1, b.min) };
-    if (ch.some((x) => x.type === "model") && (b.min || b.max !== null))
-      return { min: b.min, max: b.max ?? b.min };
-    const ranges = ch.map((x) => count(x, next));
-    return {
-      min: ranges.reduce((n, r) => n + r.min, 0),
-      max: ranges.reduce((n, r) => n + r.max, 0),
-    };
-  }
-  const r = count(u);
-  return { min: r.min || 1, max: Math.max(r.min || 1, r.max || 1) };
+  return compileModelRange(u, { children: (n) => children(n, map), bounds });
 }
 function enhancementDetachments(n, map) {
   const ids = new Set();
@@ -313,9 +298,12 @@ function unit(u, map, origin, c) {
       groupedPrice = true;
   });
   const duplicatePriceRules = modifiers
-    .map(m => duplicatePriceRule(m, u.targetId ?? u.id)).filter(Boolean);
+    .map((m) => duplicatePriceRule(m, u.targetId ?? u.id))
+    .filter(Boolean);
   const conditionalPrice =
-    modifiers.length !== priceRules.length + duplicatePriceRules.length || groupedPrice || !cost;
+    modifiers.length !== priceRules.length + duplicatePriceRules.length ||
+    groupedPrice ||
+    !cost;
   const sizes = [
     ...new Set([
       range.min,
@@ -369,6 +357,7 @@ function unit(u, map, origin, c) {
     allied,
     origin: originName,
     models: range,
+    copyLimits: compileCopyLimits(u, map),
     sizes,
     points: cost?.value ?? null,
     priceRules,

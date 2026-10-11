@@ -1,3 +1,4 @@
+import { unitAvailability, modelCountAllowed } from "./unit-limits.js";
 import { equipmentView, bindEquipment } from "./army-equipment-view.js";
 import { resizeLoadout } from "./army-loadout.js";
 import { openArmyShare } from "./army-share.js";
@@ -167,7 +168,14 @@ export async function mountArmyBuilder(root) {
   }
   function unitCatalogue() {
     const list = filtered();
-    return `<div class="catalogue-controls"><input id="unit-search" type="search" placeholder="Search units…" aria-label="Search units" value="${esc(search)}"><select id="unit-role" aria-label="Unit category">${options(["All units", "Character", "Battleline", "Infantry", "Vehicle", "Monster", "Dedicated Transport", "Other units"], role)}</select></div><div class="catalogue-toggles"><label><input id="show-legends" type="checkbox" ${legends ? "checked" : ""}> Legends / narrative</label><label><input id="show-allies" type="checkbox" ${allies ? "checked" : ""}> Allied entries</label><span>${list.length} units</span></div><div class="unit-catalogue">${list.map((u) => `<article class="catalogue-row"><button class="catalogue-detail" data-inspect="${u.id}"><span class="catalogue-symbol">${u.role === "Character" ? "✠" : u.role === "Battleline" ? "▥" : u.categories.includes("Vehicle") ? "▰" : "◇"}</span><span><strong>${esc(u.name)}</strong><small>${esc(u.role)} · ${u.models.min === u.models.max ? u.models.min : u.models.min + "–" + u.models.max} models${u.allied ? " · ALLIED" : ""}</small></span></button><span class="catalogue-points">${u.points ?? "?"}<small>PTS${u.conditionalPrice ? " *" : ""}</small></span><button class="add-unit" data-add-unit="${u.id}" aria-label="Add ${esc(u.name)}">＋</button></article>`).join("") || '<p class="empty-army">No units match these filters.</p>'}</div>`;
+    return `<div class="catalogue-controls"><input id="unit-search" type="search" placeholder="Search units…" aria-label="Search units" value="${esc(search)}"><select id="unit-role" aria-label="Unit category">${options(["All units", "Character", "Battleline", "Infantry", "Vehicle", "Monster", "Dedicated Transport", "Other units"], role)}</select></div><div class="catalogue-toggles"><label><input id="show-legends" type="checkbox" ${legends ? "checked" : ""}> Legends / narrative</label><label><input id="show-allies" type="checkbox" ${allies ? "checked" : ""}> Allied entries</label><span>${list.length} units</span></div><div class="unit-catalogue">${
+      list
+        .map((u) => {
+          const { count, max, available } = unitAvailability(u, current());
+          return `<article class="catalogue-row"><button class="catalogue-detail" data-inspect="${u.id}"><span class="catalogue-symbol">${u.role === "Character" ? "✠" : u.role === "Battleline" ? "▥" : u.categories.includes("Vehicle") ? "▰" : "◇"}</span><span><strong>${esc(u.name)}</strong><small>${esc(u.role)} · ${u.models.min === u.models.max ? u.models.min : u.models.min + "–" + u.models.max} models${u.allied ? " · ALLIED" : ""}</small></span></button><span class="catalogue-points">${u.points ?? "?"}<small>PTS${u.conditionalPrice ? " *" : ""}</small></span><span class="unit-copy-count">${count}/${max}</span><button class="add-unit" data-add-unit="${u.id}" aria-label="Add ${esc(u.name)}" ${available ? "" : "disabled"} title="Maximum ${max} units">＋</button></article>`;
+        })
+        .join("") || '<p class="empty-army">No units match these filters.</p>'
+    }</div>`;
   }
   function armyList() {
     const a = current(),
@@ -326,10 +334,14 @@ export async function mountArmyBuilder(root) {
             render();
             return;
           }
-          addUnit(
-            current(),
-            data.units.find((u) => u.id === el.dataset.addUnit),
-          );
+          const unit = data.units.find((u) => u.id === el.dataset.addUnit);
+          const availability = unitAvailability(unit, current());
+          if (!availability.available) {
+            message = `Maximum ${availability.max} units of ${unit.name}.`;
+            render();
+            return;
+          }
+          addUnit(current(), unit);
           save();
           render();
         }),
@@ -511,7 +523,7 @@ export async function mountArmyBuilder(root) {
     };
     on("config-models", "oninput", (e) => {
       const n = Number(e.target.value);
-      if (Number.isInteger(n) && n >= unit.models.min && n <= unit.models.max) {
+      if (modelCountAllowed(unit, n)) {
         row.models = n;
         resizeLoadout(unit, row);
         save();
@@ -585,7 +597,9 @@ export async function mountArmyBuilder(root) {
           el.dataset[focusEquipment] === focusValue &&
           el.dataset.model === focusModel,
       );
-    (focusTarget ?? target.querySelector("#close-config")).focus({ preventScroll: true });
+    (focusTarget ?? target.querySelector("#close-config")).focus({
+      preventScroll: true,
+    });
     if (sameUnit) restoreArmyScroll(root, scroll);
   }
   await resume(true);

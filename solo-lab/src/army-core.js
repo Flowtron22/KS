@@ -4,6 +4,7 @@ import {
   loadoutIssues,
   validateLoadout,
 } from "./army-loadout.js";
+import { modelCountAllowed, unitCopyLimit } from "./unit-limits.js";
 export const PACK = "40k-11e-cc58ee3";
 export function newArmy(faction) {
   return {
@@ -56,8 +57,9 @@ export function unitPoints(unit, row, army) {
     }
   if (army && value !== null) {
     const index = army.units.indexOf(row);
-    const previous = army.units.slice(0, Math.max(0, index))
-      .filter(r => r.unitId === row.unitId).length;
+    const previous = army.units
+      .slice(0, Math.max(0, index))
+      .filter((r) => r.unitId === row.unitId).length;
     for (const rule of unit.duplicatePriceRules ?? [])
       value += Math.floor(previous / rule.every) * rule.value;
   }
@@ -99,7 +101,7 @@ export function armySummary(army, data) {
       issues.push(`${unit.name}: unit points need review.`);
     } else total += pts;
     counts.set(unit.id, (counts.get(unit.id) ?? 0) + 1);
-    if (row.models < unit.models.min || row.models > unit.models.max)
+    if (!modelCountAllowed(unit, row.models))
       issues.push(`${unit.name}: model count is outside the source range.`);
     if (unit.conditionalPrice && row.pointsOverride === null)
       issues.push(`${unit.name}: conditional points need review.`);
@@ -140,14 +142,9 @@ export function armySummary(army, data) {
     if (!u?.categories.includes("Character"))
       issues.push("Your Warlord must be a Character.");
   }
-  const limit = army.battleSize === "incursion" ? 2 : 3;
   for (const [id, n] of counts) {
     const u = data.units.find((u) => u.id === id),
-      cap = u.categories.includes("Epic Hero")
-        ? 1
-        : u.categories.includes("Battleline")
-          ? limit * 2
-          : limit;
+      cap = unitCopyLimit(u, army);
     if (n > cap)
       issues.push(`${u.name}: ${n} copies exceeds the basic limit of ${cap}.`);
   }
@@ -212,9 +209,7 @@ export function validateArmy(value, data) {
       !u ||
       typeof row.id !== "string" ||
       ids.has(row.id) ||
-      !Number.isInteger(row.models) ||
-      row.models < u.models.min ||
-      row.models > u.models.max ||
+      !modelCountAllowed(u, row.models) ||
       typeof row.warlord !== "boolean" ||
       typeof row.notes !== "string" ||
       row.notes.length > 2000

@@ -645,3 +645,5 @@ input[type="checkbox"] {
     animation: none;
   }
 }
+
+.model-limit-note{display:block;color:#94a4b5;font-size:11px;margin:-4px 0 14px}.experiment-toggle{display:flex;gap:8px;align-items:center;min-height:44px;font-size:13px}.experiment-toggle input{width:18px;height:18px}

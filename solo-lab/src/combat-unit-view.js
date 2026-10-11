@@ -1,6 +1,7 @@
 import { escapeHtml as esc, option as opt } from "./ui-html.js";
 import { rulePicker } from "./rule-picker.js";
 import { KATAHS, KATAH_SOURCE } from "./combat-effects.js";
+import { combatModelMax } from "./unit-limits.js";
 
 export function weaponProfiles(unit, phase) {
   return (unit?.profiles ?? []).filter(
@@ -120,7 +121,12 @@ function weaponFields(i, u, phase) {
    ${panel("weapon-modifiers", "modifiers", "Modifiers and re-rolls", `<div class="defence-fields">${select(i, "weapon.hitMod", "Hit modifier", mods, w.hitMod)}${select(i, "weapon.woundMod", "Wound modifier", mods, w.woundMod)}${select(i, "weapon.hitReroll", "Hit re-rolls", rerolls, w.hitReroll)}${select(i, "weapon.woundReroll", "Wound re-rolls", rerolls, w.woundReroll)}</div><p class="fine">Manual effects only. These controls do not activate a named ability or Stratagem.</p>`)}`;
 }
 
-export function renderUnitCard(i, u, pick, { factions, phase, first }) {
+export function renderUnitCard(
+  i,
+  u,
+  pick,
+  { factions, phase, first, experiment = false },
+) {
   const source = pick.data?.units.find((unit) => unit.id === pick.unit);
   const query = pick.search ?? "";
   const filtered = (pick.data?.units ?? []).filter(
@@ -133,13 +139,15 @@ export function renderUnitCard(i, u, pick, { factions, phase, first }) {
         unit.name.toLowerCase().includes(query.toLowerCase())),
   );
   const count = abilityCount(u);
+  const maximum = source ? combatModelMax(source, u, experiment) : 100;
   return `<div class="panel-top"><span class="eyebrow">UNIT ${i ? "B" : "A"} / ${i === first ? "ATTACKS FIRST" : "TARGET"}</span><span class="small-tag">${esc(pick.data?.name ?? "CUSTOM")}</span></div>
    <div class="unit-body"><div class="unit-picker">
     <label>Faction<select data-faction aria-label="Unit ${i ? "B" : "A"} faction">${factions.map((f) => opt(f.id, f.name, pick.faction)).join("")}</select></label>
     <label>Unit<select data-unit aria-label="Unit ${i ? "B" : "A"} unit">${filtered.map((unit) => opt(unit.id, unit.name, pick.unit)).join("")}</select></label>
     ${panel("catalogue-tools", "catalogue-tools", "Search units / saved army", `<label>Search units<input data-search aria-label="Unit ${i ? "B" : "A"} search units" type="search" placeholder="Search catalogue…" value="${esc(query)}"></label><button data-saved class="mini">Choose from saved Army ${i ? "B" : "A"} →</button><div id="saved-${i}"></div>`)}
    </div>
-   <div class="unit-basics">${field(i, "models", "Models", u.models, 1, 100)}<div class="model-tokens"><span aria-hidden="true">✠</span><b class="profile-badges">T ${esc(u.toughness)} <i>·</i> Sv ${u.save > 6 ? "—" : esc(u.save) + "+"} <i>·</i> W ${esc(u.wounds)}</b></div></div>
+   <div class="unit-basics">${field(i, "models", "Models", u.models, 1, source ? combatModelMax(source, u, experiment) : 100)}<div class="model-tokens"><span aria-hidden="true">✠</span><b class="profile-badges">T ${esc(u.toughness)} <i>·</i> Sv ${u.save > 6 ? "—" : esc(u.save) + "+"} <i>·</i> W ${esc(u.wounds)}</b></div></div>
+   <small class="model-limit-note">${experiment ? "Experimental · up to 100 models" : `Maximum ${maximum} ${maximum === 1 ? "model" : "models"}${maximum > 1 ? " · fewer for casualties" : ""}`}</small>
    <label>Weapon<select data-weapon aria-label="Unit ${i ? "B" : "A"} weapon">${weaponProfiles(
      source,
      phase,

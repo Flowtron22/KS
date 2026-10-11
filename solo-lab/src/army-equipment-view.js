@@ -1,18 +1,42 @@
 import { escapeHtml as esc, option } from "./ui-html.js";
 import {
   defaultChoices,
+  defaultQuantities,
   newLoadout,
   loadoutCounts,
   loadoutIssues,
   canSelectModel,
 } from "./army-loadout.js";
+import {
+  equipmentRestrictionIssues,
+  equipmentBounds,
+  equipmentSelectionCounts,
+} from "./equipment-limits.js";
+function choiceIssues(unit, row, index, group, value) {
+  const models = row.loadout.models.map((m, i) =>
+    i === index ? { ...m, choices: { ...m.choices, [group]: value } } : m,
+  );
+  return [
+    ...equipmentRestrictionIssues(unit, models),
+    ...loadoutIssues(unit, {
+      ...row,
+      loadout: { ...row.loadout, models },
+    }).filter(
+      (issue) =>
+        issue.includes("selection limit exceeded") ||
+        issue.includes("equipment quantity outside source bounds"),
+    ),
+  ];
+}
 export function equipmentView(unit, row) {
   if (!row.loadout)
     return '<section class="equipment-picker"><h3>Equipment</h3><p>Choose model equipment to replace the old manual quantities.</p><button id="reset-equipment" class="button">Configure equipment</button></section>';
   const types = unit.equipment.models.length
     ? unit.equipment.models
     : [unit.equipment.tree];
+  const counts = equipmentSelectionCounts(unit, row.loadout.models);
   function node(n, m, index, selected = false) {
+    const bounds = equipmentBounds(n, counts);
     if (n.kind === "weapon") {
       const count =
         m.quantities[n.id] ?? (selected ? Math.max(1, n.min) : n.min);
@@ -27,9 +51,9 @@ export function equipmentView(unit, row) {
         "<label>" +
         esc(n.name) +
         '<input type="number" min="' +
-        n.min +
+        bounds.min +
         '" max="' +
-        (n.max ?? Math.max(1, n.min)) +
+        (bounds.max ?? Math.max(1, bounds.min)) +
         '" value="' +
         count +
         '" data-equipment-qty="' +
@@ -50,11 +74,20 @@ export function equipmentView(unit, row) {
         '" data-model="' +
         index +
         '">' +
-        (!n.min ? option("", "None", id) : "") +
-        n.children.map((c) => option(c.id, c.name, id)).join("") +
+        (!bounds.min ? option("", "None", id) : "") +
+        n.children
+          .map(
+            (c) =>
+              `<option value="${esc(c.id)}" ${c.id === id ? "selected" : ""} ${choiceIssues(unit, row, index, n.id, c.id).length ? "disabled" : ""}>${esc(c.name)}</option>`,
+          )
+          .join("") +
         "</select></label>" +
         (chosen && chosen.kind !== "weapon" ? node(chosen, m, index, true) : "")
       );
+    }
+    if (n.kind === "bundle" && n.max !== null && !selected) {
+      const count = m.quantities[n.id] ?? n.min;
+      return `<div class="equipment-group"><label>${esc(n.name)}<input type="number" min="${bounds.min}" max="${bounds.max}" value="${count}" data-equipment-qty="${esc(n.id)}" data-model="${index}"></label>${count ? (n.children ?? []).map((c) => node(c, m, index)).join("") : ""}</div>`;
     }
     return (
       '<div class="equipment-group">' +
@@ -135,6 +168,21 @@ export function bindEquipment(target, unit, row, onChange) {
   target.querySelectorAll("[data-equipment-choice]").forEach(
     (el) =>
       (el.onchange = () => {
+        const issues = choiceIssues(
+          unit,
+          row,
+          Number(el.dataset.model),
+          el.dataset.equipmentChoice,
+          el.value,
+        );
+        if (issues.length) {
+          el.value =
+            row.loadout.models[Number(el.dataset.model)].choices[
+              el.dataset.equipmentChoice
+            ];
+          target.querySelector(".equipment-feedback").textContent = issues[0];
+          return;
+        }
         row.loadout.models[Number(el.dataset.model)].choices[
           el.dataset.equipmentChoice
         ] = el.value;
@@ -154,6 +202,7 @@ export function bindEquipment(target, unit, row, onChange) {
           previous = model.quantities[el.dataset.equipmentQty];
         model.quantities[el.dataset.equipmentQty] = q;
         if (
+          equipmentRestrictionIssues(unit, row.loadout.models).length ||
           loadoutIssues(unit, row).some((issue) =>
             issue.includes("selection limit exceeded"),
           )
@@ -184,7 +233,7 @@ export function bindEquipment(target, unit, row, onChange) {
         row.loadout.models[index] = {
           type: t.id,
           choices: defaultChoices(t),
-          quantities: {},
+          quantities: defaultQuantities(t),
         };
         row.wargear = loadoutCounts(unit, row.loadout);
         onChange();
@@ -193,12 +242,19 @@ export function bindEquipment(target, unit, row, onChange) {
   const copy = target.querySelector("#copy-equipment");
   if (copy)
     copy.onclick = () => {
+      const previous = structuredClone(row.loadout.models);
       const first = row.loadout.models[0];
       for (const m of row.loadout.models)
         if (m.type === first.type) {
           m.choices = { ...first.choices };
           m.quantities = { ...first.quantities };
         }
+      const issues = equipmentRestrictionIssues(unit, row.loadout.models);
+      if (issues.length) {
+        row.loadout.models = previous;
+        target.querySelector(".equipment-feedback").textContent = issues[0];
+        return;
+      }
       row.wargear = loadoutCounts(unit, row.loadout);
       onChange();
     };
