@@ -145,11 +145,6 @@ function unitFromCatalogue(i, u, models = u.models.min) {
     },
     weapon: { ...baseWeapon },
   };
-  if (
-    u.name === "Custodian Guard" &&
-    picks[i].data?.name === "Adeptus Custodes"
-  )
-    upgradeGuard(i);
   constrainCombatModels(u, scenario.units[i], experiment);
   applyWeapon(i);
   if (!num(stats.W) || !num(stats.T) || !num(stats.Sv))

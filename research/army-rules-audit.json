@@ -1,5 +1,5 @@
 {
-  "auditedOn": "2026-10-11",
+  "auditedOn": "2026-10-12",
   "description": "Structural coverage audit of the pinned community snapshot. Counts measure compiler support, not official-rule certification. Per-unit review may also depend on the selected loadout.",
   "source": "BSData/wh40k-11e cc58ee3b2c23f90af9d00e7bf234cd703b762299",
   "liveSourceChecked": "3988a8bdd210f9d31ea5b6782d0016688ccb6815 (10 October 2026); Custodes still retains old squad composition",
@@ -228,9 +228,7 @@
       "enhancementsRequiringReview": [],
       "attachments": 8,
       "attachmentsRequiringReview": [],
-      "freshnessReview": [
-        "Adeptus Custodes: this army catalogue predates the September 2026 Codex; rules need source review."
-      ]
+      "freshnessReview": []
     },
     {
       "faction": "Adeptus Mechanicus",

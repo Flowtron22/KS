@@ -53,6 +53,20 @@ const fixture = () => {
   return { u, pick };
 };
 
+test("Guard preview is explicit and can return to the catalogue profile", () => {
+  const { u, pick } = fixture();
+  const options = { factions: index.factions, phase: "fight", first: 0 };
+  const preview = renderUnitCard(0, u, pick, options);
+  assert.match(preview, /Codex preview · 3 models/);
+  assert.equal((preview.match(/data-guard-reset/g) ?? []).length, 1);
+  assert.doesNotMatch(preview, /data-guard-update/);
+  u.guardCodex = false;
+  const catalogue = renderUnitCard(0, u, pick, options);
+  assert.equal((catalogue.match(/data-guard-update/g) ?? []).length, 1);
+  assert.doesNotMatch(catalogue, /data-guard-reset/);
+  assert.match(catalogue, /Maximum 5 models/);
+});
+
 test("Final shell owns exactly one of every controller target", () => {
   const ids = [...combatShell().matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
   assert.equal(new Set(ids).size, ids.length);

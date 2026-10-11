@@ -504,9 +504,7 @@ for (const c of catalogues.filter((c) => c.library === false)) {
     name,
     group,
     auxiliary: /Titanicus|Traitoris/.test(name),
-    ruleReview: name === "Adeptus Custodes"
-      ? ["Adeptus Custodes: this army catalogue predates the September 2026 Codex; rules need source review."]
-      : c.name.includes("Adeptus Astartes")
+    ruleReview: c.name.includes("Adeptus Astartes")
         ? ["Space Marines: September 2026 Codex changes are not reconciled in this army catalogue; rules need source review."]
         : [],
     source: {

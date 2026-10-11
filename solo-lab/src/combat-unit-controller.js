@@ -227,7 +227,16 @@ export function bindUnitControls(i, root, context) {
       renderUnit(i);
       changed();
       notice(
-        "September Guard defensive and Guardian Spear characteristics applied. Other Custodes profiles remain community data.",
+        "Codex preview applied. Army Lists retain the catalogue rules; preview points and equipment are not imported.",
       );
+    };
+  const guardReset = root.querySelector("[data-guard-reset]");
+  if (guardReset)
+    guardReset.onclick = () => {
+      const source = pick.data.units.find((unit) => unit.id === pick.unit);
+      unitFromCatalogue(i, source);
+      renderUnit(i);
+      changed();
+      notice("Catalogue profile restored.");
     };
 }

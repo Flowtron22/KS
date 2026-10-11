@@ -77,10 +77,10 @@ test("Assigned Agents applies category caps and independent Retinue exemptions",
   assert.ok(armyAllyIssues(army, data, unitPoints).some((issue) => issue.includes("check allied-unit eligibility")));
 });
 
-test("Superseded Custodes army catalogue cannot silently pass as current rules", async () => {
+test("Custodes preview does not invalidate the separate catalogue army rules", async () => {
   const data = await read("adeptus-custodes"), army = newArmy(data);
   addUnit(army, data.units.find((unit) => unit.name === "Custodian Guard"));
-  assert.ok(armySummary(army, data).issues.some((issue) => issue.includes("September 2026 Codex")));
+  assert.ok(!armySummary(army, data).issues.some((issue) => issue.includes("September 2026 Codex")));
 });
 
 test("Marine and chapter catalogues disclose unreconciled Codex changes", async () => {
