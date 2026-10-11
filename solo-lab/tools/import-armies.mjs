@@ -316,8 +316,41 @@ function unit(u, map, origin, c) {
   const duplicatePriceRules = modifiers
     .map((m) => duplicatePriceRule(m, u.targetId ?? u.id))
     .filter(Boolean);
+  const cataloguePriceRules =
+    !priceRules.length && !duplicatePriceRules.length
+      ? modifiers.filter(
+          (m) =>
+            !m.conditionGroups &&
+            !m.repeats &&
+            ["set", "increment", "decrement"].includes(m.type) &&
+            m.conditions?.length &&
+            m.conditions.every(
+              (q) =>
+                q.scope === "primary-catalogue" &&
+                q.field === "selections" &&
+                ["instanceOf", "notInstanceOf"].includes(q.type) &&
+                q.value === 1 &&
+                byCatalogue.has(q.childId),
+            ),
+        )
+      : [];
+  let points = cost?.value ?? null;
+  for (const m of cataloguePriceRules) {
+    if (
+      !m.conditions.every((q) =>
+        q.type === "instanceOf" ? c.id === q.childId : c.id !== q.childId,
+      )
+    )
+      continue;
+    if (m.type === "set") points = m.value;
+    else if (points !== null)
+      points += m.type === "decrement" ? -m.value : m.value;
+  }
   const conditionalPrice =
-    modifiers.length !== priceRules.length + duplicatePriceRules.length ||
+    modifiers.length !==
+      priceRules.length +
+        duplicatePriceRules.length +
+        cataloguePriceRules.length ||
     groupedPrice ||
     !cost;
   const sizes = [
@@ -380,7 +413,7 @@ function unit(u, map, origin, c) {
     ),
     copyLimits: compileCopyLimits(u, map),
     sizes,
-    points: cost?.value ?? null,
+    points,
     priceRules,
     duplicatePriceRules,
     conditionalPrice,

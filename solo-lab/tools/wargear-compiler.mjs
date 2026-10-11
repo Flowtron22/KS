@@ -36,14 +36,30 @@ export function compileEquipment(unit, { children, bounds, options }) {
         .map((c) => c.id),
     );
     const changes = [...(n.modifiers ?? [])];
-    function scan(x) {
+    function scan(x, inherited = {}, unsupported = false) {
       if (!x || typeof x !== "object") return;
+      if (Array.isArray(x)) {
+        x.forEach((item) => scan(item, inherited, unsupported));
+        return;
+      }
       if (
         x.field &&
         (constraintIds.has(x.field) || ["error", "hidden"].includes(x.field))
-      )
-        changes.push({ ...x, grouped: true });
-      for (const v of Object.values(x)) if (typeof v === "object") scan(v);
+      ) {
+        changes.push({ ...inherited, ...x, grouped: unsupported });
+        return;
+      }
+      // A plain AND wrapper with a repeat is equivalent to repeating each
+      // contained modifier. More complex group conditions still need review.
+      const simple =
+        x.type === "and" &&
+        !x.conditions?.length &&
+        !x.conditionGroups?.length &&
+        !inherited.repeats;
+      const next =
+        simple && x.repeats ? { ...inherited, repeats: x.repeats } : inherited;
+      scan(x.modifiers, next, unsupported || !simple);
+      scan(x.modifierGroups, next, unsupported || !simple);
     }
     scan(n.modifierGroups);
     pending.push({ n, changes, constraintIds });
