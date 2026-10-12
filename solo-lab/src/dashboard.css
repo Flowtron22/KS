@@ -752,3 +752,22 @@ main {
     font-size: 9px !important;
   }
 }
+.rule-reference-card {
+  margin: 8px 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border, #303b43);
+  border-radius: 6px;
+}
+.rule-reference-card summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+.rule-reference-card summary span {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #9eb0bf;
+}
+.rule-reference-card p { font-size: 13px; }
+.rule-reference-card a { display: block; margin-top: 8px; font-size: 12px; }

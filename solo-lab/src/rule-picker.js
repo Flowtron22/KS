@@ -1,4 +1,5 @@
 import { weaponRule } from "./rule-effects.js";
+import { weaponReference } from "./core-rule-reference.js";
 const effectLabels = {
   singleHitReroll: "One failed Hit re-roll",
   singleWoundReroll: "One failed Wound re-roll",
@@ -150,5 +151,5 @@ export function rulePicker(i, u, pick, esc, phase) {
     )
     .join(
       "",
-    )}</details></details><details class="weapon-rule-panel" data-panel="weapon-rules"><summary>Weapon keywords${keywords ? " · " + esc(keywords) : " · none in this profile"}</summary>${check("weaponRules", "Apply supported weapon keywords", u.weaponRules)}${check("halfRange", "Target is within half weapon range", u.weaponConditions?.halfRange)}${check("heavyEligible", "Heavy: unengaged, not set up this turn, moved at most 3 inches", u.weaponConditions?.heavyEligible)}${check("charged", "Attacking unit made a charge move this turn", u.weaponConditions?.charged)}<p class="fine">${parsed.unsupported.length ? "Not calculated: " + esc(parsed.unsupported.join(", ")) + ". " : ""}Hazardous tests, Precision allocation, Cleave and extra weapon profiles are not resolved. Torrent has no hit dice or critical hits. Lethal Hits always auto-wound; those wounds cannot trigger Devastating Wounds.</p></details>`;
+    )}</details></details><details class="weapon-rule-panel" data-panel="weapon-rules"><summary>Weapon keywords${keywords ? " · " + esc(keywords) : " · none in this profile"}</summary>${weaponReference(keywords, u.weaponConditions)}${check("weaponRules", "Apply supported weapon keywords", u.weaponRules)}${check("halfRange", "Target is within half weapon range", u.weaponConditions?.halfRange)}${check("heavyEligible", "Heavy: unengaged, not set up this turn, moved at most 3 inches", u.weaponConditions?.heavyEligible)}${check("charged", "Attacking unit made a charge move this turn", u.weaponConditions?.charged)}<p class="fine">${parsed.unsupported.length ? "Not calculated: " + esc(parsed.unsupported.join(", ")) + ". " : ""}Hazardous tests, Precision allocation, Cleave and extra weapon profiles are not resolved. Torrent has no hit dice or critical hits. Lethal Hits always auto-wound; those wounds cannot trigger Devastating Wounds.</p></details>`;
 }

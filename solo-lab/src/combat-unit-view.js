@@ -2,6 +2,7 @@ import { escapeHtml as esc, option as opt } from "./ui-html.js";
 import { rulePicker } from "./rule-picker.js";
 import { KATAHS, KATAH_SOURCE } from "./combat-effects.js";
 import { combatModelMax } from "./unit-limits.js";
+import { coreStratagemReference } from "./core-rule-reference.js";
 
 export function weaponProfiles(unit, phase) {
   return (unit?.profiles ?? []).filter(
@@ -159,6 +160,7 @@ export function renderUnitCard(
    ${panel("weapon-edit", "weapon-edit", `Weapon stats <span>${esc(weaponSummary(u, phase))}</span>`, weaponFields(i, u, phase))}
    ${panel("profile-edit", "profile-edit", "Defence & wounds", defenceFields(i, u, pick, source, phase))}
    ${panel("unit-abilities", "unit-abilities", `Abilities & auras <span>${count ? count + " selected" : "Optional"}</span>`, effectsPanel(i, u, pick, phase))}
+   ${panel("core-stratagems", "core-stratagems", "Core Stratagems", coreStratagemReference(source, phase))}
    <div id="effects-summary-${i}" class="effects-summary" aria-live="polite"></div>
    ${panel("unit-calculation", "unit-calculation", "Attack calculation", `<div class="sequence-preview" id="preview-${i}"></div>`)}
   </div>`;
