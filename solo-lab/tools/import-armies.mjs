@@ -57,6 +57,7 @@ const fields = new Set([
   "S",
   "AP",
   "D",
+  "Keywords",
 ]);
 const excluded =
   /Crusade|Battle Honours|Weapon Modifications|Battle Scars|Blackstone|Requisition|Boarding Actions/i;
@@ -214,6 +215,7 @@ function enhancementDetachments(n, map) {
 function unit(u, map, origin, c) {
   const range = modelRange(u, map),
     profiles = new Map(),
+    abilities = new Map(),
     options = [],
     attachmentProfiles = [],
     categories = [
@@ -224,6 +226,19 @@ function unit(u, map, origin, c) {
       ),
     ];
   flatten(u, map, (n, path, ancestors) => {
+    if ((n === u || n.type === "model" || n.type === "unit") && !path.some((name) => /Enhancements?|Crusade/i.test(name))) {
+      for (const ability of [
+        ...(n.profiles ?? []),
+        ...(n.infoLinks ?? []).map((link) => {
+          const target = map.get(link.targetId);
+          return target ? { ...target, name: link.name ?? target.name } : null;
+        }).filter(Boolean),
+      ]) {
+        const description = ability.description ?? ability.characteristics?.find((item) => item.name === "Description")?.$text;
+        if (description && (ability.typeName === "Abilities" || !ability.typeName))
+          abilities.set(ability.id, { id: ability.id, name: ability.name, description });
+      }
+    }
     if (!path.length)
       attachmentProfiles.push(
         ...(n.profiles ?? []),
@@ -444,6 +459,7 @@ function unit(u, map, origin, c) {
     duplicatePriceRules,
     conditionalPrice,
     profiles: [...profiles.values()],
+    abilities: [...abilities.values()],
     equipment: compileEquipment(u, {
       children: (n) => children(n, map),
       bounds,

@@ -10,6 +10,7 @@ import { armyLibraryView } from "./army-library-view.js";
 import { armyGroup, groupArmyItems } from "./army-groups.js";
 import { enhancementAllowed, enhancementAvailability, enhancementBudget } from "./army-enhancements.js";
 import { armyRosterView } from "./army-roster-view.js";
+import { armyDatasheetView } from "./army-datasheet-view.js";
 import { unitAvailability, modelCountAllowed } from "./unit-limits.js";
 import { attachmentRole, attachmentCandidates } from "./army-attachments.js";
 import {
@@ -516,7 +517,6 @@ export async function mountArmyBuilder(root) {
     const focusValue = focusEquipment ? focused.dataset[focusEquipment] : null;
     const focusModel = focused?.dataset.model;
     const stat = unit.profiles.find((p) => p.type === "Unit"),
-      weapons = unit.profiles.filter((p) => /Weapons/.test(p.type)),
       enhancements = unit.options.filter(
         (o) => enhancementAllowed(o, unit, current()) ||
           (o.type === "enhancement" && o.id === row?.enhancement),
@@ -526,7 +526,7 @@ export async function mountArmyBuilder(root) {
         .filter((c) => !c.startsWith("Faction:"))
         .slice(0, 6)
         .join(" · "),
-    )}</p>${stat ? `<div class="stat-grid">${["M", "T", "Sv", "W", "LD", "OC"].map((k) => `<div><small>${k === "LD" ? "Ld" : k}</small><strong>${esc(stat.stats[k] ?? "–")}</strong></div>`).join("")}</div>` : ""}${
+    )}</p>${stat ? `<div class="stat-grid">${["M", "T", "Sv", "W", "LD", "OC", ...(stat.stats.InSv ? ["InSv"] : [])].map((k) => `<div><small>${k === "LD" ? "Ld" : k === "InSv" ? "Invuln" : k}</small><strong>${esc(stat.stats[k] ?? "–")}</strong></div>`).join("")}</div>` : ""}${
       row
         ? `<div class="config-fields"><label>Models<input id="config-models" type="number" min="${unit.models.min}" max="${unit.models.max}" value="${row.models}"></label><strong>${unitPoints(unit, row, armies[side]) ?? "?"} points</strong></div><p class="fine">Source model range: ${unit.models.min}–${unit.models.max}. Choose equipment for each model below.</p>${unit.categories.includes("Character") ? `<label class="warlord-choice"><input id="config-warlord" type="checkbox" ${row.warlord ? "checked" : ""}> Warlord</label>` : ""}${
             attachmentRole(unit)
@@ -544,7 +544,7 @@ export async function mountArmyBuilder(root) {
               : ""
           }${equipmentView(unit, row)}<label>Loadout / model composition notes<textarea id="config-notes" maxlength="2000" rows="2" placeholder="Sergeant equipment, weapon replacements, special models…">${esc(row.notes)}</textarea></label>${unit.conditionalPrice || unit.points === null ? `<label>Reviewed unit points override<input id="config-override" type="number" min="0" max="100000" placeholder="Use source calculation" value="${row.pointsOverride ?? ""}"></label><p class="fine">Override the unit cost after checking conditional rules. Enhancement and paid wargear costs are added separately.</p>` : ""}`
         : ""
-    }<details><summary>Weapon characteristics</summary><div class="weapon-table-wrap"><table class="builder-weapons"><thead><tr>${["Weapon", "Range", "A", "BS / WS", "S", "AP", "D"].map((s) => `<th>${s}</th>`).join("")}</tr></thead><tbody>${weapons.map((w) => `<tr>${[w.name, w.stats.Range ?? "Melee", w.stats.A, w.stats.BS ?? w.stats.WS, w.stats.S, w.stats.AP, w.stats.D].map((v) => `<td>${esc(v ?? "–")}</td>`).join("")}</tr>`).join("")}</tbody></table></div></details><p class="fine">Characteristics only. Abilities and weapon keywords are not included in the battle engine.</p><button id="done-config" class="button orange">${row ? "Done" : "Back to units"}</button></section></div>`;
+    }${armyDatasheetView(unit)}<button id="done-config" class="button orange">${row ? "Done" : "Back to units"}</button></section></div>`;
     function refreshTotals() {
       target.querySelector(".config-fields strong").textContent =
         (unitPoints(unit, row, armies[side]) ?? "?") + " points";
