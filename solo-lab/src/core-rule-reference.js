@@ -1,7 +1,6 @@
 import { escapeHtml as esc } from "./ui-html.js";
 import { weaponRule } from "./rule-effects.js";
 
-export const CORE_RULE_SOURCE = "https://wahapedia.ru/wh40k11ed/the-rules/core-rules/";
 // Short reference notes; neither these cards nor their visibility grant eligibility.
 const keywordNotes = [
   [/^Lance$/i, "Charge this turn: +1 wound roll."],
@@ -23,7 +22,7 @@ export function weaponReference(keywords, conditions = {}) {
   return keywords.split(",").map((value) => value.trim()).filter(Boolean).map((name) => {
     const note = keywordNotes.find(([pattern]) => pattern.test(name))?.[1];
     const calculated = !weaponRule(name, conditions).unsupported.length;
-    return `<details class="rule-reference-card"><summary>${esc(name)} <span>${calculated ? "Calculated · conditions apply" : "Reference only"}</span></summary><p>${esc(note ?? "See the source for this ability’s conditions.")}</p><a href="${CORE_RULE_SOURCE}" target="_blank" rel="noreferrer">11th-edition rule ↗</a></details>`;
+    return `<details class="rule-reference-card"><summary>${esc(name)} <span>${calculated ? "Calculated · conditions apply" : "Reference only"}</span></summary><p>${esc(note ?? "This ability’s conditions need review.")}</p></details>`;
   }).join("");
 }
 
@@ -52,6 +51,6 @@ export function eligibleCoreStratagems(unit) {
 export function coreStratagemReference(unit, phase) {
   const candidates = eligibleCoreStratagems(unit);
   const phaseLabels = { any: "Any phase", shoot: "Shooting", fight: "Fight", command: "Command", charge: "Charge", movement: "Movement" };
-  const card = (rule) => `<details class="rule-reference-card"><summary>${esc(rule.name)} <span>${esc(rule.cp)} CP · ${esc(phaseLabels[rule.phase])}</span></summary><p>${esc(rule.when)} ${esc(rule.note)}</p><small>Reference only · check target, timing and CP.</small><a href="${CORE_RULE_SOURCE}" target="_blank" rel="noreferrer">Full conditions ↗</a></details>`;
+  const card = (rule) => `<details class="rule-reference-card"><summary>${esc(rule.name)} <span>${esc(rule.cp)} CP · ${esc(phaseLabels[rule.phase])}</span></summary><p>${esc(rule.when)} ${esc(rule.note)}</p><small>Reference only · check target, timing and CP.</small></details>`;
   return `<div class="core-stratagem-reference"><p class="fine">Core Stratagems · 11th edition. Keyword matches only; battlefield conditions still apply.</p>${candidates.filter((rule) => rule.phase === "any" || rule.phase === phase).map(card).join("")}<details data-panel="other-core-phases"><summary>Other phases</summary>${candidates.filter((rule) => rule.phase !== "any" && rule.phase !== phase).map(card).join("")}</details></div>`;
 }
